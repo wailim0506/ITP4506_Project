@@ -13,4 +13,8 @@ Include the following code in the HTML file:
 Tutorial for Bootstrap 5:
 https://www.w3schools.com/bootstrap5/bootstrap_get_started.php
 
+# JQuery Tutorial
+https://www.w3schools.com/jquery/
+
+
 
