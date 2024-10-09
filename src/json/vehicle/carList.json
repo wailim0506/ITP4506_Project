@@ -2,59 +2,101 @@
   "electricBrands": [
     {
       "name": "Tesla",
-      "types": [
+      "car": [
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "Model X",
-              "price": 99990,
-              "fuelType": "Electric",
-              "bodyColors": ["White", "Blue"],
-              "interiorColors": ["Black", "Tan"]
-            }
-          ]
+          "model": "Model X",
+          "price": 99990,
+          "fuelType": "Electric",
+          "bodyColors": ["White", "Blue", "Black", "Silver", "Red"],
+          "interiorColors": ["Black", "Tan", "Gray", "Cream", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 561,
+          "engineType": "Electric Motor",
+          "horsepower": 1020,
+          "seatingCapacity": 7,
+          "description": "The Tesla Model X is a luxury electric SUV that combines performance with practicality. With its impressive acceleration and spacious interior, it offers seating for up to seven passengers and advanced safety features. The iconic Falcon Wing doors provide easy access to the second and third rows, making it ideal for families."
         },
         {
           "type": "Sportscar",
-          "models": [
-            {
-              "model": "Roadster",
-              "price": 200000,
-              "fuelType": "Electric",
-              "bodyColors": ["Red", "Silver"],
-              "interiorColors": ["Gray", "White"]
-            }
-          ]
+          "model": "Roadster",
+          "price": 200000,
+          "fuelType": "Electric",
+          "bodyColors": ["Red", "Silver", "Blue", "Black", "Yellow"],
+          "interiorColors": ["Gray", "White", "Black", "Tan", "Red"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 620,
+          "engineType": "Electric Motor",
+          "horsepower": 2000,
+          "seatingCapacity": 4,
+          "description": "The Tesla Roadster is an all-electric sports car that redefines speed and performance. With a stunning design and groundbreaking technology, it can accelerate from 0 to 60 mph in just 1.9 seconds. The Roadster features a removable glass roof and a spacious interior, making it perfect for both thrilling drives and everyday use."
+        },
+        {
+          "type": "Sedan",
+          "model": "Model S",
+          "price": 89990,
+          "fuelType": "Electric",
+          "bodyColors": ["Black", "White", "Midnight Silver", "Blue", "Red"],
+          "interiorColors": ["Black", "White", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 652,
+          "engineType": "Electric Motor",
+          "horsepower": 1020,
+          "seatingCapacity": 5,
+          "description": "The Tesla Model S is a luxury electric sedan known for its high performance and long range. It features a minimalist interior and cutting-edge technology, offering a smooth and fast driving experience."
+        },
+        {
+          "type": "SUV",
+          "model": "Model Y",
+          "price": 53990,
+          "fuelType": "Electric",
+          "bodyColors": ["White", "Black", "Silver", "Blue", "Red"],
+          "interiorColors": ["Black", "White"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 330,
+          "engineType": "Electric Motor",
+          "horsepower": 450,
+          "seatingCapacity": 5,
+          "description": "The Tesla Model Y is a versatile electric SUV with impressive range and performance. It offers a spacious interior and advanced technology, making it perfect for families and adventurers alike."
         }
       ]
     },
     {
       "name": "BYD",
-      "types": [
+      "car": [
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "Tang",
-              "price": 45000,
-              "fuelType": "Electric",
-              "bodyColors": ["White", "Black", "Silver"],
-              "interiorColors": ["Beige", "Brown"]
-            }
-          ]
+          "model": "Tang",
+          "price": 45000,
+          "fuelType": "Electric",
+          "bodyColors": ["White", "Black", "Silver", "Blue", "Red"],
+          "interiorColors": ["Beige", "Brown", "Black", "Gray", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "China",
+          "maxRange": 500,
+          "engineType": "Electric Motor",
+          "horsepower": 517,
+          "seatingCapacity": 7,
+          "description": "The BYD Tang is an electric SUV that combines style, space, and power. With a modern design and a roomy interior, it comfortably seats up to seven passengers. The Tang offers impressive acceleration and advanced safety features, making it an excellent choice for families looking for an eco-friendly vehicle."
         },
         {
           "type": "Sedan",
-          "models": [
-            {
-              "model": "Han",
-              "price": 50000,
-              "fuelType": "Electric",
-              "bodyColors": ["Red", "Blue", "Gray"],
-              "interiorColors": ["Black", "Cream"]
-            }
-          ]
+          "model": "Han",
+          "price": 50000,
+          "fuelType": "Electric",
+          "bodyColors": ["Red", "Blue", "Gray", "White", "Black"],
+          "interiorColors": ["Black", "Cream", "Beige", "Brown", "Gray"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "China",
+          "maxRange": 605,
+          "engineType": "Electric Motor",
+          "horsepower": 494,
+          "seatingCapacity": 5,
+          "description": "The BYD Han is an elegant electric sedan that offers a perfect blend of luxury and performance. With its sleek design and high-tech interior, it provides a comfortable driving experience. The Han is equipped with cutting-edge technology and safety features, making it a top choice for those seeking an upscale electric vehicle."
         }
       ]
     }
@@ -62,194 +104,221 @@
   "nonElectricBrands": [
     {
       "name": "Toyota",
-      "types": [
+      "car": [
         {
           "type": "Hatchback",
-          "models": [
-            {
-              "model": "Yaris",
-              "price": 20000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Red", "Blue", "White"],
-              "interiorColors": ["Black", "Gray", "Beige"]
-            }
-          ]
+          "model": "Yaris",
+          "price": 20000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Red", "Blue", "White", "Black", "Silver"],
+          "interiorColors": ["Black", "Gray", "Beige", "Tan", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 600,
+          "engineType": "1.5L I4",
+          "horsepower": 106,
+          "seatingCapacity": 5,
+          "description": "The Toyota Yaris is a compact hatchback designed for urban living. Its agile handling and fuel-efficient engine make it perfect for city driving. The Yaris features a comfortable interior with modern technology, ensuring you stay connected on the go while offering excellent safety ratings."
         },
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "RAV4",
-              "price": 26725,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Blue", "Silver", "Black"],
-              "interiorColors": ["Gray", "Tan"]
-            }
-          ]
+          "model": "RAV4",
+          "price": 26725,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Blue", "Silver", "Black", "White", "Red"],
+          "interiorColors": ["Gray", "Tan", "Beige", "Black", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 650,
+          "engineType": "2.5L I4",
+          "horsepower": 203,
+          "seatingCapacity": 5,
+          "description": "The Toyota RAV4 is a versatile SUV that offers spacious seating and ample cargo space. Known for its reliability, the RAV4 comes equipped with advanced safety features and technology to enhance your driving experience. It's perfect for both daily commutes and weekend adventures."
         },
         {
           "type": "Sedan",
-          "models": [
-            {
-              "model": "Camry",
-              "price": 24425,
-              "fuelType": "Gasoline",
-              "bodyColors": ["White", "Black", "Red"],
-              "interiorColors": ["Beige", "Black"]
-            }
-          ]
+          "model": "Camry",
+          "price": 24425,
+          "fuelType": "Gasoline",
+          "bodyColors": ["White", "Black", "Red", "Silver", "Blue"],
+          "interiorColors": ["Beige", "Black", "Gray", "Tan", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 600,
+          "engineType": "2.5L I4",
+          "horsepower": 203,
+          "seatingCapacity": 5,
+          "description": "The Toyota Camry is a midsize sedan known for its comfort and efficiency. With a stylish design and spacious interior, it offers advanced technology and safety features that make every drive enjoyable. The Camry is ideal for families or anyone seeking a reliable vehicle."
         }
       ]
     },
     {
       "name": "Honda",
-      "types": [
+      "car": [
         {
           "type": "Hatchback",
-          "models": [
-            {
-              "model": "Fit",
-              "price": 22000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Green", "Yellow", "Blue"],
-              "interiorColors": ["Black", "Gray"]
-            }
-          ]
+          "model": "Fit",
+          "price": 22000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Green", "Yellow", "Blue", "Red", "Silver"],
+          "interiorColors": ["Black", "Gray", "Beige", "Tan", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 600,
+          "engineType": "1.5L I4",
+          "horsepower": 130,
+          "seatingCapacity": 5,
+          "description": "The Honda Fit is a subcompact hatchback that maximizes space without sacrificing style. Its flexible interior allows you to configure the seats in various ways to accommodate cargo or passengers easily. The Fit is known for its fuel efficiency and fun-to-drive nature, making it perfect for city dwellers."
         },
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "CR-V",
-              "price": 28750,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Silver", "White"],
-              "interiorColors": ["Gray", "Tan"]
-            }
-          ]
-        },
-        {
-          "type": "Sedan",
-          "models": [
-            {
-              "model": "Accord",
-              "price": 26720,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Black", "Silver", "Red"],
-              "interiorColors": ["Tan", "Beige"]
-            }
-          ]
+          "model": "CR-V",
+          "price": 28750,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Silver", "White", "Black", "Red", "Blue"],
+          "interiorColors": ["Gray", "Tan", "Beige", "Black", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 650,
+          "engineType": "1.5L I4 Turbocharged",
+          "horsepower": 190,
+          "seatingCapacity": 5,
+          "description": "The Honda CR-V is a compact SUV that offers a perfect blend of comfort, space, and efficiency. With its roomy interior and cargo capacity, it's ideal for families or outdoor enthusiasts. The CR-V comes equipped with advanced safety technologies to ensure peace of mind on every journey."
         }
       ]
     },
     {
       "name": "Jeep",
-      "types": [
+      "car": [
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "Wrangler",
-              "price": 30000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Orange", "Green", "Black"],
-              "interiorColors": ["Black", "Gray"]
-            }
-          ]
+          "model": "Wrangler",
+          "price": 30000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Orange", "Green", "Black", "Red", "Silver"],
+          "interiorColors": ["Black", "Gray", "Beige", "Tan", "Brown"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "3.6L V6",
+          "horsepower": 285,
+          "seatingCapacity": 4,
+          "description": "The Jeep Wrangler is an iconic off-road SUV known for its rugged capability and versatility. With removable doors and roof options, it allows drivers to experience the outdoors like never before. The Wrangler's four-wheel-drive system makes it perfect for tackling tough terrains while providing comfort on city roads."
         },
         {
           "type": "Sportscar",
-          "models": [
-            {
-              "model": "Grand Cherokee Trackhawk",
-              "price": 86000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Dark Blue", "Black"],
-              "interiorColors": ["Beige", "Red"]
-            }
-          ]
+          "model": "Grand Cherokee Trackhawk",
+          "price": 86000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Dark Blue", "Black", "Silver", "Red", "Green"],
+          "interiorColors": ["Beige", "Red", "Black", "Gray", "Brown"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "6.2L V8 Supercharged",
+          "horsepower": 707,
+          "seatingCapacity": 5,
+          "description": "The Grand Cherokee Trackhawk combines luxury with extreme performance. Powered by a supercharged V8 engine, this SUV delivers thrilling acceleration while maintaining the comfort of high-end interiors. It's designed for those who crave adventure without compromising on style or technology."
         }
       ]
     },
     {
       "name": "Ford",
-      "types": [
+      "car": [
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "Explorer",
-              "price": 33500,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Red", "Blue", "Silver"],
-              "interiorColors": ["Black", "Tan"]
-            }
-          ]
+          "model": "Explorer",
+          "price": 33500,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Red", "Blue", "Silver", "White", "Black"],
+          "interiorColors": ["Black", "Tan", "Gray", "Beige", "Cream"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 600,
+          "engineType": "2.3L I4 Turbocharged",
+          "horsepower": 300,
+          "seatingCapacity": 7,
+          "description": "The Ford Explorer is a midsize SUV designed for family adventures. With three rows of seating, ample cargo space, and advanced technology features, it ensures everyone travels in comfort. The Explorer's powerful engine options provide excellent performance on highways or off-road trails."
         },
         {
           "type": "Sportscar",
-          "models": [
-            {
-              "model": "Mustang GT",
-              "price": 43000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Yellow", "Black"],
-              "interiorColors": ["Black", "Red"]
-            }
-          ]
+          "model": "Mustang GT",
+          "price": 43000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Yellow", "Black", "Red", "Blue", "Silver"],
+          "interiorColors": ["Black", "Red", "Tan", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 550,
+          "engineType": "5.0L V8",
+          "horsepower": 450,
+          "seatingCapacity": 4,
+          "description": "The Ford Mustang GT is an iconic American muscle car that delivers exhilarating performance with its powerful V8 engine. Its aggressive styling turns heads wherever you go while providing modern technology features for an enhanced driving experience."
         },
         {
           "type": "Sedan",
-          "models": [
-            {
-              "model": "Fusion",
-              "price": 25000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["White", "Gray"],
-              "interiorColors": ["Gray", "Beige"]
-            }
-          ]
+          "model": "Fusion",
+          "price": 25000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["White", "Gray", "Silver", "Blue", "Red"],
+          "interiorColors": ["Gray", "Beige", "Tan", "Brown"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 600,
+          "engineType": "2.5L I4",
+          "horsepower": 175,
+          "seatingCapacity": 5,
+          "description": "The Ford Fusion is a midsize sedan that offers great value with its comfortable ride quality and spacious cabin. It combines efficiency with style, making it suitable for daily commutes or long road trips while ensuring advanced safety features are always present."
         }
       ]
     },
     {
       "name": "Chevrolet",
-      "types": [
+      "car": [
         {
           "type": "SUV",
-          "models": [
-            {
-              "model": "Equinox",
-              "price": 26600,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Silver", "White"],
-              "interiorColors": ["Black", "Gray"]
-            }
-          ]
+          "model": "Equinox",
+          "price": 26600,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Silver", "White", "Blue", "Red", "Black"],
+          "interiorColors": ["Black", "Gray", "Beige", "Tan", "Brown"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 600,
+          "engineType": "1.5L I4 Turbocharged",
+          "horsepower": 170,
+          "seatingCapacity": 5,
+          "description": "The Chevrolet Equinox is a compact SUV that strikes the right balance between functionality and style. With spacious interiors and modern tech offerings, it’s perfect for families or individuals seeking versatility in their daily drive."
         },
         {
           "type": "Sportscar",
-          "models": [
-            {
-              "model": "Corvette Stingray",
-              "price": 60000,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Red", "Blue"],
-              "interiorColors": ["Tan", "Black"]
-            }
-          ]
+          "model": "Corvette Stingray",
+          "price": 60000,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Red", "Blue", "Yellow", "Silver", "Black"],
+          "interiorColors": ["Tan", "Black", "Beige", "Gray", "Red"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "6.2L V8",
+          "horsepower": 495,
+          "seatingCapacity": 2,
+          "description": "The Chevrolet Corvette Stingray is America’s sports car that delivers breathtaking performance combined with cutting-edge design. Its lightweight construction enhances agility while the powerful V8 engine ensures thrilling acceleration on any road."
         },
         {
           "type": "Sedan",
-          "models": [
-            {
-              "model": "Malibu",
-              "price": 22870,
-              "fuelType": "Gasoline",
-              "bodyColors": ["Blue", "White"],
-              "interiorColors": ["Beige", "Gray"]
-            }
-          ]
+          "model": "Malibu",
+          "price": 22870,
+          "fuelType": "Gasoline",
+          "bodyColors": ["Blue", "White", "Silver", "Red", "Gray"],
+          "interiorColors": ["Beige", "Gray", "Tan", "Brown"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 600,
+          "engineType": "1.5L I4 Turbocharged",
+          "horsepower": 160,
+          "seatingCapacity": 5,
+          "description": "The Chevrolet Malibu is a stylish midsize sedan that offers comfort along with impressive efficiency. It features an intuitive infotainment system and provides plenty of room for passengers while ensuring top-notch safety ratings."
         }
       ]
     }
