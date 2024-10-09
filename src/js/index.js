@@ -6,7 +6,7 @@ function toggleVisibility() {
         $('#right_side').removeClass('col-md-5');
         $('#right_side').addClass('col-md-7');
 
-        $('#left_side_logo').css('height', '90px');
+        $('#left_side_logo').css('height', '130px');
     }else{
         $('#left_side').removeClass('col-md-5');
         $('#left_side').addClass('col-md-7');
@@ -14,7 +14,7 @@ function toggleVisibility() {
         $('#right_side').removeClass('col-md-7');
         $('#right_side').addClass('col-md-5');
 
-        $('#left_side_logo').css('height', '130px');
+        $('#left_side_logo').css('height', '210px');
     }
 
     if (window.innerWidth < 790) {

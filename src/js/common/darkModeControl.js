@@ -1,13 +1,13 @@
 function setDarkModePreference(){
     if ($('#darkModeToogle').text() == 'brightness_2') {
         //to dark mode
-        $('#html').attr('data-bs-theme','dark');
+        $('html').attr('data-bs-theme','dark');
         $('#darkModeToogle').text('wb_sunny');
         localStorage.setItem('darkMode', 'Y');
 
     }else{
         //to light mode
-        $('#html').attr('data-bs-theme','light');
+        $('html').attr('data-bs-theme','light');
         $('#darkModeToogle').text('brightness_2');
         localStorage.setItem('darkMode', 'N');
     }
@@ -16,10 +16,10 @@ function setDarkModePreference(){
 function loadDarkModePreference(){
     if (localStorage.getItem('darkMode') != null){
         if (localStorage.getItem('darkMode') == 'Y'){
-            $('#html').attr('data-bs-theme','dark');
+            $('html').attr('data-bs-theme','dark');
             $('#darkModeToogle').text('wb_sunny');
         }else{
-            $('#html').attr('data-bs-theme','light');
+            $('html').attr('data-bs-theme','light');
             $('#darkModeToogle').text('brightness_2');
         }
     }

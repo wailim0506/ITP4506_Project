@@ -1,0 +1,257 @@
+{
+  "electricBrands": [
+    {
+      "name": "Tesla",
+      "types": [
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "Model X",
+              "price": 99990,
+              "fuelType": "Electric",
+              "bodyColors": ["White", "Blue"],
+              "interiorColors": ["Black", "Tan"]
+            }
+          ]
+        },
+        {
+          "type": "Sportscar",
+          "models": [
+            {
+              "model": "Roadster",
+              "price": 200000,
+              "fuelType": "Electric",
+              "bodyColors": ["Red", "Silver"],
+              "interiorColors": ["Gray", "White"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BYD",
+      "types": [
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "Tang",
+              "price": 45000,
+              "fuelType": "Electric",
+              "bodyColors": ["White", "Black", "Silver"],
+              "interiorColors": ["Beige", "Brown"]
+            }
+          ]
+        },
+        {
+          "type": "Sedan",
+          "models": [
+            {
+              "model": "Han",
+              "price": 50000,
+              "fuelType": "Electric",
+              "bodyColors": ["Red", "Blue", "Gray"],
+              "interiorColors": ["Black", "Cream"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "nonElectricBrands": [
+    {
+      "name": "Toyota",
+      "types": [
+        {
+          "type": "Hatchback",
+          "models": [
+            {
+              "model": "Yaris",
+              "price": 20000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Red", "Blue", "White"],
+              "interiorColors": ["Black", "Gray", "Beige"]
+            }
+          ]
+        },
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "RAV4",
+              "price": 26725,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Blue", "Silver", "Black"],
+              "interiorColors": ["Gray", "Tan"]
+            }
+          ]
+        },
+        {
+          "type": "Sedan",
+          "models": [
+            {
+              "model": "Camry",
+              "price": 24425,
+              "fuelType": "Gasoline",
+              "bodyColors": ["White", "Black", "Red"],
+              "interiorColors": ["Beige", "Black"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Honda",
+      "types": [
+        {
+          "type": "Hatchback",
+          "models": [
+            {
+              "model": "Fit",
+              "price": 22000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Green", "Yellow", "Blue"],
+              "interiorColors": ["Black", "Gray"]
+            }
+          ]
+        },
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "CR-V",
+              "price": 28750,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Silver", "White"],
+              "interiorColors": ["Gray", "Tan"]
+            }
+          ]
+        },
+        {
+          "type": "Sedan",
+          "models": [
+            {
+              "model": "Accord",
+              "price": 26720,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Black", "Silver", "Red"],
+              "interiorColors": ["Tan", "Beige"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jeep",
+      "types": [
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "Wrangler",
+              "price": 30000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Orange", "Green", "Black"],
+              "interiorColors": ["Black", "Gray"]
+            }
+          ]
+        },
+        {
+          "type": "Sportscar",
+          "models": [
+            {
+              "model": "Grand Cherokee Trackhawk",
+              "price": 86000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Dark Blue", "Black"],
+              "interiorColors": ["Beige", "Red"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ford",
+      "types": [
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "Explorer",
+              "price": 33500,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Red", "Blue", "Silver"],
+              "interiorColors": ["Black", "Tan"]
+            }
+          ]
+        },
+        {
+          "type": "Sportscar",
+          "models": [
+            {
+              "model": "Mustang GT",
+              "price": 43000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Yellow", "Black"],
+              "interiorColors": ["Black", "Red"]
+            }
+          ]
+        },
+        {
+          "type": "Sedan",
+          "models": [
+            {
+              "model": "Fusion",
+              "price": 25000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["White", "Gray"],
+              "interiorColors": ["Gray", "Beige"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chevrolet",
+      "types": [
+        {
+          "type": "SUV",
+          "models": [
+            {
+              "model": "Equinox",
+              "price": 26600,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Silver", "White"],
+              "interiorColors": ["Black", "Gray"]
+            }
+          ]
+        },
+        {
+          "type": "Sportscar",
+          "models": [
+            {
+              "model": "Corvette Stingray",
+              "price": 60000,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Red", "Blue"],
+              "interiorColors": ["Tan", "Black"]
+            }
+          ]
+        },
+        {
+          "type": "Sedan",
+          "models": [
+            {
+              "model": "Malibu",
+              "price": 22870,
+              "fuelType": "Gasoline",
+              "bodyColors": ["Blue", "White"],
+              "interiorColors": ["Beige", "Gray"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
