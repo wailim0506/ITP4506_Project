@@ -59,7 +59,7 @@ function loadDarkModePreference(){
         }
     }
 }
-
+loadDarkModePreference();
 $(document).ready(function(){
     loadDarkModePreference();
 

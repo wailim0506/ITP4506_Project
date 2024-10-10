@@ -4,12 +4,12 @@ html{
     "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-/*nav*/
+
 body{
     width: 99.8%;
     margin: 0px;
 }
-
+/*nav*/
 nav{
     height: 60px;
     display: flex;
@@ -21,7 +21,7 @@ nav{
     width: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 #nav_center{
@@ -38,6 +38,11 @@ nav{
     justify-content: center;
     align-items: center;
 }
+
+#nav_left img{
+    height: 55px;
+}
+
 
 #nav_center a{
     width: 15%;
@@ -73,7 +78,7 @@ nav{
 /*nav*/
 
 #main{
-    border: 1px solid black;
+
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -94,12 +99,41 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+
     width: 95%;
 }
 
+#filter_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.filter_set{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+    width: 90%;
+}
+
+.filter_set label{
+    font-size: 16px;
+    margin-right: 0px;
+    margin-left: 9px;
+    width: 38%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.filter_set select{
+    width: 170px;
+}
+
 select{
-    width: 200px;
+    width: 130px;
     height: 35px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -108,13 +142,22 @@ select{
     margin-left: 5px;
 }
 
+#resetFiltersBtn{
+    padding: 10px 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 #main_carList{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 95%;
-    border: 1px solid black;
 }
 
 /*.row{*/
@@ -138,8 +181,11 @@ select{
 }
 
 .car-item {
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     border-radius: 25px;
+    box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
     width: 22%;
@@ -169,14 +215,101 @@ select{
     background-color: #0056b3;
 }
 
+/*nav responsive*/
+@media screen and (max-width: 1210px){
+    #nav_left{
+        width: 15%;
+    }
+    #nav_center{
+        width: 70%;
+    }
+    #nav_right{
+        width:20%;
+    }
+
+    #nav_center a{
+        font-size: 17px;
+    }
+
+    #nav_right a{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 887px){
+    #nav_left{
+        width: 7%;
+    }
+    #nav_center{
+        width: 60%;
+        position: relative;
+        left: 5px;
+    }
+    #nav_right{
+        width:10%;
+    }
+
+    #nav_center a{
+        width: 25%;
+        font-size: 13px;
+    }
+
+    #nav_right a{
+        font-size: 13px;
+    }
+
+    #nav_left img{
+        height: 40px;
+    }
+}
 
 /*responsive*/
+@media screen and (max-width: 1090px){
+    #main_sorting{
+        width: 98%;
+        flex-direction: column;
+    }
+
+
+    #filter_div{
+        flex-direction: column;
+        width: 100%;
+        align-items: normal;
+    }
+
+    .filter_set, #sortBy_set{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .filter_set label, #sortBy_set label{
+        width: 20%;
+        margin-left: 0px;
+    }
+
+    .filter_set select, #sortBy_set select{
+        width: 100%;
+    }
+
+    #resetFiltersBtn{
+        margin-left: 0px;
+        width: 30%;
+        margin-bottom: 8px;
+        align-self: end;
+        display: none;
+    }
+
+}
+
+
 @media screen and (max-width: 700px){
 
 
-    #main_sorting{
-        width: 100%;
-    }
+
 
     #main_carList{
         width: 100%;
@@ -194,4 +327,8 @@ select{
         justify-content: center;
         align-items: center;
     }
+
+
 }
+
+

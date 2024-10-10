@@ -12,7 +12,7 @@
 <body>
 <nav>
     <div id="nav_left">
-        <img src="../../../src/img/LMLogo.webp" height="60px"/>
+        <img src="../../../src/img/LMLogo.webp"/>
     </div>
     <div id="nav_center">
         <a href="#">Vehicle List</a>
@@ -26,34 +26,43 @@
 </nav>
 <div id="main">
     <div id="main_title">
-        <p>All Vehicles</p>
+        <p>Vehicles List - All</p>
     </div>
     <div id="main_sorting">
-        <div>
-            <label>Car Type:</label>
-            <select name="filter" id="filter">
-                <option value="all">All</option>
-                <option value="suv">SUV</option>
-                <option value="truck">Truck</option>
-                <option value="van">Van</option>
-            </select>
-            <label>Brand</label>
-            <select name="brand" id="brand">
-                <option value="all">All</option>
-                <option value="toyota">Toyota</option>
-                <option value="honda">Honda</option>
-                <option value="nissan">Nissan</option>
-                <option value="ford">Ford</option>
-            </select>
-            <label>Fuel Type:</label>
-            <select name="fuel" id="fuel">
-                <option value="all">All</option>
-                <option value="petrol">Petrol</option>
-                <option value="diesel">Diesel</option>
-                <option value="electric">Electric</option>
-            </select>
+        <div id="filter_div" >
+            <div class="filter_set">
+                <label>Car Type:</label>
+                <select name="type" id="type">
+                    <option value="all">All</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Van">Van</option>
+                </select>
+            </div>
+            <div class="filter_set">
+                <label>Brand:</label>
+                <select name="brand" id="brand">
+                    <option value="all">All</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Tesla">Tesla</option>
+                </select>
+            </div>
+            <div class="filter_set">
+                <label>Fuel Type:</label>
+                <select name="fuel" id="fuel">
+                    <option value="all">All</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electric">Electric</option>
+                </select>
+            </div>
+
+            <button id="resetFiltersBtn">Reset</button>
         </div>
-        <div>
+        <div id="sortBy_set">
             <label>Sort By:</label>
             <select name="sort" id="sort">
                 <option value="price">Price</option>
