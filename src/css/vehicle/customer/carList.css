@@ -1,9 +1,40 @@
-
-.filter_head{
-    font-weight: 600;
-    cursor: pointer;
+html{
+    font-family: system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-#filter_logo{
-    cursor: pointer;
+body{
+    border: 1px solid black;
+    width: 99.8%;
+    margin: 0px;
 }
+
+nav{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#nav_left{
+    width: 10%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#nav_center{
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#nav_right{
+    width: 10%;
+    border: 1px solid black;
+}
+
