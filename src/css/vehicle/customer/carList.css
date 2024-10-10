@@ -86,7 +86,7 @@ nav{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
+    font-size: 30px;
 }
 
 #main_sorting{
@@ -106,4 +106,92 @@ nav{
     border-radius: 4px;
     padding: 5px;
     margin-left: 5px;
+}
+
+#main_carList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border: 1px solid black;
+}
+
+/*.row{*/
+/*    border-bottom: 1px solid lightgray;*/
+/*}*/
+
+.brand_name{
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-bottom: 20px;
+}
+
+.car-item {
+    border: 1px solid gray;
+    border-radius: 25px;
+    overflow: hidden;
+    text-align: center;
+    width: 22%;
+    margin-left: 25px;
+}
+
+.car-item img {
+    width: 100%;
+    height: auto;
+}
+
+.car-item p {
+    margin: 10px 0;
+}
+
+.car-item button {
+    padding: 10px 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.car-item button:hover {
+    background-color: #0056b3;
+}
+
+
+/*responsive*/
+@media screen and (max-width: 700px){
+
+
+    #main_sorting{
+        width: 100%;
+    }
+
+    #main_carList{
+        width: 100%;
+    }
+
+    .car-item {
+        width: 90%;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+
+    .car-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
