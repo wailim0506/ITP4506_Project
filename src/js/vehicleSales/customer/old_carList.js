@@ -8,7 +8,7 @@ $(document).ready(function () {
             $("#productList").append("<div class=\"row mt-2\">\n" +
                 "                <div class=\"col-md-3\">\n" +
                 "                    <div class=\"card\">\n" +
-                "                        <img src=\"../../../src/img/vehicle/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
+                "                        <img src=\"../../../src/img/vehicleSales/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
                 "                        <div class=\"card-body d-flex flex-column align-items-center\">\n" +
                 "                            <h5 class=\"card-title text-center\">Product 1</h5>\n" +
                 "                            <p class=\"card-text text-center\">Price: $100</p>\n" +
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 "                </div>\n" +
                 "                <div class=\"col-md-3\">\n" +
                 "                    <div class=\"card\">\n" +
-                "                        <img src=\"../../../src/img/vehicle/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
+                "                        <img src=\"../../../src/img/vehicleSales/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
                 "                        <div class=\"card-body  d-flex flex-column align-items-center\">\n" +
                 "                            <h5 class=\"card-title text-center\">Product 1</h5>\n" +
                 "                            <p class=\"card-text text-center\">Price: $100</p>\n" +
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 "                </div>\n" +
                 "                <div class=\"col-md-3\">\n" +
                 "                    <div class=\"card\">\n" +
-                "                        <img src=\"../../../src/img/vehicle/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
+                "                        <img src=\"../../../src/img/vehicleSales/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
                 "                        <div class=\"card-body  d-flex flex-column align-items-center\">\n" +
                 "                            <h5 class=\"card-title text-center\">Product 1</h5>\n" +
                 "                            <p class=\"card-text text-center\">Price: $100</p>\n" +
@@ -38,7 +38,7 @@ $(document).ready(function () {
                 "                </div>\n" +
                 "                <div class=\"col-md-3\">\n" +
                 "                    <div class=\"card\">\n" +
-                "                        <img src=\"../../../src/img/vehicle/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
+                "                        <img src=\"../../../src/img/vehicleSales/car/test.jpg\" class=\"card-img-top\" alt=\"...\"/>\n" +
                 "                        <div class=\"card-body  d-flex flex-column align-items-center\">\n" +
                 "                            <h5 class=\"card-title text-center\">Product 1</h5>\n" +
                 "                            <p class=\"card-text text-center\">Price: $100</p>\n" +

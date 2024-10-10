@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $.getJSON('../../../src/json/vehicle/carList.json', function(data) {
+    $.getJSON('../../../src/json/vehicleSales/carList.json', function(data) {
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
                     var car = data.electricBrands[i].car[j + k * 4];
                     if (car != undefined) {
                         carRow.append("<div class=\"car-item\">\n" +
-                            "    <img src=\"../../../src/img/vehicle/car/test.jpg\" alt=\"Car 1\"/>\n" +
+                            "    <img src=\"../../../src/img/vehicleSales/car/test.jpg\" alt=\"Car 1\"/>\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
                             "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
@@ -40,7 +40,7 @@ $(document).ready(function() {
                     var car = data.nonElectricBrands[i].car[j + k * 4];
                     if (car != undefined) {
                         carRow.append("<div class=\"car-item\">\n" +
-                            "    <img src=\"../../../src/img/vehicle/car/test.jpg\" alt=\"Car 1\"/>\n" +
+                            "    <img src=\"../../../src/img/vehicleSales/car/test.jpg\" alt=\"Car 1\"/>\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
                             "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
