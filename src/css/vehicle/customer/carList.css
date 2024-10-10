@@ -92,13 +92,13 @@ nav{
 #main_sorting{
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid black;
     width: 95%;
 }
 
-#sort{
+select{
     width: 200px;
     height: 35px;
     font-size: 16px;

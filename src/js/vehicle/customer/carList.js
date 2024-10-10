@@ -17,6 +17,7 @@ $(document).ready(function() {
                         carRow.append("<div class=\"car-item\">\n" +
                             "    <img src=\"../../../src/img/vehicle/car/test.jpg\" alt=\"Car 1\"/>\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
+                            "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
                             "    <p>Price: $" + car.price + "</p>\n" +
                             "    <button>View Detail</button>\n" +
@@ -25,7 +26,6 @@ $(document).ready(function() {
                 }
                 $("#main_carList").append(carRow);
             }
-            $("#main_carList").append("<hr>");
         }
 
         for (var i = 0; i < numberOfNonElectricBrand; i++) {
@@ -42,6 +42,7 @@ $(document).ready(function() {
                         carRow.append("<div class=\"car-item\">\n" +
                             "    <img src=\"../../../src/img/vehicle/car/test.jpg\" alt=\"Car 1\"/>\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
+                            "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
                             "    <p>Price: $" + car.price + "</p>\n" +
                             "    <button>View Detail</button>\n" +
@@ -50,7 +51,6 @@ $(document).ready(function() {
                 }
                 $("#main_carList").append(carRow);
             }
-            $("#main_carList").append("<hr>");
         }
     });
 });

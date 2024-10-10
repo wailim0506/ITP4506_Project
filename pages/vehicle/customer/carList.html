@@ -8,9 +8,6 @@
     <script src="../../../src/js/vehicle/customer/carList.js"></script>
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-
-    </style>
 </head>
 <body>
 <nav>
@@ -32,87 +29,46 @@
         <p>All Vehicles</p>
     </div>
     <div id="main_sorting">
-        <label>Sort By:</label>
-        <select name="sort" id="sort">
-            <option value="price">Price</option>
-            <option value="year">Year</option>
-            <option value="brand">Brand</option>
-            <option value="model">Model</option>
-        </select>
+        <div>
+            <label>Car Type:</label>
+            <select name="filter" id="filter">
+                <option value="all">All</option>
+                <option value="suv">SUV</option>
+                <option value="truck">Truck</option>
+                <option value="van">Van</option>
+            </select>
+            <label>Brand</label>
+            <select name="brand" id="brand">
+                <option value="all">All</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="nissan">Nissan</option>
+                <option value="ford">Ford</option>
+            </select>
+            <label>Fuel Type:</label>
+            <select name="fuel" id="fuel">
+                <option value="all">All</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="electric">Electric</option>
+            </select>
+        </div>
+        <div>
+            <label>Sort By:</label>
+            <select name="sort" id="sort">
+                <option value="price">Price</option>
+                <option value="year">Year</option>
+                <option value="brand">Brand</option>
+                <option value="model">Model</option>
+            </select>
+        </div>
+
     </div>
     <div id="main_carList">
-<!--        <div class="row">-->
-<!--            <div class="brand_name">-->
-<!--                <p>Toyota</p>-->
-<!--            </div>-->
-<!--            <div class="car-row">-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 1"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $20,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 2"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $25,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 3"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $30,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 4"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $35,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        <div class="row">-->
-<!--            <div class="brand_name">-->
-<!--                <p>Toyota</p>-->
-<!--            </div>-->
-<!--            <div class="car-row">-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 1"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $20,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 2"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $25,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 3"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $30,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--                <div class="car-item">-->
-<!--                    <img src="../../../src/img/vehicle/car/test.jpg" alt="Car 4"/>-->
-<!--                    <p>Model: XXX</p>-->
-<!--                    <p>Fuel Type: XXX</p>-->
-<!--                    <p>Price: $35,000</p>-->
-<!--                    <button>View Detail</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--added by JS-->
     </div>
 </div>
+<i id="darkModeToogle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 </body>
 </html>
