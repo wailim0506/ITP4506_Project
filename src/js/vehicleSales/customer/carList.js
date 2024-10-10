@@ -1,4 +1,5 @@
 function loadCars() {
+    $("#main_carList").empty();
     $.getJSON('../../../src/json/vehicleSales/carList.json', function(data) {
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
