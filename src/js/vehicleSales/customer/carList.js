@@ -1,10 +1,13 @@
 function loadCars() {
-    $("#main_carList").empty();
+    $("#main_carList").html("");
     $.getJSON('../../../src/json/vehicleSales/carList.json', function(data) {
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
 
         for (var i = 0; i < numberOfElectricBrand; i++) {
+            if(data.electricBrands[i].name != $("#brand").val() && $("#brand").val() != "all"){
+                continue;
+            }
             $("#main_carList").append("<div class=\"row\">\n" +
                 "    <div class=\"brand_name\">\n" +
                 "        <p>" + data.electricBrands[i].name + "</p>\n" +
@@ -29,6 +32,9 @@ function loadCars() {
         }
 
         for (var i = 0; i < numberOfNonElectricBrand; i++) {
+            if(data.nonElectricBrands[i].name != $("#brand").val() && $("#brand").val() != "all"){
+                continue;
+            }
             $("#main_carList").append("<div class=\"row\">\n" +
                 "    <div class=\"brand_name\">\n" +
                 "        <p>" + data.nonElectricBrands[i].name + "</p>\n" +
@@ -118,7 +124,7 @@ function loadDarkModePreference(){
     }
 }
 loadDarkModePreference();
-loadCars();
+
 $(document).ready(function() {
     loadDarkModePreference();
     loadCars();
@@ -131,5 +137,9 @@ $(document).ready(function() {
         $("#brand").val("all");
         $("#fuel").val("all");
         $("#sort").val("price");
+    });
+
+    $("#brand").on("change", function() {
+        loadCars();
     });
 });
