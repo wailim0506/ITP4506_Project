@@ -91,6 +91,15 @@ select{
     cursor: pointer;
 }
 
+#loginBtn:hover{
+    background-color: #00aaaa;
+}
+
+.hoverEff:hover{
+    color: red;
+}
+
+
 /*responsive*/
 @media screen and (max-width: 1210px){
     #left_side{
