@@ -61,7 +61,45 @@ html{
     font-size: 20px;
 }
 
-.field input{
+.field .nameDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 7%
+}
+
+.genderBtnDiv{
+    margin-left: 7%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.genderBtnDiv div{
+    display: flex;
+    flex-direction: row;
+    width: 18%;
+    justify-content: left;
+}
+
+.genderBtnDiv label{
+    width: 84%;
+    font-size: 20px;
+    margin-left: 7px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.genderBtn{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.field .formInput{
     width: 80%;
     height: 40px;
     padding: 0 10px;

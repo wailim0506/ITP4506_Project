@@ -21,48 +21,45 @@
             </div>
             <br>
             <div class="field">
-                <div style="display: flex; flex-direction: row; justify-content: space-between; width: 89%; margin-left: 7%">
+                <div class="nameDiv">
                     <div style="flex: 1;">
-                        <label style="margin: 0 -13px;" >First Name:</label>
+                        <label style="margin: 0 -10px;" >First Name:</label>
                         <label style="margin: 0 0;">
-                            <input placeholder="FirstName"/>
+                            <input class="formInput" placeholder="FirstName"/>
                         </label>
                     </div>
                     <div style="flex: 1;">
-                        <label style="margin: 0 -13px;">Last Name:</label>
+                        <label style="margin: 0 -10px;">Last Name:</label>
                         <label style="margin: 0 0;">
-                            <input placeholder="LastName"/>
+                            <input class="formInput" placeholder="LastName"/>
                         </label>
                     </div>
                 </div>
             </div>
-            <div class="field">
-                <div style="display: flex; flex-direction: row; justify-content: space-between; width: 90%; margin-left: 0">
+            <div class="genderBtnDiv">
+                <div>
                     <label>Gender:</label>
-                    <input type="radio" name="gender">
-                    <label>Male</label>
-
-                    <input type="radio" name="gender">
-                    <label>Female</label>
+                    <label>Male<input class="genderBtn" type="radio" name="gender"></label>
+                    <label>Female<input class="genderBtn"  type="radio" name="gender"></label>
                 </div>
             </div>
             <div class="field">
                 <label>Email:</label>
-                <input type="email" id="email" placeholder="Enter email">
+                <input class="formInput" type="email" id="email" placeholder="Enter email">
             </div>
             <div class="field">
                 <label>Phone Number:</label>
-                <input id="phoneNo" placeholder="Enter Phone Number">
+                <input class="formInput" id="phoneNo" type="number" placeholder="Enter Phone Number">
             </div>
 
 
             <div class="field">
                 <label>Password:</label>
-                <input type="password" id="pass" placeholder="Enter Password">
+                <input class="formInput" type="password" id="pass" placeholder="Enter Password">
             </div>
             <div class="field">
                 <label>Confirm Password:</label>
-                <input type="email" id="conPass" placeholder="Re-enter the Password">
+                <input class="formInput" type="password" id="conPass" placeholder="Re-enter the Password">
             </div>
             <div class="field">
                 <label>Select Platform:</label>
