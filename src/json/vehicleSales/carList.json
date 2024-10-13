@@ -66,6 +66,38 @@
           "horsepower": 450,
           "seatingCapacity": 5,
           "description": "The Tesla Model Y is a versatile electric SUV with impressive range and performance. It offers a spacious interior and advanced technology, making it perfect for families and adventurers alike."
+        },
+        {
+          "id": 5,
+          "type": "Truck",
+          "model": "Cybertruck",
+          "price": 39990,
+          "fuelType": "Electric",
+          "bodyColors": ["White", "Black", "Silver"],
+          "interiorColors": ["Black", "Gray"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "Electric Motor",
+          "horsepower": 800,
+          "seatingCapacity": 6,
+          "description": "The Tesla Cybertruck is an all-electric pickup truck designed for utility and durability. Its angular design is built with ultra-hard steel, providing exceptional protection and versatility for work or play."
+        },
+        {
+          "id": 6,
+          "type": "Hatchback",
+          "model": "Model 2",
+          "price": 29990,
+          "fuelType": "Electric",
+          "bodyColors": ["Red", "Blue", "Green", "White", "Black"],
+          "interiorColors": ["Beige", "Gray", "Black"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 300,
+          "engineType": "Electric Motor",
+          "horsepower": 250,
+          "seatingCapacity": 5,
+          "description": "The Tesla Model 2 is an affordable electric hatchback aimed at urban commuters. It combines efficiency with modern features, offering a compact design perfect for city driving."
         }
       ]
     },
@@ -73,7 +105,7 @@
       "name": "BYD",
       "car": [
         {
-          "id": 5,
+          "id": 7,
           "type": "SUV",
           "model": "Tang",
           "price": 45000,
@@ -89,7 +121,7 @@
           "description": "The BYD Tang is an electric SUV that combines style, space, and power. With a modern design and a roomy interior, it comfortably seats up to seven passengers. The Tang offers impressive acceleration and advanced safety features, making it an excellent choice for families looking for an eco-friendly vehicle."
         },
         {
-          "id": 6,
+          "id": 8,
           "type": "Sedan",
           "model": "Han",
           "price": 50000,
@@ -105,7 +137,7 @@
           "description": "The BYD Han is an elegant electric sedan that offers a perfect blend of luxury and performance. With its sleek design and high-tech interior, it provides a comfortable driving experience. The Han is equipped with cutting-edge technology and safety features, making it a top choice for those seeking an upscale electric vehicle."
         },
         {
-          "id": 7,
+          "id": 9,
           "type": "Hatchback",
           "model": "Dolphin",
           "price": 30000,
@@ -121,7 +153,7 @@
           "description": "The BYD Dolphin is a compact electric hatchback with a modern design and efficient performance. It offers an eco-friendly driving experience with a spacious interior, making it ideal for city commuting."
         },
         {
-          "id": 8,
+          "id": 10,
           "type": "SUV",
           "model": "Song",
           "price": 40000,
@@ -135,6 +167,38 @@
           "horsepower": 300,
           "seatingCapacity": 5,
           "description": "The BYD Song is a versatile electric SUV that offers a balance of performance and efficiency. With advanced safety features and a comfortable interior, it's perfect for families and urban adventurers."
+        },
+        {
+          "id": 11,
+          "type": "Sedan",
+          "model": "e6",
+          "price": 35000,
+          "fuelType": "Electric",
+          "bodyColors": ["White", "Black", "Silver", "Blue", "Red"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "China",
+          "maxRange": 400,
+          "engineType": "Electric Motor",
+          "horsepower": 160,
+          "seatingCapacity": 5,
+          "description": "The BYD e6 is an electric sedan that offers a spacious interior and efficient performance. With a focus on sustainability and comfort, it's perfect for daily commuting and city driving."
+        },
+        {
+          "id": 12,
+          "type": "Hatchback",
+          "model": "e2",
+          "price": 25000,
+          "fuelType": "Electric",
+          "bodyColors": ["Red", "Blue", "White", "Black", "Silver"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "China",
+          "maxRange": 300,
+          "engineType": "Electric Motor",
+          "horsepower": 120,
+          "seatingCapacity": 5,
+          "description": "The BYD e2 is an electric hatchback designed for urban living. With its compact size and efficient performance, it's perfect for city commutes and everyday errands."
         }
       ]
     }
@@ -144,7 +208,7 @@
       "name": "Toyota",
       "car": [
         {
-          "id": 9,
+          "id": 13,
           "type": "Hatchback",
           "model": "Yaris",
           "price": 20000,
@@ -160,7 +224,7 @@
           "description": "The Toyota Yaris is a compact hatchback designed for urban living. Its agile handling and fuel-efficient engine make it perfect for city driving. The Yaris features a comfortable interior with modern technology, ensuring you stay connected on the go while offering excellent safety ratings."
         },
         {
-          "id": 10,
+          "id": 14,
           "type": "SUV",
           "model": "RAV4",
           "price": 26725,
@@ -176,7 +240,7 @@
           "description": "The Toyota RAV4 is a versatile SUV that offers spacious seating and ample cargo space. Known for its reliability, the RAV4 comes equipped with advanced safety features and technology to enhance your driving experience. It's perfect for both daily commutes and weekend adventures."
         },
         {
-          "id": 11,
+          "id": 15,
           "type": "Sedan",
           "model": "Camry",
           "price": 24425,
@@ -192,7 +256,7 @@
           "description": "The Toyota Camry is a midsize sedan known for its comfort and efficiency. With a stylish design and spacious interior, it offers advanced technology and safety features that make every drive enjoyable. The Camry is ideal for families or anyone seeking a reliable vehicle."
         },
         {
-          "id": 12,
+          "id": 16,
           "type": "SUV",
           "model": "Highlander",
           "price": 35000,
@@ -206,6 +270,70 @@
           "horsepower": 295,
           "seatingCapacity": 8,
           "description": "The Toyota Highlander is a midsize SUV that offers a spacious interior with three rows of seating. It's perfect for families and comes with advanced safety features and a comfortable ride."
+        },
+        {
+          "id": 17,
+          "type": "SUV",
+          "model": "4Runner",
+          "price": 36750,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 500,
+          "engineType": "4.0L V6",
+          "horsepower": 270,
+          "seatingCapacity": 5,
+          "description": "The Toyota 4Runner is a rugged SUV designed for off-road adventures. With its powerful engine and durable construction, it can handle tough terrains while providing a comfortable ride on highways. The 4Runner offers ample cargo space and advanced safety features for peace of mind."
+        },
+        {
+          "id": 18,
+          "type": "Truck",
+          "model": "Tacoma",
+          "price": 26500,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 500,
+          "engineType": "3.5L V6",
+          "horsepower": 278,
+          "seatingCapacity": 5,
+          "description": "The Toyota Tacoma is a midsize pickup truck known for its durability and off-road capabilities. With a rugged design and powerful engine options, it's perfect for work and play. The Tacoma offers advanced technology and safety features to enhance your driving experience."
+        },
+        {
+          "id": 19,
+          "type": "SUV",
+          "model": "Sequoia",
+          "price": 50000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 500,
+          "engineType": "5.7L V8",
+          "horsepower": 381,
+          "seatingCapacity": 8,
+          "description": "The Toyota Sequoia is a full-size SUV with three rows of seating and ample cargo space. It offers a powerful engine and a comfortable ride, making it perfect for family road trips or daily commutes."
+        },
+        {
+          "id": 20,
+          "type": "SUV",
+          "model": "Land Cruiser",
+          "price": 85000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 500,
+          "engineType": "5.7L V8",
+          "horsepower": 381,
+          "seatingCapacity": 8,
+          "description": "The Toyota Land Cruiser is a legendary off-road SUV known for its durability and capability. With a luxurious interior and advanced technology, it offers a comfortable ride on any terrain. The Land Cruiser is perfect for adventurers seeking a reliable and versatile vehicle."
         }
       ]
     },
@@ -213,7 +341,7 @@
       "name": "Honda",
       "car": [
         {
-          "id": 13,
+          "id": 21,
           "type": "Hatchback",
           "model": "Fit",
           "price": 22000,
@@ -229,7 +357,7 @@
           "description": "The Honda Fit is a subcompact hatchback that maximizes space without sacrificing style. Its flexible interior allows you to configure the seats in various ways to accommodate cargo or passengers easily. The Fit is known for its fuel efficiency and fun-to-drive nature, making it perfect for city dwellers."
         },
         {
-          "id": 14,
+          "id": 22,
           "type": "SUV",
           "model": "CR-V",
           "price": 28750,
@@ -245,7 +373,7 @@
           "description": "The Honda CR-V is a compact SUV that offers a perfect blend of comfort, space, and efficiency. With its roomy interior and cargo capacity, it's ideal for families or outdoor enthusiasts. The CR-V comes equipped with advanced safety technologies to ensure peace of mind on every journey."
         },
         {
-          "id": 15,
+          "id": 23,
           "type": "Sedan",
           "model": "Accord",
           "price": 26000,
@@ -261,7 +389,7 @@
           "description": "The Honda Accord is a midsize sedan that blends performance with sophistication. It offers a spacious interior, advanced technology, and a refined driving experience."
         },
         {
-          "id": 16,
+          "id": 24,
           "type": "SUV",
           "model": "Pilot",
           "price": 37000,
@@ -275,6 +403,54 @@
           "horsepower": 280,
           "seatingCapacity": 8,
           "description": "The Honda Pilot is a family-friendly SUV with three rows of seating and ample cargo space. It offers a smooth ride and advanced safety features, making it perfect for road trips."
+        },
+        {
+          "id": 25,
+          "type": "SUV",
+          "model": "HR-V",
+          "price": 24000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 550,
+          "engineType": "1.8L I4",
+          "horsepower": 141,
+          "seatingCapacity": 5,
+          "description": "The Honda HR-V is a subcompact SUV that offers a versatile interior and efficient performance. It's perfect for city driving and weekend getaways, providing comfort and style in a compact package."
+        },
+        {
+          "id": 26,
+          "type": "Sedan",
+          "model": "Civic",
+          "price": 22000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 600,
+          "engineType": "2.0L I4",
+          "horsepower": 158,
+          "seatingCapacity": 5,
+          "description": "The Honda Civic is a compact sedan known for its reliability and fuel efficiency. With a comfortable interior and modern technology, it's perfect for daily commuting and weekend adventures."
+        },
+        {
+          "id": 27,
+          "type": "SUV",
+          "model": "Element",
+          "price": 25000,
+          "fuelType": "Petrol",
+          "bodyColors": ["Blue", "Black", "White", "Silver", "Red"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "Japan",
+          "maxRange": 500,
+          "engineType": "2.4L I4",
+          "horsepower": 166,
+          "seatingCapacity": 5,
+          "description": "The Honda Element is a compact SUV with a unique design and versatile interior. It offers ample cargo space and a comfortable ride, making it perfect for outdoor enthusiasts and urban adventurers."
         }
       ]
     },
@@ -282,7 +458,7 @@
       "name": "Jeep",
       "car": [
         {
-          "id": 17,
+          "id": 28,
           "type": "SUV",
           "model": "Wrangler",
           "price": 30000,
@@ -298,7 +474,7 @@
           "description": "The Jeep Wrangler is an iconic off-road SUV known for its rugged capability and versatility. With removable doors and roof options, it allows drivers to experience the outdoors like never before. The Wrangler's four-wheel-drive system makes it perfect for tackling tough terrains while providing comfort on city roads."
         },
         {
-          "id": 18,
+          "id": 29,
           "type": "Sportscar",
           "model": "Grand Cherokee Trackhawk",
           "price": 86000,
@@ -314,7 +490,7 @@
           "description": "The Grand Cherokee Trackhawk combines luxury with extreme performance. Powered by a supercharged V8 engine, this SUV delivers thrilling acceleration while maintaining the comfort of high-end interiors. It's designed for those who crave adventure without compromising on style or technology."
         },
         {
-          "id": 19,
+          "id": 30,
           "type": "SUV",
           "model": "Cherokee",
           "price": 28000,
@@ -330,7 +506,7 @@
           "description": "The Jeep Cherokee is a compact SUV with off-road capabilities and a comfortable interior. It offers advanced technology and safety features for a secure and enjoyable drive."
         },
         {
-          "id": 20,
+          "id": 31,
           "type": "SUV",
           "model": "Compass",
           "price": 26000,
@@ -344,6 +520,38 @@
           "horsepower": 180,
           "seatingCapacity": 5,
           "description": "The Jeep Compass is a versatile SUV with a sleek design and modern technology. It's perfect for urban explorers and outdoor enthusiasts alike, offering comfort and capability."
+        },
+        {
+          "id": 32,
+          "type": "Truck",
+          "model": "Gladiator",
+          "price": 35000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "3.6L V6",
+          "horsepower": 285,
+          "seatingCapacity": 5,
+          "description": "The Jeep Gladiator is a midsize pickup truck that combines off-road capability with everyday practicality. With a rugged design and powerful engine options, it's perfect for work and play. The Gladiator offers a comfortable interior and advanced technology features for a seamless driving experience."
+        },
+        {
+          "id": 33,
+          "type": "SUV",
+          "model": "Renegade",
+          "price": 23000,
+          "fuelType": "Petrol",
+          "bodyColors": ["Black", "White", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "2.4L I4",
+          "horsepower": 180,
+          "seatingCapacity": 5,
+          "description": "The Jeep Renegade is a compact SUV with a bold design and off-road capabilities. It offers a comfortable interior and advanced technology features, making it perfect for urban adventures and weekend getaways."
         }
       ]
     },
@@ -351,7 +559,7 @@
       "name": "Ford",
       "car": [
         {
-          "id": 21,
+          "id": 34,
           "type": "Truck",
           "model": "F-150",
           "price": 30000,
@@ -367,7 +575,7 @@
           "description": "The Ford F-150 is a legendary full-size pickup truck known for its durability and versatility. With a range of powerful engines and advanced towing capabilities, it's perfect for work and recreation. The F-150 offers a comfortable interior with the latest technology features."
         },
         {
-          "id": 22,
+          "id": 35,
           "type": "SUV",
           "model": "Explorer",
           "price": 34000,
@@ -383,7 +591,7 @@
           "description": "The Ford Explorer is a midsize SUV that offers a spacious interior, strong performance, and cutting-edge technology. It's ideal for families and adventurers who need plenty of room for passengers and cargo."
         },
         {
-          "id": 23,
+          "id": 36,
           "type": "Sedan",
           "model": "Fusion",
           "price": 24000,
@@ -399,7 +607,7 @@
           "description": "The Ford Fusion is a stylish midsize sedan with a comfortable interior and efficient engine options. It offers advanced safety features and a smooth ride, making it a great choice for daily commuting."
         },
         {
-          "id": 24,
+          "id": 37,
           "type": "SUV",
           "model": "Bronco",
           "price": 32000,
@@ -413,6 +621,54 @@
           "horsepower": 270,
           "seatingCapacity": 5,
           "description": "The Ford Bronco is an off-road SUV built for adventure. With rugged design and capability, it handles rough terrains with ease while providing comfort on highways."
+        },
+        {
+          "id": 38,
+          "type": "Truck",
+          "model": "Ranger",
+          "price": 25000,
+          "fuelType": "Petrol",
+          "bodyColors": ["White", "Black", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 500,
+          "engineType": "2.3L I4 Turbocharged",
+          "horsepower": 270,
+          "seatingCapacity": 5,
+          "description": "The Ford Ranger is a midsize pickup truck known for its durability and capability. With a powerful engine and advanced technology features, it's perfect for work and play. The Ranger offers a comfortable interior and a smooth ride for everyday driving."
+        },
+        {
+          "id": 39,
+          "type": "SUV",
+          "model": "Escape",
+          "price": 25000,
+          "fuelType": "Hybrid",
+          "bodyColors": ["White", "Black", "Silver", "Blue", "Red"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 600,
+          "engineType": "2.5L I4",
+          "horsepower": 200,
+          "seatingCapacity": 5,
+          "description": "The Ford Escape is a compact SUV that offers a balance of performance and efficiency. With a spacious interior and advanced technology features, it's perfect for city driving and weekend getaways."
+        },
+        {
+          "id": 40,
+          "type": "SUV",
+          "model": "Edge",
+          "price": 31000,
+          "fuelType": "Petrol",
+          "bodyColors": ["Black", "White", "Silver", "Red", "Blue"],
+          "interiorColors": ["Black", "Gray", "Beige"],
+          "manufactureYear": 2024,
+          "countryOfOrigin": "USA",
+          "maxRange": 550,
+          "engineType": "2.0L I4 Turbocharged",
+          "horsepower": 250,
+          "seatingCapacity": 5,
+          "description": "The Ford Edge is a midsize SUV that offers a comfortable ride and spacious interior. With advanced technology features and safety systems, it's perfect for families and adventurers alike."
         }
       ]
     }

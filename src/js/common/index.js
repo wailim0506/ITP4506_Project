@@ -2,7 +2,7 @@ function setDarkModePreference(){
     if ($('#darkModeToogle').text() == 'brightness_2') {
         //to dark mode
         $('html').css('background-color', 'rgb(34,37,41)');
-        $('p, h1, label, i').css('color', 'rgb(194,196,200)');
+        $('body').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgb(110,168,254)');
         $('#form').css('border', '0.1px solid grey');
         $('input').css('background-color', 'rgb(44,47,51)');
@@ -16,7 +16,7 @@ function setDarkModePreference(){
     } else {
         //to light mode
         $('html').css('background-color', 'white');
-        $('p, h1, label, i').css('color', 'black');
+        $('body').css('color', 'black');
         $('a').css('color', 'blue');
         $('#form').css('border', '1px solid lightgrey');
         $('input').css('background-color', 'white');
@@ -34,7 +34,7 @@ function loadDarkModePreference(){
     if (localStorage.getItem('darkMode') != null){
         if (localStorage.getItem('darkMode') == 'Y'){
             $('html').css('background-color', 'rgb(34,37,41)');
-            $('p, h1, label, i').css('color', 'rgb(194,196,200)');
+            $('body').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgb(110,168,254)');
             $('#form').css('border', '0.1px solid grey');
             $('input').css('background-color', 'rgb(44,47,51)');
@@ -46,7 +46,7 @@ function loadDarkModePreference(){
             $('#darkModeToogle').text('wb_sunny');
         } else {
             $('html').css('background-color', 'white');
-            $('p, h1, label, i').css('color', 'black');
+            $('body').css('color', 'black');
             $('a').css('color', 'blue');
             $('#form').css('border', '1px solid lightgrey');
             $('input').css('background-color', 'white');
