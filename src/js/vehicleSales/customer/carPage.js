@@ -56,7 +56,7 @@ function loadCar(){
 }
 
 function setDarkMode() {
-    if ($('#darkModeToogle').text() == 'brightness_2') {
+    if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
         $('html').css('background-color', 'rgb(34,37,41)');
         $('body').css('color', 'rgb(194,196,200)');
@@ -68,7 +68,7 @@ function setDarkMode() {
         $('select').css('background-color', 'rgb(44,47,51)');
         $('select').css('color', 'rgb(194,196,200)');
         $('select').css('border', '0.1px solid grey');
-        $('#darkModeToogle').text('wb_sunny');
+        $('#darkModeToggle').text('wb_sunny');
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
@@ -82,7 +82,7 @@ function setDarkMode() {
         $('select').css('background-color', 'white');
         $('select').css('color', 'black');
         $('select').css('border', '1px solid lightgrey');
-        $('#darkModeToogle').text('brightness_2');
+        $('#darkModeToggle').text('brightness_2');
         localStorage.setItem('darkMode', 'N');
     }
 }
@@ -100,7 +100,7 @@ function loadDarkMode() {
             $('select').css('background-color', 'rgb(44,47,51)');
             $('select').css('color', 'rgb(194,196,200)');
             $('select').css('border', '0.1px solid grey');
-            $('#darkModeToogle').text('wb_sunny');
+            $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
             $('html').css('background-color', 'white');
@@ -113,7 +113,7 @@ function loadDarkMode() {
             $('select').css('background-color', 'white');
             $('select').css('color', 'black');
             $('select').css('border', '1px solid lightgrey');
-            $('#darkModeToogle').text('brightness_2');
+            $('#darkModeToggle').text('brightness_2');
         }
     }
 }
@@ -121,7 +121,7 @@ function loadDarkMode() {
 $(document).ready(function () {
     loadDarkMode();
     loadCar();
-    $('#darkModeToogle').click(function () {
+    $('#darkModeToggle').click(function () {
         setDarkMode();
     });
 });
