@@ -36,7 +36,7 @@ html{
 
 #form{
     width: 75%;
-    height: 70%;
+    height: auto;
     border: 1px solid lightgray;
     border-radius: 20px;
     box-shadow:
@@ -154,7 +154,7 @@ select{
     }
 
     #form{
-        width: 80%;
+        width: auto;
     }
 }
 
@@ -188,7 +188,15 @@ select{
     }
 
     #form{
-        width: 95%;
+        width: auto;
+    }
+
+    #body_div{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
     }
 }
 
