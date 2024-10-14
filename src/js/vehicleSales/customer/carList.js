@@ -79,13 +79,14 @@ function loadCars() {
                         if ($("#fuel").val() != "all" && car.fuelType != $("#fuel").val()) {
                             continue;
                         }
-                        carRow.append("<div class=\"car-item\">\n" +
+
+                        carRow.append(`<div class=\"car-item\" id=${car.id}>\n` +
                             "    <img src=\"../../../src/img/vehicleSales/car/test.jpg\">\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
                             "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
                             "    <p>Price: $" + car.price + "</p>\n" +
-                            "    <button>View Detail</button>\n" +
+                            "    <button class=\"viewCarBtn\">View Detail</button>\n" +
                             "</div>");
                         hasCars = true;
                     }
@@ -124,13 +125,13 @@ function loadCars() {
                         if ($("#fuel").val() != "all" && car.fuelType != $("#fuel").val()) {
                             continue;
                         }
-                        carRow.append("<div class=\"car-item\">\n" +
+                        carRow.append(`<div class=\"car-item\" id="${car.id}">\n` +
                             "    <img src=\"../../../src/img/vehicleSales/car/test.jpg\">\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
                             "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
                             "    <p>Price: $" + car.price + "</p>\n" +
-                            "    <button>View Detail</button>\n" +
+                            "    <button class=\"viewCarBtn\">View Detail</button>\n" +
                             "</div>");
                         hasCars = true;
                     }
@@ -147,8 +148,8 @@ function loadCars() {
     });
 }
 
-function setDarkModePreference() {
-    if ($('#darkModeToogle').text() == 'brightness_2') {
+function setDarkMode() {
+    if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
         $('html').css('background-color', 'rgb(34,37,41)');
         $('body').css('color', 'rgb(194,196,200)');
@@ -160,7 +161,7 @@ function setDarkModePreference() {
         $('select').css('background-color', 'rgb(44,47,51)');
         $('select').css('color', 'rgb(194,196,200)');
         $('select').css('border', '0.1px solid grey');
-        $('#darkModeToogle').text('wb_sunny');
+        $('#darkModeToggle').text('wb_sunny');
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
@@ -174,12 +175,12 @@ function setDarkModePreference() {
         $('select').css('background-color', 'white');
         $('select').css('color', 'black');
         $('select').css('border', '1px solid lightgrey');
-        $('#darkModeToogle').text('brightness_2');
+        $('#darkModeToggle').text('brightness_2');
         localStorage.setItem('darkMode', 'N');
     }
 }
 
-function loadDarkModePreference() {
+function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
             $('html').css('background-color', 'rgb(34,37,41)');
@@ -192,7 +193,7 @@ function loadDarkModePreference() {
             $('select').css('background-color', 'rgb(44,47,51)');
             $('select').css('color', 'rgb(194,196,200)');
             $('select').css('border', '0.1px solid grey');
-            $('#darkModeToogle').text('wb_sunny');
+            $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
             $('html').css('background-color', 'white');
@@ -205,31 +206,30 @@ function loadDarkModePreference() {
             $('select').css('background-color', 'white');
             $('select').css('color', 'black');
             $('select').css('border', '1px solid lightgrey');
-            $('#darkModeToogle').text('brightness_2');
+            $('#darkModeToggle').text('brightness_2');
         }
     }
 }
-loadDarkModePreference();
+loadDarkMode();
 $(document).ready(function () {
     loadSelectOptions();
-    loadDarkModePreference();
+    loadDarkMode();
     loadCars();
 
-    $('#darkModeToogle').click(function () {
-        setDarkModePreference();
+    $('#darkModeToggle').click(function () {
+        setDarkMode();
     });
     $("#resetFiltersBtn").click(function () {
         location.reload();
     });
 
-    $("#brand").on("change", function () {
-        loadCars();
-    });
-    $("#type").on("change", function () {
+    $("#brand, #type, #fuel").on("change", function () {
         loadCars();
     });
 
-    $("#fuel").on("change", function () {
-        loadCars();
+    $(document).on('click', '.viewCarBtn', function () {
+        //store the car id to local storage so that the carPage.html can show the correct car
+        localStorage.setItem('carToView', $(this).parent().attr('id'));
+        location.href = "carPage.html";
     });
 });

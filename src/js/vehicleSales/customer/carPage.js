@@ -1,4 +1,61 @@
-function setDarkModePreference() {
+function loadCar(){
+    var id = localStorage.getItem('carToView');
+
+    if (id == null){
+        $('body').html("");
+        $('body').append("<h1>Error, Please try again</h1>");
+        $('body').append("<i id=\"darkModeToogle\" class=\"material-icons\"\n" +
+            "   style=\"position:fixed; bottom: 10px; right: 10px; cursor: pointer;\">wb_sunny</i>");
+    }
+
+    $.getJSON("../../../src/json/vehicleSales/carList.json", function (data) {
+        $('p').text(id);
+        var numberOfElectricBrand = data.electricBrands.length;
+        var numberOfNonElectricBrand = data.nonElectricBrands.length;
+
+        //match id
+        for (var i = 0; i < numberOfElectricBrand; i++) {
+            var brand = data.electricBrands[i];
+            for (var j = 0; j < brand.car.length; j++) {
+                //console.log(brand.car[j].id);
+                if (brand.car[j].id == id) {
+                    var car = brand.car[j];
+                    // $('#carType').text(car.type);
+                    // $('#carFuel').text(car.fuelType);
+                    // $('#carPrice').text(car.price);
+                    // $('#carImage').attr('src', '../../../src/img/vehicleSales/car/' + car.image);
+                    // break;
+                    console.log(car.model);
+
+                    $('body').append("<h1>"+car.model+"</h1>");
+                    break;
+                }
+            }
+        }
+
+        for (var i = 0; i < numberOfNonElectricBrand; i++) {
+            var brand = data.nonElectricBrands[i];
+            for (var j = 0; j < brand.car.length; j++) {
+                //console.log(brand.car[j].id);
+                if (brand.car[j].id == id) {
+                    var car = brand.car[j];
+                    // $('#carType').text(car.type);
+                    // $('#carFuel').text(car.fuelType);
+                    // $('#carPrice').text(car.price);
+                    // $('#carImage').attr('src', '../../../src/img/vehicleSales/car/' + car.image);
+                    // break;
+                    console.log(car.model);
+
+                    $('body').append("<h1>"+car.model+"</h1>");
+                    break;
+                }
+            }
+        }
+
+    });
+}
+
+function setDarkMode() {
     if ($('#darkModeToogle').text() == 'brightness_2') {
         //to dark mode
         $('html').css('background-color', 'rgb(34,37,41)');
@@ -30,7 +87,7 @@ function setDarkModePreference() {
     }
 }
 
-function loadDarkModePreference() {
+function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
             $('html').css('background-color', 'rgb(34,37,41)');
@@ -62,8 +119,9 @@ function loadDarkModePreference() {
 }
 
 $(document).ready(function () {
-    loadDarkModePreference();
+    loadDarkMode();
+    loadCar();
     $('#darkModeToogle').click(function () {
-        setDarkModePreference();
+        setDarkMode();
     });
 });

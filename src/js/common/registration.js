@@ -1,4 +1,4 @@
-function setDarkModePreference(){
+function setDarkMode(){
     if ($('#darkModeToogle').text() == 'brightness_2') {
         //to dark mode
         $('html').css('background-color', 'rgb(34,37,41)');
@@ -30,7 +30,7 @@ function setDarkModePreference(){
     }
 }
 
-function loadDarkModePreference(){
+function loadDarkMode(){
     if (localStorage.getItem('darkMode') != null){
         if (localStorage.getItem('darkMode') == 'Y'){
             $('html').css('background-color', 'rgb(34,37,41)');
@@ -59,11 +59,11 @@ function loadDarkModePreference(){
         }
     }
 }
-loadDarkModePreference();
+loadDarkMode();
 $(document).ready(function(){
-    loadDarkModePreference();
+    loadDarkMode();
 
     $('#darkModeToogle').click(function() {
-        setDarkModePreference();
+        setDarkMode();
     });
 });
