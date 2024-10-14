@@ -1,9 +1,60 @@
+function loadSelectOptions() {
+    $.getJSON('../../../src/json/vehicleSales/carList.json', function (carData) {
+        const brandNamesSet = new Set();
+        const carTypesSet = new Set();
+        const fuelTypesSet = new Set();
+
+        //get brand name, car type and fuel type
+        carData.electricBrands.forEach(brand => {
+            brandNamesSet.add(brand.name);
+            brand.car.forEach(car => {
+                carTypesSet.add(car.type);
+                fuelTypesSet.add(car.fuelType);
+            });
+        });
+
+        //get brand name, car type and fuel type
+        carData.nonElectricBrands.forEach(brand => {
+            brandNamesSet.add(brand.name);
+            brand.car.forEach(car => {
+                carTypesSet.add(car.type);
+                fuelTypesSet.add(car.fuelType);
+            });
+        });
+
+        // to array
+        const brandNames = Array.from(brandNamesSet);
+        const carTypes = Array.from(carTypesSet);
+        const fuelTypes = Array.from(fuelTypesSet);
+
+        // add brand to html
+        const brandSelect = $("#brand");
+        brandSelect.append("<option value='all' selected='selected'>All</option>");
+        brandNames.forEach(brandName => {
+            brandSelect.append(`<option value='${brandName}'>${brandName}</option>`);
+        });
+        // add car type to html
+        const typeSelect = $("#type");
+        typeSelect.append("<option value='all' selected='selected'>All</option>");
+        carTypes.forEach(carType => {
+            typeSelect.append(`<option value='${carType}'>${carType}</option>`);
+        });
+        // add fuel type to html
+        const fuelSelect = $("#fuel");
+        fuelSelect.append("<option value='all' selected='selected'>All</option>");
+        fuelTypes.forEach(fuelType => {
+            fuelSelect.append(`<option value='${fuelType}'>${fuelType}</option>`);
+        });
+    });
+}
+
 function loadCars() {
     $("#main_carList").html("");
     $.getJSON('../../../src/json/vehicleSales/carList.json', function (data) {
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
 
+        //load electric cars
         for (var i = 0; i < numberOfElectricBrand; i++) {
             if (data.electricBrands[i].name != $("#brand").val() && $("#brand").val() != "all") {
                 continue;
@@ -18,6 +69,7 @@ function loadCars() {
 
             for (var k = 0; k < Math.ceil(data.electricBrands[i].car.length / 4); k++) {
                 var carRow = $("<div class=\"car-row\"></div>");
+                var j = 0;
                 for (var j = 0; j < 4; j++) {
                     var car = data.electricBrands[i].car[j + k * 4];
                     if (car != undefined) {
@@ -48,6 +100,7 @@ function loadCars() {
             }
         }
 
+        //load non-electric cars
         for (var i = 0; i < numberOfNonElectricBrand; i++) {
             if (data.nonElectricBrands[i].name != $("#brand").val() && $("#brand").val() != "all") {
                 continue;
@@ -157,8 +210,8 @@ function loadDarkModePreference() {
     }
 }
 loadDarkModePreference();
-
 $(document).ready(function () {
+    loadSelectOptions();
     loadDarkModePreference();
     loadCars();
 
@@ -166,16 +219,17 @@ $(document).ready(function () {
         setDarkModePreference();
     });
     $("#resetFiltersBtn").click(function () {
-        $("#filter").val("all");
-        $("#brand").val("all");
-        $("#fuel").val("all");
-        $("#sort").val("price");
+        location.reload();
     });
 
     $("#brand").on("change", function () {
         loadCars();
     });
     $("#type").on("change", function () {
+        loadCars();
+    });
+
+    $("#fuel").on("change", function () {
         loadCars();
     });
 });
