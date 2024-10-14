@@ -22,7 +22,7 @@ $(document).ready(function () {
                 "                        <div class=\"card-body  d-flex flex-column align-items-center\">\n" +
                 "                            <h5 class=\"card-title text-center\">Product 1</h5>\n" +
                 "                            <p class=\"card-text text-center\">Price: $100</p>\n" +
-                "                            <a href=\"../../html/customer/productPage.html\" class=\"btn btn-primary\">Add to cart</a>\n" +
+                "                            <a href=\"../../html/customer/old_productPage.html\" class=\"btn btn-primary\">Add to cart</a>\n" +
                 "                        </div>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
