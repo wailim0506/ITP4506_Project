@@ -27,7 +27,7 @@ function loadCar(){
                     // break;
                     console.log(car.model);
 
-                    $('body').append("<h1>"+car.model+"</h1>");
+
                     break;
                 }
             }
@@ -46,7 +46,7 @@ function loadCar(){
                     // break;
                     console.log(car.model);
 
-                    $('body').append("<h1>"+car.model+"</h1>");
+
                     break;
                 }
             }
