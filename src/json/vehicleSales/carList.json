@@ -8,23 +8,63 @@
           "type": "SUV",
           "model": "Model X",
           "price": 99990,
-          "fuelType": "Electric",
+          "fuelType": "Electric",  //basic info
           "bodyColors": ["White", "Blue", "Black", "Silver", "Red"],
           "interiorColors": ["Black", "Tan", "Gray", "Cream", "Beige"],
-          "manufactureYear": 2024,
-          "countryOfOrigin": "USA",
-          "maxRange": 561,
-          "engineType": "Electric Motor",
-          "horsepower": 1020,
-          "seatingCapacity": 7,
-          "chargingTime": {
-            "StandardWallOutlet": "Approximately 70 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10.5 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 35 minutes"
+          "manufactureYear": 2024,  //basic info
+          "countryOfOrigin": "USA", //basic info
+          "maxRange": 561, //basic info
+          "engineType": "Electric Motor", //basic info
+          "horsepower": 1020, //basic info
+          "acceleration": "0-100 km/h in 2.5 seconds", //basic info
+          "seatingCapacity": 7, //basic info
+          "chargingTime": {. //battery
+            "Standard Wall Outlet": "Approximately 70 hours for a full charge",
+            "High Powered Wall Outlet": "About 10.5 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 35 minutes"
           },
-          "batteryCapacity": 105,
-          "stockNumber": 100,
-          "transmission": "Automatic",
+          "batteryCapacity": 105, //battery
+          "stockNumber": 100, //basic info
+          "transmission": "Automatic", //basic info
+          "features": { //feature
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Falcon Wing Doors"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warraty": { //waranty
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive", //basic info
           "description": "The Tesla Model X is a luxury electric SUV that combines performance with practicality. With its impressive acceleration and spacious interior, it offers seating for up to seven passengers and advanced safety features. The iconic Falcon Wing doors provide easy access to the second and third rows, making it ideal for families."
         },
         {
@@ -40,15 +80,54 @@
           "maxRange": 620,
           "engineType": "Electric Motor",
           "horsepower": 2000,
+          "acceleration": "0-100 km/h in 1.9 seconds",
           "seatingCapacity": 4,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 40 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10-12 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 40 hours for a full charge",
+            "High Powered Wall Outlet": "About 10-12 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 200,
           "stockNumber": 50,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Tesla Roadster is an all-electric sports car that redefines speed and performance. With a stunning design and groundbreaking technology, it can accelerate from 0 to 60 mph in just 1.9 seconds. The Roadster features a removable glass roof and a spacious interior, making it perfect for both thrilling drives and everyday use."
         },
         {
@@ -64,15 +143,55 @@
           "maxRange": 652,
           "engineType": "Electric Motor",
           "horsepower": 1020,
+          "acceleration": "0-100 km/h in 2.1 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 40 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10-12 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 40 hours for a full charge",
+            "High Powered Wall Outlet": "About 10-12 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 100,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Tesla Model S is a luxury electric sedan known for its high performance and long range. It features a minimalist interior and cutting-edge technology, offering a smooth and fast driving experience."
         },
         {
@@ -89,14 +208,54 @@
           "engineType": "Electric Motor",
           "horsepower": 450,
           "seatingCapacity": 5,
+          "acceleration": "0-100 km/h in 2.5 seconds",
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 40 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10-12 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 40 hours for a full charge",
+            "High Powered Wall Outlet": "About 10-12 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 75,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Tesla Model Y is a versatile electric SUV with impressive range and performance. It offers a spacious interior and advanced technology, making it perfect for families and adventurers alike."
         },
         {
@@ -112,15 +271,55 @@
           "maxRange": 500,
           "engineType": "Electric Motor",
           "horsepower": 800,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 6,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 40 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10-12 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 40 hours for a full charge",
+            "High Powered Wall Outlet": "About 10-12 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 100,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Tesla Cybertruck is an all-electric pickup truck designed for utility and durability. Its angular design is built with ultra-hard steel, providing exceptional protection and versatility for work or play."
         },
         {
@@ -136,15 +335,55 @@
           "maxRange": 300,
           "engineType": "Electric Motor",
           "horsepower": 250,
+          "acceleration": "0-100 km/h in 6.5 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 40 hours for a full charge",
-            "HighPoweredWallOutlet": "About 10-12 hours for a full charge",
-            "TeslaSupercharger": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 40 hours for a full charge",
+            "High Powered Wall Outlet": "About 10-12 hours for a full charge",
+            "Tesla Super Charger": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 75,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Tesla Model 2 is an affordable electric hatchback aimed at urban commuters. It combines efficiency with modern features, offering a compact design perfect for city driving."
         }
       ]
@@ -165,15 +404,55 @@
           "maxRange": 500,
           "engineType": "Electric Motor",
           "horsepower": 517,
+          "acceleration": "0-100 km/h in 4.6 seconds",
           "seatingCapacity": 7,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 10-12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6-8 hours for a full charge",
-            "DCFastCharging": "Can charge from 10% to 80% in approximately 30-40 minutes"
+            "Standard Wall Outlet": "Approximately 10-12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6-8 hours for a full charge",
+            "DC Fast Charging": "Can charge from 10% to 80% in approximately 30-40 minutes"
           },
           "batteryCapacity": 82,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD Tang is an electric SUV that combines style, space, and power. With a modern design and a roomy interior, it comfortably seats up to seven passengers. The Tang offers impressive acceleration and advanced safety features, making it an excellent choice for families looking for an eco-friendly vehicle."
         },
         {
@@ -189,15 +468,55 @@
           "maxRange": 605,
           "engineType": "Electric Motor",
           "horsepower": 494,
+          "acceleration": "0-100 km/h in 3.9 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 10-12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6-8 hours for a full charge",
-            "DCFastCharging": "Can charge from 10% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 10-12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6-8 hours for a full charge",
+            "DC Fast Charging": "Can charge from 10% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 82,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD Han is an elegant electric sedan that offers a perfect blend of luxury and performance. With its sleek design and high-tech interior, it provides a comfortable driving experience. The Han is equipped with cutting-edge technology and safety features, making it a top choice for those seeking an upscale electric vehicle."
         },
         {
@@ -213,16 +532,55 @@
           "maxRange": 400,
           "engineType": "Electric Motor",
           "horsepower": 180,
+          "acceleration": "0-100 km/h in 7.9 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 10-12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6-8 hours for a full charge",
-            "DCFastCharging": "Can charge from 10% to 80% in approximately 30-40 minutes"
+            "Standard Wall Outlet": "Approximately 10-12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6-8 hours for a full charge",
+            "DC Fast Charging": "Can charge from 10% to 80% in approximately 30-40 minutes"
           },
           "batteryCapacity": 60,
           "stockNumber": 100,
           "transmission": "Automatic",
-
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD Dolphin is a compact electric hatchback with a modern design and efficient performance. It offers an eco-friendly driving experience with a spacious interior, making it ideal for city commuting."
         },
         {
@@ -238,15 +596,55 @@
           "maxRange": 450,
           "engineType": "Electric Motor",
           "horsepower": 300,
+          "acceleration": "0-100 km/h in 5.0 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 10-12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6-8 hours for a full charge",
-            "DCFastCharging": "Can charge from 10% to 80% in approximately 30-40 minutes"
+            "Standard Wall Outlet": "Approximately 10-12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6-8 hours for a full charge",
+            "DC Fast Charging": "Can charge from 10% to 80% in approximately 30-40 minutes"
           },
           "batteryCapacity": 70,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD Song is a versatile electric SUV that offers a balance of performance and efficiency. With advanced safety features and a comfortable interior, it's perfect for families and urban adventurers."
         },
         {
@@ -262,15 +660,55 @@
           "maxRange": 400,
           "engineType": "Electric Motor",
           "horsepower": 160,
+          "acceleration": "0-100 km/h in 7.9 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6.6 hours for a full charge",
-            "DCFastCharging": "Can charge from 0% to 80% in approximately 1.5 hours"
+            "Standard Wall Outlet": "Approximately 12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6.6 hours for a full charge",
+            "DC Fast Charging": "Can charge from 0% to 80% in approximately 1.5 hours"
           },
           "batteryCapacity": 82,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD e6 is an electric sedan that offers a spacious interior and efficient performance. With a focus on sustainability and comfort, it's perfect for daily commuting and city driving."
         },
         {
@@ -286,15 +724,55 @@
           "maxRange": 300,
           "engineType": "Electric Motor",
           "horsepower": 120,
+          "acceleration": "0-100 km/h in 8.5 seconds",
           "seatingCapacity": 5,
           "chargingTime": {
-            "StandardWallOutlet": "Approximately 10-12 hours for a full charge",
-            "HighPoweredWallOutlet": "About 6-8 hours for a full charge",
-            "DCFastCharging": "Can charge from 30% to 80% in approximately 30 minutes"
+            "Standard Wall Outlet": "Approximately 10-12 hours for a full charge",
+            "High Powered Wall Outlet": "About 6-8 hours for a full charge",
+            "DC Fast Charging": "Can charge from 30% to 80% in approximately 30 minutes"
           },
           "batteryCapacity": 60,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Autopilot",
+              "Summon",
+              "Smart Air Suspension",
+              "Keyless Entry"
+            ],
+            "Entertainment": [
+              "17-inch Touchscreen Display",
+              "Premium Audio System",
+              "Wireless Phone Charging"
+            ],
+            "Safety": [
+              "Automatic Emergency Braking",
+              "Lane Departure Warning",
+              "Blind Spot Monitoring"
+            ],
+            "Comfort": [
+              "Heated Front Seats",
+              "Ventilated Front Seats",
+              "Heated Steering Wheel"
+            ],
+            "Exterior": [
+              "LED Headlights",
+              "Panoramic Sunroof",
+              "Power Liftgate"
+            ],
+            "Interior": [
+              "Premium Cabin Materials",
+              "Spacious Seating",
+              "Ample Cargo Space"
+            ]
+          },
+          "warranty": {
+            "Basic": "4 years/50,000 miles",
+            "Powertrain": "8 years/120,000 miles",
+            "Battery": "8 years/150,000 miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The BYD e2 is an electric hatchback designed for urban living. With its compact size and efficient performance, it's perfect for city commutes and everyday errands."
         }
       ]
@@ -317,9 +795,48 @@
           "maxRange": 600,
           "engineType": "1.5L I4",
           "horsepower": 106,
+          "acceleration": "0-100 km/h in 2.1 seconds"
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Toyota Yaris is a compact hatchback designed for urban living. Its agile handling and fuel-efficient engine make it perfect for city driving. The Yaris features a comfortable interior with modern technology, ensuring you stay connected on the go while offering excellent safety ratings."
         },
         {
@@ -335,9 +852,48 @@
           "maxRange": 650,
           "engineType": "2.5L I4",
           "horsepower": 203,
+          "acceleration": "0-100 km/h in 2.5 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Toyota RAV4 is a versatile SUV that offers spacious seating and ample cargo space. Known for its reliability, the RAV4 comes equipped with advanced safety features and technology to enhance your driving experience. It's perfect for both daily commutes and weekend adventures."
         },
         {
@@ -353,9 +909,48 @@
           "maxRange": 600,
           "engineType": "2.5L I4",
           "horsepower": 203,
+          "acceleration": "0-100 km/h in 2.7 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Toyota Camry is a midsize sedan known for its comfort and efficiency. With a stylish design and spacious interior, it offers advanced technology and safety features that make every drive enjoyable. The Camry is ideal for families or anyone seeking a reliable vehicle."
         },
         {
@@ -371,9 +966,48 @@
           "maxRange": 600,
           "engineType": "3.5L V6",
           "horsepower": 295,
+          "acceleration": "0-100 km/h in 6.7 seconds",
           "seatingCapacity": 8,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Toyota Highlander is a midsize SUV that offers a spacious interior with three rows of seating. It's perfect for families and comes with advanced safety features and a comfortable ride."
         },
         {
@@ -389,9 +1023,48 @@
           "maxRange": 500,
           "engineType": "4.0L V6",
           "horsepower": 270,
+          "acceleration": "0-100 km/h in 7.5 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Toyota 4Runner is a rugged SUV designed for off-road adventures. With its powerful engine and durable construction, it can handle tough terrains while providing a comfortable ride on highways. The 4Runner offers ample cargo space and advanced safety features for peace of mind."
         },
         {
@@ -407,9 +1080,48 @@
           "maxRange": 500,
           "engineType": "3.5L V6",
           "horsepower": 278,
+          "acceleration": "0-100 km/h in 7.3 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Toyota Tacoma is a midsize pickup truck known for its durability and off-road capabilities. With a rugged design and powerful engine options, it's perfect for work and play. The Tacoma offers advanced technology and safety features to enhance your driving experience."
         },
         {
@@ -425,9 +1137,48 @@
           "maxRange": 500,
           "engineType": "5.7L V8",
           "horsepower": 381,
+          "acceleration": "0-100 km/h in 6.7 seconds",
           "seatingCapacity": 8,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Toyota Sequoia is a full-size SUV with three rows of seating and ample cargo space. It offers a powerful engine and a comfortable ride, making it perfect for family road trips or daily commutes."
         },
         {
@@ -443,9 +1194,48 @@
           "maxRange": 500,
           "engineType": "5.7L V8",
           "horsepower": 381,
+          "acceleration": "0-100 km/h in 6.7 seconds",
           "seatingCapacity": 8,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Toyota Land Cruiser is a legendary off-road SUV known for its durability and capability. With a luxurious interior and advanced technology, it offers a comfortable ride on any terrain. The Land Cruiser is perfect for adventurers seeking a reliable and versatile vehicle."
         }
       ]
@@ -466,9 +1256,48 @@
           "maxRange": 600,
           "engineType": "1.5L I4",
           "horsepower": 130,
+          "acceleration": "0-100 km/h in 2.3 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Honda Fit is a subcompact hatchback that maximizes space without sacrificing style. Its flexible interior allows you to configure the seats in various ways to accommodate cargo or passengers easily. The Fit is known for its fuel efficiency and fun-to-drive nature, making it perfect for city dwellers."
         },
         {
@@ -484,9 +1313,48 @@
           "maxRange": 650,
           "engineType": "1.5L I4 Turbocharged",
           "horsepower": 190,
+          "acceleration": "0-100 km/h in 2.7 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Honda CR-V is a compact SUV that offers a perfect blend of comfort, space, and efficiency. With its roomy interior and cargo capacity, it's ideal for families or outdoor enthusiasts. The CR-V comes equipped with advanced safety technologies to ensure peace of mind on every journey."
         },
         {
@@ -502,9 +1370,48 @@
           "maxRange": 600,
           "engineType": "2.0L I4",
           "horsepower": 252,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Honda Accord is a midsize sedan that blends performance with sophistication. It offers a spacious interior, advanced technology, and a refined driving experience."
         },
         {
@@ -520,9 +1427,48 @@
           "maxRange": 600,
           "engineType": "3.5L V6",
           "horsepower": 280,
+          "acceleration": "0-100 km/h in 6.2 seconds",
           "seatingCapacity": 8,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Honda Pilot is a family-friendly SUV with three rows of seating and ample cargo space. It offers a smooth ride and advanced safety features, making it perfect for road trips."
         },
         {
@@ -538,9 +1484,48 @@
           "maxRange": 550,
           "engineType": "1.8L I4",
           "horsepower": 141,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Honda HR-V is a subcompact SUV that offers a versatile interior and efficient performance. It's perfect for city driving and weekend getaways, providing comfort and style in a compact package."
         },
         {
@@ -556,9 +1541,48 @@
           "maxRange": 600,
           "engineType": "2.0L I4",
           "horsepower": 158,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Honda Civic is a compact sedan known for its reliability and fuel efficiency. With a comfortable interior and modern technology, it's perfect for daily commuting and weekend adventures."
         },
         {
@@ -574,9 +1598,48 @@
           "maxRange": 500,
           "engineType": "2.4L I4",
           "horsepower": 166,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Honda Element is a compact SUV with a unique design and versatile interior. It offers ample cargo space and a comfortable ride, making it perfect for outdoor enthusiasts and urban adventurers."
         }
       ]
@@ -597,9 +1660,48 @@
           "maxRange": 500,
           "engineType": "3.6L V6",
           "horsepower": 285,
+          "acceleration": "0-100 km/h in 6.1 seconds",
           "seatingCapacity": 4,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Jeep Wrangler is an iconic off-road SUV known for its rugged capability and versatility. With removable doors and roof options, it allows drivers to experience the outdoors like never before. The Wrangler's four-wheel-drive system makes it perfect for tackling tough terrains while providing comfort on city roads."
         },
         {
@@ -615,9 +1717,48 @@
           "maxRange": 500,
           "engineType": "6.2L V8 Supercharged",
           "horsepower": 707,
+          "acceleration": "0-100 km/h in 3.5 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Grand Cherokee Trackhawk combines luxury with extreme performance. Powered by a supercharged V8 engine, this SUV delivers thrilling acceleration while maintaining the comfort of high-end interiors. It's designed for those who crave adventure without compromising on style or technology."
         },
         {
@@ -633,9 +1774,48 @@
           "maxRange": 550,
           "engineType": "2.4L I4",
           "horsepower": 180,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Jeep Cherokee is a compact SUV with off-road capabilities and a comfortable interior. It offers advanced technology and safety features for a secure and enjoyable drive."
         },
         {
@@ -651,9 +1831,48 @@
           "maxRange": 500,
           "engineType": "2.4L I4",
           "horsepower": 180,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Jeep Compass is a versatile SUV with a sleek design and modern technology. It's perfect for urban explorers and outdoor enthusiasts alike, offering comfort and capability."
         },
         {
@@ -669,9 +1888,48 @@
           "maxRange": 500,
           "engineType": "3.6L V6",
           "horsepower": 285,
+          "acceleration": "0-100 km/h in 6.1 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Jeep Gladiator is a midsize pickup truck that combines off-road capability with everyday practicality. With a rugged design and powerful engine options, it's perfect for work and play. The Gladiator offers a comfortable interior and advanced technology features for a seamless driving experience."
         },
         {
@@ -687,9 +1945,48 @@
           "maxRange": 500,
           "engineType": "2.4L I4",
           "horsepower": 180,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Jeep Renegade is a compact SUV with a bold design and off-road capabilities. It offers a comfortable interior and advanced technology features, making it perfect for urban adventures and weekend getaways."
         }
       ]
@@ -710,9 +2007,48 @@
           "maxRange": 450,
           "engineType": "3.3L V6",
           "horsepower": 290,
+          "acceleration": "0-100 km/h in 6.1 seconds",
           "seatingCapacity": 6,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Ford F-150 is a legendary full-size pickup truck known for its durability and versatility. With a range of powerful engines and advanced towing capabilities, it's perfect for work and recreation. The F-150 offers a comfortable interior with the latest technology features."
         },
         {
@@ -728,9 +2064,48 @@
           "maxRange": 600,
           "engineType": "2.3L I4 Turbocharged",
           "horsepower": 300,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 7,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Ford Explorer is a midsize SUV that offers a spacious interior, strong performance, and cutting-edge technology. It's ideal for families and adventurers who need plenty of room for passengers and cargo."
         },
         {
@@ -746,9 +2121,48 @@
           "maxRange": 550,
           "engineType": "2.5L I4",
           "horsepower": 175,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Ford Fusion is a stylish midsize sedan with a comfortable interior and efficient engine options. It offers advanced safety features and a smooth ride, making it a great choice for daily commuting."
         },
         {
@@ -764,9 +2178,48 @@
           "maxRange": 500,
           "engineType": "2.3L I4 Turbocharged",
           "horsepower": 270,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Ford Bronco is an off-road SUV built for adventure. With rugged design and capability, it handles rough terrains with ease while providing comfort on highways."
         },
         {
@@ -782,9 +2235,48 @@
           "maxRange": 500,
           "engineType": "2.3L I4 Turbocharged",
           "horsepower": 270,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Four-wheel Drive",
           "description": "The Ford Ranger is a midsize pickup truck known for its durability and capability. With a powerful engine and advanced technology features, it's perfect for work and play. The Ranger offers a comfortable interior and a smooth ride for everyday driving."
         },
         {
@@ -800,9 +2292,48 @@
           "maxRange": 600,
           "engineType": "2.5L I4",
           "horsepower": 200,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "Front-wheel Drive",
           "description": "The Ford Escape is a compact SUV that offers a balance of performance and efficiency. With a spacious interior and advanced technology features, it's perfect for city driving and weekend getaways."
         },
         {
@@ -818,9 +2349,48 @@
           "maxRange": 550,
           "engineType": "2.0L I4 Turbocharged",
           "horsepower": 250,
+          "acceleration": "0-100 km/h in 2.9 seconds",
           "seatingCapacity": 5,
           "stockNumber": 100,
           "transmission": "Automatic",
+          "features": {
+            "Convenience": [
+              "Keyless Entry",
+              "Push Button Start",
+              "Remote Start"
+            ],
+            "Entertainment": [
+              "Bluetooth Audio",
+              "Apple CarPlay",
+              "Android Auto"
+            ],
+            "Safety": [
+              "Rearview Camera",
+              "Adaptive Cruise Control",
+              "Lane Keeping Assist"
+            ],
+            "Comfort": [
+              "Dual-Zone Climate Control",
+              "Leather Seats",
+              "Heated Seats"
+            ],
+            "Exterior": [
+              "Alloy Wheels",
+              "Fog Lights",
+              "Roof Rails"
+            ],
+            "Interior": [
+              "Ambient Lighting",
+              "Premium Upholstery",
+              "Adjustable Seats"
+            ]
+          },
+          "warranty": {
+            "Basic": "3 years/36,000 miles",
+            "Powertrain": "5 years/60,000 miles",
+            "Corrosion": "5 years/unlimited miles"
+          },
+          "driveTrain": "All-wheel Drive",
           "description": "The Ford Edge is a midsize SUV that offers a comfortable ride and spacious interior. With advanced technology features and safety systems, it's perfect for families and adventurers alike."
         }
       ]

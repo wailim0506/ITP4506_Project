@@ -9,7 +9,6 @@ function loadCar(){
     }
 
     $.getJSON("../../../src/json/vehicleSales/carList.json", function (data) {
-        $('p').text(id);
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
 
@@ -26,8 +25,6 @@ function loadCar(){
                     // $('#carImage').attr('src', '../../../src/img/vehicleSales/car/' + car.image);
                     // break;
                     console.log(car.model);
-
-
                     break;
                 }
             }
@@ -45,8 +42,6 @@ function loadCar(){
                     // $('#carImage').attr('src', '../../../src/img/vehicleSales/car/' + car.image);
                     // break;
                     console.log(car.model);
-
-
                     break;
                 }
             }
@@ -61,6 +56,8 @@ function setDarkMode() {
         $('html').css('background-color', 'rgb(34,37,41)');
         $('body').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
+        $('.infoBox .title').css('color','white');
+        $('.section').css('border-bottom', '1px solid #4c4c4c');
         $('.car-item').css('border', '0.1px solid grey');
         $('input').css('background-color', 'rgb(44,47,51)');
         $('input').css('border', '0.1px solid grey');
@@ -75,6 +72,8 @@ function setDarkMode() {
         $('html').css('background-color', 'white');
         $('body').css('color', 'black');
         $('a').css('color', 'rgba(0,0,0,0.65)');
+        $('.infoBox .title').css('color','black');
+        $('.section').css('border-bottom', '1px solid #d1cece');
         $('.car-item').css('border', '1px solid lightgrey');
         $('input').css('background-color', 'white');
         $('input').css('border', '1px solid lightgrey');
@@ -93,6 +92,8 @@ function loadDarkMode() {
             $('html').css('background-color', 'rgb(34,37,41)');
             $('body').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
+            $('.infoBox .title').css('color','white');
+            $('.section').css('border-bottom', '1px solid #4c4c4c');
             $('.car-item').css('border', '0.1px solid grey');
             $('input').css('background-color', 'rgb(44,47,51)');
             $('input').css('border', '0.1px solid grey');
@@ -106,6 +107,8 @@ function loadDarkMode() {
             $('html').css('background-color', 'white');
             $('body').css('color', 'black');
             $('a').css('color', 'rgba(0,0,0,0.65)');
+            $('.infoBox .title').css('color','black');
+            $('.section').css('border-bottom', '1px solid #d1cece');
             $('.car-item').css('border', '1px solid lightgrey');
             $('input').css('background-color', 'white');
             $('input').css('border', '1px solid lightgrey');

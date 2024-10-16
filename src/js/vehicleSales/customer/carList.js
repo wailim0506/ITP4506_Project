@@ -126,7 +126,7 @@ function loadCars() {
                             continue;
                         }
                         carRow.append(`<div class=\"car-item\" id="${car.id}">\n` +
-                            "    <img src=\"../../../src/img/vehicleSales/car/test.jpg\">\n" +
+                            "    <img src=\"../../../src/img/vehicleSales/car/test1.avif\">\n" +
                             "    <p>Model: " + car.model + "</p>\n" +
                             "    <p>Car Type: " + car.type + " </p>\n" +
                             "    <p>Fuel Type: " + car.fuelType + "</p>\n" +
