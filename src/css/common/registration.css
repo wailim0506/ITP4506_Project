@@ -137,6 +137,79 @@ select{
     color: red;
 }
 
+.typeSelectCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.typeSelect {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    background: rgb(232, 232, 232);
+    position: relative;
+    border-radius: 10px;
+}
+.typeSelect label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.typeSelect input {
+    display: none;
+}
+
+.typeSelect .slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 150px;
+    height: 40px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.25s ease-in;
+}
+.typeSelect input:nth-child(1):checked ~ .slider {
+    left: 2px;
+}
+.typeSelect input:nth-child(3):checked ~ .slider {
+    left: 182px;
+}
+.typeSelect input:nth-child(5):checked ~ .slider {
+    left: 362px;
+}
+
+.typeSelect input:nth-child(1):checked + label {
+    font-weight: bold;
+    background-color: #00aaaa;
+}
+.typeSelect input:nth-child(3):checked + label {
+    font-weight: bold;
+    background-color: #00aaaa;
+}
+.typeSelect input:nth-child(5):checked + label {
+    font-weight: bold;
+    background-color: #00aaaa;
+}
+
+
+
 
 /*responsive*/
 @media screen and (max-width: 1210px){

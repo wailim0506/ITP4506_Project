@@ -16,10 +16,23 @@
     </div>
     <div id="right_side"> <!-- Contain login form-->
         <div id="form"> <!--Form for login-->
+
+            <div class="typeSelectCenter">
+                <div class="typeSelect">
+                    <input type="radio" id="customer" name="type" checked>
+                    <label for="customer">Customer</label>
+                    <input type="radio" id="vehicleSales" name="type">
+                    <label for="vehicleSales">Vehicle Sales</label>
+                    <input type="radio" id="insuranceSales" name="type">
+                    <label for="insuranceSales">Insurance Sales</label>
+                    <span class="slider"></span>
+                </div>
+            </div>
+
             <div class="field">
                 <label style="font-size: 50px;font-weight: 500;">Registration</label>
             </div>
-            <br>
+
             <div class="field">
                 <div class="nameDiv">
                     <div style="flex: 1;">
@@ -61,13 +74,7 @@
                 <label>Confirm Password:</label>
                 <input class="formInput" type="password" id="conPass" placeholder="Re-enter the Password">
             </div>
-            <div class="field">
-                <label>Select Platform:</label>
-                <select>
-                    <option value="customer">Vehicle Sales Platform</option>
-                    <option value="employee">Insurance Sales Platform</option>
-                </select>
-            </div>
+
             <div class="field">
                 <button id="loginBtn">Join</button>
             </div>
