@@ -95,8 +95,8 @@ select{
     background-color: #00aaaa;
 }
 
-.hoverEff:hover{
-    color: red;
+.hoverEff a:hover {
+    text-decoration: none;
 }
 
 
