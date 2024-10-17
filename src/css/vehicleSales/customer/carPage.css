@@ -93,30 +93,123 @@ nav{
 
 #upperPart {
     width: 100%;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
+    height: 550px;
 }
 
 #upperLeft {
-    width: 60%;
-    border: 1px solid black;
+    width: 70%;
+    border-right: 1px solid #dad7d7;
     padding: 20px;
 }
 
 #upperRight {
-    width: 40%;
-    border: 1px solid black;
-    padding: 10px 10px 0 10px;
+    width: 30%;
+    padding: 27px 27px 0 27px;
     display: flex;
     flex-direction: column;
+}
 
+#addToWishListBtn {
+    width: 100%;
+    height: 50px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+#exteriorColorSelection {
+}
+
+#exteriorColorSelectionCollapse {
+    width: 100%;
+    border-bottom: 1px solid #dad7d7;
+    font-size: 25px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#selectedExteriorColorDisplay {
+    position: relative;
+    left: 8px;
+    bottom: 9px;
+}
+
+#exteriorColorRow {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    left: 8px;
+    bottom: 18px;
+    height: auto;
+}
+
+#exteriorColorRow .colorCircle {
+    cursor: pointer;
+}
+
+#interiorColorSelection {
+}
+
+#interiorColorSelectionCollapse {
+    width: 100%;
+    border-bottom: 1px solid #dad7d7;
+    font-size: 25px;
+    margin-top: 20px;
+    padding-bottom: 8px;
+    padding-left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#selectedInteriorColorDisplay {
+    position: relative;
+    left: 8px;
+    bottom: 9px;
+}
+
+#interiorColorRow {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    left: 8px;
+    bottom: 18px;
+}
+
+#interiorColorRow .colorCircle {
+    cursor: pointer;
+}
+
+i {
+    cursor: pointer;
+}
+
+.colorCircle {
+    /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
 }
 
 .carInfo{
     width: 100%;
     font-size: 32px;
-    border: 1px solid black;
 }
 
 #priceDiv{
@@ -167,12 +260,8 @@ nav{
 
 .infoBox .word{
     font-size: 20px;
-    color: white;
 }
 
-
-
-/*similar car */
 /* similar car */
 #similarCar {
     width: 100%;
@@ -265,6 +354,141 @@ nav{
 
     #nav_left img{
         height: 40px;
+    }
+}
+
+/*responsive*/
+@media screen and (max-width: 1076px) {
+    #main {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #upperPart {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    #upperLeft {
+        width: 100%;
+        border-right: 0;
+        padding: 5px;
+    }
+
+    #upperRight {
+        width: 100%;
+        padding: 27px 27px 0 27px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slideImage {
+        width: 100%;
+    }
+
+    .section, .sectionTitleDiv {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+}
+
+
+@media screen and (max-width: 1010px) {
+    .infoBox {
+        width: 25%; /*change when resize*/
+    }
+
+    .batteryInfoBox {
+        width: 50%; /*change when resize*/
+    }
+
+
+    .featureInfoBox {
+        width: 43%; /*change when resize*/
+    }
+}
+
+
+@media screen and (max-width: 986px) {
+    .infoBox {
+        width: 50%; /*change when resize*/
+    }
+
+    .batteryInfoBox {
+        width: 100%; /*change when resize*/
+    }
+
+
+    .featureInfoBox {
+        width: 50%; /*change when resize*/
+    }
+}
+
+@media screen and (max-width: 965px) {
+
+    #similarCarSection{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .similarCarBox {
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 866px) {
+
+
+    .featureInfoBox {
+        width: 100%; /*change when resize*/
+    }
+}
+
+@media screen and (max-width: 777px) {
+
+    #similarCarSection{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .similarCarBox {
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 777px) {
+
+    #similarCarSection{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .similarCarBox {
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 566px) {
+    .infoBox {
+        width: 100%; /*change when resize*/
+    }
+
+    .section, .sectionTitleDiv {
+        padding-right: 20px;
+        padding-left: 20px;
     }
 }
 

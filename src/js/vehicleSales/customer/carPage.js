@@ -16,18 +16,26 @@ function loadCar(){
         for (var i = 0; i < numberOfElectricBrand; i++) {
             var brand = data.electricBrands[i];
             for (var j = 0; j < brand.car.length; j++) {
-                //console.log(brand.car[j].id);
                 if (brand.car[j].id == id) {
                     var car = brand.car[j];
-                    //to append:
-                    // #image1
-                    // #image2
-                    // #image3
-                    // #name
-                    // #price
-                    // #similarCarSection
-                    console.log(car.countryOfOrigin[0]);
-                    $('#name').text(car.model);
+                    $('#carInfo_name').text(car.model);
+                    $('#carInfo_price').text(`$${car.price}`);
+                    $('#carInfo_brand').text(`brand.name(${car.type})`);
+                    //append exterior color
+                    $('#exteriorColorRow').html("");
+                    $('#selectedExteriorColorDisplay').text(`Selected Color: `);
+                    for (var e = 0; e < car.bodyColors.length; e++) {
+                        $('#exteriorColorRow').append(`<div class="colorCircle" style="background-color: ${car.bodyColors[e]}" 
+                                                        id="${car.bodyColors[e]}"></div>`);
+                    }
+
+                    //append interior color
+                    $('#interiorColorRow').html("");
+                    $('#selectedInteriorColorDisplay').text(`Selected Color: `);
+                    for (var e = 0; e < car.interiorColors.length; e++) {
+                        $('#interiorColorRow').append(`<div class="colorCircle" style="background-color: ${car.interiorColors[e]}" 
+                                                        id="${car.interiorColors[e]}"></div>`);
+                    }
                     // append basic infomation
                     $('#basicInfoSection').html("");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
@@ -67,7 +75,7 @@ function loadCar(){
                         "      </div>");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
                         "        <p class=\"title\">Drive Train:</p>\n" +
-                        `        <p class=\"word\">${car.acceleration}</p>\n` +
+                        `        <p class=\"word\">${car.driveTrain}</p>\n` +
                         "      </div>");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
                         "        <p class=\"title\">Seating Capacity:</p>\n" +
@@ -121,13 +129,23 @@ function loadCar(){
                 //console.log(brand.car[j].id);
                 if (brand.car[j].id == id) {
                     var car = brand.car[j];
-                    // $('#carType').text(car.type);
-                    // $('#carFuel').text(car.fuelType);
-                    // $('#carPrice').text(car.price);
-                    // $('#carImage').attr('src', '../../../src/img/vehicleSales/car/' + car.image);
-                    // break;
-                    console.log(car.model);
                     $('#name').text(car.model);
+                    //append exterior color
+                    $('#exteriorColorRow').html("");
+                    $('#selectedExteriorColorDisplay').text(car.bodyColors[0]);
+                    for (var e = 0; e < car.bodyColors.length; e++) {
+                        $('#exteriorColorRow').append(`<div class="colorCircle" style="background-color: ${car.bodyColors[e]}" 
+                                                        id="${car.bodyColors[e]}"></div>`);
+                    }
+
+                    //append interior color
+                    $('#interiorColorRow').html("");
+                    $('#selectedInteriorColorDisplay').text(car.interiorColors[0]);
+                    for (var e = 0; e < car.interiorColors.length; e++) {
+                        $('#interiorColorRow').append(`<div class="colorCircle" style="background-color: ${car.interiorColors[e]}" 
+                                                        id="${car.interiorColors[e]}"></div>`);
+                    }
+
                     // append basic infomation
                     $('#basicInfoSection').html("");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
@@ -167,7 +185,7 @@ function loadCar(){
                         "      </div>");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
                         "        <p class=\"title\">Drive Train:</p>\n" +
-                        `        <p class=\"word\">${car.acceleration}</p>\n` +
+                        `        <p class=\"word\">${car.driveTrain}</p>\n` +
                         "      </div>");
                     $('#basicInfoSection').append("<div class=\"infoBox\">\n" +
                         "        <p class=\"title\">Seating Capacity:</p>\n" +
@@ -206,7 +224,6 @@ function loadCar(){
 
     });
 }
-
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
@@ -215,6 +232,14 @@ function setDarkMode() {
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.infoBox .word').css('color', 'white');
         $('.section').css('border-bottom', '1px solid #4c4c4c');
+        if (window.innerWidth > 1036){
+            $('#upperLeft').css('border-bottom','0');
+            $('#upperLeft').css('border-right','1px solid #4c4c4c');
+        }else{
+            $('#upperLeft').css('border-right','0');
+            $('#upperLeft').css('border-bottom','0');
+        }
+        $('#exteriorColorSelectionCollapse,#interiorColorSelectionCollapse').css('border-bottom', '1px solid #4c4c4c');
         $('#similarCarSection').css('border', '0');
         $('.sectionTitleDiv p').css('color', 'white');
         $('.similarCarBox').css('border', '0.1px solid grey');
@@ -233,6 +258,14 @@ function setDarkMode() {
         $('a').css('color', 'rgba(0,0,0,0.65)');
         $('.infoBox .word').css('color', 'black');
         $('.section').css('border-bottom', '1px solid #d1cece');
+        if (window.innerWidth > 1036){
+            $('#upperLeft').css('border-bottom','0');
+            $('#upperLeft').css('border-right','1px solid #dad7d7');
+        }else{
+            $('#upperLeft').css('border-right','0');
+            $('#upperLeft').css('border-bottom','0');
+        }
+        $('#exteriorColorSelectionCollapse,#interiorColorSelectionCollapse').css('border-bottom', '1px solid #dad7d7');
         $('#similarCarSection').css('border', '0');
         $('.sectionTitleDiv p').css('color', 'black');
         $('.similarCarBox').css('border', '1px solid lightgrey');
@@ -254,7 +287,16 @@ function loadDarkMode() {
             $('body').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.infoBox .title').css('color','white');
+            $('.infoBox .word').css('color', 'white');
             $('.section').css('border-bottom', '1px solid #4c4c4c');
+            if (window.innerWidth > 1036){
+                $('#upperLeft').css('border-bottom','0');
+                $('#upperLeft').css('border-right','0');
+            }else{
+                $('#upperLeft').css('border-right','0');
+                $('#upperLeft').css('border-bottom','0');
+            }
+            $('#exteriorColorSelectionCollapse,#interiorColorSelectionCollapse').css('border-bottom', '1px solid #4c4c4c');
             $('#similarCarSection').css('border', '0');
             $('.sectionTitleDiv p').css('color', 'white');
             $('.similarCarBox').css('border', '0.1px solid grey');
@@ -271,7 +313,16 @@ function loadDarkMode() {
             $('body').css('color', 'black');
             $('a').css('color', 'rgba(0,0,0,0.65)');
             $('.infoBox .title').css('color','black');
+            $('.infoBox .word').css('color', 'black');
             $('.section').css('border-bottom', '1px solid #d1cece');
+            if (window.innerWidth > 1036){
+                $('#upperLeft').css('border-bottom','0');
+                $('#upperLeft').css('border-right','1px solid #dad7d7');
+            }else{
+                $('#upperLeft').css('border-right','0');
+                $('#upperLeft').css('border-right','1px solid #dad7d7');
+            }
+            $('#exteriorColorSelectionCollapse ,#interiorColorSelectionCollapse').css('border-bottom', '1px solid #dad7d7');
             $('#similarCarSection').css('border', '0');
             $('.sectionTitleDiv p').css('color', 'black');
             $('.similarCarBox').css('border', '1px solid lightgrey');
@@ -286,13 +337,68 @@ function loadDarkMode() {
     }
 }
 
-loadDarkMode();
-setDarkMode();
+
+var exteriorColorOpened = true;
+var interiorColorOpened = true;
 $(document).ready(function () {
     loadDarkMode();
-    setDarkMode();
     loadCar();
+
+    $(window).resize(function () {
+        if(window.innerWidth > 1076){
+            $('#upperLeft').css('border-right','1px solid #dad7d7');
+        }else{
+            $('#upperLeft').css('border-right','0');
+        }
+    });
+
     $('#darkModeToggle').click(function () {
         setDarkMode();
+    });
+
+    $('#exteriorColorSelectionCollapse').click(function () {
+        if (exteriorColorOpened) { //opened and going to close it
+            // animation to close it
+            $('#exteriorColorDiv').slideUp();
+            $('#exteriorColorSelectionCollapse i').text("keyboard_arrow_down");
+            exteriorColorOpened = false;
+        } else { //closed and going to open it
+            // animation to open it
+            $('#exteriorColorDiv').slideDown();
+            $('#exteriorColorSelectionCollapse i').text("keyboard_arrow_up");
+            exteriorColorOpened = true;
+        }
+    });
+
+    $('#interiorColorSelectionCollapse').click(function () {
+    if (interiorColorOpened) {
+        $('#interiorColorDiv').slideUp();
+        $('#interiorColorSelectionCollapse i').text("keyboard_arrow_down");
+        interiorColorOpened = false;
+    } else {
+        $('#interiorColorDiv').slideDown();
+        $('#interiorColorSelectionCollapse i').text("keyboard_arrow_up");
+        interiorColorOpened = true;
+    }
+});
+
+    $(document).on('click', '#exteriorColorRow .colorCircle', function () {
+        $('#selectedExteriorColorDisplay').text(`Selected Color: ${$(this).attr('id')}`);
+        $('#exteriorColorRow .colorCircle').css('border', '0');
+        if ($('#darkModeToggle').text() == 'brightness_2') {
+            $(this).css('border', '2px solid hotpink');
+        } else {
+            $(this).css('border', '2px solid lightgreen');
+        }
+    });
+
+    $(document).on('click', '#interiorColorRow .colorCircle', function () {
+        $('#selectedInteriorColorDisplay').text(`Selected Color: ${$(this).attr('id')}`);
+        $('#interiorColorRow .colorCircle').css('border', '0');
+        if ($('#darkModeToggle').text() == 'brightness_2') {
+            $(this).css('border', '2px solid hotpink');
+        } else {
+            $(this).css('border', '2px solid lightgreen');
+        }
     });
 });
