@@ -6,7 +6,6 @@
   <title>Legend Moter Limited - Car Page</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
   <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/carPage.css">
-  <script src="../../../src/js/vehicleSales/customer/carPage.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
@@ -131,21 +130,21 @@
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
           <div style="width: 100%;display: flex;flex-direction: row;justify-content: center">
-            <img src="../../../src/img/vehicleSales/car/test1.avif" style="width:80%">
+            <img src="../../../src/img/vehicleSales/car/test1.avif" id="image1" style="width:80%">
           </div>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
           <div style="width: 100%;display: flex;flex-direction: row;justify-content: center">
-            <img src="../../../src/img/vehicleSales/car/test2.avif" style="width:80%">
+            <img src="../../../src/img/vehicleSales/car/test2.avif" id="image2" style="width:80%">
           </div>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
           <div style="width: 100%;display: flex;flex-direction: row;justify-content: center">
-            <img src="../../../src/img/vehicleSales/car/test3.jpg" style="width:80%">
+            <img src="../../../src/img/vehicleSales/car/test3.jpg" id="image3" style="width:80%">
           </div>
         </div>
 
@@ -176,111 +175,29 @@
     <div class="sectionTitleDiv">
       <p>Basic Information</p>
     </div>
-    <div class="section">
-      <div class="infoBox">
-        <p class="title">Country of Origin</p>
-        <p class="word"><img
-                src="https://flagcdn.com/us.svg"
-                width="25"
-                alt="Ukraine" style="margin-right: 10px">USA</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Manufacture Year:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
+    <div class="section" id="basicInfoSection">
+      <!--      add by JS-->
     </div>
     <!--  battery info-->
-    <div class="sectionTitleDiv">
+    <div class="sectionTitleDiv" id="batterySectionTitle">
       <p>Battery Information</p>
     </div>
-    <div class="section">
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
+    <div class="section" id="batteryInfoSection">
+      <!--      add by JS-->
     </div>
     <!--  features-->
     <div class="sectionTitleDiv">
       <p>Features</p>
     </div>
-    <div class="section">
-      <div class="infoBox batteryInfoBox">
-        <p class="title">Battery:</p>
-        <ul class="word">
-          <li>17-inch Touchscreen Display</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-        </ul>
-      </div>
-      <div class="infoBox batteryInfoBox">
-        <p class="title">Battery:</p>
-        <ul class="word">
-          <li>Automatic Emergency Braking</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-        </ul>
-      </div>
-      <div class="infoBox batteryInfoBox">
-        <p class="title">Battery:</p>
-        <ul class="word">
-          <li>Automatic Emergency Braking</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-        </ul>
-      </div>
-      <div class="infoBox batteryInfoBox">
-        <p class="title">Battery:</p>
-        <ul class="word">
-          <li>Automatic Emergency Braking</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-          <li>100 kWh</li>
-        </ul>
-      </div>
+    <div class="section" id="featureInfoSection">
+      <!--      add by JS-->
     </div>
     <!--  warranty-->
     <div class="sectionTitleDiv">
       <p>Warranty</p>
     </div>
-    <div class="section">
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
-      <div class="infoBox">
-        <p class="title">Battery:</p>
-        <p class="word">100 kWh</p>
-      </div>
+    <div class="section" id="warrantyInfoSection">
+      <!--      add by JS-->
     </div>
   </div>
   <!--  similar car-->
@@ -288,26 +205,30 @@
     <div class="sectionTitleDiv">
       <p>Similar Cars</p>
     </div>
-    <div class="section">
+    <div class="section" id="similarCarSection">
       <div class="similarCarBox">
         <img src="../../../src/img/vehicleSales/car/test1.avif" alt="">
         <p class="name">Tesla Model X</p>
         <p class="price">$10000</p>
+        <button>View</button>
       </div>
       <div class="similarCarBox">
         <img src="../../../src/img/vehicleSales/car/test2.avif" alt="">
         <p class="name">Tesla Model X</p>
         <p class="price">$10000</p>
+        <button>View</button>
       </div>
       <div class="similarCarBox">
         <img src="../../../src/img/vehicleSales/car/test.jpg" alt="">
         <p class="name">Tesla Model X</p>
         <p class="price">$10000</p>
+        <button>View</button>
       </div>
       <div class="similarCarBox">
         <img src="../../../src/img/vehicleSales/car/test1.avif" alt="">
         <p class="name">Tesla Model X</p>
         <p class="price">$10000</p>
+        <button>View</button>
       </div>
     </div>
   </div>
@@ -344,6 +265,7 @@
     $(dots[slideIndex - 1]).addClass("active");
   }
 </script>
+<script src="../../../src/js/vehicleSales/customer/carPage.js"></script>
 </body>
 
 </html>
