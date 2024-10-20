@@ -133,8 +133,8 @@ select{
     background-color: #00aaaa;
 }
 
-.hoverEff:hover{
-    color: red;
+.hoverEff:hover {
+    text-decoration: none;
 }
 
 .typeSelectCenter{
@@ -208,7 +208,10 @@ select{
     background-color: #00aaaa;
 }
 
-
+#policy{
+    margin: 0 10px 0 10px;
+    font-size: 16px;
+}
 
 
 /*responsive*/
