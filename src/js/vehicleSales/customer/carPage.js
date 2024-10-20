@@ -18,9 +18,16 @@ function loadCar(){
             for (var j = 0; j < brand.car.length; j++) {
                 if (brand.car[j].id == id) {
                     var car = brand.car[j];
-                    $('#carInfo_name').text(car.model);
+                    $('#slide1').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#carInfo_name').text(`${car.model}`);
+                    $('#carType').text(`Type: ${car.type}`);
                     $('#carInfo_price').text(`$${car.price}`);
-                    $('#carInfo_brand').text(`brand.name(${car.type})`);
+                    $('#carInfo_brand').text(`${brand.name}`);
                     //append exterior color
                     $('#exteriorColorRow').html("");
                     $('#selectedExteriorColorDisplay').text(`Selected Color: `);
@@ -127,12 +134,22 @@ function loadCar(){
             var brand = data.nonElectricBrands[i];
             for (var j = 0; j < brand.car.length; j++) {
                 //console.log(brand.car[j].id);
+
                 if (brand.car[j].id == id) {
                     var car = brand.car[j];
-                    $('#name').text(car.model);
+                    $('#slide1').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    " id="image1">`);
+                    $('#carInfo_name').text(car.model);
+                    $('#carInfo_price').text(`$${car.price}`);
+                    $('#carInfo_brand').text(`${brand.name}`);
+                    $('#carType').text(`Type: ${car.type}`);
                     //append exterior color
                     $('#exteriorColorRow').html("");
-                    $('#selectedExteriorColorDisplay').text(car.bodyColors[0]);
+                    $('#selectedExteriorColorDisplay').text("Selected Color: ");
                     for (var e = 0; e < car.bodyColors.length; e++) {
                         $('#exteriorColorRow').append(`<div class="colorCircle" style="background-color: ${car.bodyColors[e]}" 
                                                         id="${car.bodyColors[e]}"></div>`);
@@ -140,7 +157,7 @@ function loadCar(){
 
                     //append interior color
                     $('#interiorColorRow').html("");
-                    $('#selectedInteriorColorDisplay').text(car.interiorColors[0]);
+                    $('#selectedInteriorColorDisplay').text("Selected Color: ");
                     for (var e = 0; e < car.interiorColors.length; e++) {
                         $('#interiorColorRow').append(`<div class="colorCircle" style="background-color: ${car.interiorColors[e]}" 
                                                         id="${car.interiorColors[e]}"></div>`);
@@ -384,6 +401,7 @@ $(document).ready(function () {
 
     $(document).on('click', '#exteriorColorRow .colorCircle', function () {
         $('#selectedExteriorColorDisplay').text(`Selected Color: ${$(this).attr('id')}`);
+        localStorage.setItem('selectedExteriorColor', $(this).attr('id'));
         $('#exteriorColorRow .colorCircle').css('border', '0');
         if ($('#darkModeToggle').text() == 'brightness_2') {
             $(this).css('border', '2px solid hotpink');
@@ -394,6 +412,7 @@ $(document).ready(function () {
 
     $(document).on('click', '#interiorColorRow .colorCircle', function () {
         $('#selectedInteriorColorDisplay').text(`Selected Color: ${$(this).attr('id')}`);
+        localStorage.setItem('selectedInteriorColor', $(this).attr('id'));
         $('#interiorColorRow .colorCircle').css('border', '0');
         if ($('#darkModeToggle').text() == 'brightness_2') {
             $(this).css('border', '2px solid hotpink');
