@@ -123,14 +123,30 @@ select{
     margin: 20px 10%;
     border: none;
     border-radius: 5px;
-    background-color: teal;
+    background-color: #24cc31;
     color: white;
     font-size: 20px;
     cursor: pointer;
 }
 
 #loginBtn:hover{
+    background-color: #66d872;
+}
+
+#backBtn:hover{
     background-color: #00aaaa;
+}
+
+#backBtn{
+    width: 84.5%;
+    height: 40px;
+    margin: 5px 10% 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .hoverEff:hover {

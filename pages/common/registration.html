@@ -10,20 +10,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function (){
-            $("#customer").click(function (){
+            $(".field").has("input[id='SN']").hide();
 
+            $("#customer").click(function (){
+                $(".field").has("input[id='policy']").show();
+                $(".field").has("input[id='SN']").hide();
             });
             $("#vehicleSales").click(function (){
-
+                $(".field").has("input[id='policy']").hide();
+                $(".field").has("input[id='SN']").show();
             });
             $("#insuranceSales").click(function (){
-
+                $(".field").has("input[id='policy']").hide();
+                $(".field").has("input[id='SN']").show();
             });
         });
-
-
-
-
     </script>
 </head>
 <body>
@@ -35,7 +36,7 @@
         <div id="form"> <!--Form for registration-->
 
             <div class="field">
-                <label style="font-size: 50px;font-weight: 500;">Registration</label>
+                <label style="font-size: 45px;font-weight: 500;">Registration</label>
             </div>
 
             <div class="typeSelectCenter">
@@ -48,6 +49,10 @@
                     <label for="insuranceSales">Insurance Sales</label>
                     <span class="slider"></span>
                 </div>
+            </div>
+
+            <div class="field">
+                <label>Staff Number: </label><input class="formInput" type="text" placeholder="Staff Number" id="SN">
             </div>
 
             <div class="field">
@@ -82,7 +87,6 @@
                 <input class="formInput" id="phoneNo" type="number" placeholder="Enter Phone Number">
             </div>
 
-
             <div class="field">
                 <label>Password:</label>
                 <input class="formInput" type="password" id="pass" placeholder="Enter Password">
@@ -93,13 +97,17 @@
             </div>
 
             <div class="field">
-                <label><input type="checkbox" >I agree to the
+                <label><input type="checkbox" id="policy">I agree to the
                     <a href="policy.html" class="hoverEff" target="_blank">terms and conditions</a>
                 </label>
             </div>
 
             <div class="field">
                 <button id="loginBtn">Join</button>
+            </div>
+
+            <div class="field">
+                <button id="backBtn">Back To Login</button>
             </div>
 
 
