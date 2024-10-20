@@ -9,23 +9,52 @@
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" language="JavaScript">
-        $(document).ready(function (){
-            $(".field").has("input[id='SN']").hide();
+        $(document).ready(function () {
+            $(".field").has("input[id='SN']").hide();   //Hide the staff number field
 
-            $("#customer").click(function (){
+            $("#customer").click(function () {    //For customer option
                 $(".field").has("input[id='policy']").show();
                 $(".field").has("input[id='SN']").hide();
             });
-            $("#vehicleSales").click(function (){
+            $("#vehicleSales").click(function () {     //For vehicle sales option
                 $(".field").has("input[id='policy']").hide();
                 $(".field").has("input[id='SN']").show();
             });
-            $("#insuranceSales").click(function (){
+            $("#insuranceSales").click(function () {     //For insurance sales option
                 $(".field").has("input[id='policy']").hide();
                 $(".field").has("input[id='SN']").show();
             });
-            $("#backBtn").click(function (){
+
+            $("#backBtn").click(function () {        //Back to login page
                 window.location.href = "../../index.html";
+            });
+
+            $("#register").click(function () {       //Registration
+                let SN;
+                let type = $("input[name='type']:checked").val();
+
+                if(type === "C") {   //For customer
+                    if(!$('#policy').is(':checked')) {
+                        alert("Please agree to the terms and conditions");
+                    }else {
+                        alert("Resister successfully \nYour username is: LMC0001");
+                    }
+                }else if(type === "V") {    //For vehicle sales
+                    SN = $("#SN").val();
+                    if(SN === "") {
+                        alert("Please enter the staff number");
+                    }else if(SN === "LM0001") {
+                        alert("Resister successfully \nYour username is: VS0001");
+                    }
+
+                }else if(type === "I") {    //For insurance sales
+                    SN = $("#SN").val();
+                    if(SN === "") {
+                        alert("Please enter the staff number");
+                    }else if(SN === "LM0001") {
+                        alert("Resister successfully \nYour username is: IS0001");
+                    }
+                }
             });
         });
     </script>
@@ -44,11 +73,11 @@
 
             <div class="typeSelectCenter">
                 <div class="typeSelect">
-                    <input type="radio" id="customer" name="type" checked>
+                    <input type="radio" id="customer" name="type" value="C" checked>
                     <label for="customer">Customer</label>
-                    <input type="radio" id="vehicleSales" name="type">
+                    <input type="radio" id="vehicleSales" value="V" name="type">
                     <label for="vehicleSales">Vehicle Sales</label>
-                    <input type="radio" id="insuranceSales" name="type">
+                    <input type="radio" id="insuranceSales" value="I" name="type">
                     <label for="insuranceSales">Insurance Sales</label>
                     <span class="slider"></span>
                 </div>
@@ -106,7 +135,7 @@
             </div>
 
             <div class="field">
-                <button id="loginBtn">Join</button>
+                <button id="register">Join</button>
             </div>
 
             <div class="field">
