@@ -158,7 +158,6 @@ select{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -176,8 +175,11 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 40px;
+
+    width: 80%;
+    height: 50%;
+    min-height: 50px;
+
     padding: 10px 15px;
     cursor: pointer;
     position: relative;
@@ -193,8 +195,10 @@ select{
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 150px;
-    height: 40px;
+
+    width: 100px;
+    height: 50px;
+
     padding: 10px 15px;
     background: white;
     border-radius: 10px;
@@ -202,13 +206,13 @@ select{
     transition: 0.25s ease-in;
 }
 .typeSelect input:nth-child(1):checked ~ .slider {
-    left: 2px;
+    left: 0;
 }
 .typeSelect input:nth-child(3):checked ~ .slider {
-    left: 182px;
+    left: 142px;
 }
 .typeSelect input:nth-child(5):checked ~ .slider {
-    left: 362px;
+    left: 290px;
 }
 
 .typeSelect input:nth-child(1):checked + label {
@@ -237,9 +241,19 @@ select{
     width: 100%;
 }
 
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: 1%;
+    width: 90%;
+    margin-top: 1%;
+}
+
 #closePolicy{
-    text-align: left;
     height: 40px;
+    width: 20%;
     margin: 5px 10% 30px;
     border: none;
     border-radius: 5px;
