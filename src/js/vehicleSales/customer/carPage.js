@@ -139,9 +139,9 @@ function loadCar(){
                     var car = brand.car[j];
                     $('#slide1').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
                     " id="image1">`);
-                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/2.jpg
                     " id="image1">`);
-                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
+                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/3.jpg
                     " id="image1">`);
                     $('#carInfo_name').text(car.model);
                     $('#carInfo_price').text(`$${car.price}`);
