@@ -98,11 +98,21 @@ $(document).ready(function () {
 
     $('.addBtn').click(function () {
         $(this).siblings('input').val(parseInt($(this).siblings('input').val()) + 1);
+        var currentPrice = parseInt($(this).parent().parent().siblings('.price').text().replace('$', ''));
+        var unitPrice = parseInt($(this).parent().attr('unitprice'));
+        var newPrice = currentPrice + unitPrice;
+        $(this).parent().parent().siblings('.price').text(`$${newPrice}`);
+        $('#subtotal').text('$'+calculateTotalPrice());
     });
 
     $('.minusBtn').click(function () {
         if ($(this).siblings('input').val() > 1) {
             $(this).siblings('input').val(parseInt($(this).siblings('input').val()) - 1);
+            var currentPrice = parseInt($(this).parent().parent().siblings('.price').text().replace('$', ''));
+            var unitPrice = parseInt($(this).parent().attr('unitprice'));
+            var newPrice = currentPrice - unitPrice;
+            $(this).parent().parent().siblings('.price').text(`$${newPrice}`);
+            $('#subtotal').text('$'+calculateTotalPrice());
         }else{
             $(this).siblings('input').val(1);
         }
