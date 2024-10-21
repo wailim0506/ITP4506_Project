@@ -229,6 +229,25 @@ select{
     font-size: 16px;
 }
 
+#flowColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#closePolicy{
+    text-align: left;
+    height: 40px;
+    margin: 5px 10% 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 /*responsive*/
 @media screen and (max-width: 1210px){
