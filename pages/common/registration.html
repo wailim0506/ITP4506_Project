@@ -68,7 +68,7 @@
         <div id="form"> <!--Form for registration-->
 
             <div class="field">
-                <label style="font-size: 45px;font-weight: 500;">Registration</label>
+                <label style="font-size: 40px;font-weight: 500;">Registration</label>
             </div>
 
             <div class="typeSelectCenter">
@@ -84,31 +84,25 @@
             </div>
 
             <div class="field">
-                <label>Staff Number: </label><input class="formInput" type="text" placeholder="Staff Number" id="SN">
+                <label>Staff Number: </label>
+                <input class="formInput" type="text" placeholder="Staff Number" id="SN">
             </div>
 
-            <div class="field">
+
                 <div class="nameDiv">
-                    <div style="flex: 1;">
-                        <label style="margin: 0 -7px;" >First Name:</label>
-                        <label style="margin: 0 0;">
-                            <input class="formInput" placeholder="FirstName"/>
-                        </label>
+                    <div class="nameDivInner">
+                        <label>First Name:<input class="formInput" placeholder="FirstName"/></label>
                     </div>
-                    <div style="flex: 1;">
-                        <label style="margin: 0 -5px;">Last Name:</label>
-                        <label style="margin: 0 0;">
-                            <input class="formInput" placeholder="LastName"/>
-                        </label>
+                    <div class="nameDivInner">
+                        <label>Last Name:<input class="formInput" placeholder="LastName"/></label>
                     </div>
                 </div>
-            </div>
+
+
             <div class="genderBtnDiv">
-                <div>
-                    <label>Gender:</label>
+                    <label id="genderTit">Gender:</label>
                     <label>Male<input class="genderBtn" type="radio" name="gender"></label>
                     <label>Female<input class="genderBtn"  type="radio" name="gender"></label>
-                </div>
             </div>
             <div class="field">
                 <label>Email:</label>
