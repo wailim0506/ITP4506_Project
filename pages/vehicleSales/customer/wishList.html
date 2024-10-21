@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Moter Limited - Wish List</title>
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/wishList.css">
+    <script src="../../../src/js/vehicleSales/customer/wishList.js"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="#">Vehicle List</a>
+        <a href="#">Wish List</a>
+        <a href="#">Orders</a>
+        <a href="#">Profile</a>
+    </div>
+    <div id="nav_right">
+        <a href="#">Logout</a>
+    </div>
+</nav>
+<div id="main">
+    <div id="main_top">
+        <p id="title">Wish List</p>
+        <p id="text_below_title">There are <span id="numberInTitle">3</span> items in your wish list</p>
+    </div>
+    <div id="main_body"> <!-- The table showing car in wish list -->
+        <table>
+            <tr>
+                <th>Product</th>
+                <th style="width: 800px"></th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../src/img/vehicleSales/car/21/1.jpg" style="width: 170px">
+
+                </td>
+                <td>
+                    <p class="">2021 Toyota Corolla</p>
+                    <p>2021 Toyota Corolla</p>
+                    <p>2021 Toyota Corolla</p>
+                </td>
+                <td>$20,000</td>
+                <td>
+                    <input type="number" value="1"/>
+                </td>
+                <td>
+                    <i class="material-icons">delete</i>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>
