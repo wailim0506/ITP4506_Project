@@ -96,7 +96,6 @@ nav{
     height: fit-content;
     width: 90%;
     align-items: center;
-    border: 1px solid white;
 }
 
 #title{
@@ -118,7 +117,6 @@ nav{
     height: fit-content;
     width: 90%;
     align-items: center;
-    border: 1px solid white;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -126,24 +124,25 @@ nav{
 
 table{
     width: 80%;
-    border: 1px solid black;
+    border-top: 1px solid lightgray;
     margin-top: 20px;
+    border-collapse: collapse; /* Add this line */
 }
+
 
 tr{
     height: 50px;
-    border: 1px solid black;
+    border-bottom: 1px solid #6c6969;
 }
 
 th{
     font-size: 20px;
     font-weight: 500;
-    border: 1px solid black;
+
 }
 
 td{
     font-size: 18px;
-    border: 1px solid black;
     text-align: center;
     vertical-align: middle;
 }
@@ -155,7 +154,7 @@ td input {
     padding: 0 10px;
     border: 1px solid lightgray;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
@@ -193,7 +192,7 @@ td button{
 }
 
 .vehicleDetailCell{
-    text-align: start;
+    text-align: center;
     padding-left:15px;
 }
 
@@ -228,21 +227,34 @@ td i{
     height: fit-content;
     width: 90%;
     align-items: center;
-    border: 1px solid white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 #main_bottom div{
     width: 80%;
-    border: 1px solid white;
     text-align: end;
     font-size: 30px;
 }
 
+#getQuoteDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    text-align: end;
+    font-size: 30px;
+}
+
+#getQuoteDiv a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
 #getQuoteBtn{
-    width: 200px;
+    width: 180px;
     height: 50px;
     background-color: teal;
     color: white;
