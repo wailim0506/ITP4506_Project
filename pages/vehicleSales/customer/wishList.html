@@ -32,7 +32,7 @@
     </div>
     <div id="main_body"> <!-- The table showing car in wish list -->
         <table>
-            <tr>
+            <tr id="headingRow">
                 <th>Vehicle Image</th>
                 <th style="width: 400px">Vehicle Detail</th>
                 <th>Price</th>
@@ -48,7 +48,7 @@
                     <p class="exteriorColor">Exterior Color: Red</p>
                     <p class="interiorColor">Interior Color: Blue</p>
                 </td>
-                <td>$20,000</td>
+                <td class="price">$20000</td>
                 <td class="quantityCell">
                     <div>
                         <button class="addBtn">+</button>
@@ -69,7 +69,28 @@
                     <p class="exteriorColor">Exterior Color: Red</p>
                     <p class="interiorColor">Interior Color: Blue</p>
                 </td>
-                <td>$20,000</td>
+                <td class="price">$20000</td>
+                <td class="quantityCell">
+                    <div>
+                        <button class="addBtn">+</button>
+                        <input type="number" value="1"/>
+                        <button class="minusBtn">-</button>
+                    </div>
+                </td>
+                <td>
+                    <i class="material-icons">delete</i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../src/img/vehicleSales/car/21/1.jpg">
+                </td>
+                <td class="vehicleDetailCell">
+                    <p class="vehicleName">Tesla Model X</p>
+                    <p class="exteriorColor">Exterior Color: Red</p>
+                    <p class="interiorColor">Interior Color: Blue</p>
+                </td>
+                <td class="price">$20000</td>
                 <td class="quantityCell">
                     <div>
                         <button class="addBtn">+</button>
@@ -86,9 +107,10 @@
     <div id="main_bottom">
         <div>
             <p>Subtotal:</p>
-            <p>$10000</p>
+            <p id="subtotal">$10000</p>
         </div>
-        <div>
+        <div id="getQuoteDiv">
+            <a href="carList.html">← Continue Shopping</a>
             <button id="getQuoteBtn">Get a Quote</button>
         </div>
 
