@@ -33,31 +33,65 @@
     <div id="main_body"> <!-- The table showing car in wish list -->
         <table>
             <tr>
-                <th>Product</th>
-                <th style="width: 800px"></th>
+                <th>Vehicle Image</th>
+                <th style="width: 400px">Vehicle Detail</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Delete</th>
             </tr>
             <tr>
                 <td>
-                    <img src="../../../src/img/vehicleSales/car/21/1.jpg" style="width: 170px">
-
+                    <img src="../../../src/img/vehicleSales/car/21/1.jpg">
                 </td>
-                <td>
-                    <p class="">2021 Toyota Corolla</p>
-                    <p>2021 Toyota Corolla</p>
-                    <p>2021 Toyota Corolla</p>
+                <td class="vehicleDetailCell">
+                    <p class="vehicleName">Tesla Model X</p>
+                    <p class="exteriorColor">Exterior Color: Red</p>
+                    <p class="interiorColor">Interior Color: Blue</p>
                 </td>
                 <td>$20,000</td>
+                <td class="quantityCell">
+                    <div>
+                        <button class="addBtn">+</button>
+                        <input type="number" value="1"/>
+                        <button class="minusBtn">-</button>
+                    </div>
+                </td>
                 <td>
-                    <input type="number" value="1"/>
+                    <i class="material-icons">delete</i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../../../src/img/vehicleSales/car/21/1.jpg">
+                </td>
+                <td class="vehicleDetailCell">
+                    <p class="vehicleName">Tesla Model X</p>
+                    <p class="exteriorColor">Exterior Color: Red</p>
+                    <p class="interiorColor">Interior Color: Blue</p>
+                </td>
+                <td>$20,000</td>
+                <td class="quantityCell">
+                    <div>
+                        <button class="addBtn">+</button>
+                        <input type="number" value="1"/>
+                        <button class="minusBtn">-</button>
+                    </div>
                 </td>
                 <td>
                     <i class="material-icons">delete</i>
                 </td>
             </tr>
         </table>
+    </div>
+    <div id="main_bottom">
+        <div>
+            <p>Subtotal:</p>
+            <p>$10000</p>
+        </div>
+        <div>
+            <button id="getQuoteBtn">Get a Quote</button>
+        </div>
+
     </div>
 </div>
 

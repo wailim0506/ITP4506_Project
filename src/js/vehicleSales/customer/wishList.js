@@ -74,4 +74,16 @@ $(document).ready(function () {
     $('#darkModeToggle').click(function () {
         setDarkMode();
     });
+
+    $('.addBtn').click(function () {
+        $(this).siblings('input').val(parseInt($(this).siblings('input').val()) + 1);
+    });
+
+    $('.minusBtn').click(function () {
+        if ($(this).siblings('input').val() > 1) {
+            $(this).siblings('input').val(parseInt($(this).siblings('input').val()) - 1);
+        }else{
+            $(this).siblings('input').val(1);
+        }
+    });
 });
