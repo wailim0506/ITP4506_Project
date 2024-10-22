@@ -359,11 +359,15 @@ function addCart(){
     var selectedInteriorColor = localStorage.getItem('selectedInteriorColor');
     var selectedCar = localStorage.getItem('carToView');
     var price = $('#carInfo_price').text();
+    var brand = $('#carInfo_brand').text();
+    var name = $('#carInfo_name').text();
 
     var cart = localStorage.getItem('cart');
     if (cart == null) {
         cart = [{
             carId: selectedCar,
+            brand: brand,
+            name: name,
             exteriorColor: selectedExteriorColor,
             interiorColor: selectedInteriorColor,
             price: price
@@ -373,6 +377,8 @@ function addCart(){
         cart = JSON.parse(cart);
         cart.push({
             carId: selectedCar,
+            brand: brand,
+            name: name,
             exteriorColor: selectedExteriorColor,
             interiorColor: selectedInteriorColor,
             price: price
