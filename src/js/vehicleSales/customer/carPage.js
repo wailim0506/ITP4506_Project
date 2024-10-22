@@ -21,9 +21,9 @@ function loadCar(){
                     $('#slide1').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
                     " id="image1">`);
                     $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/2.jpg
-                    " id="image1">`);
+                    " id="image2">`);
                     $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/3.jpg
-                    " id="image1">`);
+                    " id="image3">`);
                     $('#carInfo_name').text(`${car.model}`);
                     $('#carType').text(`Type: ${car.type}`);
                     $('#carInfo_price').text(`$${car.price}`);
@@ -139,10 +139,10 @@ function loadCar(){
                     var car = brand.car[j];
                     $('#slide1').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
                     " id="image1">`);
-                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
-                    " id="image1">`);
-                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/1.jpg
-                    " id="image1">`);
+                    $('#slide2').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/2.jpg
+                    " id="image2">`);
+                    $('#slide3').append(`<img class="slideImage" src="../../../src/img/vehicleSales/car/${car.id}/3.jpg
+                    " id="image3">`);
                     $('#carInfo_name').text(car.model);
                     $('#carInfo_price').text(`$${car.price}`);
                     $('#carInfo_brand').text(`${brand.name}`);
@@ -354,6 +354,43 @@ function loadDarkMode() {
     }
 }
 
+function addCart(){
+    var selectedExteriorColor = localStorage.getItem('selectedExteriorColor');
+    var selectedInteriorColor = localStorage.getItem('selectedInteriorColor');
+    var selectedCar = localStorage.getItem('carToView');
+    var price = $('#carInfo_price').text();
+    var brand = $('#carInfo_brand').text();
+    var name = $('#carInfo_name').text();
+
+    var cart = localStorage.getItem('cart');
+    if (cart == null) {
+        cart = [{
+            itemId: 1 ,
+            carId: selectedCar,
+            brand: brand,
+            name: name,
+            exteriorColor: selectedExteriorColor,
+            interiorColor: selectedInteriorColor,
+            price: price
+        }];
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }else{
+        cart = JSON.parse(cart);
+        cart.push({
+            itemId: cart.length + 1,
+            carId: selectedCar,
+            brand: brand,
+            name: name,
+            exteriorColor: selectedExteriorColor,
+            interiorColor: selectedInteriorColor,
+            price: price
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    alert("Vehicle added to wish list!");
+    location.reload();
+}
+
 
 var exteriorColorOpened = true;
 var interiorColorOpened = true;
@@ -418,6 +455,18 @@ $(document).ready(function () {
             $(this).css('border', '2px solid hotpink');
         } else {
             $(this).css('border', '2px solid lightgreen');
+        }
+    });
+
+    $('#addToWishListBtn').click(function () {
+        if ($('#selectedInteriorColorDisplay').text() != "Selected Color: "){
+            if ($('#selectedExteriorColorDisplay').text() != "Selected Color: "){
+                addCart();
+            }else{
+                alert("Please select a exterior color");
+            }
+        }else{
+            alert("Please select a interior color");
         }
     });
 });

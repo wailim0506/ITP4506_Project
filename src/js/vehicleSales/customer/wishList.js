@@ -72,6 +72,50 @@ function loadDarkMode() {
     }
 }
 
+function loadWishList(){
+    var cart = localStorage.getItem('cart');
+    if (cart != null) {
+        var cartArray = JSON.parse(cart);
+        for (var i = 0; i < cartArray.length; i++) {
+            var item = cartArray[i];
+            var unitPrice = parseInt(item.price.replace('$', ''));
+            var itemId = parseInt(item.itemId);
+            var row = `<tr itemid=\"${itemId}\">\n` +
+                "                <td>\n" +
+                `                    <img src=\"../../../src/img/vehicleSales/car/${item.carId}/1.jpg\">\n` +
+                "                </td>\n" +
+                "                <td class=\"vehicleDetailCell\">\n" +
+                `                    <p class=\"vehicleName\">${item.brand} ${item.name}</p>\n` +
+                `                    <p class=\"exteriorColor\">Exterior Color: ${item.exteriorColor}</p>\n` +
+                `                    <p class=\"interiorColor\">Interior Color: ${item.interiorColor}</p>\n` +
+                "                </td>\n" +
+                `                <td class=\"price\">${item.price}</td>\n` +
+                "                <td class=\"quantityCell\">\n" +
+                `                    <div unitprice=\"${unitPrice}\">\n` +
+                "                        <button class=\"addBtn\">+</button>\n" +
+                "                        <input type=\"number\" value=\"1\"/>\n" +
+                "                        <button class=\"minusBtn\">-</button>\n" +
+                "                    </div>\n" +
+                "                </td>\n" +
+                "                <td>\n" +
+                "                    <i class=\"material-icons\">delete</i>\n" +
+                "                </td>\n" +
+                "            </tr>";
+            $('table').append(row);
+            $('#numberInTitle').text($('table tr').length-1);
+        }
+    }else{
+        $('#main_body').html("");
+        $('#numberInTitle').text("0");
+        $('#subtotal').hide();
+        $('#subtotal').siblings('p').hide();
+        $('#getQuoteBtn').hide();
+        $('#text_below_title').text("Your wish list is empty.");
+        $('#text_below_title').css('font-size','50px');
+
+    }
+}
+
 function calculateTotalPrice() {
     var totalPrice = 0;
     $('.price').each(function () {
@@ -87,10 +131,10 @@ function calculateTotalPrice() {
 loadDarkMode();
 $(document).ready(function () {
     loadDarkMode();
+    loadWishList();
 
     $('#subtotal').text('$'+calculateTotalPrice());
 
-    $('#numberInTitle').text($('table tr').length-1);
 
     $('#darkModeToggle').click(function () {
         setDarkMode();
@@ -98,20 +142,61 @@ $(document).ready(function () {
 
     $('.addBtn').click(function () {
         $(this).siblings('input').val(parseInt($(this).siblings('input').val()) + 1);
+        var currentPrice = parseInt($(this).parent().parent().siblings('.price').text().replace('$', ''));
+        var unitPrice = parseInt($(this).parent().attr('unitprice'));
+        var newPrice = currentPrice + unitPrice;
+        $(this).parent().parent().siblings('.price').text(`$${newPrice}`);
+        $('#subtotal').text('$'+calculateTotalPrice());
     });
 
     $('.minusBtn').click(function () {
         if ($(this).siblings('input').val() > 1) {
             $(this).siblings('input').val(parseInt($(this).siblings('input').val()) - 1);
+            var currentPrice = parseInt($(this).parent().parent().siblings('.price').text().replace('$', ''));
+            var unitPrice = parseInt($(this).parent().attr('unitprice'));
+            var newPrice = currentPrice - unitPrice;
+            $(this).parent().parent().siblings('.price').text(`$${newPrice}`);
+            $('#subtotal').text('$'+calculateTotalPrice());
         }else{
             $(this).siblings('input').val(1);
         }
     });
 
     $('td i').click(function () {
+
+        var itemId = $(this).parent().parent().attr('itemid');
+        var cart = localStorage.getItem('cart');
+        var cartArray = JSON.parse(cart);
+        var newCartArray = [];
+        for (var i = 0; i < cartArray.length; i++) {
+            if (cartArray[i].itemId != itemId) {
+                newCartArray.push(cartArray[i]);
+            }
+        }
+        if (newCartArray.length == 0) {
+            localStorage.removeItem('cart');
+        }else{
+            localStorage.setItem('cart', JSON.stringify(newCartArray));
+        }
+
+
         $(this).parent().parent().remove();
         $('#numberInTitle').text($('table tr').length-1);
         $('#subtotal').text('$'+calculateTotalPrice());
+
+        if ($('table tr').length == 1){
+            $('#main_body').html("");
+            $('#numberInTitle').text("0");
+            $('#subtotal').hide();
+            $('#subtotal').siblings('p').hide();
+            $('#getQuoteBtn').hide();
+            $('#text_below_title').text("Your wish list is empty.");
+            $('#text_below_title').css('font-size','50px');
+        }
+    });
+
+    $('#refreshBtn').click(function(){
+        location.reload();
     });
 
 
