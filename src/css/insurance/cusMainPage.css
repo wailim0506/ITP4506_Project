@@ -6,8 +6,8 @@ html{
 
 
 body{
-    width: 99.8%;
-    margin: 0px;
+    width: 100%;
+    margin: 0;
 
 }
 
@@ -17,8 +17,10 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-bottom: black;
-    border-width: 2px;
+    border-color: black;
+    border-bottom: 1px solid;
+    box-shadow: black 0 0 3px;
+    animation: nav-load 0.5s ease-in;
 }
 
 #nav_left{
@@ -47,7 +49,6 @@ nav{
     height: 55px;
 }
 
-
 #nav_center a{
     width: 15%;
     display: flex;
@@ -60,7 +61,7 @@ nav{
     text-decoration: none;
 }
 
-/* The effects of the contents in the nav bar */
+    /* The effects of the contents in the nav bar */
 #nav_center a::before{
     position: absolute;
     content: '';
@@ -97,4 +98,84 @@ nav{
 #nav_right a:hover{
     color: rgba(0,0,0,0.85);
 }
+
+/* The ease-in animation for the nav bar */
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 /*nav*/
+
+/* The slide show */
+.slider{
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+    animation: slider 19s infinite step-end, article-load 0.5s ease-in;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slider{
+    0%{background: url(../../img/insurance/IMG_0001.jpg);
+        background-size: cover;
+        background-position: bottom;}
+    25%{background: url(../../img/insurance/IMG_0002.png);
+        background-size: cover;
+        background-position: bottom;}
+    50%{background: url(../../img/insurance/IMG_0003.jpeg);
+        background-size: cover;
+        background-position: top;}
+    75%{background: url(../../img/insurance/IMG_0004.jpg);
+        background-size: cover;
+        background-position: bottom;}
+}
+    /* pause when the cursor above the slide show*/
+.slider:hover{
+    animation-play-state: paused;
+}
+    /* the content above the slide show */
+.slider .sliderContent{
+    margin-left: 2%;
+}
+
+.slider .sliderContent h4{
+    font-size: 380%;
+    margin-top: 0;
+    margin-bottom: 1.5%;
+    color: white;
+}
+
+#EstimateBtn{
+    color: #ef2c2c;
+    background: #45c145;
+    border-color: #45c145;
+    border-radius: 10px;
+    font-size: 300%;
+    width: 35%;
+    padding: 1%;
+    transition: all .40s ease;
+}
+
+#EstimateBtn:hover{
+    transform: translateY(-15px);
+}
+
+/* The slide show */
+
+
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
