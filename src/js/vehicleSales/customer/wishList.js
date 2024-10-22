@@ -165,6 +165,16 @@ $(document).ready(function () {
         $(this).parent().parent().remove();
         $('#numberInTitle').text($('table tr').length-1);
         $('#subtotal').text('$'+calculateTotalPrice());
+
+        if ($('table tr').length == 1){
+            $('#main_body').html("");
+            $('#numberInTitle').text("0");
+            $('#subtotal').hide();
+            $('#subtotal').siblings('p').hide();
+            $('#getQuoteBtn').hide();
+            $('#text_below_title').text("Your wish list is empty.");
+            $('#text_below_title').css('font-size','50px');
+        }
     });
 
     $('#refreshBtn').click(function(){

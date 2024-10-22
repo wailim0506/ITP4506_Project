@@ -13,73 +13,6 @@ body{
     /*border: 1px solid white;*/
 }
 
-/*nav*/
-nav{
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-#nav_left{
-    width: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-}
-#nav_center{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-#nav_right{
-    width:10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#nav_left img{
-    height: 55px;
-}
-
-
-#nav_center a{
-    width: 15%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: rgba(0,0,0,0.65);
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#nav_right a{
-    width: 14%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: rgba(0,0,0,0.65);
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#nav_center a:hover{
-    color: rgba(0,0,0,0.85);
-}
-
-#nav_right a:hover{
-    color: rgba(0,0,0,0.85);
-}
-/*nav*/
 
 #main{
     width: 100%;
@@ -286,53 +219,7 @@ td i{
 }
 
 
-/*nav responsive*/
-@media screen and (max-width: 1210px){
-    #nav_left{
-        width: 15%;
-    }
-    #nav_center{
-        width: 70%;
-    }
-    #nav_right{
-        width:20%;
-    }
 
-    #nav_center a{
-        font-size: 17px;
-    }
-
-    #nav_right a{
-        font-size: 17px;
-    }
-}
-
-@media screen and (max-width: 887px){
-    #nav_left{
-        width: 7%;
-    }
-    #nav_center{
-        width: 60%;
-        position: relative;
-        left: 5px;
-    }
-    #nav_right{
-        width:10%;
-    }
-
-    #nav_center a{
-        width: 25%;
-        font-size: 13px;
-    }
-
-    #nav_right a{
-        font-size: 13px;
-    }
-
-    #nav_left img{
-        height: 40px;
-    }
-}
 
 /*responsive*/
 @media screen and (max-width: 1075px) {
