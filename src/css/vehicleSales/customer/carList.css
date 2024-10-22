@@ -1,15 +1,3 @@
-html{
-    font-family: system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", "Liberation Sans", sans-serif;
-}
-
-
-body{
-    width: 99.8%;
-    margin: 0px;
-
-}
 
 
 #main{
@@ -115,6 +103,7 @@ select{
     margin-bottom: 20px;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .car-item {
@@ -195,13 +184,11 @@ select{
         display: none;
     }
 
+
 }
 
 
 @media screen and (max-width: 700px){
-
-
-
 
     #main_carList{
         width: 100%;
@@ -212,15 +199,12 @@ select{
         margin-bottom: 20px;
         margin-left: 0px;
     }
-
     .car-row{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
-
 }
 
 

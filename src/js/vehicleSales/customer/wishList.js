@@ -79,7 +79,8 @@ function loadWishList(){
         for (var i = 0; i < cartArray.length; i++) {
             var item = cartArray[i];
             var unitPrice = parseInt(item.price.replace('$', ''));
-            var row = "<tr>\n" +
+            var itemId = parseInt(item.itemId);
+            var row = `<tr itemid=\"${itemId}\">\n` +
                 "                <td>\n" +
                 `                    <img src=\"../../../src/img/vehicleSales/car/${item.carId}/1.jpg\">\n` +
                 "                </td>\n" +
@@ -162,6 +163,23 @@ $(document).ready(function () {
     });
 
     $('td i').click(function () {
+
+        var itemId = $(this).parent().parent().attr('itemid');
+        var cart = localStorage.getItem('cart');
+        var cartArray = JSON.parse(cart);
+        var newCartArray = [];
+        for (var i = 0; i < cartArray.length; i++) {
+            if (cartArray[i].itemId != itemId) {
+                newCartArray.push(cartArray[i]);
+            }
+        }
+        if (newCartArray.length == 0) {
+            localStorage.removeItem('cart');
+        }else{
+            localStorage.setItem('cart', JSON.stringify(newCartArray));
+        }
+
+
         $(this).parent().parent().remove();
         $('#numberInTitle').text($('table tr').length-1);
         $('#subtotal').text('$'+calculateTotalPrice());

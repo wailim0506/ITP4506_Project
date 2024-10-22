@@ -365,6 +365,7 @@ function addCart(){
     var cart = localStorage.getItem('cart');
     if (cart == null) {
         cart = [{
+            itemId: 1 ,
             carId: selectedCar,
             brand: brand,
             name: name,
@@ -376,6 +377,7 @@ function addCart(){
     }else{
         cart = JSON.parse(cart);
         cart.push({
+            itemId: cart.length + 1,
             carId: selectedCar,
             brand: brand,
             name: name,
@@ -386,6 +388,7 @@ function addCart(){
         localStorage.setItem('cart', JSON.stringify(cart));
     }
     alert("Vehicle added to wish list!");
+    location.reload();
 }
 
 

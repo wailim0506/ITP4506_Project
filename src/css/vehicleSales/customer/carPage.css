@@ -1,16 +1,4 @@
-html{
-    font-family: system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", "Liberation Sans", sans-serif;
-}
 
-
-body{
-    width: 99.8%;
-    margin: 0px;
-    /*padding-left: 50px;*/
-    /*padding-right: 50px;*/
-}
 
 #main{
     width: 100%;
