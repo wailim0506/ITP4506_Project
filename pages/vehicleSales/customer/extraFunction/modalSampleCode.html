@@ -4,69 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrollable Modal Form with Fixed Submit Button</title>
-    <style>
-        /*body { font-family: Arial, sans-serif; margin: 0; padding: 0; }*/
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            height: 90%;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column; /* Stack children vertically */
-        }
-        .modal-body {
-            max-height: calc(90% - 60px); /* Adjust height for button */
-            overflow-y: auto; /* Enable vertical scrolling */
-            flex-grow: 1; /* Allow body to grow */
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        input[type="text"], input[type="email"], textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button[type="submit"] {
-            background-color: #4CAF50; /* Green */
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+
+    <link rel="stylesheet" href="../../../../src/css/vehicleSales/customer/wishListmodal.css">
+    <script src="../../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+
 </head>
 <body>
 
@@ -144,75 +85,6 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        var modal = $("#myModal");
-        var btn = $("#myBtn");
-        var span = $(".close");
-
-        // Open modal
-        btn.click(function() {
-            modal.show();
-
-            // Prevent body scroll
-            $('body').css({
-                'overflow': 'hidden',
-                'position': 'fixed',
-                'width': '100%',
-                'top': `-${window.scrollY}px`
-            });
-        });
-
-        // Close modal
-        span.click(function() {
-            modal.hide();
-
-            // Restore body scroll
-            var scrollY = $('body').css('top');
-            $('body').css({
-                'overflow': '',
-                'position': '',
-                'top': ''
-            });
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        });
-
-        // Close modal when clicking outside of it
-        $(window).click(function(event) {
-            if (event.target == modal[0]) {
-                modal.hide();
-
-                // Restore body scroll
-                var scrollY = $('body').css('top');
-                $('body').css({
-                    'overflow': '',
-                    'position': '',
-                    'top': ''
-                });
-                window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            }
-        });
-
-        // Handle form submission
-        $("#longForm").submit(function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            alert("Form submitted! \nName: " + $("#name").val() + "\nEmail: " + $("#email").val());
-
-            // Close the modal after submission
-            modal.hide();
-
-            // Restore body scroll
-            var scrollY = $('body').css('top');
-            $('body').css({
-                'overflow': '',
-                'position': '',
-                'top': ''
-            });
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        });
-    });
-</script>
-
+<script src="../../../../src/js/vehicleSales/customer/wishListmodal.js"></script>
 </body>
 </html>

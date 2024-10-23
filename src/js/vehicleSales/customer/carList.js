@@ -238,4 +238,5 @@ $(document).ready(function () {
         localStorage.setItem('carToView', $(this).parent().attr('id'));
         location.href = "carPage.html";
     });
+
 });

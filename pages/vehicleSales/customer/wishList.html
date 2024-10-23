@@ -9,6 +9,7 @@
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/wishListmodal.css">
 </head>
 <body>
 <nav>
@@ -18,8 +19,9 @@
     <div id="nav_center">
         <a href="carList.html">Vehicle List</a>
         <a href="wishList.html">Wish List</a>
-        <a href="#">Orders</a>
-        <a href="#">Profile</a>
+        <a href="#">Quotes</a>
+        <a href="#">Loan Payment Calculator</a>
+        <a href="#">Vehicle Comparison Tool</a>
     </div>
     <div id="nav_right">
         <a href="#">Logout</a>
@@ -58,7 +60,113 @@
     </div>
 </div>
 
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Personal, Payment & Trade In Detail</h2>
+        <i style="color: red">*Required</i>
+        <div class="modal-body">
+            <form id="longForm" autocomplete="on" autocapitalize="on">
+                <p style="font-size: 20px;font-weight: 600">Personal Information</p>
+                <label>Your Name<span style="color: red">*</span></label>
+                <div>
+                    <input id="firstName" style="width: 50%" placeholder="First Name" required>
+                    <input id="lastName" style="width: 50%" placeholder="Last Name" required>
+                </div>
+                <label>Email<span style="color: red">*</span></label>
+                <div>
+                    <input id="email" type="email" style="width: 100%" placeholder="Email" required>
+                </div>
+                <label>Phone Number<span style="color: red">*</span></label>
+                <div>
+                    <input id="phone" type="tel" style="width: 100%" placeholder="Phone Number" required>
+                </div>
+                <label>Address<span style="color: red">*</span></label>
+                <div>
+                    <input id="address" type="text" style="width: 100%" placeholder="Address" required>
+                </div>
+                <label>Country<span style="color: red">*</span></label>
+                <div>
+                    <input id="country" type="text" style="width: 100%" placeholder="Country" required>
+                </div>
+                <label>City<span style="color: red">*</span></label>
+                <div>
+                    <input id="city" type="text" style="width: 100%" placeholder="City" required>
+                </div>
+                <label>Zip Code</label>
+                <div>
+                    <input id="zip" type="text" style="width: 100%" placeholder="Zip Code">
+                </div>
+                <!--                Payment Below-->
+                <p style="font-size: 20px;font-weight: 600">Payment Information</p>
+
+                <label>Card Type<span style="color: red">*</span></label>
+                <div style="display: flex;flex-direction: column">
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="visa" name="cardType" value="visa" checked>
+                        <img src="../../../src/img/vehicleSales/payment/visaLogo.jpg" style="width: 80px;height: 40px">
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="master" name="cardType" value="master">
+                        <img src="../../../src/img/vehicleSales/payment/masterLogo.png"
+                             style="width: 51px;height: 40px;margin-left: 10px">
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="amex" name="cardType" value="amex">
+                        <img src="../../../src/img/vehicleSales/payment/amexLogo.png"
+                             style="width: 99px;height: 80px;position: relative;right: 10px">
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="unionPay" name="cardType" value="amex">
+                        <img src="../../../src/img/vehicleSales/payment/unionPayLogo.svg"
+                             style="width: 62px;height: 50px;margin-left: 10px">
+                    </div>
+                </div>
+
+                <label>Card Holder Name<span style="color: red">*</span></label>
+                <div>
+                    <input id="cardHolder" type="text" style="width: 100%" placeholder="Card Holder Name" required>
+                </div>
+                <label>Card Number<span style="color: red">*</span></label>
+                <div>
+                    <input id="cardNumber" type="text" style="width: 100%" placeholder="Card Number" required>
+                </div>
+
+                <label>Expiry Date & CVV<span style="color: red">*</span></label>
+                <div>
+                    <input id="expiryDate" type="date" style="width: 48%; display: inline-block;"
+                           placeholder="Expiry Date" required>
+                    <input id="cvv" type="text" pattern="\d{3}"
+                           style="width: 48%; display: inline-block; margin-left: 4%;"
+                           placeholder="CVV" required>
+                </div>
+
+                <!-- Trade-In Information (if applicable) -->
+
+                <p style="font-size: 20px;font-weight: 600">Trade-In Information</p>
+                <label>Do you have a vehicle to trade in?<span style="color: red">*</span> (If yes, continue to scroll down)</label>
+                <div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="tradeInYes" name="tradeIn" value="yes" >
+                        <label for="tradeInYes">Yes</label>
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="tradeInNo" name="tradeIn" value="no">
+                        <label for="tradeInNo">No</label>
+                    </div>
+                </div>
+                <!-- if yes, add by JS-->
+
+            </form>
+        </div>
+        <p id="formScrolled">Form Scrolled: </p>
+        <button type="submit" form="longForm">Get a Quote</button> <!-- Fixed -->
+    </div>
+</div>
+
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+<script src="../../../src/js/vehicleSales/customer/wishListmodal.js"></script>
 </body>
 </html>

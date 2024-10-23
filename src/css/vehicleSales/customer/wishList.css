@@ -63,7 +63,7 @@
 
 table{
     width: 80%;
-    border-top: 1px solid lightgray;
+    /*border-top: 1px solid lightgray;*/
     margin-top: 20px;
     border-collapse: collapse; /* Add this line */
 }
@@ -71,7 +71,7 @@ table{
 
 tr{
     height: 50px;
-    border-bottom: 1px solid #6c6969;
+    border-bottom: 0.8px solid #6c6969;
 }
 
 th{
@@ -182,6 +182,7 @@ td i{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     text-align: end;
     font-size: 30px;
