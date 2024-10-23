@@ -10,6 +10,24 @@ body{
     margin: 0;
 }
 
+/* Go to top */
+.goTopBtn{
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    border: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.goTopBtn img{
+    width: 110%;
+}
+
 
 /*nav*/
 nav{
@@ -120,8 +138,10 @@ nav{
     background: #aaa8a8;
     left: 0;
     right: 0;
-    padding: 1%;
+    padding: 1% 5% 1% 5%;
 }
+
+
 .footer-logo{
     width: 15%;
     margin-bottom: 1.5%;
