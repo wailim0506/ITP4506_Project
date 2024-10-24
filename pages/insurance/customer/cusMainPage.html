@@ -5,7 +5,7 @@
     <title>Legend Motor Limited - Insurance</title>
     <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
     <link rel="stylesheet" href="../../../src/css/insurance/cusMainPage.css">
-    <script src="../../../src/js/vehicleSales/customer/carList.js"></script>
+    <script src="../../../src/js/insurance/darkMode.js"></script>
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -119,8 +119,80 @@
                 </ul>
             </div>
         </div>
-    </section>
 
+        <hr>
+
+        <div class="contentTable">
+            <h2 class="mainContentTitle">Why us?</h2>
+            <table id="compareTb">
+                <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Our Company Plan</th>
+                    <th>Competitor Plan</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="compareType" data-label="Feature">Monthly Premium</td>
+                    <td data-label="Our Company Plan">$100</td>
+                    <td data-label="Competitor Plan">$120</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Deductible</td>
+                    <td data-label="Our Company Plan">$500</td>
+                    <td data-label="Competitor Plan">$600</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Coverage Amount</td>
+                    <td data-label="Our Company Plan">$1,000,000</td>
+                    <td data-label="Competitor Plan">$800,000</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Network Size</td>
+                    <td data-label="Our Company Plan">Extensive network with 500+ providers</td>
+                    <td data-label="Competitor Plan">Limited network with 300 providers</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Claim Processing Time</td>
+                    <td data-label="Our Company Plan">Average of 5 days</td>
+                    <td data-label="Competitor Plan">Average of 7 days</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Customer Satisfaction</td>
+                    <td data-label="Our Company Plan">95% satisfaction rate</td>
+                    <td data-label="Competitor Plan">85% satisfaction rate</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Additional Benefits</td>
+                    <td data-label="Our Company Plan">- Wellness programs<br>- 24/7 customer support<br>- Free annual health checkup</td>
+                    <td data-label="Competitor Plan">- None<br>- Limited support hours</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Discounts Available</td>
+                    <td data-label="Our Company Plan">- Multi-policy discount<br>- Safe driver discount</td>
+                    <td data-label="Competitor Plan">- Loyalty discount<br>- None</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Policy Flexibility</td>
+                    <td data-label="Our Company Plan">Customizable plans available</td>
+                    <td data-label="Competitor Plan">Standard plans only</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Online Tools</td>
+                    <td data-label="Our Company Plan">Comprehensive online portal</td>
+                    <td data-label="Competitor Plan">Basic online services</td>
+                </tr>
+                <tr>
+                    <td class="compareType" data-label="Feature">Exclusions</td>
+                    <td data-label="Our Company Plan">- Pre-existing conditions covered<br>- No lifetime limits</td>
+                    <td data-label="Competitor Plan">- Pre-existing conditions not covered<br>- Lifetime limits apply</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!--Main Content-->
 
 
 
@@ -144,6 +216,10 @@
             <a href="#"><h4>ProFile</h4></a>
         </div>
     </section>
+    <!--footer-->
+
+    <i id="darkModeToggle" class="material-icons"
+       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 
     <script src="../../../src/js/insurance/toTopBtn.js"></script>
 </body>
