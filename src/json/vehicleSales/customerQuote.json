@@ -1,7 +1,7 @@
 [
   {
     "quoteId": "Q52081",
-    "quoteDate": "2024/10/24",
+    "quoteDate": "2024/07/20",
     "vehicleInQuote": [
       {
         "vehicleId": "4",
@@ -33,9 +33,9 @@
     "paymentInformation": {
       "cardType": "visa",
       "cardHolder": "John Doe",
-      "cardNumber": "4111111111111111",
+      "cardNumber": "4910901950165357",
       "expiryDate": "2027-11-01",
-      "cvv": "111"
+      "cvv": "916"
     },
     "tradeInInformation": {
       "tradeIn": "yes",
@@ -47,11 +47,47 @@
       "exteriorCondition": "excellent",
       "interiorCondition": "excellent",
       "mechanicalCondition": "excellent",
-      "previousOwners": "31",
-      "serviceHistory": "ABC",
+      "previousOwners": "1",
+      "serviceHistory": "2019: Oil change & routine maintenance\n2019: Tire rotation & brake inspection\n2020: Air filter replacement\n2020: Oil change & inspection\n2021: Brake pad replacement\n2022: Transmission fluid change\n2023: Oil change & tire rotation",
       "accidentHistory": "no"
     },
-    "status": "Pending",
+    "status": "Confirmed",
     "totalPrice": "80715"
+  },
+  {
+    "quoteId": "Q75642",
+    "quoteDate": "2024/10/24",
+    "vehicleInQuote": [
+      {
+        "vehicleId": "31",
+        "vehicleName": "Jeep Compass",
+        "exteriorColor": "White",
+        "interiorColor": "Black",
+        "price": "26000",
+        "quantity": "1"
+      }
+    ],
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "example@gmail.com",
+      "phone": "93452234",
+      "address": "123 ABC Street",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "zip": ""
+    },
+    "paymentInformation": {
+      "cardType": "mastercard",
+      "cardHolder": "Jane Smith",
+      "cardNumber": "2231080000582485",
+      "expiryDate": "2026-12-01",
+      "cvv": "498"
+    },
+    "tradeInInformation": {
+      "tradeIn": "no"
+    },
+    "status": "Pending",
+    "totalPrice": "26000"
   }
 ]

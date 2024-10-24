@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Moter Limited - Your Quotes</title>
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/quotePage.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../../../src/js/vehicleSales/customer/quotePage.js"></script>
+
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="#">Loan Payment Calculator</a>
+        <a href="#">Vehicle Comparison Tool</a>
+    </div>
+    <div id="nav_right">
+        <a href="#">Logout</a>
+    </div>
+</nav>
+<div id="main">
+    <div id="upperPart">
+        <div id="goBackLinkDiv">
+            <a href="quotesList.html" style="text-decoration: none">← Back to Quote List</a>
+        </div>
+        <div id="quoteTitle">
+            <h1>Quote</h1>
+            <button id="printBtn">Print this page</button>
+        </div>
+        <div id="statusTitle">
+            <h2>Status: Pending</h2>
+        </div>
+
+    </div>
+    <div id="middlePart">
+        <div id="vehicleSection">
+            <h2>Vehicle in Quote:</h2>
+            <table>
+                <tr id="headingRow">
+                    <th>Vehicle Image</th>
+                    <th>Vehicle Name</th>
+                    <th>Exterior Color</th>
+                    <th>Interior Color</th>
+
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>View</th>
+                </tr>
+                <tr class="carRow">
+                    <td><img src="../../../src/img/vehicleSales/car/1/1.jpg"/></td>
+                    <td>2021 Toyota Corolla</td>
+                    <td>White</td>
+                    <td>Black</td>
+                    <td>$25000</td>
+                    <td>1</td>
+                    <td>$25000</td>
+                    <td>
+                        <button>View</button>
+                    </td>
+                </tr>
+                <tr class="carRow">
+                    <td><img src="../../../src/img/vehicleSales/car/4/1.jpg"/></td>
+                    <td>2021 Toyota Corolla</td>
+                    <td>White</td>
+                    <td>Black</td>
+                    <td>$25000</td>
+                    <td>1</td>
+                    <td>$25000</td>
+                    <td>
+                        <button>View</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="InfoSection">
+            <div id="buyerInfo">
+                <h2>Customer Information:</h2>
+                <p>Name: ABC</p>
+                <p>Email: jhg</p>
+                <p>Phone: 123</p>
+                <p>Address: </p>
+                <p>Country: </p>
+
+            </div>
+            <div id="paymentInfo">
+                <h2>Payment Detail:</h2>
+                <p>Payment Method: Credit Card</p>
+                <p>Card Type: Visa</p>
+                <p>Card Number:</p>
+                <p>Expiry Date:</p>
+
+            </div>
+            <div id="tradeInfo">
+                <h2>Trade-In Information:</h2>
+                <p>Trade-In Vehicle: 2021 Toyota Corolla</p>
+                <p>Trade-In Value: $10000</p>
+            </div>
+        </div>
+    </div>
+    <div id="lowerPart">
+        <div id="priceBreakdown">
+            <h2>Price Breakdown:</h2>
+            <table>
+                <tr>
+                    <th>Subtotal</th>
+                    <td>$50000</td>
+                </tr>
+                <tr>
+                    <th>Trade-In Value</th>
+                    <td>- $10000</td>
+                </tr>
+                <tr>
+                    <th>Discount</th>
+                    <td>- $0</td>
+                </tr>
+                <tr>
+                    <th>Shipping Fee</th>
+                    <td>+ $0</td>
+                </tr>
+                <tr id="breakdown_tr">
+                    <th>Tax</th>
+                    <td>+ $5000</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <td>$45000</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="buttonDiv">
+        <button>Cancel Quote</button>
+    </div>
+</div>
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>

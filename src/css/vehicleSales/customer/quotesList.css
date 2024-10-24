@@ -9,7 +9,7 @@
 
 
 .quoteList{
-    width: 85%;  /*change to 95% when resize*/
+    width: 85%;
 }
 
 #refreshBtnDiv{
@@ -73,4 +73,24 @@ table button {
 
 .delBtn{
     background-color: red;
+}
+
+/*responsive*/
+@media screen and (max-width: 800px) {
+    .quoteList{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 653px) {
+    .quoteList{
+        width: 98%;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 561px) {
+    .quoteList{
+        font-size: 11px;
+    }
 }

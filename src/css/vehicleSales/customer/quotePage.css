@@ -1,0 +1,230 @@
+#main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    /*border: 1px solid black;*/
+}
+
+#upperPart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#goBackLinkDiv {
+    width: 93%;
+}
+
+#quoteTitle, #statusTitle {
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#quoteTitle button {
+    width: auto;
+    height: fit-content;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+#middlePart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    align-items: center;
+}
+
+#vehicleSection {
+    width: 93%;
+
+}
+
+#vehicleSection table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#vehicleSection table th {
+    font-size: 17px;
+}
+
+.carRow {
+    height: 50px;
+}
+
+#headingRow {
+    height: 50px;
+}
+
+
+#vehicleSection table td {
+    text-align: center;
+    padding-top: 5px;
+}
+
+#vehicleSection td img {
+    width: 200px;
+}
+
+#vehicleSection td button {
+    width: 70px;
+    height: 30px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#InfoSection {
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+#InfoSection div {
+    width: 33.333333333333333%;
+    /*border-right: 1px solid black;*/
+    height: auto;
+
+}
+
+#buyerInfo {
+    padding-left: 0px;
+}
+
+#paymentInfo {
+    padding-left: 25px;
+}
+
+#tradeInfo {
+    padding-left: 25px;
+}
+
+#lowerPart {
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#priceBreakdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#priceBreakdown table {
+    width: 26%;
+    text-align: left;
+    font-size: 18px;
+    border-collapse: collapse;
+}
+
+#priceBreakdown table tr td {
+    text-align: right;
+}
+
+#buttonDiv {
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 20px;
+}
+
+#buttonDiv button {
+    width: auto;
+    height: auto;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+@media screen and (max-width: 885px) {
+    #InfoSection {
+        flex-direction: column;
+    }
+
+    #InfoSection div {
+        width: 90%;
+    }
+
+    #paymentInfo, #tradeInfo {
+        padding-left: 0px;
+    }
+
+    #vehicleSection td img {
+        width: 170px;
+    }
+
+    #priceBreakdown table {
+        width: 100%;
+        text-align: left;
+        font-size: 18px;
+        border-collapse: collapse;
+    }
+
+}
+
+@media screen and (max-width: 730px) {
+
+    #vehicleSection table th {
+        font-size: 13px;
+    }
+
+    #vehicleSection table {
+        font-size: 12px;
+    }
+
+    #vehicleSection td img {
+        width: 120px;
+    }
+
+    #vehicleSection td button {
+        font-size: 12px;
+        width: 50px;
+        height: 25px;
+    }
+
+    #buttonDiv button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+
+@media screen and (max-width: 611px) {
+
+    #vehicleSection table th {
+        font-size: 12px;
+    }
+
+    #vehicleSection table {
+        font-size: 11px;
+    }
+
+    #vehicleSection td img {
+        width: 100px;
+    }
+}

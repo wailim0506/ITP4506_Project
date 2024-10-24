@@ -326,8 +326,8 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html').css('background-color', 'white');
-            $('body').css('color', 'black');
+            $('html,nav').css('background-color', 'white');
+            $('body,nav').css('color', 'black');
             $('a').css('color', 'rgba(0,0,0,0.65)');
             $('.infoBox .title').css('color','black');
             $('.infoBox .word').css('color', 'black');
