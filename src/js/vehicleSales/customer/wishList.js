@@ -1,8 +1,8 @@
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
-        $('html,.modal-content').css('background-color', 'rgb(34,37,41)');
-        $('body,.modal-content').css('color', 'rgb(194,196,200)');
+        $('html,.modal-content, nav').css('background-color', 'rgb(34,37,41)');
+        $('body,.modal-content, nav').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('tr').css('border-bottom', '0.1px solid grey');
         $('table').css('border-top', '0.1px solid grey');
@@ -15,8 +15,8 @@ function setDarkMode() {
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
-        $('html,.modal-content').css('background-color', 'white');
-        $('body,.modal-content').css('color', 'black');
+        $('html,.modal-content, nav').css('background-color', 'white');
+        $('body,.modal-content, nav').css('color', 'black');
         $('a').css('color', 'rgba(0,0,0,0.65)');
         $('tr').css('border-bottom', '0.8px solid #6c6969');
         $('table').css('border-top', '0.8px solid #6c6969');
@@ -38,8 +38,8 @@ function setDarkMode() {
 function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
-            $('html,.modal-content').css('background-color', 'rgb(34,37,41)');
-            $('body,.modal-content').css('color', 'rgb(194,196,200)');
+            $('html,.modal-content, nav').css('background-color', 'rgb(34,37,41)');
+            $('body,.modal-content, nav').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('tr').css('border-bottom', '0.1px solid grey');
             $('table').css('border-top', '0.1px solid grey');
@@ -51,8 +51,8 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html,.modal-content').css('background-color', 'white');
-            $('body,.modal-content').css('color', 'black');
+            $('html,.modal-content, nav').css('background-color', 'white');
+            $('body,.modal-content, nav').css('color', 'black');
             $('a').css('color', 'rgba(0,0,0,0.65)');
             $('tr').css('border-bottom', '0.8px solid #6c6969');
             $('table').css('border-top', '0.8px solid #6c6969');
@@ -79,7 +79,7 @@ function loadWishList(){
             var item = cartArray[i];
             var unitPrice = parseInt(item.price.replace('$', ''));
             var itemId = parseInt(item.itemId);
-            var row = `<tr itemid=\"${itemId}\">\n` +
+            var row = `<tr class="row" itemid=\"${itemId}\" carid = \"${item.carId}\">\n` +
                 "                <td>\n" +
                 `                    <img src=\"../../../src/img/vehicleSales/car/${item.carId}/1.jpg\">\n` +
                 "                </td>\n" +
@@ -92,7 +92,7 @@ function loadWishList(){
                 "                <td class=\"quantityCell\">\n" +
                 `                    <div unitprice=\"${unitPrice}\">\n` +
                 "                        <button class=\"addBtn\">+</button>\n" +
-                "                        <input type=\"number\" value=\"1\"/>\n" +
+                "                        <input type=\"number\" value=\"1\" maxlength=\"2\"/>\n" +
                 "                        <button class=\"minusBtn\">-</button>\n" +
                 "                    </div>\n" +
                 "                </td>\n" +
@@ -145,7 +145,7 @@ function formShowTradeIn() {
         "                    <label>VIN (Vehicle Identification Number)<span style=\"color: red\">*</span></label>\n" +
         "                    <div>\n" +
         "                        <input id=\"tradeInVIN\" type=\"text\" style=\"width: 100%\"\n" +
-        "                               placeholder=\"VIN (Vehicle Identification Number)\" pattern=\"\\d{15}\" required>\n" +
+        "                               placeholder=\"VIN (Vehicle Identification Number)\"  required>\n" +
         "                    </div>\n" +
         "                    <label>Overall Condition<span style=\"color: red\">*</span></label>\n" +
         "                    <div style=\"display: flex; flex-direction: column;\">\n" +
@@ -228,7 +228,7 @@ function formShowTradeIn() {
         "                    <label>Number of Previous Owners<span style=\"color: red\">*</span></label>\n" +
         "                    <div>\n" +
         "                        <input id=\"previousOwners\" type=\"text\" style=\"width: 100%\"\n" +
-        "                               placeholder=\"Number of Previous Owners\" required pattern=\"\\d{2}\">\n" +
+        "                               placeholder=\"Number of Previous Owners\" required >\n" +
         "                    </div>\n" +
         "                    <label>Service History<span style=\"color: red\">*</span></label>\n" +
         "                    <div>\n" +
@@ -335,6 +335,11 @@ $(document).ready(function () {
         if (parseInt($(this).val()) <= "0"){
             $(this).val(1);
         }
+
+        if (parseInt($(this).val()) >= "100"){
+            $(this).val(99);
+        }
+
         var currentPrice = parseInt($(this).parent().attr('unitprice'));
         var newPrice = currentPrice * $(this).val();
         $(this).parent().parent().siblings('.price').text(`$${newPrice}`);

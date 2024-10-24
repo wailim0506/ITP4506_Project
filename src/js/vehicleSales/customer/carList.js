@@ -151,8 +151,8 @@ function loadCars() {
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
-        $('html').css('background-color', 'rgb(34,37,41)');
-        $('body').css('color', 'rgb(194,196,200)');
+        $('html, nav').css('background-color', 'rgb(34,37,41)');
+        $('body, nav').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.car-item').css('border', '0.1px solid grey');
         $('input, select').css({
@@ -164,8 +164,8 @@ function setDarkMode() {
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
-        $('html').css('background-color', 'white');
-        $('body').css('color', 'black');
+        $('html, nav').css('background-color', 'white');
+        $('body, nav').css('color', 'black');
         $('a').css('color', 'rgba(0,0,0,0.65)');
         $('.car-item').css('border', '1px solid lightgrey');
         $('input').css({
@@ -186,8 +186,8 @@ function setDarkMode() {
 function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
-            $('html').css('background-color', 'rgb(34,37,41)');
-            $('body').css('color', 'rgb(194,196,200)');
+            $('html, nav').css('background-color', 'rgb(34,37,41)');
+            $('body, nav').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.car-item').css('border', '0.1px solid grey');
             $('input, select').css({
@@ -198,8 +198,8 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html').css('background-color', 'white');
-            $('body').css('color', 'black');
+            $('html, nav').css('background-color', 'white');
+            $('body, nav').css('color', 'black');
             $('a').css('color', 'rgba(0,0,0,0.65)');
             $('.car-item').css('border', '1px solid lightgrey');
             $('input').css({

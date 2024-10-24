@@ -1,0 +1,57 @@
+[
+  {
+    "quoteId": "Q52081",
+    "quoteDate": "2024/10/24",
+    "vehicleInQuote": [
+      {
+        "vehicleId": "4",
+        "vehicleName": "Tesla Model Y",
+        "exteriorColor": "Blue",
+        "interiorColor": "Black",
+        "price": "53990",
+        "quantity": "1"
+      },
+      {
+        "vehicleId": "14",
+        "vehicleName": "Toyota RAV4",
+        "exteriorColor": "Silver",
+        "interiorColor": "Gray",
+        "price": "26725",
+        "quantity": "1"
+      }
+    ],
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "example@gmail.com",
+      "phone": "93452234",
+      "address": "123 ABC Street",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "zip": ""
+    },
+    "paymentInformation": {
+      "cardType": "visa",
+      "cardHolder": "John Doe",
+      "cardNumber": "4111111111111111",
+      "expiryDate": "2027-11-01",
+      "cvv": "111"
+    },
+    "tradeInInformation": {
+      "tradeIn": "yes",
+      "tradeInMakeModel": "Toyota RAV4",
+      "tradeInYear": "2019",
+      "tradeInMileage": "2219",
+      "tradeInVIN": "12345678901234567",
+      "tradeInCondition": "excellent",
+      "exteriorCondition": "excellent",
+      "interiorCondition": "excellent",
+      "mechanicalCondition": "excellent",
+      "previousOwners": "31",
+      "serviceHistory": "ABC",
+      "accidentHistory": "no"
+    },
+    "status": "Pending",
+    "totalPrice": "80715"
+  }
+]

@@ -18,6 +18,9 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 #nav_left{
