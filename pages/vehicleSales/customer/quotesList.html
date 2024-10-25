@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Moter Limited - Your Quotes</title>
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/quotesList.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../../../src/js/vehicleSales/customer/quotesList.js"></script>
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="#">Loan Payment Calculator</a>
+        <a href="#">Vehicle Comparison Tool</a>
+    </div>
+    <div id="nav_right">
+        <a href="#">Logout</a>
+    </div>
+</nav>
+<div id="main">
+    <p style="font-size: 30px;font-weight: 700">Your Quote(s)</p>
+    <div id="refreshBtnDiv">
+        <p style="font-weight: 700">Total Quote(s): 4</p>
+        <button id="refreshBtn">Refresh</button>
+    </div>
+    <div class="quoteList">
+        <table>
+            <tr>
+                <th>Quote ID</th>
+                <th style="width: 250px">Vehicle(s)</th>
+                <th>Quantity</th>
+                <th>Quote Total Price</th>
+                <th>Quote Request Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <!-- add by JS -->
+        </table>
+    </div>
+</div>
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>

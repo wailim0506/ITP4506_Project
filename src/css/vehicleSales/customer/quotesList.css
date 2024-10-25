@@ -1,0 +1,96 @@
+#main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.quoteList{
+    width: 85%;
+}
+
+#refreshBtnDiv{
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#refreshBtn{
+    width: 70px;
+    height: 30px;
+    background-color: teal;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    /*background-color: #f2f2f2;*/
+    /*background-color: #333;*/
+    text-align: center;
+}
+/*tr:nth-child(even) {*/
+/*    background-color: #f9f9f9;*/
+/*}*/
+/*tr:hover {*/
+/*    background-color: #ddd;*/
+/*}*/
+table button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 15px;
+    padding: 7px 15px;
+    width: auto;
+}
+
+.viewBtn{
+    background-color: teal;
+
+}
+
+.delBtn{
+    background-color: red;
+}
+
+/*responsive*/
+@media screen and (max-width: 800px) {
+    .quoteList{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 653px) {
+    .quoteList{
+        width: 98%;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 561px) {
+    .quoteList{
+        font-size: 11px;
+    }
+}
