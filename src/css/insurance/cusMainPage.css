@@ -212,10 +212,10 @@ nav{
 }
 
 #EstimateBtn{
-    color: #ef2c2c;
-    background: #45c145;
-    border-color: #45c145;
-    border-radius: 10px;
+    color: #ffffff;
+    background: #fb7171;
+    border-color: #fb7171;
+    border-radius: 20px;
     font-size: 300%;
     width: 35%;
     padding: 1%;
@@ -317,6 +317,57 @@ nav{
 
 .compareType{
     font-weight: bold;
+    font-size: 18px;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 10% 1% 10%;
+}
+
+.followMethod{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-top: -3%;
+}
+
+.contact h2{
+    font-size: 300%;
+    margin-top: 0;
+    margin-bottom: 4%;
+    color: black;
+    text-align: left;
+}
+
+.follow{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 170px;
+    height: 140px;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #7ce4e4;
+}
+
+.follow span{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.follow img{
+    width: 60%;
+}
+
+.follow img:hover{
+    transform: translateY(-5px);
 }
 
 /* The Main Content */
