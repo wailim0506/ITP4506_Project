@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Estimate</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/estimate.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- To top button -->
+  <button class="goTopBtn">
+    <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+  </button>
+  <!--Nav Bar-->
+  <nav>
+    <div id="nav_left">
+      <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
+    </div>
+    <div id="nav_center">
+      <a href="#">Plans</a>
+      <a href="estimate.html">Estimate</a>
+      <a href="#">Application</a>
+      <a href="cusProFile.html">ProFile</a>
+    </div>
+    <div id="nav_right">
+      <a href="../../../index.html">Logout</a>
+    </div>
+  </nav>
+  <!--Nav Bar-->
+
+
+
+  <!--Main Content-->
+  <section id="mainContent">
+      <h1 id="title">Estimate Now</h1>
+    <div id="main">
+      <img src="../../../src/img/insurance/IMG_0010.jpeg">
+
+      <div class="container">
+        <form id="estimateForm">
+          <label for="carModel">Car Model:</label>
+          <input type="text" id="carModel" required>
+
+          <label for="year">Year:</label>
+          <input type="number" id="year" required>
+
+          <label for="mileage">Mileage:</label>
+          <input type="number" id="mileage" required>
+
+          <label for="condition">Condition:</label>
+          <select id="condition" required>
+            <option value="">Select Condition</option>
+            <option value="new">New</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+          </select>
+
+          <label for="insurance">Insurance Plan:</label>
+          <select id="insurance" required>
+            <option value="">Select Insurance Plan</option>
+            <option value="comprehensive">Comprehensive</option>
+            <option value="thirdParty">Third Party</option>
+          </select>
+
+          <button type="submit">Get Estimate</button>
+        </form>
+        <div id="result" class="result" style="display:none;"></div>
+      </div>
+
+    </div>
+
+    <div class="policy">
+      <h2 id="policyTitle">Policy Information</h2>
+      <p>By using this tool, you acknowledge that the estimates provided are based on the information you supply. Actual values may vary based on market conditions and specific vehicle assessments.</p>
+      <p>Insurance plans are subject to approval and may vary based on individual circumstances. Comprehensive coverage generally provides broader protection, while third-party coverage is limited to liability.</p>
+      <p>Please consult with a licensed insurance professional for personalized advice.</p>
+    </div>
+
+  </section>
+  <!--Main Content-->
+
+
+
+  <!--footer-->
+  <section class="footer">
+    <div class="footer-content">
+      <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+      <p>Reliable car insurance for peace of mind on every journey.</p>
+      <p>© 2024 Legend Motor Limited</p>
+    </div>
+    <div class="footer-content">
+      <a href="#"><h4>Plans</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="estimate.html"><h4>Estimate</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="#"><h4>Application</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="cusProFile.html"><h4>ProFile</h4></a>
+    </div>
+  </section>
+  <!--footer-->
+
+  <i id="darkModeToggle" class="material-icons"
+     style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+  <script src="../../../src/js/insurance/toTopBtn.js"></script>
+  <script src="../../../src/js/insurance/estimate.js"></script>
+</body>
+</html>
