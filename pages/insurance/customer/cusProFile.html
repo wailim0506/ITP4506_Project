@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Insurance</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/cusProfile.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- To top button -->
+    <button class="goTopBtn">
+      <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+    </button>
+    <!--Nav Bar-->
+    <nav>
+      <div id="nav_left">
+        <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
+      </div>
+      <div id="nav_center">
+        <a href="#">Plans</a>
+        <a href="#">Estimate</a>
+        <a href="#">Application</a>
+        <a href="cusProFile.html">ProFile</a>
+      </div>
+      <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+      </div>
+    </nav>
+    <!--Nav Bar-->
+
+
+
+    <!--Main Content-->
+    <section id="mainContent">
+      <div class="title">
+        <h3>My Information</h3>
+      </div>
+
+      <div id="profile">
+        <div id="profile_left">
+          <img src="../../../src/img/insurance/IMG_User.png" id="userPhoto">
+          <p id="userName">Chan Dai Man</p>
+          <hr>
+          <div class="info">
+            <p><b>User ID:</b> LMC0001</p>
+            <p><b>Register date:</b> 2024-01-20</p>
+            <p><b>Status:</b> normal</p>
+          </div>
+        </div>
+        <div id="profile_right">
+          <div class="name-row">
+            <div class="form-group">
+              <label>First Name:</label>
+              <input type="text" placeholder="Chan">
+            </div>
+            <div class="form-group">
+              <label>Last Name:</label>
+              <input type="text" placeholder="Dai Man">
+            </div>
+          </div>
+
+          <div id="personalData">
+            <div class="form-group">
+              <label>Phone:</label>
+              <input type="text" placeholder="9759 7292">
+            </div>
+            <div class="form-group">
+              <label>Address:</label>
+              <input type="text" placeholder="102, Sha Tin Road, Sha Tin, New Territories, Hong Kong">
+            </div>
+            <div class="form-group">
+              <label>Change Password:</label>
+              <input type="text" placeholder="Enter new password">
+            </div>
+            <div class="form-group">
+              <label>Confirm Password:</label>
+              <input type="text" placeholder="Confirm new password">
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button type="submit">Save Changes</button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="title">
+        <h3>My Plans</h3>
+      </div>
+
+      <div id="planList">
+        <div id="plans">
+          <table>
+            <thead>
+            <tr>
+              <th>Application ID</th>
+              <th>Plan Type</th>
+              <th>Car Name</th>
+              <th>Status</th>
+              <th>Submission Date</th>
+              <th>Review Date</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>A123456</td>
+              <td>Comprehensive</td>
+              <td>Toyota Camry</td>
+              <td>Under Review</td>
+              <td>2024-10-01</td>
+              <td>N/A</td>
+              <td>
+                <div class="button-container">
+                  <button class="button edit-button">Edit</button>
+                  <button class="button view-button">View</button>
+                  <button class="button progress-button">Progress</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>A789012</td>
+              <td>Comprehensive</td>
+              <td>Honda Accord</td>
+              <td>Approved</td>
+              <td>2024-09-15</td>
+              <td>2024-10-02</td>
+              <td>
+                <div class="button-container">
+                  <button class="button edit-button">Edit</button>
+                  <button class="button view-button">View</button>
+                  <button class="button progress-button">Progress</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>A345678</td>
+              <td>Third Party</td>
+              <td>BMW 3 Series</td>
+              <td>Rejected</td>
+              <td>2024-08-20</td>
+              <td>2024-09-01</td>
+              <td>
+                <div class="button-container">
+                  <button class="button edit-button">Edit</button>
+                  <button class="button view-button">View</button>
+                  <button class="button progress-button">Progress</button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+
+
+        </div>
+      </div>
+    </section>
+    <!--Main Content-->
+
+
+
+    <!--footer-->
+    <section class="footer">
+      <div class="footer-content">
+        <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+        <p>Reliable car insurance for peace of mind on every journey.</p>
+        <p>© 2024 Legend Motor Limited</p>
+      </div>
+      <div class="footer-content">
+        <a href="#"><h4>Plans</h4></a>
+      </div>
+      <div class="footer-content">
+        <a href="#"><h4>Estimate</h4></a>
+      </div>
+      <div class="footer-content">
+        <a href="#"><h4>Application</h4></a>
+      </div>
+      <div class="footer-content">
+        <a href="#"><h4>ProFile</h4></a>
+      </div>
+    </section>
+    <!--footer-->
+
+    <i id="darkModeToggle" class="material-icons"
+       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+    <script src="../../../src/js/insurance/toTopBtn.js"></script>
+</body>
+</html>
