@@ -308,7 +308,7 @@ function loadDarkMode() {
             $('.section').css('border-bottom', '1px solid #4c4c4c');
             if (window.innerWidth > 1036){
                 $('#upperLeft').css('border-bottom','0');
-                $('#upperLeft').css('border-right','0');
+                $('#upperLeft').css('border-right','1px solid #4c4c4c');
             }else{
                 $('#upperLeft').css('border-right','0');
                 $('#upperLeft').css('border-bottom','0');

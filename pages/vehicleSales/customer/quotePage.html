@@ -56,54 +56,105 @@
                     <th>Total Price</th>
                     <th>View</th>
                 </tr>
-                <tr class="carRow">
-                    <td><img src="../../../src/img/vehicleSales/car/1/1.jpg"/></td>
-                    <td>2021 Toyota Corolla</td>
-                    <td>White</td>
-                    <td>Black</td>
-                    <td>$25000</td>
-                    <td>1</td>
-                    <td>$25000</td>
-                    <td>
-                        <button>View</button>
-                    </td>
-                </tr>
-                <tr class="carRow">
-                    <td><img src="../../../src/img/vehicleSales/car/4/1.jpg"/></td>
-                    <td>2021 Toyota Corolla</td>
-                    <td>White</td>
-                    <td>Black</td>
-                    <td>$25000</td>
-                    <td>1</td>
-                    <td>$25000</td>
-                    <td>
-                        <button>View</button>
-                    </td>
-                </tr>
+                <!-- add by JS-->
             </table>
         </div>
         <div id="InfoSection">
             <div id="buyerInfo">
                 <h2>Customer Information:</h2>
-                <p>Name: ABC</p>
-                <p>Email: jhg</p>
-                <p>Phone: 123</p>
-                <p>Address: </p>
-                <p>Country: </p>
-
+                <div class="InfoSmallBoxDiv" id="CustInfoSmallBoxDiv">
+                    <div>
+                        <h3>Name:</h3>
+                        <p id="custName"></p>
+                    </div>
+                    <div>
+                        <h3>Email:</h3>
+                        <p id="custEmail"></p>
+                    </div>
+                    <div>
+                        <h3>Phone:</h3>
+                        <p id="custPhone"></p>
+                    </div>
+                    <div>
+                        <h3>Address:</h3>
+                        <p id="custAddress"></p>
+                    </div>
+                    <div>
+                        <h3>Country/ Region:</h3>
+                        <p id="custCountry"></p>
+                    </div>
+                </div>
             </div>
             <div id="paymentInfo">
                 <h2>Payment Detail:</h2>
-                <p>Payment Method: Credit Card</p>
-                <p>Card Type: Visa</p>
-                <p>Card Number:</p>
-                <p>Expiry Date:</p>
-
+                <div class="InfoSmallBoxDiv" id="PaymentInfoSmallBoxDiv">
+                    <div>
+                        <h3>Payment Method:</h3>
+                        <p>Credit Card</p>
+                    </div>
+                    <div>
+                        <h3>Card Type:</h3>
+                        <p id="cardType"></p>
+                    </div>
+                    <div>
+                        <h3>Card Number:</h3>
+                        <p id="cardNumber"></p>
+                    </div>
+                </div>
             </div>
             <div id="tradeInfo">
                 <h2>Trade-In Information:</h2>
-                <p>Trade-In Vehicle: 2021 Toyota Corolla</p>
-                <p>Trade-In Value: $10000</p>
+                <div class="InfoSmallBoxDiv" id="TradeInInfoSmallBoxDiv">
+                    <div>
+                        <h3>Trade-In Vehicle:</h3>
+                        <p id="tradeInCar">Trade-In Vehicle: 2021 Toyota Corolla</p>
+                    </div>
+                    <div>
+                        <h3>Manufacturer Year:</h3>
+                        <p id="tradeInMY">Manufacturer Year:</p>
+                    </div>
+                    <div>
+                        <h3>Mileage:</h3>
+                        <p id="tradeInMileage">Mileage:</p>
+                    </div>
+                    <div>
+                        <h3>VIN:</h3>
+                        <p id="tradeInVIN">VIN:</p>
+                    </div>
+                    <div>
+                        <h3>Overall Condition:</h3>
+                        <p id="tradeInOC">Overall Condition:</p>
+                    </div>
+                    <div>
+                        <h3>Exterior Condition:</h3>
+                        <p id="tradeInEC">Exterior Condition: </p>
+                    </div>
+                    <div>
+                        <h3>Interior Condition:</h3>
+                        <p id="tradeInIC">Interior Condition:</p>
+                    </div>
+                    <div>
+                        <h3>Mechanical Condition:</h3>
+                        <p id="tradeInMC">Mechanical Condition:</p>
+                    </div>
+                    <div>
+                        <h3>No. of Previous Owner:</h3>
+                        <p id="tradeInPO">No. of Previous Owner:</p>
+                    </div>
+                    <div>
+                        <h3>Service History:</h3>
+                        <p id="tradeInSH">Service History</p>
+                    </div>
+                    <div>
+                        <h3>Accident History:</h3>
+                        <p id="tradeInAH">Accident History</p>
+                    </div>
+                    <div>
+                        <h3>Trade-In Value:</h3>
+                        <p id="tradeInValue">Trade-In Value:</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -113,11 +164,11 @@
             <table>
                 <tr>
                     <th>Subtotal</th>
-                    <td>$50000</td>
+                    <td id="subtotal">$50000</td>
                 </tr>
                 <tr>
                     <th>Trade-In Value</th>
-                    <td>- $10000</td>
+                    <td id="tradeInValueBreakdown">- $10000</td>
                 </tr>
                 <tr>
                     <th>Discount</th>
@@ -133,7 +184,7 @@
                 </tr>
                 <tr>
                     <th>Total</th>
-                    <td>$45000</td>
+                    <td id="totalPrice">$45000</td>
                 </tr>
             </table>
         </div>
