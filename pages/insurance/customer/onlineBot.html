@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Legend Motor Limited - Estimate</title>
+  <title>Legend Motor Limited - Online Bot</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
-  <link rel="stylesheet" href="../../../src/css/insurance/estimate.css">
+  <link rel="stylesheet" href="../../../src/css/insurance/onlineBot.css">
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -36,51 +36,34 @@
 
   <!--Main Content-->
   <section id="mainContent">
-      <h1 id="title">Estimate Now</h1>
-    <div id="main">
-      <img src="../../../src/img/insurance/IMG_0010.jpeg">
-
-      <div class="container">
-        <form id="estimateForm">
-          <label for="carModel">Car Model:</label>
-          <input type="text" id="carModel" required>
-
-          <label for="year">Year:</label>
-          <input type="number" id="year" required>
-
-          <label for="mileage">Mileage:</label>
-          <input type="number" id="mileage" required>
-
-          <label for="condition">Condition:</label>
-          <select id="condition" required>
-            <option value="">Select Condition</option>
-            <option value="new">New</option>
-            <option value="good">Good</option>
-            <option value="fair">Fair</option>
-            <option value="poor">Poor</option>
-          </select>
-
-          <label for="insurance">Insurance Plan:</label>
-          <select id="insurance" required>
-            <option value="">Select Insurance Plan</option>
-            <option value="comprehensive">Comprehensive</option>
-            <option value="thirdParty">Third Party</option>
-          </select>
-
-          <button type="submit">Get Estimate</button>
-        </form>
-        <div id="result" class="result" style="display:none;"></div>
+    <h1 id="title">Online Bot</h1>
+    <div class="container">
+      <div id="guide">
+        <img src="../../../src/img/insurance/chatbot.png" alt="Chatbot" id="chatbot">
+        <h2>User Guide</h2>
+        <p>Welcome to the Car Insurance Chatbot! Here are some guidelines to help you navigate:</p>
+        <ul>
+          <li>Type your questions about car insurance in the input box.</li>
+          <li>Press "Enter" or click "Send" to submit your question.</li>
+          <li>The chatbot can provide information on policy definitions, costs, and more.</li>
+          <li>If the bot cannot answer your question, please try rephrasing it.</li>
+        </ul>
       </div>
 
+      <div id="chat">
+          <div id="messages">
+          </div>
+        <div id="userInput">
+          <input type="text" id="input" placeholder="Ask about car insurance...">
+          <button id="send">Send</button>
+        </div>
+      </div>
     </div>
-
     <div class="policy">
       <h2 id="policyTitle">Policy Information</h2>
-      <p>By using this tool, you acknowledge that the estimates provided are based on the information you supply. Actual values may vary based on market conditions and specific vehicle assessments.</p>
-      <p>Insurance plans are subject to approval and may vary based on individual circumstances. Comprehensive coverage generally provides broader protection, while third-party coverage is limited to liability.</p>
-      <p>Please consult with a licensed insurance professional for personalized advice.</p>
+      <p>This chatbot provides general information about car insurance. For specific policy details,
+        please refer to your insurance provider or contact customer service directly.</p>
     </div>
-
   </section>
   <!--Main Content-->
 
@@ -100,9 +83,6 @@
       <a href="estimate.html"><h4>Estimate</h4></a>
     </div>
     <div class="footer-content">
-      <a href="onlineBot.html"><h4>OnlineBot</h4></a>
-    </div>
-    <div class="footer-content">
       <a href="#"><h4>Application</h4></a>
     </div>
     <div class="footer-content">
@@ -115,6 +95,6 @@
      style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 
   <script src="../../../src/js/insurance/toTopBtn.js"></script>
-  <script src="../../../src/js/insurance/estimate.js"></script>
+  <script src="../../../src/js/insurance/chatBot.js"></script>
 </body>
 </html>
