@@ -11,6 +11,8 @@
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function () {
             $(".field").has("input[id='SN']").hide();   //Hide the staff number field
+            $('.error').hide();
+
 
             $("#customer").click(function () {    //For customer option
                 $(".field").has("input[id='policy']").show();
@@ -29,30 +31,74 @@
                 window.location.href = "../../index.html";
             });
 
+            $(".typeSelect").change(function (){
+                $('.error').hide();
+                $('#registrationForm')[0].reset();
+            });
+
+
             $("#register").click(function () {       //Registration
+                $('.error').hide();
                 let SN;
                 let type = $("input[name='type']:checked").val();
+                let hasError = false;
+
+                if ($('#SN').val().trim() === '' && (type === "V" || type === "I")) {
+                    $('#SNError').show();
+                    hasError = true;
+                }
+
+                if ($('#firstName').val().trim() === '' || $('#lastName').val().trim() === '') {
+                    $('#usernameError').show();
+                    hasError = true;
+                }
+
+                if (!$('input[name="gender"]:checked').val()) {
+                    $('#genderError').show();
+                    hasError = true;
+                }
+
+                if ($('#phoneNo').val().trim() === '') {
+                    $('#phoneError').show();
+                    hasError = true;
+                }
+
+                if ($('#pass').val().trim() === '') {
+                    $('#passError').show();
+                    hasError = true;
+                }
+
+                if ($('#pass').val().trim() !== $('#conPass').val().trim()) {
+                    $('#confirmPassError').show();
+                    hasError = true;
+                }
+
+                // Validate email
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (!emailPattern.test($('#email').val().trim())) {
+                    $('#emailError').show();
+                    hasError = true;
+                }
+
 
                 if(type === "C") {   //For customer
-                    if(!$('#policy').is(':checked')) {
-                        alert("Please agree to the terms and conditions");
-                    }else {
+                    if($('#policy').is(':checked') && !hasError) {
                         alert("Resister successfully \nYour username is: LMC0001");
+                    }else if(!$('#policy').is(':checked')) {
+                        alert("Please agree to the terms and conditions");
                     }
                 }else if(type === "V") {    //For vehicle sales
                     SN = $("#SN").val();
-                    if(SN === "") {
-                        alert("Please enter the staff number");
-                    }else if(SN === "LM0001") {
-                        alert("Resister successfully \nYour username is: VS0001");
+                    if(SN === "LM0001" && !hasError) {
+                        alert("Resister successfully \nYour username is: VS0001\nThe system will redirect to the login page.");
+                        window.location.href = "../../index.html";
                     }
 
                 }else if(type === "I") {    //For insurance sales
                     SN = $("#SN").val();
-                    if(SN === "") {
-                        alert("Please enter the staff number");
-                    }else if(SN === "LM0001") {
-                        alert("Resister successfully \nYour username is: IS0001");
+                    if(SN === "LM0001" && !hasError) {
+                        alert("Resister successfully \nYour username is: IS0001\nThe system will redirect to the login page.");
+                        window.location.href = "../../index.html";
                     }
                 }
             });
@@ -68,7 +114,7 @@
         <div id="form"> <!--Form for registration-->
 
             <div class="field">
-                <label style="font-size: 40px;font-weight: 500;">Registration</label>
+                <label style="font-size: 300%;font-weight: 500; color: #278da3">Registration</label>
             </div>
 
             <div class="typeSelectCenter">
@@ -86,17 +132,19 @@
             <div class="field">
                 <label>Staff Number: </label>
                 <input class="formInput" type="text" placeholder="Staff Number" id="SN">
+                <div class="error" id="SNError">Staff number is required.</div>
             </div>
 
 
                 <div class="nameDiv">
                     <div class="nameDivInner">
-                        <label>First Name:<input class="formInput" placeholder="FirstName"/></label>
+                        <label>First Name:<input class="formInput" id="firstName" placeholder="FirstName"/></label>
                     </div>
                     <div class="nameDivInner">
-                        <label>Last Name:<input class="formInput" placeholder="LastName"/></label>
+                        <label>Last Name:<input class="formInput" id="lastName" placeholder="LastName"/></label>
                     </div>
                 </div>
+                <div class="error" id="usernameError">User name is required.</div>
 
 
             <div class="genderBtnDiv">
@@ -104,22 +152,28 @@
                     <label>Male<input class="genderBtn" type="radio" name="gender"></label>
                     <label>Female<input class="genderBtn"  type="radio" name="gender"></label>
             </div>
+            <div class="error" id="genderError">Please select a gender.</div>
+
             <div class="field">
                 <label>Email:</label>
                 <input class="formInput" type="email" id="email" placeholder="Enter email">
+                <div class="error" id="emailError">Email is required.</div>
             </div>
             <div class="field">
                 <label>Phone Number:</label>
                 <input class="formInput" id="phoneNo" type="number" placeholder="Enter Phone Number">
+                <div class="error" id="phoneError">Phone number is required.</div>
             </div>
 
             <div class="field">
                 <label>Password:</label>
                 <input class="formInput" type="password" id="pass" placeholder="Enter Password">
+                <div class="error" id="passError">Password is required.</div>
             </div>
             <div class="field">
                 <label>Confirm Password:</label>
                 <input class="formInput" type="password" id="conPass" placeholder="Re-enter the Password">
+                <div class="error" id="confirmPassError">Password not match.</div>
             </div>
 
             <div class="field">

@@ -282,6 +282,20 @@ select{
     cursor: pointer;
 }
 
+#usernameError{
+    text-align: center;
+}
+
+#genderError{
+    text-align: center;
+}
+
+.error {
+    margin-top: 0.5%;
+    color: red;
+    /*display: none;*/
+}
+
 /*responsive*/
 @media screen and (max-width: 1210px){
     #left_side{
