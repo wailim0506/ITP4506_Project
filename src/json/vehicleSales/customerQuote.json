@@ -49,7 +49,8 @@
       "mechanicalCondition": "excellent",
       "previousOwners": "1",
       "serviceHistory": "2019: Oil change & routine maintenance\n2019: Tire rotation & brake inspection\n2020: Air filter replacement\n2020: Oil change & inspection\n2021: Brake pad replacement\n2022: Transmission fluid change\n2023: Oil change & tire rotation",
-      "accidentHistory": "no"
+      "accidentHistory": "no",
+      "tradeInPrice": "26725"
     },
     "status": "Confirmed",
     "totalPrice": "80715"

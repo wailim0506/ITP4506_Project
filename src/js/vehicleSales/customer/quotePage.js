@@ -108,12 +108,118 @@ function loadDarkMode() {
 function loadQuote() {
     var quoteId = localStorage.getItem('quoteToView');
     $('#quoteTitle h1').text(`Quote #${quoteId}`);
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId == quoteId);
+        if (quote != null) {
+            for (var i = 0; i < quote.vehicleInQuote.length; i++) {
+                $('#vehicleSection table').append(`<tr class="carRow" carid="${quote.vehicleInQuote[i].vehicleId}">
+                    <td><img src="../../../src/img/vehicleSales/car/${quote.vehicleInQuote[i].vehicleId}/1.jpg"/></td>
+                    <td>${quote.vehicleInQuote[i].vehicleName}</td>
+                    <td>${quote.vehicleInQuote[i].exteriorColor}</td>
+                    <td>${quote.vehicleInQuote[i].interiorColor}</td>
+                    <td>$${(parseInt(quote.vehicleInQuote[i].price) / parseInt(quote.vehicleInQuote[i].quantity))}</td>
+                    <td>${quote.vehicleInQuote[i].quantity}</td>
+                    <td>$${quote.vehicleInQuote[i].price}</td>
+                    <td>
+                        <button>View</button>
+                    </td>
+                </tr>`);
+            }
+        }
+    }
+}
+
+function loadQuotePersonalDetail() {
+    var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId == quoteId);
+        if (quote != null) {
+            $('#custName').text(`${quote.personalInformation.firstName} ${quote.personalInformation.lastName}`);
+            $('#custEmail').text(`${quote.personalInformation.email}`);
+            $('#custPhone').text(`${quote.personalInformation.phone}`);
+            $('#custAddress').text(`${quote.personalInformation.address}`);
+            $('#custCountry').text(`${quote.personalInformation.country}`);
+        }
+    }
+}
+
+function loadQuotePaymentDetail() {
+    var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId == quoteId);
+        if (quote != null) {
+            $('#cardType').text(`${quote.paymentInformation.cardType.toUpperCase()}`);
+            let cardNumber = quote.paymentInformation.cardNumber;
+            let maskedCardNumber = cardNumber.replace(/(\d{4})\d{8}(\d{4})/, '$1********$2');
+            $('#cardNumber').text(maskedCardNumber);
+
+        }
+    }
+}
+
+
+function loadQuoteTradeInDetail() {
+    var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId === quoteId);
+        if (quote != null) {
+            if (quote.tradeInInformation.tradeIn !== "no") {
+                $('#tradeInCar').text(`$${quote.tradeInInformation.tradeInMakeModel}`);
+                $('#tradeInMY').text(`${quote.tradeInInformation.tradeInYear}`);
+                $('#tradeInMileage').text(`${quote.tradeInInformation.tradeInMileage}`);
+                $('#tradeInVin').text(`${quote.tradeInInformation.tradeInVIN}`);
+                $('#tradeInOC').text(`${quote.tradeInInformation.tradeInCondition}`);
+                $('#tradeInEC').text(`${quote.tradeInInformation.exteriorCondition}`);
+                $('#tradeInIC').text(`${quote.tradeInInformation.interiorCondition}`);
+                $('#tradeInMC').text(`${quote.tradeInInformation.mechanicalCondition}`);
+                $('#tradeInPO').text(`${quote.tradeInInformation.previousOwners}`);
+                $('#tradeInSH').text(`${quote.tradeInInformation.serviceHistory}`);
+                $('#tradeInAH').text(`${quote.tradeInInformation.accidentHistory}`);
+                $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInPrice}`);
+            } else {
+                $('#tradeInfo').remove();
+            }
+        }
+    }
+}
+
+function loadQuotePriceBreakdown() {
+    var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId == quoteId);
+        if (quote != null) {
+            $('#subtotal').text(`$${parseInt(quote.totalPrice)}`);
+            if (quote.tradeInInformation.tradeIn != "no") {
+                $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
+                $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(quote.tradeInInformation.tradeInPrice) + 5000}`);
+            } else {
+                $('#tradeInValueBreakdown').text(`-$0`);
+                $('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);
+            }
+        }
+    }
 }
 
 loadDarkMode();
 $(document).ready(function () {
-    loadDarkMode();
+
     loadQuote();
+    loadQuotePersonalDetail();
+    loadQuotePaymentDetail();
+    loadQuoteTradeInDetail();
+    loadQuotePriceBreakdown();
+    loadDarkMode();
+
 
     $('#darkModeToggle').click(function () {
         setDarkMode();
@@ -123,9 +229,32 @@ $(document).ready(function () {
         $(this).hide();
         $('nav,i,#goBackLinkDiv,#buttonDiv').hide();
         $('#vehicleSection img').css('width', '150px');
+        $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div').css('width', '30%');
         window.print();
         $('nav,i,#goBackLinkDiv,#buttonDiv').show();
         $(this).show();
         $('#vehicleSection img').css('width', '200px');
+        $('#CustInfoSmallBoxDiv div').css('width', '20%');
+        $('#PaymentInfoSmallBoxDiv div').css('width', '20%');
+        $('#TradeInInfoSmallBoxDiv div').css('width', '25%');
+    });
+
+    $('#vehicleSection table tr button').click(function () {
+        localStorage.setItem('carToView', $(this).parent().parent().attr('carid'));
+        window.location.href = '../../../pages/vehicleSales/customer/carPage.html';
+    });
+
+    $('#buttonDiv button').click(function () {
+        var quoteId = localStorage.getItem('quoteToView');
+        if (confirm(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`)) {
+            var quoteList = localStorage.getItem('quote');
+            if (quoteList != null) {
+                quoteList = JSON.parse(quoteList);
+                quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
+                localStorage.setItem('quote', JSON.stringify(quoteList));
+                alert(`Quote (${quoteId}) deleted successfully!`);
+                window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
+            }
+        }
     });
 });
