@@ -19,72 +19,91 @@
     <a href="../carList.html">Vehicle List</a>
     <a href="../wishList.html">Wish List</a>
     <a href="../quotesList.html">Your Quotes</a>
-    <a href="#">Loan Payment Calculator</a>
+    <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
     <a href="#">Vehicle Comparison Tool</a>
   </div>
   <div id="nav_right">
     <a href="#">Logout</a>
   </div>
 </nav>
-<div class="container">
-  <h1>Loan Payment Calculator</h1>
+<div id="main">
+    <div class="container">
+        <h1>Loan Payment Calculator</h1>
 
-  <label for="loanAmount">Loan Amount:</label>
-  <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" placeholder="Enter loan amount" required value="100000">
 
-  <label for="interestRate">Annual Interest Rate (%):</label>
-  <input type="number" id="interestRate" placeholder="Enter interest rate" required>
+        <label for="interestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate" required value="5">
 
-  <label for="loanTerm">Loan Term (years)(Max. 10):</label>
-  <input type="number" id="loanTerm" placeholder="Enter loan term in years" required>
+        <label for="loanTerm">Loan Term (years)(Max. 10):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term in years" required value="1">
 
-  <button id="calculateBtn">Calculate</button>
+        <button id="calculateBtn">Calculate</button>
+        <button id="resetBtn">Reset</button>
+        <button id="printBtn">Print this page</button>
 
-  <h2>Repayment Schedule</h2>
+        <h2>Repayment Schedule</h2>
 
-  <table id="amortizationTable">
-    <thead>
-    <tr>
-      <th>Payment #</th>
-      <th>Principal Payment</th>
-      <th>Interest Payment</th>
-      <th>Total Payment</th>
-      <th>Remaining Balance</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
-<table id="percentageTable" style="display: block; margin: 20px auto;">
-    <thead>
-    <tr>
-        <th>Type</th>
-        <th>Percentage</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Principal Paid</td>
-        <td id="principalPercentage"></td>
-    </tr>
-    <tr>
-        <td>Interest Paid</td>
-        <td id="interestPercentage"></td>
-    </tr>
-    </tbody>
-</table>
-<canvas id="pieChart" width="400" height="400"></canvas>
-
-<div id="legend">
-    <div class="legend-item">
-        <div class="color-box" style="background-color: blue;"></div>
-        <span>Principal</span>
+        <table id="amortizationTable">
+            <thead>
+            <tr>
+                <th>Payment #</th>
+                <th>Principal Payment</th>
+                <th>Interest Payment</th>
+                <th>Monthly Total Payment</th>
+                <th>Remaining Balance</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
-    <div class="legend-item">
-        <div class="color-box" style="background-color: green;"></div>
-        <span>Interest</span>
+    <div id="pieChartDiv">
+        <div style="width: 400px">
+            <div id="monthlyPaymentDiv">
+                <p id="monthlyPayment"></p>
+            </div>
+
+            <table id="percentageTable" style="width: inherit">
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Total Paid</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Total Paid</td>
+                    <td id="totalPayment"></td>
+                </tr>
+                <tr>
+                    <td>Total Principal Paid</td>
+                    <td id="principalPercentage"></td>
+                </tr>
+                <tr>
+                    <td>Total Interest Paid</td>
+                    <td id="interestPercentage"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <canvas id="pieChart" width="400" height="400"></canvas>
+
+        <div id="legend">
+            <div class="legend-item">
+                <div class="color-box" style="background-color: blue;"></div>
+                <span>Principal</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box" style="background-color: green;"></div>
+                <span>Interest</span>
+            </div>
+        </div>
     </div>
 </div>
+
+
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 </body>

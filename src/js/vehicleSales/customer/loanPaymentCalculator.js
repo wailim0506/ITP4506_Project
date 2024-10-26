@@ -83,50 +83,59 @@ function loadDarkMode() {
     }
 }
 
-function drawPieChart(principalPaid, interestPaid) {
+function drawPieChart(principalPaid, interestPaid, monthlyPayment) {
     const $canvas = $('#pieChart');
     const ctx = $canvas[0].getContext('2d');
     const total = principalPaid + interestPaid;
     const principalAngle = (principalPaid / total) * 2 * Math.PI;
     const interestAngle = (interestPaid / total) * 2 * Math.PI;
 
-    // Draw principal part
-    ctx.beginPath();
-    ctx.moveTo(200, 200);
-    ctx.arc(200, 200, 200, 0, principalAngle);
+    ctx.clearRect(0, 0, $canvas.width(), $canvas.height());
+
+    ctx.arc(200, 200, 100, 0, principalAngle);
     ctx.fillStyle = 'blue';
     ctx.fill();
 
-    // Draw interest part
     ctx.beginPath();
     ctx.moveTo(200, 200);
-    ctx.arc(200, 200, 200, principalAngle, principalAngle + interestAngle);
+    ctx.arc(200, 200, 100, principalAngle, principalAngle + interestAngle);
     ctx.fillStyle = 'green';
     ctx.fill();
 
-    // Draw donut hole
     ctx.beginPath();
-    ctx.arc(200, 200, 100, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
+    ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+    if (localStorage.getItem('darkMode') == 'Y') {
+        ctx.fillStyle = 'rgb(34,37,41)';
+    }else{
+        ctx.fillStyle = 'white';
+    }
     ctx.fill();
 
-    // Update percentage table
+
     const principalPercentage = Math.round((principalPaid / total) * 100);
     const interestPercentage = Math.round((interestPaid / total) * 100);
-    $('#principalPercentage').text(principalPercentage + '%');
-    $('#interestPercentage').text(interestPercentage + '%');
+    // $('#principalPercentage').text(principalPercentage + '%');
+    // $('#interestPercentage').text(interestPercentage + '%');
+    $('#principalPercentage').text(principalPaid.toFixed(2));
+    $('#interestPercentage').text(interestPaid.toFixed(2));
+    $('#totalPayment').text(total.toFixed(2));
+    $('#monthlyPayment').text(`Monthly Pay: $${monthlyPayment.toFixed(2)}`);
 
-    // Draw percentages on the pie chart
-    ctx.fillStyle = 'black';
+
+    if (localStorage.getItem('darkMode') == 'Y') {
+        ctx.fillStyle = 'rgb(194,196,200)';
+    }else{
+        ctx.fillStyle = 'black';
+    }
     ctx.font = '20px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    // Principal percentage
+
     const principalTextAngle = principalAngle / 2;
     ctx.fillText(principalPercentage + '%', 200 + 150 * Math.cos(principalTextAngle), 200 + 150 * Math.sin(principalTextAngle));
 
-    // Interest percentage
+
     const interestTextAngle = principalAngle + interestAngle / 2;
     ctx.fillText(interestPercentage + '%', 200 + 150 * Math.cos(interestTextAngle), 200 + 150 * Math.sin(interestTextAngle));
 }
@@ -135,20 +144,20 @@ function calculate(){
     let totalPrincipalPaid = 0;
     let totalInterestPaid = 0;
     const loanAmount = parseFloat($('#loanAmount').val());
-    const interestRate = parseFloat($('#interestRate').val()) / 100 / 12; // Monthly interest rate
-    const loanTerm = parseInt($('#loanTerm').val()) * 12; // Total number of payments
+    const interestRate = parseFloat($('#interestRate').val()) / 100 / 12;
+    const loanTerm = parseInt($('#loanTerm').val()) * 12;
 
     const $tableBody = $('#amortizationTable tbody');
-    $tableBody.html(''); // Clear previous results
+    $tableBody.html('');
 
     const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
 
     let remainingBalance = loanAmount;
 
     for (let i = 1; i <= loanTerm; i++) {
-        const interestPayment = remainingBalance * interestRate; // Interest for the current balance
-        const principalPayment = monthlyPayment - interestPayment; // Principal payment
-        remainingBalance -= principalPayment; // Update remaining balance
+        const interestPayment = remainingBalance * interestRate;
+        const principalPayment = monthlyPayment - interestPayment;
+        remainingBalance -= principalPayment;
 
         const row = `
                         <tr>
@@ -163,21 +172,35 @@ function calculate(){
         $tableBody.append(row);
         loadDarkMode();
     }
-    drawPieChart(totalPrincipalPaid, totalInterestPaid);
+    drawPieChart(totalPrincipalPaid, totalInterestPaid, monthlyPayment);
 }
 
 loadDarkMode();
 $(document).ready(function() {
     loadDarkMode();
+    calculate();
 
     $('#darkModeToggle').click(function () {
         setDarkMode();
+        calculate();
     });
 
     $('#calculateBtn').click(function() {
         if(parseInt($('#loanTerm').val()) > 10){
             alert('Loan term cannot be more than 10 years');
             $('#loanTerm').val('');
+            return;
+        }
+
+        if(parseInt($('#loanAmount').val()) > 99999999){
+            alert('Loan amount cannot be exceed 99999999');
+            $('#loanAmount').val('');
+            return;
+        }
+
+        if(parseInt($('#interestRate').val()) > 100){
+            alert('Interest rate cannot be exceed 100');
+            $('#interestRate').val('');
             return;
         }
 
@@ -195,8 +218,41 @@ $(document).ready(function() {
             return;
         }
 
+        if(parseInt($('#loanAmount').val()) > 99999999){
+            alert('Loan amount cannot be exceed 99999999');
+            $('#loanAmount').val('');
+            return;
+        }
+
+        if(parseInt($('#interestRate').val()) > 100){
+            alert('Interest rate cannot be exceed 100');
+            $('#interestRate').val('');
+            return;
+        }
+
         if ($('#loanAmount').val() != '' && $('#interestRate').val() != '' && $('#loanTerm').val() != '') {
             calculate();
         }
     });
+
+    $('#resetBtn').click(function() {
+        $('#loanAmount').val('');
+        $('#interestRate').val('');
+        $('#loanTerm').val('');
+        $('#amortizationTable tbody').html('');
+    });
+
+    $('#printBtn').click(function() {
+        $('nav,button,i').hide();
+        $('.container').css({'width': '90%', 'height': '100%', 'margin-top': '100px'});
+        $('#pieChartDiv').css({'width': '90%', 'height': '100%', 'margin-top': '100px'});
+        $('#main').css('flex-direction', 'column');
+        window.print();
+        $('nav,button,i').show();
+        $('.container').css({'width': '40%', 'height': 'auto', 'margin-top': '20px'});
+        $('#pieChartDiv').css({'width': '40%', 'height': 'auto', 'margin-top': '20px'});
+        $('#main').css('flex-direction', 'row');
+    });
+
+
 });
