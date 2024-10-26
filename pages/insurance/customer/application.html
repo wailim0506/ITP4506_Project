@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Application</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/applicationP1.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      $(".chatBtn").click(function () {
+        window.location.href = "onlineBot.html";
+      });
+
+        $('#addDriver').click(function() {
+          const currentCount = $('.newDriver').length;
+          if (currentCount < 2) {
+            const inputRow = `
+        <div class="newDriver"><hr>
+          <div class="inputRowTitle">
+            <p style="font-size: 25px; font-weight: bold">Driver ${currentCount+2}</p>
+            <button type="button" class="remove-button" onclick="removeDriver(this)">Remove</button>
+          </div>
+          <div class="inputRow">
+            <label>Date of birth: <input type="date"  class="date"></label>
+            <label>Profession: <input type="text" ></label>
+            <label>Marital status: <input type="text" ></label>
+          </div>
+          <div class="inputRow">
+             <div>
+             <label>Gender:</label>
+             <div id="buttonDiv">
+                <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+             </div>
+             </div>
+                <label>Driving experience: <input type="date"  class="date"></label>
+                <label>License number: <input type="text" ></label>
+             </div>
+             </div>`;
+            $('#driverList').append(inputRow);
+            $('#warningMessage').hide(); // Hide warning if adding is successful
+          } else {
+            $('#warningMessage').show(); // Show warning if limit is reached
+          }
+        });
+    });
+
+    function removeDriver(button) {
+      $(button).closest('.newDriver').remove();
+      const currentCount = $('.newDriver').length;
+      if (currentCount < 2) {
+        $('#warningMessage').hide(); // Hide warning if count is less than 3
+      }
+    }
+
+    function selectGender(button) {
+      const buttons = document.querySelectorAll('.gender-button');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+    }
+  </script>
+</head>
+<body>
+  <!-- Chatbot button -->
+  <button class="chatBtn">
+    <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
+  </button>
+  <!-- Chatbot button -->
+  <!-- To top button -->
+  <button class="goTopBtn">
+    <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+  </button>
+  <!--Nav Bar-->
+  <nav>
+    <div id="nav_left">
+      <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
+    </div>
+    <div id="nav_center">
+      <a href="cusPlan.html">Plans</a>
+      <a href="estimate.html">Estimate</a>
+      <a href="onlineBot.html">Online Bot</a>
+      <a href="application.html">Application</a>
+      <a href="cusProFile.html">ProFile</a>
+    </div>
+    <div id="nav_right">
+      <a href="../../../index.html">Logout</a>
+    </div>
+  </nav>
+  <!--Nav Bar-->
+
+
+
+  <!--Main Content-->
+  <section id="mainContent">
+    <div class="container">
+      <h1>Your LML car insurance application</h1>
+      <div id="form">
+        <form  id="contactForm">
+          <p class="formClass">1 - Basic Information</p>
+          <hr>
+          <p class="subTitle">1.1 - Car Information</p>
+
+          <div class="inputRow">
+            <label>Car Name: <input type="text" placeholder="Car Name"></label>
+            <label>Car Model:
+              <select id="carModel" name="carModel">
+                <option value="">--Please choose an Model--</option>
+                <option value="toyota_corolla">Toyota Corolla</option>
+                <option value="honda_civic">Honda Civic</option>
+                <option value="ford_focus">Ford Focus</option>
+                <option value="chevrolet_malibu">Chevrolet Malibu</option>
+                <option value="nissan_altima">Nissan Altima</option>
+                <option value="bmw_3_series">BMW 3 Series</option>
+                <option value="audi_a4">Audi A4</option>
+                <option value="mercedes_benz_c_class">Mercedes-Benz C-Class</option>
+              </select>
+            </label>
+            <label>Car Type:
+              <select id="carBody" name="carBody">
+                <option value="">--Please choose an Type--</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="coupe">Coupe</option>
+                <option value="convertible">Convertible</option>
+                <option value="wagon">Wagon</option>
+                <option value="pickup">Pickup Truck</option>
+                <option value="van">Van</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="inputRow">
+            <label>Manufacture date: <input type="date" ></label>
+            <label>Car Image: <input type="file" ></label>
+          </div>
+
+          <hr>
+
+          <p class="subTitle">1.2 - Policyholder Information</p>
+
+          <div class="inputRow">
+            <label>Date of birth: <input type="date"  class="date"></label>
+            <label>Profession: <input type="text" placeholder="Profession"></label>
+            <label>Marital Status: <input type="text" placeholder="Marital Status"></label>
+          </div>
+
+          <div id="driverList">
+            <div class="inputRow">
+              <div>
+                <label>Gender:</label>
+                <div id="buttonDiv">
+                  <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                  <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+                </div>
+              </div>
+              <label>Driving Experience: <input type="number"  class="date" placeholder="Driving Experience"></label>
+              <label>License Number: <input type="text" placeholder="License Number"></label>
+            </div>
+          </div>
+
+          <div class="inputRow">
+            <button id="addDriver" type="button">+ Add another driver</button>
+          </div>
+          <div class="inputRow">
+            <div class="warning" id="warningMessage" style="display: none;">Maximum of 3 drivers can be added.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <div id="nextBtnContainer">
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+    </div>
+
+  </section>
+  <!--Main Content-->
+
+
+
+  <!--footer-->
+  <section class="footer">
+    <div class="footer-content">
+      <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+      <p>Reliable car insurance for peace of mind on every journey.</p>
+      <p>© 2024 Legend Motor Limited</p>
+    </div>
+    <div class="footer-content">
+      <a href="cusPlan.html"><h4>Plans</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="estimate.html"><h4>Estimate</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="onlineBot.html"><h4>OnlineBot</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="application.html"><h4>Application</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="cusProFile.html"><h4>ProFile</h4></a>
+    </div>
+  </section>
+  <!--footer-->
+
+  <i id="darkModeToggle" class="material-icons"
+     style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+  <script src="../../../src/js/insurance/toTopBtn.js"></script>
+</body>
+</html>
