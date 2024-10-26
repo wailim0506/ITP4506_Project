@@ -8,8 +8,24 @@
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      $(".chatBtn").click(function () {
+        window.location.href = "onlineBot.html";
+      });
+      $("#saveChanges").click(function () {
+        alert("Changes saved successfully!");
+        location.reload();
+      });
+    });
+  </script>
 </head>
 <body>
+    <!-- Chatbot button -->
+    <button class="chatBtn">
+      <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
+    </button>
+    <!-- Chatbot button -->
     <!-- To top button -->
     <button class="goTopBtn">
       <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
@@ -83,7 +99,7 @@
           </div>
 
           <div class="button-container">
-            <button type="submit">Save Changes</button>
+            <button type="submit" id="saveChanges">Save Changes</button>
           </div>
         </div>
       </div>
