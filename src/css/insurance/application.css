@@ -515,6 +515,66 @@ input[type="text"]:focus {
 
 
 
+/* For P2 */
+#plans{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 3% 3% 3%;
+}
+
+
+.plan{
+    width: 45%;
+    border: 5px black solid;
+    padding: 10px;
+}
+
+.plan h1{
+    font-size: 35px;
+    margin: 0 0 0 0;
+}
+
+.plan img{
+    width: 20%;
+}
+
+.planContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.planContent p{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.plan:hover{
+    transform: translateY(-10px);
+}
+
+#downloads{
+    margin-top: -15px;
+    font-size: 20px;
+}
+
+#downloads a{
+    text-decoration: none;
+}
+
+#downloads a:hover{
+    text-decoration: underline;
+}
+
+#planDetail p{
+    font-size: 20px;
+    margin: -1% 2% 2% 2%;
+}
+
+
 
 
 

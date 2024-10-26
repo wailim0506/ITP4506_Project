@@ -25,6 +25,15 @@
       $("#AppP1").click(function () {
         window.location.href = "applicationP1.html";
       });
+
+        $('.plan').click(function() {
+          var details = $(this).data('details');
+          $('.plan').css('background-color', '');
+
+          $('#planDetail p').text(details);
+          $(this).css('background-color', '#f9c22c');
+        });
+
     });
   </script>
 </head>
@@ -80,8 +89,50 @@
     <div id="form">
       <form  id="contactForm">
         <p class="formClass">2 - Plan Select</p>
+
+        <hr>
+        <p class="subTitle">2.1 - Select a Plan</p>
+        <div id="plans">
+          <div class="plan" data-details="Third-party insurance covers damages to other vehicles
+              and injuries to other people in the event of an accident where you are at fault.
+              It is the minimum legal requirement for car insurance in many places.">
+            <h1>Third-Party</h1>
+            <div class="planContent">
+              <p>6800 Per year</p>
+              <img src="../../../src/img/insurance/IMG_0012.png" alt="Third-Party">
+            </div>
+          </div>
+
+          <div class="plan" data-details="Comprehensive insurance provides broader coverage,
+              including damages to your own vehicle as well as damages to third parties. It covers a
+              variety of risks, including theft, vandalism, and natural disasters..">
+            <h1>Comprehensive</h1>
+            <div class="planContent">
+              <p>16800 Per year</p>
+              <img src="../../../src/img/insurance/IMG_0013.png" alt="Third-Party">
+            </div>
+          </div>
+        </div>
+
         <hr>
 
+        <p class="subTitle">2.2 - Plan Detail</p>
+        <div id="planDetail">
+          <p>Select a plan to see the details here.</p>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">2.3 - Document Download</p>
+        <div id="downloads">
+          <ul>
+            <li><a href="#" download>Car Insurance Policy Document</a></li>
+            <li><a href="#" download>Claim Form</a></li>
+            <li><a href="#" download>Coverage Summary</a></li>
+            <li><a href="#" download>Premium Payment Guidelines</a></li>
+            <li><a href="#" download>Customer Service Contact Information</a></li>
+          </ul>
+        </div>
       </form>
     </div>
   </div>
