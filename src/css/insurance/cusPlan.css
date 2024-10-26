@@ -189,7 +189,7 @@ nav{
     animation: article-load 0.6s ease-in;
 }
 
-#mainContent hr{
+.spacing{
     width: 0;
     margin-top: 60px;
 }
@@ -277,6 +277,106 @@ nav{
 .ApplicationBtn:hover{
     transform: translateY(-15px);
 }
+
+#separateLine{
+    width: 90%;
+    height: 6px;
+    border: none;
+    border-top: 2px dashed white;
+    background-color: #333;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.containerColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    margin: 2% 12% 1% 12%;
+}
+
+.containerColumn h1{
+    font-size: 80px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.containerColumn table {
+    width: 85%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.containerColumn table th{
+    font-size: 21px;
+}
+
+.containerColumn th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+.containerColumn th {
+    background-color: #0b6ed6;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.containerColumn td{
+    font-size: 19px;
+}
+
+.containerColumn tr:hover {
+    background-color: #f1f1f1;
+}
+.containerColumn tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.yesItem{
+    color: green;
+}
+
+.noItem{
+    color: red;
+}
+
+#noIdea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    width: 100%;
+}
+
+#noIdea h2{
+    font-size: 80px;
+    color: #f9c22c;
+}
+
+#EstimateBtnNoIdea{
+    color: #ffffff;
+    background: #fb7171;
+    border-color: #fb7171;
+    border-radius: 20px;
+    font-size: 280%;
+    width: 25%;
+    padding: 1%;
+    transition: all .40s ease;
+}
+
+#EstimateBtnNoIdea:hover{
+    transform: translateY(-15px);
+}
+
 
 /* The main section */
 

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
-      $(".EstimateBtn").click(function () {
+      $(".EstimateBtn, #EstimateBtnNoIdea").click(function () {
         window.location.href = "estimate.html";
       });
       $(".ApplicationBtn").click(function () {
@@ -56,7 +56,7 @@
       <img src="../../../src/img/insurance/IMG_0008.jpg" alt="insurance">
     </div>
 
-    <hr>
+    <hr class="spacing">
 
     <div class="container" id="thirdContent">
       <img src="../../../src/img/insurance/IMG_0009.jpeg" alt="Third-Party">
@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <hr>
+    <hr class="spacing">
 
     <div class="container" id="comprehensiveContent">
       <div class="planDetails">
@@ -100,6 +100,72 @@
         </div>
       </div>
       <img src="../../../src/img/insurance/IMG_0011.jpeg" alt="Third Party">
+    </div>
+
+    <hr id="separateLine">
+
+    <div class="containerColumn">
+        <h1 id="contactUs">Which is more suitable for me?</h1>
+      <table>
+        <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Third-Party Insurance</th>
+          <th>Comprehensive Insurance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><b>Coverage for Damage to Other Vehicles</b></td>
+          <td class="yesItem">Yes</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Coverage for Personal Injury</b></td>
+          <td class="yesItem">Yes</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Coverage for Your Own Vehicle</b></td>
+          <td class="noItem">No</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Theft and Vandalism Protection</b></td>
+          <td class="noItem">No</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Fire Damage Coverage</b></td>
+          <td class="noItem">No</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Coverage for Accidental Damage</b></td>
+          <td class="noItem">No</td>
+          <td class="yesItem">Yes</td>
+        </tr>
+        <tr>
+          <td><b>Cost</b></td>
+          <td>Generally Lower</td>
+          <td>Generally Higher</td>
+        </tr>
+        <tr>
+          <td><b>Legal Requirements</b></td>
+          <td>Mandatory in Most Places</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td><b>No-Claims Bonus</b></td>
+          <td>Limited</td>
+          <td>Available</td>
+        </tr>
+        </tbody>
+      </table>
+      <div id="noIdea">
+        <h2>Still no idea?</h2>
+        <button id="EstimateBtnNoIdea">Estimate Now</button>
+      </div>
     </div>
 
   </section>
