@@ -14,12 +14,20 @@
         window.location.href = "onlineBot.html";
       });
 
-      $("#nextBtn").click(function () {
+      $("#previousBtn").click(function () {
+        window.location.href = "applicationP3.html";
+      });
+
+      $("#AppP1").click(function () {
+        window.location.href = "applicationP1.html";
+      });
+
+      $("#AppP2").click(function () {
         window.location.href = "applicationP2.html";
       });
 
-      $("#previousBtn").click(function () {
-        window.location.href = "applicationP1.html";
+      $("#AppP3").click(function () {
+        window.location.href = "applicationP3.html";
       });
     });
   </script>
@@ -62,11 +70,11 @@
 
   <div class="container">
     <div id="progress">
-      <p class="completed">Basic Information</p>
+      <p class="completed" id="AppP1">Basic Information</p>
       <span class="arrowCompleted">&#8680;</span>
-      <p class="completed">Plan Select</p>
+      <p class="completed" id="AppP2">Plan Select</p>
       <span class="arrowCompleted">&#8680;</span>
-      <p class="completed">Payment</p>
+      <p class="completed" id="AppP3">Payment</p>
       <span class="arrowCompleted">&#8680;</span>
       <p class="inProgress">Submit for Checking</p>
     </div>
@@ -88,7 +96,7 @@
       <button type="button" id="previousBtn">Previous</button>
       <div>
         <div id="nextBtnContainer">
-          <button type="button" id="nextBtn">Next</button>
+          <button type="button" id="FinishBtn">Finish</button>
         </div>
       </div>
 

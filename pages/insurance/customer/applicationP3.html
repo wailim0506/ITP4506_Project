@@ -15,11 +15,19 @@
       });
 
       $("#nextBtn").click(function () {
-        window.location.href = "applicationP2.html";
+        window.location.href = "applicationP4.html";
       });
 
       $("#previousBtn").click(function () {
+        window.location.href = "applicationP2.html";
+      });
+
+      $("#AppP1").click(function () {
         window.location.href = "applicationP1.html";
+      });
+
+      $("#AppP2").click(function () {
+        window.location.href = "applicationP2.html";
       });
     });
   </script>
@@ -62,9 +70,9 @@
 
   <div class="container">
     <div id="progress">
-      <p class="completed">Basic Information</p>
+      <p class="completed" id="AppP1">Basic Information</p>
       <span class="arrowCompleted">&#8680;</span>
-      <p class="completed">Plan Select</p>
+      <p class="completed" id="AppP2">Plan Select</p>
       <span class="arrowCompleted">&#8680;</span>
       <p class="inProgress">Payment</p>
       <span class="arrowInProgress">&#8680;</span>

@@ -392,6 +392,18 @@ input[type="text"]:focus {
     margin: -0.5% 0 1% 0;
 }
 
+#FinishBtn{
+    width: 15%;
+    background-color: #29d829;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
+
 #exitBtn{
     width: 130px;
     background-color: #ef2c2c;
@@ -418,6 +430,10 @@ input[type="text"]:focus {
 
 #previousBtn:hover{
     background-color: #46c6c6;
+}
+
+#FinishBtn:hover{
+    background-color: #40cc4a;
 }
 
 #exitBtn:hover{
