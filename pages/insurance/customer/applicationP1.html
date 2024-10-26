@@ -14,6 +14,14 @@
         window.location.href = "onlineBot.html";
       });
 
+      $("#nextBtn").click(function () {
+        window.location.href = "applicationP2.html";
+      });
+
+      $("#exitBtn").click(function () {
+        window.location.href = "cusPlan.html";
+      });
+
         $('#addDriver').click(function() {
           const currentCount = $('.newDriver').length;
           if (currentCount < 2) {
@@ -97,6 +105,21 @@
   <section id="mainContent">
     <div class="container">
       <h1>Your LML car insurance application</h1>
+    </div>
+
+    <div class="container">
+      <div id="progress">
+        <p class="inProgress">Basic Information</p>
+        <span class="arrowInProgress">&#8680;</span>
+        <p class="waiting">Plan Select</p>
+        <span class="arrowWaiting">&#8680;</span>
+        <p class="waiting">Payment</p>
+        <span class="arrowWaiting">&#8680;</span>
+        <p class="waiting">Submit for Checking</p>
+      </div>
+    </div>
+
+    <div class="container">
       <div id="form">
         <form  id="contactForm">
           <p class="formClass">1 - Basic Information</p>
@@ -171,12 +194,16 @@
         </form>
       </div>
     </div>
-    <div class="container">
-      <div id="nextBtnContainer">
-        <button type="button" id="nextBtn">Next</button>
-      </div>
-    </div>
 
+
+    <div class="containerRow">
+      <div id="previousBtnContainer">
+        <button type="button" id="exitBtn">Exit</button>
+        <div>
+          <div id="nextBtnContainer">
+            <button type="button" id="nextBtn">Next</button>
+        </div>
+    </div>
   </section>
   <!--Main Content-->
 

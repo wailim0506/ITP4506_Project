@@ -225,6 +225,7 @@ nav{
 }
 
 .container h1{
+    margin-top: 0;
     font-size: 40px;
     color: black;
 }
@@ -358,25 +359,146 @@ input[type="text"]:focus {
     background: rgba(236, 190, 73, 0.93);
 }
 
-
-#nextBtnContainer{
-    width: 1000px;
+.containerRow{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; /* Aligns the button to the right */
+    justify-content: center;
+    align-items: center;
+    margin: 1% 10% 0 10%;
 }
+
+
+#nextBtnContainer{
+    width: 870px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#previousBtnContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+
 
 #nextBtn{
     width: 15%;
-    background-color: #1a981a;
+    background-color: #f9c22c;
     color: white;
     border: none;
     padding: 10px 10px;
     border-radius: 5px;
     font-size: 20px;
+    font-weight: bold;
     margin: -0.5% 0 1% 0;
 }
 
-#nextBtn:hover{
-    background-color: #45c145;
+#exitBtn{
+    width: 130px;
+    background-color: #ef2c2c;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
 }
+
+#previousBtn{
+    width: 130px;
+    background-color: #16bdbd;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
+
+#previousBtn:hover{
+    background-color: #46c6c6;
+}
+
+#exitBtn:hover{
+    background-color: #df4545;
+}
+
+#nextBtn:hover{
+    background-color: #ffce4b;
+}
+
+#progress {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: -3% 0 0 0;
+}
+
+#progress p {
+    flex: 1; /* Distribute space evenly */
+    padding: 25px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    transition: background 0.3s ease;
+
+}
+
+.inProgress{
+    background: #1a981a;
+    animation-name: light;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.completed{
+    background: green;
+}
+
+.waiting{
+    background: gray;
+}
+
+@keyframes light{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+
+.arrowInProgress{
+    font-size: 100px;
+    color: #f9c22c;
+    margin: 0 0 0.5% 0;
+    animation-name: light;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.arrowWaiting{
+    font-size: 100px;
+    color: gray;
+    margin: 0 0 0.5% 0;
+}
+
+.arrowCompleted{
+    font-size: 100px;
+    color: green;
+    margin: 0 0 0.5% 0;
+}
+
+
+
+
+
+
+
