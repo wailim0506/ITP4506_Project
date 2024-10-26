@@ -8,6 +8,16 @@
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      $(".EstimateBtn").click(function () {
+        window.location.href = "estimate.html";
+      });
+      $(".ApplicationBtn").click(function () {
+        window.location.href = "#";
+      });
+    });
+  </script>
 </head>
 <body>
   <!-- To top button -->
@@ -36,7 +46,61 @@
 
   <!--Main Content-->
   <section id="mainContent">
+    <div class="container">
+      <div id="planIntro">
+        <h1 id="mainTitle">Our Plans</h1>
+        <p>At LMC, we offer tailored car insurance solutions to meet your needs.</p>
+        <h3 id="third">Third-Party Insurance:</h3> <p>Essential coverage for liability in case of accidents, protecting you against claims from other parties.</p>
+        <h3 id="comprehensive">Comprehensive Insurance:</h3><p> Extensive protection that covers both third-party liabilities and damages to your own vehicle, including theft and natural disasters.</p>
+      </div>
+      <img src="../../../src/img/insurance/IMG_0008.jpg" alt="insurance">
+    </div>
 
+    <hr>
+
+    <div class="container" id="thirdContent">
+      <img src="../../../src/img/insurance/IMG_0009.jpeg" alt="Third-Party">
+      <div class="planDetails">
+          <h1 class="planTitle">Third Party</h1>
+          <h3>What is Third-Party Insurance?</h3>
+          <p>Third-party insurance covers damages to other vehicles and injuries to other people in the event of an accident where you are at fault. It is the minimum legal requirement for car insurance in many places.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li>Coverage for damages to third-party property.</li>
+            <li>Medical expenses for third-party injuries.</li>
+            <li>No coverage for your own vehicle damage.</li>
+            <li>Typically lower premiums compared to comprehensive plans.</li>
+          </ul>
+
+          <div class="buttonContainer">
+            <button class="ApplicationBtn">Application Now</button>
+            <button class="EstimateBtn">Estimate Now</button>
+          </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="container" id="comprehensiveContent">
+      <div class="planDetails">
+        <h1 class="planTitle">Comprehensive</h1>
+        <h3>What is Comprehensive Insurance?</h3>
+        <p>Comprehensive insurance provides broader coverage, including damages to your own vehicle as well as damages to third parties. It covers a variety of risks, including theft, vandalism, and natural disasters.</p>
+        <h3>Key Features:</h3>
+        <ul>
+          <li>Covers damages to your own vehicle.</li>
+          <li>Includes third-party liability coverage.</li>
+          <li>Protection against theft and vandalism.</li>
+          <li>Higher premiums, but greater peace of mind.</li>
+        </ul>
+
+        <div class="buttonContainer">
+          <button class="ApplicationBtn">Application Now</button>
+          <button class="EstimateBtn">Estimate Now</button>
+        </div>
+      </div>
+      <img src="../../../src/img/insurance/IMG_0011.jpeg" alt="Third Party">
+    </div>
 
   </section>
   <!--Main Content-->
@@ -72,6 +136,6 @@
      style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 
   <script src="../../../src/js/insurance/toTopBtn.js"></script>
-  <script src="../../../src/js/insurance/estimate.js"></script>
+  <script src="../../../src/js/insurance/pageControl.js"></script>
 </body>
 </html>

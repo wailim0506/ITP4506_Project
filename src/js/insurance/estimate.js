@@ -8,19 +8,19 @@ document.getElementById('estimateForm').addEventListener('submit', function(even
     const insurance = document.getElementById('insurance').value;
 
     // Base price estimation logic
-    let basePrice = 20000; // Base price for new car
+    let basePrice = 20000;
     if (condition === 'good') basePrice -= 3000;
     if (condition === 'fair') basePrice -= 6000;
     if (condition === 'poor') basePrice -= 10000;
 
-    const mileageDeduction = mileage * 0.1; // Deduct value based on mileage
+    const mileageDeduction = mileage * 0.1;
     let estimate = basePrice - mileageDeduction;
 
     // Adjust estimate based on insurance plan
     if (insurance === 'comprehensive') {
-        estimate += 2000; // Add value for comprehensive coverage
+        estimate += 2000;
     } else if (insurance === 'thirdParty') {
-        estimate -= 1000; // Deduct value for third-party coverage
+        estimate -= 1000;
     }
 
     document.getElementById('result').innerText = `Estimated Value of ${model} (${year} years): $${estimate.toFixed(2)}`;
