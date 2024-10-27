@@ -425,7 +425,7 @@ nav{
     color: red;
 }
 
-#chkMsg{
+.chkMsg{
     font-size: 20px;
     font-weight: bold;
     margin-left: 15px;
@@ -478,9 +478,26 @@ nav{
     background-color: #f9c22c;
 }
 
+#cancel{
+    width: 12%;
+    background-color: #ef2c2c;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 13px 1% 0;
+}
 
+#cancel:hover{
+    background-color: #fa6f6f;
+}
 
-
+.infoRow img{
+    width: 70%;
+    margin-left: 120px;
+}
 
 
 

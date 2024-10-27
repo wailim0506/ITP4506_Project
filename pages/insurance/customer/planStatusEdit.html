@@ -15,7 +15,11 @@
             });
 
             $("#bckProfile").click(function () {
-
+                alert("Your changes have been submitted.\nThe system will redirect to your Profile");
+                window.location.href = "cusProFile.html";
+            });
+            $("#cancel").click(function () {
+                window.location.href = "cusProFile.html";
             });
         });
 
@@ -83,7 +87,8 @@
                     <form  id="contactForm">
                         <p class="formClass">Edit - LMIS07711</p>
 
-                        <p id="chkMsg">Modify might increase the processing time.</p>
+                        <p class="chkMsg">Modify might increase the processing time.</p>
+                        <p class="chkMsg">If you need to edit unchangeable data please contact our staff.</p>
 
                         <hr>
 
@@ -145,6 +150,7 @@
 
             <div class="containerRow">
                 <div id="nextBtnContainer">
+                    <button type="button" id="cancel">Cancel</button>
                     <button type="button" id="bckProfile">Save & Submit</button>
                 </div>
             </div>

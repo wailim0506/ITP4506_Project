@@ -13,6 +13,13 @@
             $(".chatBtn").click(function () {
                 window.location.href = "onlineBot.html";
             });
+            $("#bckProfile").click(function () {
+                alert("Thank you for your review and welcome to purchase Legend Motor Insurance again.");
+                window.location.href = "cusProFile.html";
+            });
+            $("#cancel").click(function () {
+                window.location.href = "cusProFile.html";
+            });
         });
     </script>
 </head>
@@ -67,11 +74,32 @@
                     <p class="waiting">Resubmit</p>
                 </div>
             </div>
+            <div class="container">
+                <div id="form">
+                    <form  id="contactForm">
+                        <p class="formClass">Cashier - LMIS07711</p>
 
+                        <hr>
 
+                        <p class="subTitle">Payment:</p>
+                        <div class="infoRow">
+                            <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
+                        </div>
 
+                        <p class="subTitle">QRCode:</p>
+                        <div class="infoRow">
+                            <img src="../../../src/img/insurance/IMG_0018.png">
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-
+            <div class="containerRow">
+                <div id="nextBtnContainer">
+                    <button type="button" id="cancel">Cancel</button>
+                    <button type="button" id="bckProfile">Finish</button>
+                </div>
+            </div>
 
 
         </div>
