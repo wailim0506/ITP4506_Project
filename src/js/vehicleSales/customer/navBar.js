@@ -16,12 +16,13 @@ $(document).ready(function () {
         $('#hiddenNav').hide();
         $('#hiddenNav').slideDown(400);
         $('#clodeBtnDiv i').show();
-
+        $('body').css('overflow', 'hidden');
     });
 
     $('#clodeBtnDiv i').click(function () {
         $(this).hide();
         $('#hiddenNav').slideUp(400);
+        $('body').css('overflow', 'auto');
     });
 
     $(window).resize(function () {
