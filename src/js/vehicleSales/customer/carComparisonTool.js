@@ -1,7 +1,8 @@
 function applyMode(isDarkMode) {
     if (isDarkMode) {
         $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
-        $('body, nav,.modal-content').css('color', 'rgb(194,196,200)');
+        $('footer').css('background-color', '#333');
+        $('body, nav,.modal-content,footer').css('color', 'rgb(194,196,200)');
         $('.modal-content').css('border', '1px solid grey');
         $('a').css('color', 'rgba(255,255,255,0.65)');
 
@@ -21,9 +22,10 @@ function applyMode(isDarkMode) {
         $('#darkModeToggle').text('wb_sunny');
     } else {
         $('html, nav,.modal-content').css('background-color', 'white');
+        $('footer').css('background-color', '#e8e6e6');
         $('body, nav,.modal-content').css('color', 'black');
         $('.modal-content').css('border', '1px solid #888');
-        $('a').css('color', 'rgba(0,0,0,0.65)');
+        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.infoRow').css('border-bottom', '1px solid lightgrey');
         if ($('.addCarBtn').length == 4) {
             $('.carBox').css('border', '0');

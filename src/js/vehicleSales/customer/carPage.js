@@ -245,7 +245,8 @@ function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
         $('html, nav').css('background-color', 'rgb(34,37,41)');
-        $('body, nav').css('color', 'rgb(194,196,200)');
+        $('footer').css('background-color', '#333');
+        $('body, nav,footer').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.infoBox .word').css('color', 'white');
         $('.section').css('border-bottom', '1px solid #4c4c4c');
@@ -271,8 +272,9 @@ function setDarkMode() {
     } else {
         //to light mode
         $('html, nav').css('background-color', 'white');
+        $('footer').css('background-color', '#e8e6e6');
         $('body, nav').css('color', 'black');
-        $('a').css('color', 'rgba(0,0,0,0.65)');
+        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.infoBox .word').css('color', 'black');
         $('.section').css('border-bottom', '1px solid #d1cece');
         if (window.innerWidth > 1036){
@@ -301,7 +303,8 @@ function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
             $('html, nav').css('background-color', 'rgb(34,37,41)');
-            $('body, nav').css('color', 'rgb(194,196,200)');
+            $('footer').css('background-color', '#333');
+            $('body, nav,footer').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.infoBox .title').css('color','white');
             $('.infoBox .word').css('color', 'white');
@@ -327,8 +330,9 @@ function loadDarkMode() {
         } else {
             //to light mode
             $('html,nav').css('background-color', 'white');
-            $('body,nav').css('color', 'black');
-            $('a').css('color', 'rgba(0,0,0,0.65)');
+            $('footer').css('background-color', '#e8e6e6');
+            $('body, nav').css('color', 'black');
+            $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('.infoBox .title').css('color','black');
             $('.infoBox .word').css('color', 'black');
             $('.section').css('border-bottom', '1px solid #d1cece');

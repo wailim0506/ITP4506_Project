@@ -2,7 +2,8 @@ function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
         $('html, nav,.container').css('background-color', 'rgb(34,37,41)');
-        $('body, nav,.container').css('color', 'rgb(194,196,200)');
+        $('footer').css('background-color', '#333');
+        $('body, nav,.container,footer').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.car-item,.container,th,td').css('border', '0.1px solid grey');
         $('input, select').css({
@@ -19,8 +20,9 @@ function setDarkMode() {
     } else {
         //to light mode
         $('html, nav,.container').css('background-color', 'white');
+        $('footer').css('background-color', '#e8e6e6');
         $('body, nav,.container').css('color', 'black');
-        $('a').css('color', 'rgba(0,0,0,0.65)');
+        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.car-item,.container,th,td').css('border', '1px solid lightgrey');
         $('input').css({
             'background-color': 'white',
@@ -45,7 +47,8 @@ function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
             $('html, nav, .container').css('background-color', 'rgb(34,37,41)');
-            $('body, nav, .container').css('color', 'rgb(194,196,200)');
+            $('footer').css('background-color', '#333');
+            $('body, nav,.container,footer').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.car-item,.container,th,td').css('border', '0.1px solid grey');
             $('input, select').css({
@@ -61,8 +64,9 @@ function loadDarkMode() {
         } else {
             //to light mode
             $('html, nav,.container').css('background-color', 'white');
+            $('footer').css('background-color', '#e8e6e6');
             $('body, nav,.container').css('color', 'black');
-            $('a').css('color', 'rgba(0,0,0,0.65)');
+            $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('.car-item,.container,th,td').css('border', '1px solid lightgrey');
             $('input').css({
                 'background-color': 'white',
