@@ -84,8 +84,101 @@
     <div id="form">
       <form  id="contactForm">
         <p class="formClass">3 - Submit for Checking</p>
+
+        <p id="chkMsg">The information you have entered. Please check it carefully.</p>
+
         <hr>
 
+        <p class="subTitle">Basic Information:</p>
+
+        <div class="infoRow">
+          <label>Car Name:<a>Toyota 7312</a></label>
+          <label>Car Model:<a>Toyota Corolla</a></label>
+          <label>Car Type:<a>HatchBack</a></label>
+        </div>
+
+        <div class="infoRow">
+          <label>Manufacture Date:<a>2000/01/16</a></label>
+          <label>Car Image:<a>IMG_1293.jpg</a></label>
+        </div>
+
+        <p class="subTitle">Driver:</p>
+        <div class="infoRow">
+          <label>Date of Birth:<a>1989/04/13</a></label>
+          <label>Profession:<a>Teacher</a></label>
+          <label>Marital Status:<a>Married</a></label>
+        </div>
+        <div class="infoRow">
+          <label>Gender:<a>Male</a></label>
+          <label>Driving Experience:<a>12</a></label>
+          <label>License Number:<a>1234567</a></label>
+        </div>
+
+        <p class="subTitle">Plan:</p>
+        <div class="infoRow">
+          <label><a>Comprehensive</a></label>
+        </div>
+
+        <p class="subTitle">Payment:</p>
+        <div class="infoRow">
+          <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
+        </div>
+
+        <hr>
+        <p class="subTitle">3.2 - Legend Motor Limited - Information Agreement and Policy</p>
+
+
+        <div id="agreementPolicy">
+          <h2>Information Agreement</h2>
+          <p>By submitting your information on the Legend Motor Limited car insurance application page, you agree to the following terms:</p>
+          <ol>
+            <li><strong>Accuracy of Information:</strong> You certify that all information provided is accurate, complete, and truthful to the best of your knowledge. Providing false information may result in the denial of coverage or cancellation of your policy.</li>
+            <li><strong>Consent for Communication:</strong> You consent to receive communications from Legend Motor Limited regarding your application, policy updates, and other relevant information via email, phone, or SMS.</li>
+            <li><strong>Use of Information:</strong> Your information will be used solely for the purpose of processing your car insurance application and managing your policy. We will not sell, rent, or lease your personal information to third parties.</li>
+            <li><strong>Data Protection:</strong> Legend Motor Limited is committed to protecting your personal information. We comply with applicable data protection laws and have implemented appropriate security measures to safeguard your data.</li>
+            <li><strong>Right to Access and Correct Information:</strong> You have the right to access your personal information held by us and to request corrections if necessary. Please contact our customer service for assistance.</li>
+          </ol>
+
+          <h2>Privacy Policy</h2>
+          <p>We collect personal information necessary to provide you with car insurance quotes and policies. This may include:</p>
+          <ul>
+            <li>Name</li>
+            <li>Address</li>
+            <li>Date of birth</li>
+            <li>Vehicle information</li>
+            <li>Driving history</li>
+          </ul>
+
+          <p>We may use your information for:</p>
+          <ul>
+            <li>Processing your application</li>
+            <li>Providing customer support</li>
+            <li>Communicating updates about your policy</li>
+            <li>Complying with legal obligations</li>
+          </ul>
+
+          <p>We may share your information with:</p>
+          <ul>
+            <li>Insurance partners for underwriting and claims purposes</li>
+            <li>Regulatory authorities as required by law</li>
+            <li>Service providers who assist us in delivering our services</li>
+          </ul>
+
+          <p>Your information will be retained for as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
+
+          <p>Legend Motor Limited reserves the right to update this policy. We will notify you of any significant changes via email or through our website.</p>
+
+          <h2>Contact Us</h2>
+          <p>If you have any questions about this Information Agreement and Policy, please contact us at:</p>
+          <p><strong>Legend Motor Limited</strong><br>
+            Email: support@legendmotor.com<br>
+            Phone: (123) 456-7890</p>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="agreement" required>
+            <label for="agreement" id="agreeP4">I have read and agree to the Information Agreement and Privacy Policy.</label>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -96,7 +189,7 @@
       <button type="button" id="previousBtn">Previous</button>
       <div>
         <div id="nextBtnContainer">
-          <button type="button" id="FinishBtn">Finish</button>
+          <button type="button" id="FinishBtn">Submit</button>
         </div>
       </div>
 

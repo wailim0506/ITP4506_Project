@@ -672,19 +672,62 @@ input[type='checkbox'] {
     box-sizing: border-box;
 }
 
+/* For P4 */
+
 #paymentMsg{
     font-size: 20px;
     color: red;
 }
 
+#chkMsg{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: red;
+    margin-top: -10px;
+}
 
+.infoRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: 0 3% 3% 7%;
+}
 
+.infoRow label{
+    width: 280px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
 
+.infoRow label a{
+    font-weight: normal;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.infoRow label a img{
+    margin-left: 15px;
+    width: 50px;
+}
 
+#agreementPolicy{
+    margin: 0 3% 3% 3%;
+}
 
+#agreementPolicy p, ol, ul{
+    font-size: 18px;
+}
 
-
+#agreeP4{
+   font-weight: bold;
+    font-size: 19px;
+}
 
 
 
