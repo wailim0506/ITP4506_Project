@@ -211,201 +211,6 @@ nav{
     color: teal;
 }
 
-/* Profile */
-#profile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3%;
-    margin: 0 10% 4% 10%;
-}
-
-#profile_left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    height: 550px;
-    border: 2px teal solid;
-    border-radius: 20px;
-    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
-    padding: 0.5%;
-}
-
-#profile_left .info{
-    font-size: 20px;
-    color: black;
-}
-
-
-#userName{
-    font-size: 25px;
-    color: black;
-    font-weight: bold;
-}
-
-#profile_right{
-    width: 70%;
-    height: 550px;
-    border: 2px teal solid;
-    border-radius: 20px;
-    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
-    padding: 0.5%;
-}
-
-#profile_right label{
-    color: black;
-}
-
-#userPhoto{
-    margin-top: 7%;
-    width: 45%;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-    font-size: 20px;
-}
-.name-row {
-    margin: 2% 10% 0 10%;
-    display: flex;
-    justify-content: space-between;
-}
-.name-row .form-group {
-    flex: 1;
-    margin-right: 10px;
-}
-.name-row .form-group:last-child {
-    margin-right: 0;
-}
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 20px;
-}
-input[type="text"]:focus {
-    border-color: #007BFF;
-    outline: none;
-}
-.button-container {
-    text-align: left;
-    margin: 2% 10% 3% 10%;
-}
-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
-button:hover {
-    background-color: #0056b3;
-}
-
-#personalData{
-    margin: 0 10% 0 10%;
-}
-/* Profile */
-
-
-
-/* Plan */
-#planList{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10% 5% 10%;
-
-}
-
-#plans{
-    width: 100%;
-    height: 550px;
-    border: 2px teal solid;
-    border-radius: 20px;
-    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 0 0;
-}
-
-
-#plans table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1% 0 0 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-#plans th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#plans td{
-    font-size: 18px;
-}
-
-#plans th {
-    color: black;
-    font-size: 22px;
-}
-#plans tr:hover {
-    background-color: #f1f1f1;
-}
-#plans.button-container {
-    display: flex;
-    gap: 10px;
-    margin-left: -1%;
-}
-#plans .button {
-    padding: 8px 12px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-#plans .disable {
-    background-color: gray;
-    padding: 7.5px 12px;
-}
-
-#plans .edit-button:hover {
-    background-color: #f6cb79;
-}
-
-#plans .edit-button {
-    background-color: #ffa500;
-}
-
-#plans .view-button:hover {
-    background-color: #4b9ffb;
-}
-#plans .view-button {
-    background-color: #007bff;
-}
-#plans .progress-button:hover {
-    background-color: #8cc698;
-}
-#plans .progress-button {
-    background-color: #28a745;
-}
-
 @keyframes article-load {
     0% {
         transform: translateY(-20px);
@@ -417,4 +222,111 @@ button:hover {
         opacity: 1;
     }
 }
+
+#progress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3% 3% 3% 10%;
+}
+
+.arrowRow{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: -10px 0 -10px 0;
+    gap: 20px;
+}
+
+.arrowRow span{
+    font-size: 70px;
+}
+
+.arrowRow p{
+    padding: 10px;
+    width: 85px;
+    border-radius: 7px;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+
+#downArrow{
+    margin-left: 25px;
+}
+
+.inProgress{
+    background: #1a981a;
+    animation-name: light;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.completed{
+    background: green;
+}
+
+.waiting{
+    background: gray;
+}
+
+@keyframes light{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+
+.arrowInProgress{
+    font-size: 100px;
+    color: #f9c22c;
+    margin: 0 0 0.5% 0;
+    animation-name: light;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.arrowWaiting{
+    font-size: 100px;
+    color: gray;
+    margin: 0 0 0.5% 0;
+}
+
+.arrowCompleted{
+    font-size: 100px;
+    color: green;
+    margin: 0 0 0.5% 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

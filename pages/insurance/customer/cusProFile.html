@@ -13,9 +13,22 @@
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
+
       $("#saveChanges").click(function () {
         alert("Changes saved successfully!");
         location.reload();
+      });
+
+      $(".view-button").click(function () {
+        window.location.href = "planStatusReview.html";
+      });
+
+      $(".edit-button").click(function () {
+        window.location.href = "planStatusEdit.html";
+      });
+
+      $(".progress-button").click(function () {
+        window.location.href = "planStatusProgress.html";
       });
     });
   </script>
@@ -135,8 +148,8 @@
               <td>
                 <div class="button-container">
                   <button class="button edit-button">Edit</button>
-                  <button class="button view-button">View</button>
-                  <button class="button progress-button">Progress</button>
+                  <button class="button view-button">Review</button>
+                  <button class="disable">Progress</button>
                 </div>
               </td>
             </tr>
@@ -149,8 +162,8 @@
               <td>2024-10-02</td>
               <td>
                 <div class="button-container">
-                  <button class="button edit-button">Edit</button>
-                  <button class="button view-button">View</button>
+                  <button class="disable">Edit</button>
+                  <button class="button view-button">Review</button>
                   <button class="button progress-button">Progress</button>
                 </div>
               </td>
@@ -165,8 +178,8 @@
               <td>
                 <div class="button-container">
                   <button class="button edit-button">Edit</button>
-                  <button class="button view-button">View</button>
-                  <button class="button progress-button">Progress</button>
+                  <button class="button view-button">Review</button>
+                  <button class="disable">Progress</button>
                 </div>
               </td>
             </tr>
