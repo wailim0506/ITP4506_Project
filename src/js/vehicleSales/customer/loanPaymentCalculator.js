@@ -93,13 +93,13 @@ function drawPieChart(principalPaid, interestPaid, monthlyPayment) {
     ctx.clearRect(0, 0, $canvas.width(), $canvas.height());
 
     ctx.arc(200, 200, 100, 0, principalAngle);
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'rgb(67,123,212)';
     ctx.fill();
 
     ctx.beginPath();
     ctx.moveTo(200, 200);
     ctx.arc(200, 200, 100, principalAngle, principalAngle + interestAngle);
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = 'rgb(149,187,66)';
     ctx.fill();
 
     ctx.beginPath();

@@ -128,9 +128,9 @@ function loadQuoteList(){
 }
 
 loadDarkMode();
+setQuoteListToLocalStorage();
 $(document).ready(function () {
     loadDarkMode();
-    setQuoteListToLocalStorage();
     loadQuoteList();
 
     $('#darkModeToggle').click(function () {
