@@ -29,6 +29,39 @@
       $("#AppP2").click(function () {
         window.location.href = "applicationP2.html";
       });
+
+      $('.payment').on('click', function() {
+        $('.payment').css('border', '2px solid #000');
+        $(this).css('border', '5px solid green');
+        $('#paymentDetail').empty();
+
+        var paymentMethod = $(this).find('p').text();
+
+        if (paymentMethod === 'Card' || paymentMethod === 'Apple Pay') {
+          var paymentDetailForm = `
+                <div class="paymentRow">
+                    <label for="cardNumber">Card Number <input type="text" id="cardNumber" name="cardNumber" required></label>
+                </div>
+                <div class="paymentRow">
+                    <label for="cardHolder">Card Holder: <input type="text" id="cardHolder" name="cardHolder" required></label>
+                    <label for="expiryDate">Expiry Date <input type="date" id="expiryDate" name="expiryDate" required></label>
+                </div>
+                <div class="paymentRow">
+                    <label for="cvv">CVV <input type="text" id="cvv" name="cvv" required></label>
+                </div>
+            `;
+
+          $('#paymentDetail').append(paymentDetailForm);
+        }else if(paymentMethod === 'Alipay' || paymentMethod === 'WeChatPay'){
+          var paymentDetailForm = `
+                <div class="paymentRow">
+                    <p id="paymentMsg">The QRCode will generate after the application approved.</p>
+                </div>
+            `;
+          $('#paymentDetail').append(paymentDetailForm);
+        }
+      });
+
     });
   </script>
 </head>
@@ -86,6 +119,53 @@
         <p class="formClass">3 - Payment</p>
         <hr>
 
+        <p class="subTitle">3.1 - Select a Method</p>
+        <p id="totalTitle">Base on the information you provided you need to pay: <b>16800 HKD</b></p>
+
+        <div id="paymentMethod">
+          <div class="payment">
+            <p>Card</p>
+            <img src="../../../src/img/insurance/IMG_0014.png" style="width: 35%">
+          </div>
+          <div class="payment">
+            <p>Apple Pay</p>
+            <img src="../../../src/img/insurance/IMG_0016.png" style="width: 65%">
+          </div>
+          <div class="payment">
+            <p>Alipay</p>
+            <img src="../../../src/img/insurance/IMG_0017.png" style="width: 30%">
+          </div>
+          <div class="payment">
+            <p>WeChatPay</p>
+            <img src="../../../src/img/insurance/IMG_0015.png" style="width: 40%">
+          </div>
+        </div>
+
+        <div id="paymentDetail">
+
+        </div>
+
+        <hr>
+
+        <p class="subTitle">3.2 - Agreement</p>
+        <div class="agreement">
+
+          <div id="agreementContent">
+            <p>By agreeing to these terms, you acknowledge that:</p>
+            <ul>
+              <li>You have read and understood the insurance policy.</li>
+              <li>You are aware of the coverage details and limitations.</li>
+              <li>You agree to provide accurate information during the application.</li>
+              <li>Any claims made must adhere to the policy guidelines.</li>
+            </ul>
+            <label for="agreementCheckbox">
+              <input type="checkbox" id="agreementCheckbox">I agree to the terms and conditions.
+            </label>
+          </div>
+        </div>
+
+
+
       </form>
     </div>
   </div>
@@ -101,7 +181,7 @@
       </div>
 
 
-</section>
+  </section>
 <!--Main Content-->
 
 

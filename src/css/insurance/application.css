@@ -515,6 +515,181 @@ input[type="text"]:focus {
 
 
 
+/* For P2 */
+#plans{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 3% 3% 3%;
+}
+
+
+.plan{
+    width: 45%;
+    border: 5px black solid;
+    padding: 10px;
+}
+
+.plan h1{
+    font-size: 35px;
+    margin: 0 0 0 0;
+}
+
+.plan img{
+    width: 20%;
+}
+
+.planContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.planContent p{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.plan:hover{
+    transform: translateY(-10px);
+}
+
+#downloads{
+    margin-top: -15px;
+    font-size: 20px;
+}
+
+#downloads a{
+    text-decoration: none;
+}
+
+#downloads a:hover{
+    text-decoration: underline;
+}
+
+#planDetail p{
+    font-size: 20px;
+    margin: -1% 2% 2% 2%;
+}
+
+
+
+/* For P3 */
+#totalTitle{
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+#paymentMethod{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 9% 3% 9%;
+}
+
+.payment{
+    width: 150px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px;
+}
+
+.payment p{
+    margin: 10px 0 10px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#agreementContent{
+    display: flex;
+    flex-direction: column;
+    margin: -30px 3% 3% 3%;
+    font-size: 20px;
+}
+
+#agreementContent p{
+    margin: 20px 0 0 0;
+}
+
+#agreementContent ul{
+    margin: 5px 0 10px 0;
+}
+
+#agreementContent label{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -12px;
+}
+
+#agreementContent input{
+    width: 40px;
+}
+
+input[type='checkbox'] {
+    width:20px;
+    height:20px;
+}
+
+#paymentDetail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 3% 3% 15%;
+}
+
+.paymentRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+}
+
+.paymentRow label{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+#cardNumber,#cvv{
+    width: 668px;
+}
+
+.paymentRow input{
+    margin-top: 6px;
+    font-size: 20px;
+    width: 320px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#paymentMsg{
+    font-size: 20px;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

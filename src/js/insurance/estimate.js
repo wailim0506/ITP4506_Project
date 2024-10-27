@@ -18,9 +18,9 @@ document.getElementById('estimateForm').addEventListener('submit', function(even
 
     // Adjust estimate based on insurance plan
     if (insurance === 'comprehensive') {
-        estimate += 2000;
+        estimate += 12000;
     } else if (insurance === 'thirdParty') {
-        estimate -= 1000;
+        estimate -= 2000;
     }
 
     document.getElementById('result').innerText = `Estimated Value of ${model} (${year} years): $${estimate.toFixed(2)}`;
