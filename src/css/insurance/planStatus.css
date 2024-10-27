@@ -43,7 +43,7 @@ body{
     align-items: center;
 }
 .chatBtn img{
-    width: 90%;
+    width: 72%;
 }
 
 
@@ -225,7 +225,7 @@ nav{
 
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 3% 3% 3% 3%;
@@ -316,9 +316,114 @@ nav{
 
 
 
+/* For form */
+#form{
+    height: auto;
+    border: 1px solid black;
+    width: 1000px;
+    background: #d7e4e4;
+    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
+}
+
+#form form{
+    margin: 2%;
+}
+
+#form form hr{
+    width: 100%;
+    border-top: 5px solid black;
+}
+
+.formClass{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.subTitle{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.containerRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: -30px 10% 0 10%;
+}
 
 
+#nextBtnContainer{
+    width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+}
 
+#previousBtnContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* For Review */
+#paymentMsg{
+    font-size: 20px;
+    color: red;
+}
+
+#chkMsg{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: red;
+    margin-top: -10px;
+}
+
+.infoRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: 0 3% 3% 7%;
+}
+
+.infoRow label{
+    width: 280px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoRow label a{
+    font-weight: normal;
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.infoRow label a img{
+    margin-left: 15px;
+    width: 50px;
+}
+
+#bckProfile{
+    width: 18%;
+    background-color: #f99a05;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
+
+#bckProfile:hover{
+    background-color: #f9c22c;
+}
 
 
 

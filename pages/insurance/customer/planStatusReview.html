@@ -13,6 +13,10 @@
             $(".chatBtn").click(function () {
                 window.location.href = "onlineBot.html";
             });
+
+            $("#bckProfile").click(function () {
+                window.location.href = "cusProFile.html";
+            });
         });
     </script>
 </head>
@@ -68,9 +72,60 @@
                 </div>
             </div>
 
+        <div class="container">
+            <div id="form">
+                <form  id="contactForm">
+                    <p class="formClass">Review - LMIS07711</p>
 
+                    <p id="chkMsg">You can modify the data via "Edit" in profile before Approved.</p>
 
+                    <hr>
 
+                    <p class="subTitle">Basic Information:</p>
+
+                    <div class="infoRow">
+                        <label>Car Name:<a>Toyota 7312</a></label>
+                        <label>Car Model:<a>Toyota Corolla</a></label>
+                        <label>Car Type:<a>HatchBack</a></label>
+                    </div>
+
+                    <div class="infoRow">
+                        <label>Manufacture Date:<a>2000/01/16</a></label>
+                        <label>Car Image:<a>IMG_1293.jpg</a></label>
+                    </div>
+
+                    <p class="subTitle">Driver:</p>
+                    <div class="infoRow">
+                        <label>Date of Birth:<a>1989/04/13</a></label>
+                        <label>Profession:<a>Teacher</a></label>
+                        <label>Marital Status:<a>Married</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Gender:<a>Male</a></label>
+                        <label>Driving Experience:<a>12</a></label>
+                        <label>License Number:<a>1234567</a></label>
+                    </div>
+
+                    <p class="subTitle">Plan:</p>
+                    <div class="infoRow">
+                        <label><a>Comprehensive</a></label>
+                        <label>Starting Date:<a>2024/10/10</a></label>
+                        <label>Expire Date:<a>2025/10/10</a></label>
+                    </div>
+
+                    <p class="subTitle">Payment:</p>
+                    <div class="infoRow">
+                        <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="containerRow">
+            <div id="nextBtnContainer">
+               <button type="button" id="bckProfile">Back to Profile</button>
+            </div>
+        </div>
 
 
 
