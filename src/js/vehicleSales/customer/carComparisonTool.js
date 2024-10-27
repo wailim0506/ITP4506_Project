@@ -126,25 +126,25 @@ function addCar(clickedButton, carId) {
                 `                <img src=\"../../../../src/img/vehicleSales/car/${carId}/1.jpg\"/>\n` +
                 "            </div>\n" +
                 "            <h3>GENERAL</h3>\n" +
-                "            <div class=\"carBox_infoRowDiv\">\n" +
+                `            <div class="carBox_infoRowDiv">\n` +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Brand</p>\n" +
+                "                    <p class=\"name\">Brand:</p>\n" +
                 `                    <p class=\"P\">${brand}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Model</p>\n" +
+                "                    <p class=\"name\">Model:</p>\n" +
                 `                    <p class=\"P\">${car.model}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Type</p>\n" +
+                "                    <p class=\"name\">Type:</p>\n" +
                 `                    <p class=\"P\">${car.type}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Year</p>\n" +
+                "                    <p class=\"name\">Year:</p>\n" +
                 `                    <p class=\"P\">${car.manufactureYear}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Country of Origin</p>\n" +
+                "                    <p class=\"name\">Country of Origin:</p>\n" +
                 `                   <p class=\"P\">${car.countryOfOrigin[car.countryOfOrigin.length - 1]}</p>\n` +
                 "                </div>\n" +
                 "            </div>\n" +
@@ -158,31 +158,31 @@ function addCar(clickedButton, carId) {
                 "            <h3>Specification</h3>\n" +
                 "            <div class=\"carBox_infoRowDiv\">\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Fuel Type</p>\n" +
+                "                    <p class=\"name\">Fuel Type:</p>\n" +
                 `                    <p class=\"P\">${car.fuelType}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Engine Type</p>\n" +
+                "                    <p class=\"name\">Engine Type:</p>\n" +
                 `                    <p class=\"P\">${car.engineType}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Transmission</p>\n" +
+                "                    <p class=\"name\">Transmission:</p>\n" +
                 `                    <p class=\"P\">${car.transmission}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Drive Train</p>\n" +
+                "                    <p class=\"name\">Drive Train:</p>\n" +
                 `                    <p class=\"P\">${car.driveTrain}</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Horse Power</p>\n" +
+                "                    <p class=\"name\">Horse Power:</p>\n" +
                 `                    <p class=\"P\">${car.horsepower} Watt</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Max Range</p>\n" +
+                "                    <p class=\"name\">Max Range:</p>\n" +
                 `                    <p class=\"P\">${car.maxRange} KM</p>\n` +
                 "                </div>\n" +
                 "                <div class=\"infoRow\">\n" +
-                "                    <p class=\"name\">Seating Capacity</p>\n" +
+                "                    <p class=\"name\">Seating Capacity:</p>\n" +
                 `                    <p class=\"P\">${car.seatingCapacity}</p>\n` +
                 "                </div>\n" +
                 "            </div>\n");
@@ -219,7 +219,7 @@ function addCar(clickedButton, carId) {
                     `                    <p class=\"P\">${car.batteryCapacity} kWh</p>\n` +
                     "                </div>\n" +
                     "                <div class=\"infoRow\">\n" +
-                    "                    <p class=\"name\">Fastest Charging Time </p>\n" +
+                    "                    <p class=\"name\">Fastest Charging Time: </p>\n" +
                     `                    <p class=\"P\">${Object.values(car.chargingTime).pop()}</p>\n` +
                     "                </div>\n" +
                     "            </div>")

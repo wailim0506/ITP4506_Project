@@ -5,10 +5,12 @@
     <title>Legend Motor Limited - Your Quotes</title>
     <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/quotesList.css">
-    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBarTest.css">
+    <script src="../../../src/js/vehicleSales/customer/navBar.js"></script>
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../../../src/js/vehicleSales/customer/quotesList.js"></script>
+
 </head>
 <body>
 <nav>
@@ -25,7 +27,25 @@
     <div id="nav_right">
         <a href="#">Logout</a>
     </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
 </nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="./extraFunction/loanPaymentCalculator.html">Loan Payment Calculator</a>
+        <a href="./extraFunction/carComparisonTool.html">Vehicle Comparison Tool</a>
+        <a>Logout</a>
+    </div>
+</div>
 <div id="main">
     <p style="font-size: 30px;font-weight: 700">Your Quote(s)</p>
     <div id="refreshBtnDiv">

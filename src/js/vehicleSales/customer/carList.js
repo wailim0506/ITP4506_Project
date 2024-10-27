@@ -239,4 +239,5 @@ $(document).ready(function () {
         location.href = "carPage.html";
     });
 
+
 });
