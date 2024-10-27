@@ -18,6 +18,12 @@
 
             });
         });
+
+        function selectGender(button) {
+            const buttons = document.querySelectorAll('.gender-button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        }
     </script>
 </head>
 <body>
@@ -75,9 +81,9 @@
             <div class="container">
                 <div id="form">
                     <form  id="contactForm">
-                        <p class="formClass">Review - LMIS07711</p>
+                        <p class="formClass">Edit - LMIS07711</p>
 
-                        <p id="chkMsg">You can modify the data via "Edit" in profile before Approved.</p>
+                        <p id="chkMsg">Modify might increase the processing time.</p>
 
                         <hr>
 
@@ -88,22 +94,38 @@
                             <label>Car Model:<a>Toyota Corolla</a></label>
                             <label>Car Type:<a>HatchBack</a></label>
                         </div>
-
                         <div class="infoRow">
                             <label>Manufacture Date:<a>2000/01/16</a></label>
                             <label>Car Image:<a>IMG_1293.jpg</a></label>
                         </div>
 
                         <p class="subTitle">Driver:</p>
-                        <div class="infoRow">
-                            <label>Date of Birth:<a>1989/04/13</a></label>
-                            <label>Profession:<a>Teacher</a></label>
-                            <label>Marital Status:<a>Married</a></label>
+
+                        <div class="inputRow">
+                            <label>Date of Birth: <input type="date"  class="date" value="1989-04-13"></label>
+                            <label>Profession: <input type="text" placeholder="Teacher"></label>
+                            <label>Marital Status:
+                                <select id="marital" name="maritalStatus" >
+                                    <option value="">Married</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </label>
                         </div>
-                        <div class="infoRow">
-                            <label>Gender:<a>Male</a></label>
-                            <label>Driving Experience:<a>12</a></label>
-                            <label>License Number:<a>1234567</a></label>
+
+                        <div id="driverList">
+                            <div class="inputRow">
+                                <div>
+                                    <label>Gender:</label>
+                                    <div id="buttonDiv">
+                                        <button type="button" class="gender-button selected" onclick="selectGender(this)">Male</button>
+                                        <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+                                    </div>
+                                </div>
+                                <label>Driving Experience: <input type="number"  class="date" placeholder="12"></label>
+                                <label>License Number: <input type="text" placeholder="1234567"></label>
+                            </div>
                         </div>
 
                         <p class="subTitle">Plan:</p>

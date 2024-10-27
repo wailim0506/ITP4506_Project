@@ -353,6 +353,30 @@ nav{
     margin: -30px 10% 0 10%;
 }
 
+.inputRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: 0 3% 3% 3%;
+}
+
+.inputRow label{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputRow label input, select{
+    margin-top: 6px;
+    font-size: 20px;
+    width: 280px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
 #nextBtnContainer{
     width: 1000px;
@@ -363,6 +387,35 @@ nav{
 #previousBtnContainer{
     display: flex;
     justify-content: flex-start;
+}
+
+#buttonDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 80px;
+}
+
+.gender-button {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 7px 15px;
+    margin: 5px 10px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.gender-button.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.gender-button:hover {
+    background-color: #e7f0ff;
 }
 
 
@@ -389,7 +442,7 @@ nav{
 }
 
 .infoRow label{
-    width: 280px;
+    width: 270px;
     font-size: 20px;
     font-weight: bold;
     display: flex;
