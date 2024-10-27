@@ -672,9 +672,9 @@ input[type='checkbox'] {
     box-sizing: border-box;
 }
 
-#ePaymentQRCode{
-    margin-left: 180px;
-    width: 40%;
+#paymentMsg{
+    font-size: 20px;
+    color: red;
 }
 
 

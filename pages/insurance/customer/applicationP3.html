@@ -55,7 +55,7 @@
         }else if(paymentMethod === 'Alipay' || paymentMethod === 'WeChatPay'){
           var paymentDetailForm = `
                 <div class="paymentRow">
-                    <img src="../../../src/img/insurance/IMG_0018.png" id="ePaymentQRCode">
+                    <p id="paymentMsg">The QRCode will generate after the application approved.</p>
                 </div>
             `;
           $('#paymentDetail').append(paymentDetailForm);
