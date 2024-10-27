@@ -109,7 +109,7 @@ th {
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 100px;
+    bottom: 50px;
 }
 .legend-item {
     display: flex;

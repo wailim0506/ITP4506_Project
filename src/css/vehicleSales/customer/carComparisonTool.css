@@ -1,0 +1,74 @@
+#main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.carBox{
+    width:  23%;
+    height: inherit;
+    /*border: 1px solid black;*/
+    /*border-right: 1px solid black;*/
+    /*border-radius: 20px;*/
+    padding-right: 12px;
+}
+
+.carBox_closeBtn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.carBox img{
+    width: 100%;
+    /*height: 50%;*/
+    border-radius: 5px;
+}
+
+.carBox_infoRowDiv{
+    padding:0 2px;
+}
+
+.infoRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 15px;
+    font-weight: bold;
+    /*border: 1px solid black;*/
+    /*border-radius: 5px;*/
+    margin-top: 3px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.name{
+    font-weight: 500;
+}
+
+.addCarBtn{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 1px solid teal;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    font-size: 30px;
+    margin-top: 80px;
+}
