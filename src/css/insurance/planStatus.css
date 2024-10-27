@@ -223,15 +223,22 @@ nav{
     }
 }
 
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 3% 3% 3%;
+}
+
 #progress{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3% 3% 3% 10%;
 }
 
 .arrowRow{
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin: -10px 0 -10px 0;
@@ -254,7 +261,8 @@ nav{
 }
 
 #downArrow{
-    margin-left: 25px;
+    font-size: 65px;
+    margin-left: 32px;
 }
 
 .inProgress{
