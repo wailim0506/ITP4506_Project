@@ -2,7 +2,8 @@ function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
         $('html,.modal-content, nav').css('background-color', 'rgb(34,37,41)');
-        $('body,.modal-content, nav').css('color', 'rgb(194,196,200)');
+        $('footer').css('background-color', '#333');
+        $('body,.modal-content, nav,footer').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('tr').css('border-bottom', '0.1px solid grey');
         $('table').css('border-top', '0.1px solid grey');
@@ -16,8 +17,9 @@ function setDarkMode() {
     } else {
         //to light mode
         $('html,.modal-content, nav').css('background-color', 'white');
+        $('footer').css('background-color', '#e8e6e6');
         $('body,.modal-content, nav').css('color', 'black');
-        $('a').css('color', 'rgba(0,0,0,0.65)');
+        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('tr').css('border-bottom', '0.8px solid #6c6969');
         $('table').css('border-top', '0.8px solid #6c6969');
         $('input,.modal-content,textarea').css({
@@ -39,7 +41,8 @@ function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
             $('html,.modal-content, nav').css('background-color', 'rgb(34,37,41)');
-            $('body,.modal-content, nav').css('color', 'rgb(194,196,200)');
+            $('footer').css('background-color', '#333');
+            $('body,.modal-content, nav,footer').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('tr').css('border-bottom', '0.1px solid grey');
             $('table').css('border-top', '0.1px solid grey');
@@ -53,7 +56,8 @@ function loadDarkMode() {
             //to light mode
             $('html,.modal-content, nav').css('background-color', 'white');
             $('body,.modal-content, nav').css('color', 'black');
-            $('a').css('color', 'rgba(0,0,0,0.65)');
+            $('footer').css('background-color', '#e8e6e6');
+            $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('tr').css('border-bottom', '0.8px solid #6c6969');
             $('table').css('border-top', '0.8px solid #6c6969');
             $('input,.modal-content,textarea').css({
@@ -377,4 +381,5 @@ $(document).ready(function () {
     $('.modal-body').on('scroll', function () {
         showFormScrolledPercentage();
     });
+
 });
