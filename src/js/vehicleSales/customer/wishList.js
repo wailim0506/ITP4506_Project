@@ -314,7 +314,8 @@ $(document).ready(function () {
             }
         }
         if (newCartArray.length == 0) {
-            localStorage.removeItem('cart');
+             localStorage.removeItem('cart');
+            // localStorage.setItem('cart', JSON.stringify(newCartArray));
         }else{
             localStorage.setItem('cart', JSON.stringify(newCartArray));
         }

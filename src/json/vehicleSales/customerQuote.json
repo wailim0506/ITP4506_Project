@@ -1,22 +1,14 @@
 [
   {
-    "quoteId": "Q52081",
-    "quoteDate": "2024/07/20",
+    "quoteId": "Q70633",
+    "quoteDate": "2024/10/28",
     "vehicleInQuote": [
       {
-        "vehicleId": "4",
-        "vehicleName": "Tesla Model Y",
+        "vehicleId": "13",
+        "vehicleName": "Toyota Yaris",
         "exteriorColor": "Blue",
-        "interiorColor": "Black",
-        "price": "53990",
-        "quantity": "1"
-      },
-      {
-        "vehicleId": "14",
-        "vehicleName": "Toyota RAV4",
-        "exteriorColor": "Silver",
         "interiorColor": "Gray",
-        "price": "26725",
+        "price": "20000",
         "quantity": "1"
       }
     ],
@@ -28,67 +20,105 @@
       "address": "123 ABC Street",
       "country": "Hong Kong",
       "city": "Hong Kong",
-      "zip": ""
+      "zip": "000000"
     },
     "paymentInformation": {
-      "cardType": "visa",
-      "cardHolder": "John Doe",
-      "cardNumber": "4910901950165357",
-      "expiryDate": "2027-11-01",
-      "cvv": "916"
-    },
-    "tradeInInformation": {
-      "tradeIn": "yes",
-      "tradeInMakeModel": "Toyota RAV4",
-      "tradeInYear": "2019",
-      "tradeInMileage": "2219",
-      "tradeInVIN": "12345678901234567",
-      "tradeInCondition": "excellent",
-      "exteriorCondition": "excellent",
-      "interiorCondition": "excellent",
-      "mechanicalCondition": "excellent",
-      "previousOwners": "1",
-      "serviceHistory": "2019: Oil change & routine maintenance\n2019: Tire rotation & brake inspection\n2020: Air filter replacement\n2020: Oil change & inspection\n2021: Brake pad replacement\n2022: Transmission fluid change\n2023: Oil change & tire rotation",
-      "accidentHistory": "no",
-      "tradeInPrice": "26725"
-    },
-    "status": "Confirmed",
-    "totalPrice": "80715"
-  },
-  {
-    "quoteId": "Q75642",
-    "quoteDate": "2024/10/24",
-    "vehicleInQuote": [
-      {
-        "vehicleId": "31",
-        "vehicleName": "Jeep Compass",
-        "exteriorColor": "White",
-        "interiorColor": "Black",
-        "price": "26000",
-        "quantity": "1"
-      }
-    ],
-    "personalInformation": {
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "example@gmail.com",
-      "phone": "93452234",
-      "address": "123 ABC Street",
-      "country": "Hong Kong",
-      "city": "Hong Kong",
-      "zip": ""
-    },
-    "paymentInformation": {
-      "cardType": "mastercard",
-      "cardHolder": "Jane Smith",
-      "cardNumber": "2231080000582485",
-      "expiryDate": "2026-12-01",
-      "cvv": "498"
+      "paymentMethod": "bankTransfer",
+      "bankName": "Test",
+      "holderName": "123",
+      "accountNumber": "345",
+      "swiftCode": "567"
     },
     "tradeInInformation": {
       "tradeIn": "no"
     },
+    "status": "Confirmed",
+    "totalPrice": "20000"
+  },
+  {
+    "quoteId": "Q85055",
+    "quoteDate": "2024/10/28",
+    "vehicleInQuote": [
+      {
+        "vehicleId": "16",
+        "vehicleName": "Toyota Highlander",
+        "exteriorColor": "Black",
+        "interiorColor": "Gray",
+        "price": "35000",
+        "quantity": "1"
+      }
+    ],
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "example@gmail.com",
+      "phone": "93452234",
+      "address": "123 ABC Street",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "zip": "000000"
+    },
+    "paymentInformation": {
+      "paymentMethod": "bankTransfer",
+      "bankName": "Demo Bank",
+      "holderName": "Demo",
+      "accountNumber": "12931203",
+      "swiftCode": "304958420"
+    },
+    "tradeInInformation": {
+      "tradeIn": "yes",
+      "tradeInMakeModel": "Tesla Model 3",
+      "tradeInYear": "2020",
+      "tradeInMileage": "30000",
+      "tradeInVIN": "123123213123131",
+      "tradeInCondition": "excellent",
+      "exteriorCondition": "good",
+      "interiorCondition": "good",
+      "mechanicalCondition": "good",
+      "previousOwners": "1",
+      "serviceHistory": "2019: Oil change, tire rotation",
+      "accidentHistory": "/",
+      "tradeInValue": "10000"
+    },
     "status": "Pending",
-    "totalPrice": "26000"
+    "totalPrice": "35000"
+  },
+  {
+    "quoteId": "Q90364",
+    "quoteDate": "2024/10/28",
+    "vehicleInQuote": [
+      {
+        "vehicleId": "8",
+        "vehicleName": "BYD Han",
+        "exteriorColor": "Red",
+        "interiorColor": "Black",
+        "price": "50000",
+        "quantity": "1"
+      }
+    ],
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "example@gmail.com",
+      "phone": "93452234",
+      "address": "123 ABC Street",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "zip": "000000"
+    },
+    "paymentInformation": {
+      "paymentMethod": "creditCard",
+      "cardType": "visa",
+      "cardHolder": "Demo",
+      "cardNumber": "9876545678878181",
+      "expiryDate": "2025-07-10",
+      "cvv": "123"
+    },
+    "tradeInInformation": {
+      "tradeIn": "no",
+      "tradeInValue": "10000"
+    },
+    "status": "Pending",
+    "totalPrice": "50000"
   }
 ]

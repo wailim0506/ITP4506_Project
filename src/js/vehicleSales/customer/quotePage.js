@@ -157,11 +157,52 @@ function loadQuotePaymentDetail() {
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
         var quote = quoteList.find(quote => quote.quoteId == quoteId);
+        var box = $("#PaymentInfoSmallBoxDiv");
         if (quote != null) {
-            $('#cardType').text(`${quote.paymentInformation.cardType.toUpperCase()}`);
-            let cardNumber = quote.paymentInformation.cardNumber;
-            let maskedCardNumber = cardNumber.replace(/(\d{4})\d{8}(\d{4})/, '$1********$2');
-            $('#cardNumber').text(maskedCardNumber);
+            if (quote.paymentInformation.paymentMethod === 'cheque') {
+                $('#paymentMethod').text('Cheque');
+                // $('#chequeBankName').text(`${quote.paymentInformation.chequeBankName}`);
+                box.append(`<div>
+                        <h3>Bank Name:</h3>
+                        <p>${quote.paymentInformation.chequeBankName}</p>
+                        </div>`);
+            }
+            if (quote.paymentInformation.paymentMethod === 'bankTransfer') {
+                $('#paymentMethod').text('Bank Transfer');
+
+                box.append(`<div>
+                                <h3>Bank Name:</h3>
+                                <p>${quote.paymentInformation.bankName}</p>
+                            </div>
+                            <div>
+                                <h3>Account Holder Name:</h3>
+                                <p>${quote.paymentInformation.holderName}</p>
+                            </div>
+                            <div>
+                                <h3>Account Number:</h3>
+                                <p>${quote.paymentInformation.accountNumber}</p>
+                            </div>
+                            <div>
+                                <h3>Swift Code:</h3>
+                                <p>${quote.paymentInformation.swiftCode}</p>
+                            </div>`);
+            }
+
+            if (quote.paymentInformation.paymentMethod === 'creditCard') {
+                // $('#cardType').text(`${quote.paymentInformation.cardType.toUpperCase()}`);
+                let cardNumber = quote.paymentInformation.cardNumber;
+                let maskedCardNumber = cardNumber.replace(/(\d{4})\d{8}(\d{4})/, '$1********$2');
+                // $('#cardNumber').text(maskedCardNumber);
+                $('#paymentMethod').text('Credit Card');
+                box.append(`<div>
+                                <h3>Card Type:</h3>
+                                <p>${quote.paymentInformation.cardType.toUpperCase()}</p>
+                            </div>
+                            <div>
+                                <h3>Card Number:</h3>
+                                <p>${maskedCardNumber}</p>
+                            </div>`);
+            }
 
         }
     }
@@ -176,10 +217,11 @@ function loadQuoteTradeInDetail() {
         var quote = quoteList.find(quote => quote.quoteId === quoteId);
         if (quote != null) {
             if (quote.tradeInInformation.tradeIn !== "no") {
-                $('#tradeInCar').text(`$${quote.tradeInInformation.tradeInMakeModel}`);
+                $('#tradeInCar').text(`${quote.tradeInInformation.tradeInMakeModel}`);
                 $('#tradeInMY').text(`${quote.tradeInInformation.tradeInYear}`);
                 $('#tradeInMileage').text(`${quote.tradeInInformation.tradeInMileage}`);
-                $('#tradeInVin').text(`${quote.tradeInInformation.tradeInVIN}`);
+                // $('#tradeInVin').text(`${quote.tradeInInformation.tradeInVIN}`);
+
                 $('#tradeInOC').text(`${quote.tradeInInformation.tradeInCondition}`);
                 $('#tradeInEC').text(`${quote.tradeInInformation.exteriorCondition}`);
                 $('#tradeInIC').text(`${quote.tradeInInformation.interiorCondition}`);
@@ -187,7 +229,7 @@ function loadQuoteTradeInDetail() {
                 $('#tradeInPO').text(`${quote.tradeInInformation.previousOwners}`);
                 $('#tradeInSH').text(`${quote.tradeInInformation.serviceHistory}`);
                 $('#tradeInAH').text(`${quote.tradeInInformation.accidentHistory}`);
-                $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInPrice}`);
+                // $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInPrice}`);
             } else {
                 $('#tradeInfo').remove();
             }
@@ -204,8 +246,9 @@ function loadQuotePriceBreakdown() {
         if (quote != null) {
             $('#subtotal').text(`$${parseInt(quote.totalPrice)}`);
             if (quote.tradeInInformation.tradeIn != "no") {
-                $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
-                $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(quote.tradeInInformation.tradeInPrice) + 5000}`);
+                // $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
+                $('#tradeInValueBreakdown').text(`-$10000`);
+                $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(10000) + 5000}`);
             } else {
                 $('#tradeInValueBreakdown').text(`-$0`);
                 $('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);

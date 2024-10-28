@@ -27,22 +27,30 @@ function createQuote() {
 
 
     // get data
-    var firstName = $('#firstName').val();
-    var lastName = $('#lastName').val();
-    var email = $('#email').val();
-    var phone = $('#phone').val();
-    var address = $('#address').val();
-    var country = $('#country').val();
-    var city = $('#city').val();
-    var zip = $('#zip').val();
+    // var firstName = $('#firstName').val();
+    // var lastName = $('#lastName').val();
+    // var email = $('#email').val();
+    // var phone = $('#phone').val();
+    // var address = $('#address').val();
+    // var country = $('#country').val();
+    // var city = $('#city').val();
+    // var zip = $('#zip').val();
 
-
-    var cardType = $('input[name="cardType"]:checked').val();
-    var cardHolder = $('#cardHolder').val();
-    var cardNumber = $('#cardNumber').val();
-    var expiryDate = $('#expiryDate').val();
-    var cvv = $('#cvv').val();
-
+    var paymentMethod = $('input[name="paymentMethod"]:checked').val();
+    if (paymentMethod === 'cheque') {
+        var chequeBankName = $('#chequeBankName').val();
+    } else if (paymentMethod === 'bankTransfer') {
+        var bankName = $('#transferBankName').val();
+        var holderName = $('#transferAccountHolderName').val();
+        var accountNumber = $('#transferAccountNumber').val();
+        var swiftCode = $('#transferSwiftCode').val();
+    } else if (paymentMethod === 'creditCard') {
+        var cardType = $('input[name="cardType"]:checked').val();
+        var cardHolder = $('#cardHolder').val();
+        var cardNumber = $('#cardNumber').val();
+        var expiryDate = $('#expiryDate').val();
+        var cvv = $('#cvv').val();
+    }
 
     var tradeIn = $('input[name="tradeIn"]:checked').val();
     var tradeInMakeModel = $('#tradeInMakeModel').val();
@@ -68,39 +76,58 @@ function createQuote() {
         "quoteDate": new Date().toLocaleDateString(),
         "vehicleInQuote": vehicleInQuote,
         "personalInformation": {
-            "firstName": firstName,
-            "lastName": lastName,
-            "email": email,
-            "phone": phone,
-            "address": address,
-            "country": country,
-            "city": city,
-            "zip": zip
-        },
-        "paymentInformation": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "example@gmail.com",
+            "phone": "93452234",
+            "address": "123 ABC Street",
+            "country": "Hong Kong",
+            "city": "Hong Kong",
+            "zip": "000000"
+        }
+    }
+
+    if (paymentMethod === 'cheque') {
+        newQuote.paymentInformation = {
+            "paymentMethod": paymentMethod,
+            "chequeBankName": chequeBankName
+        }
+    } else if (paymentMethod === 'bankTransfer') {
+        newQuote.paymentInformation = {
+            "paymentMethod": paymentMethod,
+            "bankName": bankName,
+            "holderName": holderName,
+            "accountNumber": accountNumber,
+            "swiftCode": swiftCode
+        }
+    } else {
+        newQuote.paymentInformation = {
+            "paymentMethod": paymentMethod,
             "cardType": cardType,
             "cardHolder": cardHolder,
             "cardNumber": cardNumber,
             "expiryDate": expiryDate,
             "cvv": cvv
-        },
-        "tradeInInformation": {
-            "tradeIn": tradeIn,
-            "tradeInMakeModel": tradeInMakeModel,
-            "tradeInYear": tradeInYear,  //manufacture year
-            "tradeInMileage": tradeInMileage,
-            "tradeInVIN": tradeInVIN,
-            "tradeInCondition": tradeInCondition,
-            "exteriorCondition": exteriorCondition,
-            "interiorCondition": interiorCondition,
-            "mechanicalCondition": mechanicalCondition,
-            "previousOwners": previousOwners,
-            "serviceHistory": serviceHistory,
-            "accidentHistory": accidentHistory
-        },
-        "status": "Pending",
-        "totalPrice": $('#subtotal').text().replace('$', '').replace('.00', '').trim()
+        }
     }
+
+    newQuote.tradeInInformation = {
+        "tradeIn": tradeIn,
+        "tradeInMakeModel": tradeInMakeModel,
+        "tradeInYear": tradeInYear,  //manufacture year
+        "tradeInMileage": tradeInMileage,
+        "tradeInVIN": tradeInVIN,
+        "tradeInCondition": tradeInCondition,
+        "exteriorCondition": exteriorCondition,
+        "interiorCondition": interiorCondition,
+        "mechanicalCondition": mechanicalCondition,
+        "previousOwners": previousOwners,
+        "serviceHistory": serviceHistory,
+        "accidentHistory": accidentHistory,
+        "tradeInValue": "10000"
+    };
+    newQuote.status = "Pending";
+    newQuote.totalPrice = $('#subtotal').text().replace('$', '').replace('.00', '').trim();
 
     if (localStorage.getItem('quote') != null) {
         var getQuote = JSON.parse(localStorage.getItem('quote'));
@@ -115,6 +142,9 @@ function createQuote() {
 }
 
 $(document).ready(function() {
+    $('#creditCardSection').hide();
+    $('#chequeSection').hide();
+    $('#bankTransferSection').hide();
     var modal = $("#myModal");
     var btn = $("#getQuoteBtn");
     var span = $(".close");
@@ -164,8 +194,7 @@ $(document).ready(function() {
 
     $("#longForm").submit(function(event) {
         event.preventDefault(); // Prevent the default form submission
-        alert("Form submitted! \nName: " + $("#name").val() + "\nEmail: " + $("#email").val());
-
+        
         modal.hide();
         createQuote();
 
@@ -176,6 +205,24 @@ $(document).ready(function() {
             'top': ''
         });
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    });
+
+
+    $('input[name="paymentMethod"]').change(function () {
+        if ($(this).val() === 'cheque') {
+            $('#chequeSection').show();
+            $('#creditCardSection').hide();
+            $('#bankTransferSection').hide();
+        } else if ($(this).val() === 'creditCard') {
+            $('#creditCardSection').show();
+            $('#chequeSection').hide();
+            $('#bankTransferSection').hide();
+        } else {
+            $('#bankTransferSection').show();
+            $('#creditCardSection').hide();
+            $('#chequeSection').hide();
+        }
+
     });
 
 });

@@ -378,7 +378,9 @@ function addCart(){
             price: price
         }];
         localStorage.setItem('cart', JSON.stringify(cart));
-    }else{
+    }else if(JSON.parse(cart).length == 1){
+        alert("Wish List already have car");
+    } else{
         cart = JSON.parse(cart);
         cart.push({
             itemId: cart.length + 1,
@@ -390,8 +392,8 @@ function addCart(){
             price: price
         });
         localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Vehicle added to wish list!");
     }
-    alert("Vehicle added to wish list!");
     location.reload();
 }
 

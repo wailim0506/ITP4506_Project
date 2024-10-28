@@ -96,3 +96,8 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: teal;
 }
+
+#creditCardSection,#chequeSection,#bankTransferSection{
+    display: flex;
+    flex-direction: column;
+}
