@@ -62,4 +62,14 @@ $(document).ready(function(){
     $('#darkModeToggle').click(function () {
         setDarkMode();
     });
+
+    $('#loginBtn').click(function () {
+        var selectPlatform = $('#selectPlatform').val();
+        console.log(selectPlatform);
+        if (selectPlatform == '0') {
+            window.location.href = '../../../pages/VehicleSales/customer/carList.html';
+        }else{
+            window.location.href = '../../../pages/insurance/customer/onlineBot.html';
+        }
+    });
 });
