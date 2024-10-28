@@ -69,7 +69,7 @@ $(document).ready(function(){
         if (selectPlatform == '0') {
             window.location.href = '../../../pages/VehicleSales/customer/carList.html';
         }else{
-            window.location.href = '../../../pages/insurance/customer/onlineBot.html';
+            window.location.href = '../../../pages/insurance/customer/cusMainPage.html';
         }
     });
 });
