@@ -379,7 +379,8 @@ function addCart(){
         }];
         localStorage.setItem('cart', JSON.stringify(cart));
     }else if(JSON.parse(cart).length == 1){
-        alert("Wish List already have car");
+        // alert("Wish List already have car");
+        openModal("Wish List already have car");
     } else{
         cart = JSON.parse(cart);
         cart.push({
@@ -392,9 +393,10 @@ function addCart(){
             price: price
         });
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert("Vehicle added to wish list!");
+        // alert("Vehicle added to wish list!");
+        openModal("Vehicle added to wish list!");
     }
-    location.reload();
+    // location.reload();
 }
 
 
@@ -469,10 +471,12 @@ $(document).ready(function () {
             if ($('#selectedExteriorColorDisplay').text() != "Selected Color: "){
                 addCart();
             }else{
-                alert("Please select a exterior color");
+                // alert("Please select a exterior color");
+                openModal("Please select a exterior color");
             }
         }else{
-            alert("Please select a interior color");
+            // alert("Please select a interior color");
+            openModal("Please select a interior color");
         }
     });
 });

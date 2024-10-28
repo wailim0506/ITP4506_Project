@@ -5,16 +5,18 @@
   <meta charset="UTF-8">
   <title>Legend Motor Limited - Vehicle Page</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/alertModal.css">
+  <script src="../../../src/js/vehicleSales/customer/alertModal.js"></script>
   <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/carPage.css">
   <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
   <script src="../../../src/js/vehicleSales/customer/navBar.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
   <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/imageSlide.css">
   <script src="../../../src/js/vehicleSales/customer/carPage.js"></script>
   <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/footer.css">
+
+
 
 </head>
 
@@ -201,13 +203,15 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Long Form</h2>
+    <h2>Message:</h2>
     <div class="modal-body">
       <form id="longForm">
-        <p id="warningMessage"></p>
+        <div>
+          <p id="warningMessage"></p>
+        </div>
       </form>
     </div>
-    <button type="submit" form="longForm">Submit</button> <!-- Fixed submit button -->
+    <button type="submit" form="longForm">Close</button> <!-- Fixed submit button -->
   </div>
 </div>
 <footer>

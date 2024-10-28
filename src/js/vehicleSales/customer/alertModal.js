@@ -1,15 +1,26 @@
 function openModal(message) {
     var modal = $("#myModal");
-    btn.click(function() {
-        modal.show();
+    // btn.click(function() {
+    //     $('#warningMessage').text(message);
+    //     modal.show();
+    //
+    //     // Prevent body scroll
+    //     $('body').css({
+    //         'overflow': 'hidden',
+    //         'position': 'fixed',
+    //         'width': '100%',
+    //         'top': `-${window.scrollY}px`
+    //     });
+    // });
+    $('#warningMessage').text(message);
+    modal.show();
 
-        // Prevent body scroll
-        $('body').css({
-            'overflow': 'hidden',
-            'position': 'fixed',
-            'width': '100%',
-            'top': `-${window.scrollY}px`
-        });
+    // Prevent body scroll
+    $('body').css({
+        'overflow': 'hidden',
+        'position': 'fixed',
+        'width': '100%',
+        'top': `-${window.scrollY}px`
     });
 }
 
