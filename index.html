@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="src/css/common/index.css">
     <script src="src/js/common/jslib/jquery-1.11.1.js"></script>
     <script src="src/js/common/index.js"></script>
+    <script src="src/js/common/forgetPasswordModal.js"></script>
+    <script src="src/js/common/forgetPasswordModal.js"></script>
+    <link rel="stylesheet" href="src/css/common/forgetPasswordModal.css">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 <div id="body_div">
@@ -20,7 +24,8 @@
                 <label style="font-size: 30px;font-weight: 500">Sign in</label>
             </div>
             <div class="field">
-                <label class="hoverEff" style="font-size: 17px">Don't have an account? <a  href="pages/common/registration.html" >Sign up</a></label>
+                <label class="hoverEff" style="font-size: 17px">Don't have an account? <a
+                        href="pages/common/registration.html">Sign up</a></label>
             </div>
             <div class="field">
                 <label>Email:</label>
@@ -42,10 +47,36 @@
             </div>
             <div class="field">
                 <div style="width:100%; display: flex;flex-direction: row;justify-content: end;margin-right: 80px">
-                    <a href="./html/customer/itemList.html" style="font-size: 15px;">Forget password</a>
+                    <a href="#" style="font-size: 15px;" id="forgetPWBtn">Forget password</a>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Forget Password</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="Enter your email" required style="height: fit-content">
+                    <div class="field">
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password" name="new-password" placeholder="Enter your new password"
+                               required>
+                    </div>
+                    <div class="field">
+                        <label for="confirm-password">Confirm New Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Retype new password"
+                               required>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <button id="forgetPWSubBtn">Submit</button> <!-- Fixed submit button -->
     </div>
 </div>
 <!-- dark mode button -->
