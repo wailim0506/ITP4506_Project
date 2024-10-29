@@ -289,7 +289,7 @@ input[type="text"]:focus {
     border-color: #007BFF;
 }
 
-#buttonDiv{
+.buttonDiv{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -315,6 +315,47 @@ input[type="text"]:focus {
 }
 
 .gender-button:hover {
+    background-color: #e7f0ff;
+}
+
+
+.electronic-button-Yes {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #29d829;
+    color: #29d829;
+    padding: 7px 15px;
+    margin: 5px 10px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.electronic-button-Yes.selected {
+    background-color: #66d872;
+    color: white;
+}
+
+.electronic-button-No {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #ef2c2c;
+    color: #ef2c2c;
+    padding: 7px 15px;
+    margin: 5px 10px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.electronic-button-No.selected {
+    background-color: #e45656;
+    color: white;
+}
+
+.electronic-button-No:hover, .electronic-button-Yes:hover {
     background-color: #e7f0ff;
 }
 

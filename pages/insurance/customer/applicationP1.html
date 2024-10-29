@@ -69,6 +69,12 @@
       buttons.forEach(btn => btn.classList.remove('selected'));
       button.classList.add('selected');
     }
+
+    function selectElectronic(button) {
+      const buttons = document.querySelectorAll('.electronic-button-No,.electronic-button-Yes');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+    }
   </script>
 </head>
 <body>
@@ -159,6 +165,13 @@
           <div class="inputRow">
             <label>Manufacture Date: <input type="date" ></label>
             <label>Car Image: <input type="file" ></label>
+            <div>
+              <label>Electronic Car? :</label>
+              <div class="buttonDiv">
+                <button type="button" class="electronic-button-Yes" onclick="selectElectronic(this)">Yes</button>
+                <button type="button" class="electronic-button-No" onclick="selectElectronic(this)">No</button>
+              </div>
+            </div>
           </div>
 
           <hr>
@@ -182,7 +195,7 @@
             <div class="inputRow">
               <div>
                 <label>Gender:</label>
-                <div id="buttonDiv">
+                <div class="buttonDiv">
                   <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
                   <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
                 </div>
