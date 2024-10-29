@@ -47,6 +47,7 @@ nav{
 
 #nav_left img{
     height: 55px;
+    cursor: pointer;
 }
 
 

@@ -30,4 +30,8 @@ $(document).ready(function () {
             $('#hiddenNav').slideUp(1);
         }
     });
+
+    $('#nav_left img').click(function () {
+        location.href = '../../../index.html';
+    });
 });
