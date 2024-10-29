@@ -378,6 +378,7 @@ function addCart(){
             price: price
         }];
         localStorage.setItem('cart', JSON.stringify(cart));
+        openModal("Vehicle added to wish list!");
     }else if(JSON.parse(cart).length == 1){
         // alert("Wish List already have car");
         openModal("Wish List already have car");

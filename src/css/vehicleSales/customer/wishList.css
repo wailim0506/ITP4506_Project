@@ -53,7 +53,7 @@
 }
 
 #main_body{
-    height: fit-content;
+    height: 460px;
     width: 90%;
     align-items: center;
     display: flex;
