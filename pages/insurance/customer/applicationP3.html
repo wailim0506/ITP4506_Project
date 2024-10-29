@@ -39,6 +39,9 @@
         $(this).css('border', '5px solid green');
         $('#paymentDetail').empty();
 
+
+
+
         var paymentMethod = $(this).find('p').text();
 
         if (paymentMethod === 'Card' || paymentMethod === 'Apple Pay') {
@@ -67,6 +70,26 @@
       });
 
     });
+    function payOption(button) {
+      const buttons = document.querySelectorAll('.payOption-Installments,.payOption-full');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+      var isElectronic = $(button).hasClass('payOption-Installments');
+      var additionalInfoDiv = $('#payOptions');
+      additionalInfoDiv.empty(); // Clear previous content
+
+      if (isElectronic) {
+        var inputHtml = `<label>*Installments Options:
+                    <select required>
+                        <option value="">--Select an Option--</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                    </select>
+                </label>`;
+        additionalInfoDiv.append(inputHtml);
+      }
+    }
   </script>
 </head>
 <body>
@@ -150,6 +173,18 @@
         <div id="paymentDetail">
 
         </div>
+
+        <hr>
+        <p class="subTitle">5.2 - Payment Options</p>
+        <div class="infoRow">
+          <div>
+            <div class="buttonDiv">
+              <button type="button" class="payOption-full" onclick="payOption(this)">Pay in full</button>
+              <button type="button" class="payOption-Installments" onclick="payOption(this)">In installments</button>
+            </div>
+          </div>
+        </div>
+        <div class="infoRow" id="payOptions"></div>
 
         <hr>
 

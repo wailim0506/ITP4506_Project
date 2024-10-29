@@ -296,7 +296,7 @@ input[type="text"]:focus {
     margin-right: 80px;
 }
 
-.gender-button {
+.gender-button{
     width: 100%;
     background-color: #ffffff;
     border: 2px solid #007bff;
@@ -309,12 +309,26 @@ input[type="text"]:focus {
     font-size: 20px;
 }
 
-.gender-button.selected {
+.payOption-Installments,.payOption-full{
+    width: 180px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 7px 15px;
+    margin: 5px 10px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.gender-button.selected,.payOption-Installments.selected,.payOption-full.selected {
     background-color: #007bff;
     color: white;
 }
 
-.gender-button:hover {
+.gender-button:hover,.payOption-Installments:hover,.payOption-full:hover {
     background-color: #e7f0ff;
 }
 
@@ -806,6 +820,11 @@ input[type='checkbox'] {
    font-weight: bold;
     font-size: 19px;
 }
+
+#long{
+    width: 520px;
+}
+
 
 /* For Finish */
 

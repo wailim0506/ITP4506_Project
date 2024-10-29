@@ -45,9 +45,9 @@
         if (!isNaN(years) && startDate instanceof Date && !isNaN(startDate)) {
           const expireDate = new Date(startDate);
           expireDate.setFullYear(expireDate.getFullYear() + years);
-          $('#expireDate').text(expireDate.toISOString().split('T')[0]); // Format as YYYY-MM-DD
+          $('#expireDate').text(expireDate.toISOString().split('T')[0]);
         } else {
-          $('#expireDate').text('Please enter date'); // Reset if inputs are invalid
+          $('#expireDate').text('Please enter date');
         }
       }
 
@@ -57,17 +57,25 @@
 
       function calPrice() {
         const years = parseInt($('#years').val());
-        const price = $('.plan').data('price');
+        const selectedPlan = $('.plan.selected');
+        const price = selectedPlan.data('price');
 
         if(!isNaN(years) && !isNaN(price)){
-          $('#price').text(price*years);
-        }else{
-            $('#price').text('Please select a plan');
+          $('#price').text(price * years);
+        } else {
+          $('#price').text('Please select a plan');
         }
       }
 
-        $('.plan').on('click', calPrice);
-        $('#years').on('input', calPrice);
+
+      $('.plan').on('click', function() {
+        $('.plan').removeClass('selected');
+        $(this).addClass('selected');
+        calPrice();
+      });
+
+
+      $('#years').on('input', calPrice);
 
     });
 
@@ -154,7 +162,7 @@
         </div>
 
         <div class="inputRow">
-          <label>Years:<input type="number" id="years" min="1"></label>
+          <label>Duration:<input type="number" id="years" min="1" placeholder="Duration"></label>
           <label for="plan">Starting Date:<input type="date" id="plan" name="plan"></label>
           <label>Expire Date:<span id="expireDate">Please enter date</span></label>
         </div>
