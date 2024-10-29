@@ -481,7 +481,7 @@ $(document).ready(function () {
     });
 
     $('.similarCarBox button').click(function () {
-        localStorage.setItem('carToView', $(this).attr('id'));
+        localStorage.setItem('carToView', $(this).attr('carid'));
         location.href = "carPage.html";
     });
 });
