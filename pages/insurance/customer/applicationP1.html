@@ -39,7 +39,7 @@
           <div class="inputRow">
              <div>
              <label>Gender:</label>
-             <div id="buttonDiv">
+             <div class="buttonDiv">
                 <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
                 <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
              </div>
@@ -74,6 +74,29 @@
       const buttons = document.querySelectorAll('.electronic-button-No,.electronic-button-Yes');
       buttons.forEach(btn => btn.classList.remove('selected'));
       button.classList.add('selected');
+      var isElectronic = $(button).hasClass('electronic-button-Yes');
+      var additionalInfoDiv = $('#electronicOption');
+      additionalInfoDiv.empty(); // Clear previous content
+
+      if (isElectronic) {
+        var inputHtml = `
+                <label>Battery Capacity: <input type="number"></label>
+                <label>Charge Range: <input type="number"></label>
+                <label>Charging Options:
+                    <select required>
+                        <option value="">--Select an Option--</option>
+                        <option value="new">Hybrid Electric</option>
+                        <option value="good">Extended Range Electric</option>
+                        <option value="fair">Fuel Cell Electric</option>
+                        <option value="poor">Mild Hybrid Electric</option>
+                    </select>
+                </label>`;
+        additionalInfoDiv.append(inputHtml);
+      } else {
+        var inputHtml = `
+                <label>Tank Capacity: <input type="number"></label>`;
+        additionalInfoDiv.append(inputHtml);
+      }
     }
   </script>
 </head>
@@ -174,9 +197,32 @@
             </div>
           </div>
 
+          <div class="inputRow">
+            <label>Engine Number: <input type="text" ></label>
+            <label>Condition:
+              <select required>
+                <option value="">--Select Condition--</option>
+                <option value="new">New</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="poor">Poor</option>
+              </select>
+            </label>
+            <label>Mileage: <input type="number" ></label>
+          </div>
+
+
+
+          <div class="inputRow" id="electronicOption">
+
+          </div>
+
+
+
+
           <hr>
 
-          <p class="subTitle">1.2 - Policyholder Information</p>
+          <p class="subTitle">1.2 - Driver Information</p>
 
           <div class="inputRow">
             <label>Date of Birth: <input type="date"  class="date"></label>

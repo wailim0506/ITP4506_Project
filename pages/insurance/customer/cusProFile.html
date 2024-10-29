@@ -30,6 +30,11 @@
       $(".progress-button").click(function () {
         window.location.href = "planStatusProgress.html";
       });
+
+      $(".disable").click(function () {
+        alert("You cannot Edit/Progress the plan if is under review or rejected.");
+      });
+
     });
   </script>
 </head>
