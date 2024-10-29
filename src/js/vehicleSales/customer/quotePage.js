@@ -329,4 +329,8 @@ $(document).ready(function () {
             'top': ''
         });
     });
+
+    $('#insureBtnDiv button').click(function(){
+        window.location.href = '../../../pages/insurance/customer/cusMainPage.html';
+    });
 });

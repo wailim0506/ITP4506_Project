@@ -20,11 +20,37 @@
     margin-top: 8px;
 }
 
-#quoteTitle, #statusTitle {
+#quoteTitle {
     width: 93%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#statusTitle {
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#statusTitle div {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#statusTitle div button {
+    width: auto;
+    height: fit-content;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
 }
 
 #quoteTitle button {
@@ -168,6 +194,25 @@
     width: auto;
     height: auto;
     background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+#insureBtnDiv {
+    width: 93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#insureBtnDiv button {
+    width: auto;
+    height: auto;
+    background-color: teal;
     color: white;
     border: none;
     border-radius: 5px;

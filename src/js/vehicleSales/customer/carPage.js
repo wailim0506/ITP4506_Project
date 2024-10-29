@@ -485,4 +485,8 @@ $(document).ready(function () {
         localStorage.setItem('carToView', $(this).attr('carid'));
         location.href = "carPage.html";
     });
+
+    $('#compareBtn').click(function () {
+        location.href = "carComparisonTool.html"
+    });
 });

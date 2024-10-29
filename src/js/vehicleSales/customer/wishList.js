@@ -127,6 +127,7 @@ function calculateTotalPrice() {
         if (!isNaN(price)) {
             totalPrice += price;
         }
+        totalPrice += 2000;
     });
     return totalPrice.toFixed(2);
 }
