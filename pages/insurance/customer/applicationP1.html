@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Legend Motor Limited - Application</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
-  <link rel="stylesheet" href="../../../src/css/insurance/application.css">
+  <link rel="stylesheet" href="../../../src/css/insurance/applicationWithGuide.css">
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,7 +15,7 @@
       });
 
       $("#nextBtn").click(function () {
-        window.location.href = "applicationP2.html";
+        window.location.href = "applicationP1_1.html";
       });
 
       $("#exitBtn").click(function () {
@@ -32,20 +32,20 @@
             <button type="button" class="remove-button" onclick="removeDriver(this)">Remove</button>
           </div>
           <div class="inputRow">
-            <label>Date of birth: <input type="date"  class="date"></label>
-            <label>Profession: <input type="text" ></label>
-            <label>Marital status: <input type="text" ></label>
+            <label>*Date of birth: <input type="date"  class="date"></label>
+            <label>*Profession: <input type="text" ></label>
+            <label>*Marital status: <input type="text" ></label>
           </div>
           <div class="inputRow">
              <div>
-             <label>Gender:</label>
+             <label>*Gender:</label>
              <div class="buttonDiv">
                 <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
                 <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
              </div>
              </div>
-                <label>Driving experience: <input type="date"  class="date"></label>
-                <label>License number: <input type="text" ></label>
+                <label>*Driving experience: <input type="date"  class="date"></label>
+                <label>*License number: <input type="text" ></label>
              </div>
              </div>`;
             $('#driverList').append(inputRow);
@@ -70,6 +70,7 @@
       button.classList.add('selected');
     }
 
+
     function selectElectronic(button) {
       const buttons = document.querySelectorAll('.electronic-button-No,.electronic-button-Yes');
       buttons.forEach(btn => btn.classList.remove('selected'));
@@ -80,9 +81,9 @@
 
       if (isElectronic) {
         var inputHtml = `
-                <label>Battery Capacity: <input type="number"></label>
-                <label>Charge Range: <input type="number"></label>
-                <label>Charging Options:
+                <label>*Battery Capacity: <input type="number" placeholder="Battery Capacity"></label>
+                <label>*Charge Range: <input type="number" placeholder="Charge Range"></label>
+                <label>*Charging Options:
                     <select required>
                         <option value="">--Select an Option--</option>
                         <option value="new">Hybrid Electric</option>
@@ -94,7 +95,34 @@
         additionalInfoDiv.append(inputHtml);
       } else {
         var inputHtml = `
-                <label>Tank Capacity: <input type="number"></label>`;
+                <label>*Tank Capacity: <input type="number" placeholder="Tank Capacity"></label>`;
+        additionalInfoDiv.append(inputHtml);
+      }
+    }
+
+    function loan(button) {
+      const buttons = document.querySelectorAll('.loan-No,.loan-Yes');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+      var isloan = $(button).hasClass('loan-Yes');
+      var additionalInfoDiv = $('.isloan');
+      additionalInfoDiv.empty(); // Clear previous content
+
+      if (isloan) {
+        var inputHtml = `
+                <label>*Loan Company:
+                    <select required>
+                        <option value="">--Select a Company-</option>
+                        <option value="JPMorgan Chase">JPMorgan Chase</option>
+                        <option value="Bank of America">Bank of America</option>
+                        <option value="Upstart">Upstart</option>
+                        <option value="LendingClub">LendingClub</option>
+                        <option value="Funding Circle">Funding Circle</option>
+                        <option value="Prosper">Prosper</option>
+                        <option value="Check Into Cash">Check Into Cash</option>
+                        <option value="Advance America">Advance America</option>
+                    </select>
+                </label>`;
         additionalInfoDiv.append(inputHtml);
       }
     }
@@ -140,6 +168,8 @@
       <div id="progress">
         <p class="inProgress">Basic Information</p>
         <span class="arrowInProgress">&#8680;</span>
+        <p class="waiting">Policyholder Information</p>
+        <span class="arrowWaiting">&#8680;</span>
         <p class="waiting">Plan Select</p>
         <span class="arrowWaiting">&#8680;</span>
         <p class="waiting">Payment</p>
@@ -148,116 +178,152 @@
       </div>
     </div>
 
-    <div class="container">
-      <div id="form">
-        <form  id="contactForm">
-          <p class="formClass">1 - Basic Information</p>
-          <hr>
-          <p class="subTitle">1.1 - Car Information</p>
+    <div class="containerMainRow">
+      <div class="container" id="intro">
+        <h2>Welcome to the Registration Form</h2>
+        <p>
+          This form is designed to gather essential information about your car and the driver(s).
+          Please provide accurate details to ensure a smooth registration process.
+        </p>
+        <h3>Guidelines for Filling Out the Form:</h3>
+        <ul>
+          <li><strong>Car Information:</strong> Enter the car's name, select the model from the dropdown, and choose the type of vehicle. Ensure to provide the manufacture date and upload an image of your car if available.</li>
+          <li><strong>Engine Number & Condition:</strong> Fill in the engine number and select the condition of the car from the given options.</li>
+          <li><strong>Mileage:</strong> Provide the mileage of the car in kilometers.</li>
+          <li><strong>Driver Information:</strong> Input the driver's date of birth, profession, and marital status. You can add multiple drivers (up to three).</li>
+          <li><strong>Gender & Experience:</strong> Select the driver's gender and provide their driving experience in years.</li>
+        </ul>
+        <p>
+          If you encounter any issues while completing the form, please contact our support team for assistance.
+        </p>
+      </div>
 
-          <div class="inputRow">
-            <label>Car Name: <input type="text" placeholder="Car Name"></label>
-            <label>Car Model:
-              <select id="carModel" name="carModel">
-                <option value="">--Please choose an Model--</option>
-                <option value="toyota_corolla">Toyota Corolla</option>
-                <option value="honda_civic">Honda Civic</option>
-                <option value="ford_focus">Ford Focus</option>
-                <option value="chevrolet_malibu">Chevrolet Malibu</option>
-                <option value="nissan_altima">Nissan Altima</option>
-                <option value="bmw_3_series">BMW 3 Series</option>
-                <option value="audi_a4">Audi A4</option>
-                <option value="mercedes_benz_c_class">Mercedes-Benz C-Class</option>
-              </select>
-            </label>
-            <label>Car Type:
-              <select id="carBody" name="carBody">
-                <option value="">--Please choose an Type--</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="hatchback">Hatchback</option>
-                <option value="coupe">Coupe</option>
-                <option value="convertible">Convertible</option>
-                <option value="wagon">Wagon</option>
-                <option value="pickup">Pickup Truck</option>
-                <option value="van">Van</option>
-              </select>
-            </label>
-          </div>
+      <div class="container">
+        <div id="form">
+          <form  id="contactForm">
+            <p class="formClass">1 - Basic Information</p><p id="essential">* Essential Information</p>
+            <hr>
+            <p class="subTitle">1.1 - Car Information</p>
 
-          <div class="inputRow">
-            <label>Manufacture Date: <input type="date" ></label>
-            <label>Car Image: <input type="file" ></label>
-            <div>
-              <label>Electronic Car? :</label>
-              <div class="buttonDiv">
-                <button type="button" class="electronic-button-Yes" onclick="selectElectronic(this)">Yes</button>
-                <button type="button" class="electronic-button-No" onclick="selectElectronic(this)">No</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="inputRow">
-            <label>Engine Number: <input type="text" ></label>
-            <label>Condition:
-              <select required>
-                <option value="">--Select Condition--</option>
-                <option value="new">New</option>
-                <option value="good">Good</option>
-                <option value="fair">Fair</option>
-                <option value="poor">Poor</option>
-              </select>
-            </label>
-            <label>Mileage: <input type="number" ></label>
-          </div>
-
-
-
-          <div class="inputRow" id="electronicOption">
-
-          </div>
-
-
-
-
-          <hr>
-
-          <p class="subTitle">1.2 - Driver Information</p>
-
-          <div class="inputRow">
-            <label>Date of Birth: <input type="date"  class="date"></label>
-            <label>Profession: <input type="text" placeholder="Profession"></label>
-            <label>Marital Status:
-              <select id="marital" name="maritalStatus">
-                <option value="">--Please choose an Option--</option>
-                <option value="Married">Married</option>
-                <option value="Single">Single</option>
-                <option value="Widowed">Widowed</option>
-              </select>
-            </label>
-          </div>
-
-          <div id="driverList">
             <div class="inputRow">
+              <label>*Car Name: <input type="text" placeholder="Car Name"></label>
+              <label>*Car Model:
+                <select id="carModel" name="carModel">
+                  <option value="">--Please choose an Model--</option>
+                  <option value="toyota_corolla">Toyota Corolla</option>
+                  <option value="honda_civic">Honda Civic</option>
+                  <option value="ford_focus">Ford Focus</option>
+                  <option value="chevrolet_malibu">Chevrolet Malibu</option>
+                  <option value="nissan_altima">Nissan Altima</option>
+                  <option value="bmw_3_series">BMW 3 Series</option>
+                  <option value="audi_a4">Audi A4</option>
+                  <option value="mercedes_benz_c_class">Mercedes-Benz C-Class</option>
+                </select>
+              </label>
+              <label>*Car Type:
+                <select id="carBody" name="carBody">
+                  <option value="">--Please choose an Type--</option>
+                  <option value="sedan">Sedan</option>
+                  <option value="suv">SUV</option>
+                  <option value="hatchback">Hatchback</option>
+                  <option value="coupe">Coupe</option>
+                  <option value="convertible">Convertible</option>
+                  <option value="wagon">Wagon</option>
+                  <option value="pickup">Pickup Truck</option>
+                  <option value="van">Van</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="inputRow">
+              <label>*Manufacture Date: <input type="date" ></label>
+              <label>Car Image: <input type="file" ></label>
               <div>
-                <label>Gender:</label>
+                <label>*Electronic Car? :</label>
                 <div class="buttonDiv">
-                  <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
-                  <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+                  <button type="button" class="electronic-button-Yes" onclick="selectElectronic(this)">Yes</button>
+                  <button type="button" class="electronic-button-No" onclick="selectElectronic(this)">No</button>
                 </div>
               </div>
-              <label>Driving Experience: <input type="number"  class="date" placeholder="Driving Experience"></label>
-              <label>License Number: <input type="text" placeholder="License Number"></label>
             </div>
-          </div>
 
-          <div class="inputRow">
-            <button id="addDriver" type="button">+ Add another driver</button>
-          </div>
-          <div class="inputRow">
-            <div class="warning" id="warningMessage" style="display: none;">Maximum of 3 drivers can be added.</div>
-          </div>
-        </form>
+            <div class="inputRow">
+              <label>*Engine Number: <input type="text" placeholder="Engine Number"></label>
+              <label>*Condition:
+                <select required>
+                  <option value="">--Select Condition--</option>
+                  <option value="new">New</option>
+                  <option value="good">Good</option>
+                  <option value="fair">Fair</option>
+                  <option value="poor">Poor</option>
+                </select>
+              </label>
+              <label>*Mileage: <input type="number" placeholder="Mileage"></label>
+            </div>
+
+
+
+            <div class="inputRow" id="electronicOption">
+
+            </div>
+
+
+            <hr>
+
+            <p class="subTitle">1.2 - Current Status</p>
+            <div class="inputRow">
+              <div>
+                <label>*Have you applied for a loan for your insured car? :</label>
+                <div class="buttonDiv">
+                  <button type="button" class="loan-Yes" onclick="loan(this)">Yes</button>
+                  <button type="button" class="loan-No" onclick="loan(this)">No</button>
+                </div>
+              </div>
+              <div class="isloan"></div>
+            </div>
+
+
+
+
+            <hr>
+
+            <p class="subTitle">1.3 - Driver Information</p>
+
+            <div class="inputRow">
+              <label>*Date of Birth: <input type="date"  class="date"></label>
+              <label>*Profession: <input type="text" placeholder="Profession"></label>
+              <label>*Marital Status:
+                <select id="marital" name="maritalStatus">
+                  <option value="">--Please choose an Option--</option>
+                  <option value="Married">Married</option>
+                  <option value="Single">Single</option>
+                  <option value="Widowed">Widowed</option>
+                </select>
+              </label>
+            </div>
+
+            <div id="driverList">
+              <div class="inputRow">
+                <div>
+                  <label>*Gender:</label>
+                  <div class="buttonDiv">
+                    <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                    <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+                  </div>
+                </div>
+                <label>*Driving Experience: <input type="number"  class="date" placeholder="Driving Experience"></label>
+                <label>*License Number: <input type="text" placeholder="License Number"></label>
+              </div>
+            </div>
+
+            <div class="inputRow">
+              <button id="addDriver" type="button">+ Add another driver</button>
+            </div>
+            <div class="inputRow">
+              <div class="warning" id="warningMessage" style="display: none;">Maximum of 3 drivers can be added.</div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 

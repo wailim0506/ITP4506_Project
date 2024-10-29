@@ -19,11 +19,15 @@
       });
 
       $("#previousBtn").click(function () {
-        window.location.href = "applicationP1.html";
+        window.location.href = "applicationP1_1.html";
       });
 
       $("#AppP1").click(function () {
         window.location.href = "applicationP1.html";
+      });
+
+      $("#AppP2").click(function () {
+        window.location.href = "applicationP1_1.html";
       });
 
         $('.plan').click(function() {
@@ -34,7 +38,39 @@
           $(this).css('background-color', '#f9c22c');
         });
 
+      function calculateExpireDate() {
+        const years = parseInt($('#years').val());
+        const startDate = new Date($('#plan').val());
+
+        if (!isNaN(years) && startDate instanceof Date && !isNaN(startDate)) {
+          const expireDate = new Date(startDate);
+          expireDate.setFullYear(expireDate.getFullYear() + years);
+          $('#expireDate').text(expireDate.toISOString().split('T')[0]); // Format as YYYY-MM-DD
+        } else {
+          $('#expireDate').text('Please enter date'); // Reset if inputs are invalid
+        }
+      }
+
+      $('#years').on('input', calculateExpireDate);
+      $('#plan').on('change', calculateExpireDate);
+
+
+      function calPrice() {
+        const years = parseInt($('#years').val());
+        const price = $('.plan').data('price');
+
+        if(!isNaN(years) && !isNaN(price)){
+          $('#price').text(price*years);
+        }else{
+            $('#price').text('Please select a plan');
+        }
+      }
+
+        $('.plan').on('click', calPrice);
+        $('#years').on('input', calPrice);
+
     });
+
   </script>
 </head>
 <body>
@@ -77,6 +113,8 @@
     <div id="progress">
       <p class="completed" id="AppP1">Basic Information</p>
       <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP2">Policyholder Information</p>
+      <span class="arrowCompleted">&#8680;</span>
       <p class="inProgress">Plan Select</p>
       <span class="arrowInProgress">&#8680;</span>
       <p class="waiting">Payment</p>
@@ -88,12 +126,13 @@
   <div class="container">
     <div id="form">
       <form  id="contactForm">
-        <p class="formClass">2 - Plan Select</p>
+        <p class="formClass">3 - Plan Select</p>
+
 
         <hr>
-        <p class="subTitle">2.1 - Select a Plan</p>
+        <p class="subTitle">3.1 - Select a Plan</p>
         <div id="plans">
-          <div class="plan" data-details="Third-party insurance covers damages to other vehicles
+          <div class="plan" data-price="6800" data-details="Third-party insurance covers damages to other vehicles
               and injuries to other people in the event of an accident where you are at fault.
               It is the minimum legal requirement for car insurance in many places.">
             <h1>Third-Party</h1>
@@ -103,7 +142,7 @@
             </div>
           </div>
 
-          <div class="plan" data-details="Comprehensive insurance provides broader coverage,
+          <div class="plan" data-price="16800" data-details="Comprehensive insurance provides broader coverage,
               including damages to your own vehicle as well as damages to third parties. It covers a
               variety of risks, including theft, vandalism, and natural disasters..">
             <h1>Comprehensive</h1>
@@ -115,20 +154,25 @@
         </div>
 
         <div class="inputRow">
-            <label for="plan">Starting Date:<input type="date" id="plan" name="plan"></label>
+          <label>Years:<input type="number" id="years" min="1"></label>
+          <label for="plan">Starting Date:<input type="date" id="plan" name="plan"></label>
+          <label>Expire Date:<span id="expireDate">Please enter date</span></label>
+        </div>
 
+        <div class="inputRow">
+          <label>Predicted Price:<span id="price">Please select a plan</span></label>
         </div>
 
         <hr>
 
-        <p class="subTitle">2.2 - Plan Detail</p>
+        <p class="subTitle">3.2 - Plan Detail</p>
         <div id="planDetail">
           <p>Select a plan to see the details here.</p>
         </div>
 
         <hr>
 
-        <p class="subTitle">2.3 - Document Download</p>
+        <p class="subTitle">3.3 - Document Download</p>
         <div id="downloads">
           <ul>
             <li><a href="#" download>Car Insurance Policy Document</a></li>

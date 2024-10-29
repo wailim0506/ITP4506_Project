@@ -27,6 +27,10 @@
       });
 
       $("#AppP2").click(function () {
+        window.location.href = "applicationP1_1.html";
+      });
+
+      $("#AppP3").click(function () {
         window.location.href = "applicationP2.html";
       });
 
@@ -105,7 +109,9 @@
     <div id="progress">
       <p class="completed" id="AppP1">Basic Information</p>
       <span class="arrowCompleted">&#8680;</span>
-      <p class="completed" id="AppP2">Plan Select</p>
+      <p class="completed" id="AppP2">Policyholder Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP3">Plan Select</p>
       <span class="arrowCompleted">&#8680;</span>
       <p class="inProgress">Payment</p>
       <span class="arrowInProgress">&#8680;</span>
@@ -116,10 +122,10 @@
   <div class="container">
     <div id="form">
       <form  id="contactForm">
-        <p class="formClass">3 - Payment</p>
+        <p class="formClass">4 - Payment</p>
         <hr>
 
-        <p class="subTitle">3.1 - Select a Method</p>
+        <p class="subTitle">4.1 - Select a Method</p>
         <p id="totalTitle">Base on the information you provided you need to pay: <b>16800 HKD</b></p>
 
         <div id="paymentMethod">
@@ -147,7 +153,7 @@
 
         <hr>
 
-        <p class="subTitle">3.2 - Agreement</p>
+        <p class="subTitle">4.2 - Agreement</p>
         <div class="agreement">
 
           <div id="agreementContent">

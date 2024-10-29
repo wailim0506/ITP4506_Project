@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Application</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/application.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      $(".chatBtn").click(function () {
+        window.location.href = "onlineBot.html";
+      });
+
+      $("#nextBtn").click(function () {
+        window.location.href = "applicationP2.html";
+      });
+
+      $("#exitBtn").click(function () {
+        window.location.href = "cusPlan.html";
+      });
+
+      $("#previousBtn").click(function () {
+        window.location.href = "applicationP1.html";
+      });
+
+      $("#AppP1").click(function () {
+        window.location.href = "applicationP1.html";
+      });
+
+    });
+
+    function selectGender(button) {
+      const buttons = document.querySelectorAll('.gender-button');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+    }
+
+  </script>
+</head>
+<body>
+<!-- Chatbot button -->
+<button class="chatBtn">
+  <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
+</button>
+<!-- Chatbot button -->
+<!-- To top button -->
+<button class="goTopBtn">
+  <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!--Nav Bar-->
+<nav>
+  <div id="nav_left">
+    <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
+  </div>
+  <div id="nav_center">
+    <a href="cusPlan.html">Plans</a>
+    <a href="estimate.html">Estimate</a>
+    <a href="onlineBot.html">Online Bot</a>
+    <a href="applicationP1.html">Application</a>
+    <a href="cusProFile.html">ProFile</a>
+  </div>
+  <div id="nav_right">
+    <a href="../../../index.html">Logout</a>
+  </div>
+</nav>
+<!--Nav Bar-->
+
+
+
+<!--Main Content-->
+<section id="mainContent">
+  <div class="container">
+    <h1>Your LML car insurance application</h1>
+  </div>
+
+  <div class="container">
+    <div id="progress">
+      <p class="completed" id="AppP1">Basic Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="inProgress">Policyholder Information</p>
+      <span class="arrowInProgress">&#8680;</span>
+      <p class="waiting">Plan Select</p>
+      <span class="arrowWaiting">&#8680;</span>
+      <p class="waiting">Payment</p>
+      <span class="arrowWaiting">&#8680;</span>
+      <p class="waiting">Submit for Checking</p>
+    </div>
+  </div>
+
+
+
+    <div class="container">
+      <div id="form">
+        <form  id="contactForm">
+          <p class="formClass">2 - Policyholder Information</p><p id="essential">* Essential Information</p>
+          <hr>
+          <p class="subTitle">2.1 - Policyholder Information</p>
+
+          <div class="inputRow">
+            <label>*First Name: <input type="text" placeholder="First Name"></label>
+            <label>*Last Name: <input type="text" placeholder="Last Name"></label>
+            <label>*Date of Birth: <input type="date"  class="date"></label>
+          </div>
+
+          <div class="inputRow">
+            <label>*HKID: <input type="text" placeholder="HKID"></label>
+            <label>*Profession: <input type="text" placeholder="Profession"></label>
+            <label>*Marital Status:
+              <select id="marital" name="maritalStatus">
+                <option value="">--Please choose an Option--</option>
+                <option value="Married">Married</option>
+                <option value="Single">Single</option>
+                <option value="Widowed">Widowed</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="driverList">
+            <div class="inputRow">
+              <div>
+                <label>*Gender:</label>
+                <div class="buttonDiv">
+                  <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                  <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="subTitle">2.2 - Policyholder Contact Information</p>
+
+          <div class="inputRow">
+            <label>*Phone Number: <input type="text"  class="date" placeholder="Phone Number"></label>
+            <label>Family Phone Number: <input type="text" placeholder="Family Phone Number"></label>
+            <label>Email Address: <input type="email" placeholder="Email Address"></label>
+          </div>
+
+          <div class="inputRowAdd" >
+            <label>*Address 1: <input type="text"  class="date" placeholder="Address 1"></label>
+          </div>
+
+          <div class="inputRowAdd">
+            <label>Address 2: <input type="text" placeholder="Address 2"></label>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+
+
+  <div class="containerRow">
+    <div id="previousBtnContainer">
+      <button type="button" id="previousBtn">Previous</button>
+      <div>
+        <div id="nextBtnContainer">
+          <button type="button" id="nextBtn">Next</button>
+        </div>
+      </div>
+</section>
+<!--Main Content-->
+
+
+
+<!--footer-->
+<section class="footer">
+  <div class="footer-content">
+    <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+    <p>Reliable car insurance for peace of mind on every journey.</p>
+    <p>© 2024 Legend Motor Limited</p>
+  </div>
+  <div class="footer-content">
+    <a href="cusPlan.html"><h4>Plans</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="estimate.html"><h4>Estimate</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="onlineBot.html"><h4>OnlineBot</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="applicationP1.html"><h4>Application</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="cusProFile.html"><h4>ProFile</h4></a>
+  </div>
+</section>
+<!--footer-->
+
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+</body>
+</html>

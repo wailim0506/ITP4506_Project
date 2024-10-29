@@ -216,12 +216,59 @@ nav{
     animation: article-load 0.6s ease-in;
 }
 
+#intro{
+    width: 350px;
+    min-width: 350px;
+    border: 2px solid black;
+    height: 800px;
+    padding: 3.5% 2%;
+    border-radius: 20px;
+    background: #eddaa9;
+}
+
+#intro h2 {
+    font-size: 25px;
+}
+
+#intro h3 {
+    font-size: 19px;
+}
+
+#intro p {
+    line-height: 1.5;
+}
+
+#intro ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+#intro li {
+    margin-bottom: 10px;
+}
+
+.containerMainRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 1% 10% 0 10%;
+}
+
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1% 10% 0 10%;
+    margin-top: 1%;
+}
+
+#essential{
+    color:red;
+    margin-top: -20px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .container h1{
@@ -267,6 +314,8 @@ nav{
     margin: 0 3% 3% 3%;
 }
 
+
+
 .inputRow label{
     font-size: 20px;
     font-weight: bold;
@@ -283,6 +332,10 @@ nav{
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+
+
+
 
 
 input[type="text"]:focus {
@@ -319,43 +372,7 @@ input[type="text"]:focus {
 }
 
 
-.inputRowAdd{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3%;
-    margin: 0 3% 3% 3%;
-}
-
-
-#expireDate, #price{
-    font-size: 20px;
-    margin-top: 7px;
-    background: white;
-    width: 270px;
-    padding: 3%;
-    border-radius: 5px;
-}
-
-
-.inputRowAdd label{
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-.inputRowAdd label input{
-    margin-top: 6px;
-    font-size: 20px;
-    width: 900px;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.electronic-button-Yes {
+.electronic-button-Yes, .loan-Yes {
     width: 100%;
     background-color: #ffffff;
     border: 2px solid #29d829;
@@ -368,12 +385,12 @@ input[type="text"]:focus {
     font-size: 20px;
 }
 
-.electronic-button-Yes.selected {
+.electronic-button-Yes.selected, .loan-Yes.selected {
     background-color: #66d872;
     color: white;
 }
 
-.electronic-button-No {
+.electronic-button-No, .loan-No {
     width: 100%;
     background-color: #ffffff;
     border: 2px solid #ef2c2c;
@@ -386,12 +403,12 @@ input[type="text"]:focus {
     font-size: 20px;
 }
 
-.electronic-button-No.selected {
+.electronic-button-No.selected, .loan-No.selected {
     background-color: #e45656;
     color: white;
 }
 
-.electronic-button-No:hover, .electronic-button-Yes:hover {
+.electronic-button-No:hover, .electronic-button-Yes:hover, .loan-No:hover, .loan-Yes:hover {
     background-color: #e7f0ff;
 }
 
@@ -446,7 +463,7 @@ input[type="text"]:focus {
 
 
 #nextBtnContainer{
-    width: 870px;
+    width: 1350px;
     display: flex;
     justify-content: flex-end;
 }
@@ -458,7 +475,7 @@ input[type="text"]:focus {
 
 
 #nextBtn{
-    width: 15%;
+    width: 10%;
     background-color: #f9c22c;
     color: white;
     border: none;
@@ -603,9 +620,8 @@ input[type="text"]:focus {
 
 
 .plan{
-    border-radius: 20px;
     width: 45%;
-    border: 3px black solid;
+    border: 5px black solid;
     padding: 10px;
 }
 
@@ -803,7 +819,7 @@ input[type='checkbox'] {
 }
 
 #agreeP4{
-   font-weight: bold;
+    font-weight: bold;
     font-size: 19px;
 }
 
