@@ -32,6 +32,6 @@ $(document).ready(function () {
     });
 
     $('#nav_left img').click(function () {
-        location.href = '../../../index.html';
+        location.href = 'carList.html';
     });
 });
