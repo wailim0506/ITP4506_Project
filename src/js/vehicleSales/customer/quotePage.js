@@ -1,9 +1,9 @@
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
-        $('html, nav').css('background-color', 'rgb(34,37,41)');
+        $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
         $('footer').css('background-color', '#333');
-        $('body, nav,footer').css('color', 'rgb(194,196,200)');
+        $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.car-item').css('border', '0.1px solid grey');
         $('input, select').css({
@@ -26,9 +26,9 @@ function setDarkMode() {
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
-        $('html, nav').css('background-color', 'white');
+        $('html, nav,.modal-content').css('background-color', 'white');
         $('footer').css('background-color', '#e8e6e6');
-        $('body, nav').css('color', 'black');
+        $('body, nav,.modal-content').css('color', 'black');
         $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.car-item').css('border', '1px solid lightgrey');
         $('input').css({
@@ -58,9 +58,9 @@ function setDarkMode() {
 function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
-            $('html, nav').css('background-color', 'rgb(34,37,41)');
+            $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
             $('footer').css('background-color', '#333');
-            $('body, nav,footer').css('color', 'rgb(194,196,200)');
+            $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.car-item').css('border', '0.1px solid grey');
             $('input, select').css({
@@ -80,9 +80,9 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html, nav').css('background-color', 'white');
+            $('html, nav,.modal-content').css('background-color', 'white');
             $('footer').css('background-color', '#e8e6e6');
-            $('body, nav').css('color', 'black');
+            $('body, nav,.modal-content').css('color', 'black');
             $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('.car-item').css('border', '1px solid lightgrey');
             $('input').css({
@@ -293,15 +293,40 @@ $(document).ready(function () {
 
     $('#buttonDiv button').click(function () {
         var quoteId = localStorage.getItem('quoteToView');
-        if (confirm(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`)) {
-            var quoteList = localStorage.getItem('quote');
-            if (quoteList != null) {
-                quoteList = JSON.parse(quoteList);
-                quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
-                localStorage.setItem('quote', JSON.stringify(quoteList));
-                alert(`Quote (${quoteId}) deleted successfully!`);
-                window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
-            }
+        // if (confirm(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`)) {
+        //     var quoteList = localStorage.getItem('quote');
+        //     if (quoteList != null) {
+        //         quoteList = JSON.parse(quoteList);
+        //         quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
+        //         localStorage.setItem('quote', JSON.stringify(quoteList));
+        //         alert(`Quote (${quoteId}) deleted successfully!`);
+        //         window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
+        //     }
+        // }
+
+        confirmModal(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`);
+        $('#modalYesBtn').attr('quoteId', quoteId);
+        $('#modalNoBtn').attr('quoteId', quoteId);
+    });
+
+    $('#modalYesBtn').click(function(){
+        var quoteId = $(this).attr('quoteId');
+        var quoteList = localStorage.getItem('quote');
+        if (quoteList != null) {
+            quoteList = JSON.parse(quoteList);
+            quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
+            localStorage.setItem('quote', JSON.stringify(quoteList));
+            window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
         }
+    });
+
+    $('#modalNoBtn').click(function(){
+        $('#myModal').hide();
+        var scrollY = $('body').css('top');
+        $('body').css({
+            'overflow': '',
+            'position': '',
+            'top': ''
+        });
     });
 });

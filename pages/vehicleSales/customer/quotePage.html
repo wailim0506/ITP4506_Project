@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../../../src/js/vehicleSales/customer/quotePage.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/footer.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/confirmModal.css">
+    <script src="../../../src/js/vehicleSales/customer/confirmModal.js"></script>
 
 
 </head>
@@ -212,6 +214,23 @@
     </div>
     <div id="buttonDiv">
         <button>Cancel Quote</button>
+    </div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Message:</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div>
+                    <p id="warningMessage"></p>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow">
+            <button id="modalNoBtn">No</button>
+            <button id="modalYesBtn">Yes</button>
+        </div>
     </div>
 </div>
 <footer>

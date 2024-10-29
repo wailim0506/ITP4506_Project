@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/footer.css">
     <script src="../../../src/js/vehicleSales/customer/quotesList.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/confirmModal.css">
+    <script src="../../../src/js/vehicleSales/customer/confirmModal.js"></script>
 
 
 </head>
@@ -69,6 +71,25 @@
         </table>
     </div>
 </div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Message:</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div>
+                    <p id="warningMessage"></p>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow">
+            <button id="modalNoBtn">No</button>
+            <button id="modalYesBtn">Yes</button>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div id="footerUp">
         <a href="carList.html">Vehicle List</a>
@@ -85,7 +106,10 @@
             <img src="../../../src/img/LMLogo.webp">
         </div>
     </div>
+
+
 </footer>
+
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 </body>

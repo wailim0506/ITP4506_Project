@@ -244,9 +244,9 @@ function loadCar(){
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
-        $('html, nav').css('background-color', 'rgb(34,37,41)');
+        $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
         $('footer').css('background-color', '#333');
-        $('body, nav,footer').css('color', 'rgb(194,196,200)');
+        $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.infoBox .word').css('color', 'white');
         $('.section').css('border-bottom', '1px solid #4c4c4c');
@@ -271,9 +271,9 @@ function setDarkMode() {
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
-        $('html, nav').css('background-color', 'white');
+        $('html, nav,.modal-content').css('background-color', 'white');
         $('footer').css('background-color', '#e8e6e6');
-        $('body, nav').css('color', 'black');
+        $('body, nav,.modal-content').css('color', 'black');
         $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.infoBox .word').css('color', 'black');
         $('.section').css('border-bottom', '1px solid #d1cece');
@@ -302,9 +302,9 @@ function setDarkMode() {
 function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
-            $('html, nav').css('background-color', 'rgb(34,37,41)');
+            $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
             $('footer').css('background-color', '#333');
-            $('body, nav,footer').css('color', 'rgb(194,196,200)');
+            $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.infoBox .title').css('color','white');
             $('.infoBox .word').css('color', 'white');
@@ -329,9 +329,9 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html,nav').css('background-color', 'white');
+            $('html,nav,.modal-content').css('background-color', 'white');
             $('footer').css('background-color', '#e8e6e6');
-            $('body, nav').css('color', 'black');
+            $('body, nav,.modal-content').css('color', 'black');
             $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('.infoBox .title').css('color','black');
             $('.infoBox .word').css('color', 'black');
@@ -478,5 +478,10 @@ $(document).ready(function () {
             // alert("Please select a interior color");
             openModal("Please select a interior color");
         }
+    });
+
+    $('.similarCarBox button').click(function () {
+        localStorage.setItem('carToView', $(this).attr('id'));
+        location.href = "carPage.html";
     });
 });
