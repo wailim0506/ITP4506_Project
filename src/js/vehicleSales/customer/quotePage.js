@@ -277,9 +277,13 @@ $(document).ready(function () {
         $('nav,i,#goBackLinkDiv,#buttonDiv').hide();
         $('#vehicleSection img').css('width', '150px');
         $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div').css('width', '30%');
+        $('footer').hide();
+        $('#insureBtnDiv button').hide();
         window.print();
         $('nav,i,#goBackLinkDiv,#buttonDiv').show();
         $(this).show();
+        $('footer').show();
+        $('#insureBtnDiv button').show();
         $('#vehicleSection img').css('width', '200px');
         $('#CustInfoSmallBoxDiv div').css('width', '20%');
         $('#PaymentInfoSmallBoxDiv div').css('width', '20%');
