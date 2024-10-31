@@ -825,7 +825,12 @@ input[type='checkbox'] {
     width: 520px;
 }
 
-
+.error{
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
 /* For Finish */
 
 

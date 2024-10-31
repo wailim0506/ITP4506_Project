@@ -499,10 +499,34 @@ nav{
     margin-left: 120px;
 }
 
+#long{
+    width: 520px;
+}
 
+.inputRowAdd{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: 0 3% 3% 3%;
+}
 
+.inputRowAdd label{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
 
-
+.inputRowAdd label input{
+    margin-top: 6px;
+    font-size: 20px;
+    width: 900px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
 
 

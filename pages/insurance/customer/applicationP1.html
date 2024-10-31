@@ -10,12 +10,25 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      const today = new Date();
+      const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+      const year = minDate.getFullYear();
+      const month = String(minDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      const day = String(minDate.getDate()).padStart(2, '0');
+      const formattedDate = `${year}-${month}-${day}`;
+      document.querySelector('.birthdate').setAttribute('max', formattedDate);
+
+      document.querySelector('.electronic-button-No').click();
+
+
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
 
       $("#nextBtn").click(function () {
-        window.location.href = "applicationP1_1.html";
+        if (validateForm()) {
+          window.location.href = "applicationP1_1.html";
+        }
       });
 
       $("#exitBtn").click(function () {
@@ -32,20 +45,36 @@
             <button type="button" class="remove-button" onclick="removeDriver(this)">Remove</button>
           </div>
           <div class="inputRow">
-            <label>*Date of birth: <input type="date"  class="date"></label>
-            <label>*Profession: <input type="text" ></label>
-            <label>*Marital status: <input type="text" ></label>
+            <label>*Date of birth: <input type="date"  class="birthdate" required>
+                <span class="error-message" style="color:red; display:none;">Please select a date.</span>
+            </label>
+            <label>*Profession: <input type="text" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the profession.</span>
+            </label>
+            <label>*Marital Status:
+                <select id="marital" name="maritalStatus" required>
+                  <option value="">--Please choose an Option--</option>
+                  <option value="Married">Married</option>
+                  <option value="Single">Single</option>
+                  <option value="Widowed">Widowed</option>
+                </select>
+                <span class="error-message" style="color:red; display:none;">Please select a status.</span>
+              </label>
           </div>
           <div class="inputRow">
              <div>
              <label>*Gender:</label>
              <div class="buttonDiv">
-                <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                <button type="button" class="gender-button selected" onclick="selectGender(this)">Male</button>
                 <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
              </div>
              </div>
-                <label>*Driving experience: <input type="date"  class="date"></label>
-                <label>*License number: <input type="text" ></label>
+                <label>*Driving experience: <input type="number" min="1" max="99" class="date" required>
+                    <span class="error-message" style="color:red; display:none;">Please enter the driving experience.</span>
+                </label>
+                <label>*License number: <input type="text" min="9" max="9" required>
+                    <span class="error-message" style="color:red; display:none;">Please enter the license number.</span>
+                </label>
              </div>
              </div>`;
             $('#driverList').append(inputRow);
@@ -55,6 +84,39 @@
           }
         });
     });
+
+
+    function validateForm() {
+      let isValid = true;
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+      $('select[required]').each(function() {
+        const $select = $(this);
+        const $errorSpan = $select.next('.error-message');
+
+        if (!$select.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+
+      return isValid;
+    }
+
+
+
 
     function removeDriver(button) {
       $(button).closest('.newDriver').remove();
@@ -79,10 +141,15 @@
       var additionalInfoDiv = $('#electronicOption');
       additionalInfoDiv.empty(); // Clear previous content
 
+
       if (isElectronic) {
         var inputHtml = `
-                <label>*Battery Capacity: <input type="number" placeholder="Battery Capacity"></label>
-                <label>*Charge Range: <input type="number" placeholder="Charge Range"></label>
+                <label>*Battery Capacity: <input type="number" placeholder="Battery Capacity" required>
+                    <span class="error-message" style="color:red; display:none;">Please enter the battery capacity.</span>
+                </label>
+                <label>*Charge Range: <input type="number" min="1" placeholder="Charge Range" required>
+                    <span class="error-message" style="color:red; display:none;">Please enter the charge range.</span>
+                </label>
                 <label>*Charging Options:
                     <select required>
                         <option value="">--Select an Option--</option>
@@ -91,11 +158,14 @@
                         <option value="fair">Fuel Cell Electric</option>
                         <option value="poor">Mild Hybrid Electric</option>
                     </select>
+                    <span class="error-message" style="color:red; display:none;">Please select an option.</span>
                 </label>`;
         additionalInfoDiv.append(inputHtml);
       } else {
         var inputHtml = `
-                <label>*Tank Capacity: <input type="number" placeholder="Tank Capacity"></label>`;
+                <label>*Tank Capacity: <input type="number" placeholder="Tank Capacity" required>
+                    <span class="error-message" style="color:red; display:none;">Please enter tank capacity.</span>
+                </label>`;
         additionalInfoDiv.append(inputHtml);
       }
     }
@@ -122,10 +192,12 @@
                         <option value="Check Into Cash">Check Into Cash</option>
                         <option value="Advance America">Advance America</option>
                     </select>
+                    <span class="error-message" style="color:red; display:none;">Please select a company.</span>
                 </label>`;
         additionalInfoDiv.append(inputHtml);
       }
     }
+
   </script>
 </head>
 <body>
@@ -206,9 +278,12 @@
             <p class="subTitle">1.1 - Car Information</p>
 
             <div class="inputRow">
-              <label>*Car Name: <input type="text" placeholder="Car Name"></label>
+              <label>*Car Name: <input type="text" placeholder="Car Name" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the car name.</span>
+              </label>
+
               <label>*Car Model:
-                <select id="carModel" name="carModel">
+                <select id="carModel" name="carModel" required>
                   <option value="">--Please choose an Model--</option>
                   <option value="toyota_corolla">Toyota Corolla</option>
                   <option value="honda_civic">Honda Civic</option>
@@ -219,9 +294,10 @@
                   <option value="audi_a4">Audi A4</option>
                   <option value="mercedes_benz_c_class">Mercedes-Benz C-Class</option>
                 </select>
+                <span class="error-message" style="color:red; display:none;">Please select a model.</span>
               </label>
               <label>*Car Type:
-                <select id="carBody" name="carBody">
+                <select id="carBody" name="carBody" required>
                   <option value="">--Please choose an Type--</option>
                   <option value="sedan">Sedan</option>
                   <option value="suv">SUV</option>
@@ -232,23 +308,28 @@
                   <option value="pickup">Pickup Truck</option>
                   <option value="van">Van</option>
                 </select>
+                <span class="error-message" style="color:red; display:none;">Please select a type.</span>
               </label>
             </div>
 
             <div class="inputRow">
-              <label>*Manufacture Date: <input type="date" ></label>
+              <label>*Manufacture Date: <input type="date" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the manufacture date.</span>
+              </label>
               <label>Car Image: <input type="file" ></label>
               <div>
                 <label>*Electronic Car? :</label>
                 <div class="buttonDiv">
                   <button type="button" class="electronic-button-Yes" onclick="selectElectronic(this)">Yes</button>
-                  <button type="button" class="electronic-button-No" onclick="selectElectronic(this)">No</button>
+                  <button type="button" class="electronic-button-No selected" onclick="selectElectronic(this)">No</button>
                 </div>
               </div>
             </div>
 
             <div class="inputRow">
-              <label>*Engine Number: <input type="text" placeholder="Engine Number"></label>
+              <label>*Engine Number: <input type="text" placeholder="Engine Number" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the engine number.</span>
+              </label>
               <label>*Condition:
                 <select required>
                   <option value="">--Select Condition--</option>
@@ -257,8 +338,11 @@
                   <option value="fair">Fair</option>
                   <option value="poor">Poor</option>
                 </select>
+                <span class="error-message" style="color:red; display:none;">Please select a condition.</span>
               </label>
-              <label>*Mileage: <input type="number" placeholder="Mileage"></label>
+              <label>*Mileage: <input type="number" placeholder="Mileage" min="1" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the mileage.</span>
+              </label>
             </div>
 
 
@@ -276,7 +360,7 @@
                 <label>*Have you applied for a loan for your insured car? :</label>
                 <div class="buttonDiv">
                   <button type="button" class="loan-Yes" onclick="loan(this)">Yes</button>
-                  <button type="button" class="loan-No" onclick="loan(this)">No</button>
+                  <button type="button" class="loan-No selected" onclick="loan(this)">No</button>
                 </div>
               </div>
               <div class="isloan"></div>
@@ -290,15 +374,20 @@
             <p class="subTitle">1.3 - Driver Information</p>
 
             <div class="inputRow">
-              <label>*Date of Birth: <input type="date"  class="date"></label>
-              <label>*Profession: <input type="text" placeholder="Profession"></label>
+              <label>*Date of Birth: <input type="date"  class="birthdate" max="" required>
+                <span class="error-message" style="color:red; display:none;">Please select a date.</span>
+              </label>
+              <label>*Profession: <input type="text" placeholder="Profession" required>
+                <span class="error-message" style="color:red; display:none;">Please enter the profession.</span>
+              </label>
               <label>*Marital Status:
-                <select id="marital" name="maritalStatus">
+                <select id="marital" name="maritalStatus" required>
                   <option value="">--Please choose an Option--</option>
                   <option value="Married">Married</option>
                   <option value="Single">Single</option>
                   <option value="Widowed">Widowed</option>
                 </select>
+                <span class="error-message" style="color:red; display:none;">Please select a status.</span>
               </label>
             </div>
 
@@ -307,12 +396,16 @@
                 <div>
                   <label>*Gender:</label>
                   <div class="buttonDiv">
-                    <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                    <button type="button" class="gender-button selected" onclick="selectGender(this)">Male</button>
                     <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
                   </div>
                 </div>
-                <label>*Driving Experience: <input type="number"  class="date" placeholder="Driving Experience"></label>
-                <label>*License Number: <input type="text" placeholder="License Number"></label>
+                <label>*Driving Experience: <input type="number"  min="1" max="99" class="date" placeholder="Driving Experience" required>
+                  <span class="error-message" style="color:red; display:none;">Please enter the driving experience.</span>
+                </label>
+                <label>*License Number: <input type="text" maxlength="6" minlength="6" placeholder="License Number" required>
+                  <span class="error-message" style="color:red; display:none;">Please enter the license number.</span>
+                </label>
               </div>
             </div>
 

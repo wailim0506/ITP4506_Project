@@ -35,7 +35,11 @@
       });
 
       $("#FinishBtn").click(function () {
-        window.location.href = "applicationFinish.html";
+        if ($('#agreement').is(':checked')) {
+          window.location.href = "applicationFinish.html";
+        } else {
+          $(".error").show();
+        }
       });
     });
   </script>
@@ -114,7 +118,7 @@
         </div>
 
         <div class="infoRow">
-          <label>Engine Number:<a>2000/01/16</a></label>
+          <label>Engine Number:<a>DQW12334</a></label>
           <label>Condition:<a>good</a></label>
           <label>Mileage:<a>1821</a></label>
         </div>
@@ -244,6 +248,7 @@
             <input type="checkbox" id="agreement" required>
             <label for="agreement" id="agreeP4">I have read and agree to the Information Agreement and Privacy Policy.</label>
           </div>
+          <label class="error">*Please agree the policy.</label>
         </div>
       </form>
     </div>
