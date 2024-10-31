@@ -15,7 +15,9 @@
       });
 
       $("#nextBtn").click(function () {
-        window.location.href = "applicationP3.html";
+        if (validateForm()) {
+          window.location.href = "applicationP3.html";
+        }
       });
 
       $("#previousBtn").click(function () {
@@ -79,6 +81,39 @@
 
     });
 
+    let selectedPlan= null;
+
+    function selectPlan(element) {
+      const payments = document.querySelectorAll('.plan');
+      payments.forEach(payment => payment.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedPlan = element;
+    }
+
+    function validateForm() {
+      let isValid = true;
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+      if(!selectedPlan){
+        $("#planError").show();
+        isValid = false;
+      }else {
+        $("#planError").hide();
+      }
+
+      return isValid;
+    }
+
   </script>
 </head>
 <body>
@@ -134,7 +169,7 @@
   <div class="container">
     <div id="form">
       <form  id="contactForm">
-        <p class="formClass">3 - Plan Select</p>
+        <p class="formClass">3 - Plan Select</p><p id="essential">* Essential Information</p>
 
 
         <hr>
@@ -142,7 +177,7 @@
         <div id="plans">
           <div class="plan" data-price="6800" data-details="Third-party insurance covers damages to other vehicles
               and injuries to other people in the event of an accident where you are at fault.
-              It is the minimum legal requirement for car insurance in many places.">
+              It is the minimum legal requirement for car insurance in many places." onclick="selectPlan(this)">
             <h1>Third-Party</h1>
             <div class="planContent">
               <p>6800 HKD Per year</p>
@@ -152,7 +187,7 @@
 
           <div class="plan" data-price="16800" data-details="Comprehensive insurance provides broader coverage,
               including damages to your own vehicle as well as damages to third parties. It covers a
-              variety of risks, including theft, vandalism, and natural disasters..">
+              variety of risks, including theft, vandalism, and natural disasters.." onclick="selectPlan(this)">
             <h1>Comprehensive</h1>
             <div class="planContent">
               <p>16800 HKD Per year</p>
@@ -160,10 +195,15 @@
             </div>
           </div>
         </div>
+        <span class="error-message" id="planError" style="color:red; display:none;">Please select a plan.</span>
 
         <div class="inputRow">
-          <label>Duration:<input type="number" id="years" min="1" placeholder="Duration"></label>
-          <label for="plan">Starting Date:<input type="date" id="plan" name="plan"></label>
+          <label>*Duration:<input type="number" id="years" min="1" placeholder="Duration" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the duration.</span>
+          </label>
+          <label for="plan">*Starting Date:<input type="date" id="plan" name="plan" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the starting date.</span>
+          </label>
           <label>Expire Date:<span id="expireDate">Please enter date</span></label>
         </div>
 

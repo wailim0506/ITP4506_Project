@@ -415,6 +415,11 @@ input[type="text"]:focus {
     font-weight: bold;
 }
 
+#paymentError{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .remove-button {
     background-color: red;
     color: white;
@@ -825,7 +830,7 @@ input[type='checkbox'] {
     width: 520px;
 }
 
-.error{
+.error, #payError, #planError{
     font-size: 18px;
     font-weight: bold;
     color: red;
@@ -833,7 +838,12 @@ input[type='checkbox'] {
 }
 /* For Finish */
 
-
+#essential{
+    color:red;
+    margin-top: -20px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 
 

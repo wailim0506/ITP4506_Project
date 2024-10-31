@@ -10,12 +10,23 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      const today = new Date();
+      const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+      const year = minDate.getFullYear();
+      const month = String(minDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      const day = String(minDate.getDate()).padStart(2, '0');
+      const formattedDate = `${year}-${month}-${day}`;
+      document.querySelector('.birthdate').setAttribute('max', formattedDate);
+
+
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
 
       $("#nextBtn").click(function () {
-        window.location.href = "applicationP2.html";
+        if(validateForm()) {
+          window.location.href = "applicationP2.html";
+        }
       });
 
       $("#exitBtn").click(function () {
@@ -36,6 +47,35 @@
       const buttons = document.querySelectorAll('.gender-button');
       buttons.forEach(btn => btn.classList.remove('selected'));
       button.classList.add('selected');
+    }
+
+    function validateForm() {
+      let isValid = true;
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+      $('select[required]').each(function() {
+        const $select = $(this);
+        const $errorSpan = $select.next('.error-message');
+
+        if (!$select.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+
+      return isValid;
     }
 
   </script>
@@ -100,21 +140,32 @@
           <p class="subTitle">2.1 - Policyholder Information</p>
 
           <div class="inputRow">
-            <label>*First Name: <input type="text" placeholder="First Name"></label>
-            <label>*Last Name: <input type="text" placeholder="Last Name"></label>
-            <label>*Date of Birth: <input type="date"  class="date"></label>
+            <label>*First Name: <input type="text" placeholder="First Name" required>
+              <span class="error-message" style="color:red; display:none;">Please enter first name.</span>
+            </label>
+            <label>*Last Name: <input type="text" placeholder="Last Name" required>
+              <span class="error-message" style="color:red; display:none;">Please enter last name.</span>
+            </label>
+            <label>*Date of Birth: <input type="date"  class="birthdate" required>
+              <span class="error-message" style="color:red; display:none;">Please select a date.</span>
+            </label>
           </div>
 
           <div class="inputRow">
-            <label>*HKID: <input type="text" placeholder="HKID"></label>
-            <label>*Profession: <input type="text" placeholder="Profession"></label>
+            <label>*HKID: <input type="text" placeholder="HKID" required>
+              <span class="error-message" style="color:red; display:none;">Please enter HKID.</span>
+            </label>
+            <label>*Profession: <input type="text" placeholder="Profession" required>
+              <span class="error-message" style="color:red; display:none;">Please enter your profession.</span>
+            </label>
             <label>*Marital Status:
-              <select id="marital" name="maritalStatus">
+              <select id="marital" name="maritalStatus" required>
                 <option value="">--Please choose an Option--</option>
                 <option value="Married">Married</option>
                 <option value="Single">Single</option>
                 <option value="Widowed">Widowed</option>
               </select>
+              <span class="error-message" style="color:red; display:none;">Please select a status.</span>
             </label>
           </div>
 
@@ -123,7 +174,7 @@
               <div>
                 <label>*Gender:</label>
                 <div class="buttonDiv">
-                  <button type="button" class="gender-button" onclick="selectGender(this)">Male</button>
+                  <button type="button" class="gender-button selected" onclick="selectGender(this)">Male</button>
                   <button type="button" class="gender-button" onclick="selectGender(this)">Female</button>
                 </div>
               </div>
@@ -135,13 +186,20 @@
           <p class="subTitle">2.2 - Policyholder Contact Information</p>
 
           <div class="inputRow">
-            <label>*Phone Number: <input type="text"  class="date" placeholder="Phone Number"></label>
-            <label>Family Phone Number: <input type="text" placeholder="Family Phone Number"></label>
-            <label>Email Address: <input type="email" placeholder="Email Address"></label>
+            <label>*Phone Number: <input type="text"  class="date" placeholder="Phone Number" required>
+              <span class="error-message" style="color:red; display:none;">Please enter the phone number.</span>
+            </label>
+            <label>Family Phone Number: <input type="text" placeholder="Family Phone Number">
+            </label>
+            <label>Email Address: <input type="email" placeholder="Email Address" required>
+              <span class="error-message" style="color:red; display:none;">Please enter the email address.</span>
+            </label>
           </div>
 
           <div class="inputRowAdd" >
-            <label>*Address 1: <input type="text"  class="date" placeholder="Address 1"></label>
+            <label>*Address 1: <input type="text"  class="date" placeholder="Address 1" required>
+              <span class="error-message" style="color:red; display:none;">Please enter the address.</span>
+            </label>
           </div>
 
           <div class="inputRowAdd">
