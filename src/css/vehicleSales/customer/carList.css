@@ -65,6 +65,16 @@ select{
     margin-left: 5px;
 }
 
+.filter_set input {
+    width: 170px;
+    height: 25px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
 #resetFiltersBtn{
     padding: 10px 20px;
     background-color: teal;
@@ -172,7 +182,7 @@ select{
         margin-left: 0px;
     }
 
-    .filter_set select, #sortBy_set select{
+    .filter_set select, #sortBy_set select, .filter_set input{
         width: 100%;
     }
 

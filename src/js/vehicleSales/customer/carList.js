@@ -48,8 +48,6 @@ function loadSelectOptions() {
     });
 }
 
-
-
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
@@ -124,9 +122,12 @@ function loadDarkMode() {
 }
 function loadCars() {
     $("#main_carList").html("");
+    var carsFound = false;
+
     $.getJSON('../../../src/json/vehicleSales/carList.json', function (data) {
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
+        var searchModel = $("#searchModel").val().toLowerCase();
 
         //load electric cars
         for (var i = 0; i < numberOfElectricBrand; i++) {
@@ -143,7 +144,6 @@ function loadCars() {
 
             for (var k = 0; k < Math.ceil(data.electricBrands[i].car.length / 4); k++) {
                 var carRow = $("<div class=\"car-row\"></div>");
-                var j = 0;
                 for (var j = 0; j < 4; j++) {
                     var car = data.electricBrands[i].car[j + k * 4];
                     if (car != undefined) {
@@ -151,6 +151,9 @@ function loadCars() {
                             continue;
                         }
                         if ($("#fuel").val() != "all" && car.fuelType != $("#fuel").val()) {
+                            continue;
+                        }
+                        if (searchModel && !car.model.toLowerCase().includes(searchModel)) {
                             continue;
                         }
 
@@ -163,6 +166,7 @@ function loadCars() {
                             "    <button class=\"viewCarBtn\">View Detail</button>\n" +
                             "</div>");
                         hasCars = true;
+                        carsFound = true;
                     }
                 }
                 if (carRow.children().length > 0) {
@@ -199,6 +203,10 @@ function loadCars() {
                         if ($("#fuel").val() != "all" && car.fuelType != $("#fuel").val()) {
                             continue;
                         }
+                        if (searchModel && !car.model.toLowerCase().includes(searchModel)) {
+                            continue;
+                        }
+
                         carRow.append(`<div class=\"car-item\" id="${car.id}">\n` +
                             `    <img src=\"../../../src/img/vehicleSales/car/${car.id}/1.jpg\">\n` +
                             "    <p>Model: " + car.model + "</p>\n" +
@@ -208,6 +216,7 @@ function loadCars() {
                             "    <button class=\"viewCarBtn\">View Detail</button>\n" +
                             "</div>");
                         hasCars = true;
+                        carsFound = true;
                     }
                 }
                 if (carRow.children().length > 0) {
@@ -218,6 +227,12 @@ function loadCars() {
             if (hasCars) {
                 $("#main_carList").append(brandDiv);
             }
+        }
+
+        if (carsFound) {
+            $("#notFoundMessage").hide();
+        } else {
+            $("#notFoundMessage").show();
         }
         loadDarkMode();
     });
@@ -236,6 +251,11 @@ $(document).ready(function () {
     });
 
     $("#brand, #type, #fuel").on("change", function () {
+        loadCars();
+        loadDarkMode();
+    });
+
+    $('#searchModel').on('keyup', function () {
         loadCars();
         loadDarkMode();
     });
