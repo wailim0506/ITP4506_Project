@@ -1,7 +1,7 @@
 [
   {
     "quoteId": "Q70633",
-    "quoteDate": "2024/10/28",
+    "quoteDate": "2024/2/28",
     "vehicleInQuote": [
       {
         "vehicleId": "13",
@@ -37,7 +37,7 @@
   },
   {
     "quoteId": "Q85055",
-    "quoteDate": "2024/10/28",
+    "quoteDate": "2024/7/28",
     "vehicleInQuote": [
       {
         "vehicleId": "16",
@@ -85,7 +85,7 @@
   },
   {
     "quoteId": "Q90364",
-    "quoteDate": "2024/10/28",
+    "quoteDate": "2024/9/28",
     "vehicleInQuote": [
       {
         "vehicleId": "8",
@@ -120,5 +120,43 @@
     },
     "status": "Pending",
     "totalPrice": "50000"
+  },
+  {
+    "quoteId": "Q90365",
+    "quoteDate": "2024/3/28",
+    "vehicleInQuote": [
+      {
+        "vehicleId": "1",
+        "vehicleName": "Tesla Model X",
+        "exteriorColor": "Red",
+        "interiorColor": "Black",
+        "price": "50000",
+        "quantity": "1"
+      }
+    ],
+    "personalInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "example@gmail.com",
+      "phone": "93452234",
+      "address": "123 ABC Street",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "zip": "000000"
+    },
+    "paymentInformation": {
+      "paymentMethod": "creditCard",
+      "cardType": "visa",
+      "cardHolder": "Demo",
+      "cardNumber": "9876545678878181",
+      "expiryDate": "2025-07-10",
+      "cvv": "123"
+    },
+    "tradeInInformation": {
+      "tradeIn": "no",
+      "tradeInValue": "10000"
+    },
+    "status": "Delivered",
+    "totalPrice": "99000"
   }
 ]

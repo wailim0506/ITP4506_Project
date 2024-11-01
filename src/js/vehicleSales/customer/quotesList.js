@@ -95,15 +95,43 @@ function setQuoteListToLocalStorage(){
             localStorage.setItem('quote', JSON.stringify(data));
         }
     });
-}
+} //initial the quote list
 
-function loadQuoteList(){
+function loadQuoteList() {
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
-        $('#refreshBtnDiv p').text(`Total Quote(s): ${quoteList.length}`);
-        for (var i = 0; i < quoteList.length; i++) {
-            var quote = quoteList[i];
+
+        // Get filter values
+        var filterStatus = $('#filterStatus').val();
+        var filterPrice = $('#filterPrice').val();
+        var filterQuoteId = $('#filterQuoteId').val().toLowerCase();
+
+        // Filter quotes
+        var filteredQuotes = quoteList.filter(function(quote) {
+            var matchesStatus = filterStatus === "" || quote.status === filterStatus;
+            var matchesPrice = filterPrice === "" || (
+                filterPrice === "0-10000" && quote.totalPrice <= 10000 ||
+                filterPrice === "10001-20000" && quote.totalPrice > 10000 && quote.totalPrice <= 20000 ||
+                filterPrice === "20001-30000" && quote.totalPrice > 20000 && quote.totalPrice <= 30000 ||
+                filterPrice === "30001-40000" && quote.totalPrice > 30000 && quote.totalPrice <= 40000 ||
+                filterPrice === "40001-50000" && quote.totalPrice > 40000 && quote.totalPrice <= 50000 ||
+                filterPrice === "50001" && quote.totalPrice > 50000
+            );
+            var matchesQuoteId = filterQuoteId === "" || quote.quoteId.toLowerCase().includes(filterQuoteId);
+
+            return matchesStatus && matchesPrice && matchesQuoteId;
+        });
+
+        // Update total quotes count
+        $('#refreshBtnDiv p').text(`Total Quote(s): ${filteredQuotes.length}`);
+
+        // Clear existing rows
+        $('table tr:not(:first)').remove();
+
+        // Append filtered quotes
+        for (var i = 0; i < filteredQuotes.length; i++) {
+            var quote = filteredQuotes[i];
             $('table').append(`<tr quoteId="${quote.quoteId}">
                 <td class="quoteIDCell">${quote.quoteId}</td>
                 <td class="vehicleCell">
@@ -126,8 +154,29 @@ function loadQuoteList(){
                     <button class="delBtn">Delete</button>
                 </td>
             </tr>`);
-        }
+            $('.viewBtn').click(function(){
+                localStorage.setItem('quoteToView', $(this).parent().parent().attr('quoteId'));
+                window.location.href = '../../../pages/vehicleSales/customer/quotePage.html';
+            });
 
+            $('.delBtn').click(function(){
+                var quoteId = $(this).parent().parent().attr('quoteId');
+                // if (confirm(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`)) {
+                //     var quoteList = localStorage.getItem('quote');
+                //     if (quoteList != null) {
+                //         quoteList = JSON.parse(quoteList);
+                //         quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
+                //         localStorage.setItem('quote', JSON.stringify(quoteList));
+                //         alert(`Quote (${quoteId}) deleted successfully!`);
+                //         location.reload();
+                //     }
+                //}
+
+                confirmModal(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`);
+                $('#modalYesBtn').attr('quoteId', quoteId);
+                $('#modalNoBtn').attr('quoteId', quoteId);
+            });
+        }
     }
 }
 
@@ -136,12 +185,13 @@ setQuoteListToLocalStorage();
 $(document).ready(function () {
     loadDarkMode();
     loadQuoteList();
+    loadQuoteList();
 
     $('#darkModeToggle').click(function () {
         setDarkMode();
     });
 
-    $('#refreshBtn').click(function(){
+    $('#refreshBtn,#resetFilterBtn').click(function(){
         location.reload();
     });
 
@@ -191,5 +241,11 @@ $(document).ready(function () {
     });
 
     $('.quoteList').css('height', window.innerHeight - 200);
+    // Add filter event listeners
+    $('#filterStatus, #filterPrice, #filterQuoteId').on('change keyup', function() {
+        loadQuoteList();
+    });
+
+
 
 });

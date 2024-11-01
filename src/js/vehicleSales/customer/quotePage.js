@@ -112,6 +112,7 @@ function loadDarkMode() {
 function loadQuote() {
     var quoteId = localStorage.getItem('quoteToView');
     $('#quoteTitle h1').text(`Quote #${quoteId}`);
+    $('#statusTitle h2').text(`Status: Pending`);
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);

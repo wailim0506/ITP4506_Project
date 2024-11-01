@@ -77,6 +77,50 @@ table button {
     background-color: red;
 }
 
+#filterDiv {
+    width: 85%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#filterDiv label {
+    font-weight: bold;
+}
+
+#filterDiv select, #filterDiv input {
+    padding: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+
+#filterDiv input{
+    width: 20%;
+}
+
+#applyFilterBtn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#resetFilterBtn{
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#applyFilterBtn:hover {
+    background-color: #0056b3;
+}
+
 /*responsive*/
 @media screen and (max-width: 800px) {
     .quoteList{

@@ -28,6 +28,7 @@ function loadCar(){
                     $('#carType').text(`Type: ${car.type}`);
                     $('#carInfo_price').text(`$${car.price}`);
                     $('#carInfo_brand').text(`${brand.name}`);
+                    $('#subNav').append(`${brand.name} ${car.model}`);
                     //append exterior color
                     $('#exteriorColorRow').html("");
                     $('#selectedExteriorColorDisplay').text(`Selected Color: `);
@@ -147,6 +148,7 @@ function loadCar(){
                     $('#carInfo_price').text(`$${car.price}`);
                     $('#carInfo_brand').text(`${brand.name}`);
                     $('#carType').text(`Type: ${car.type}`);
+                    $('#subNav').append(`${brand.name} ${car.model}`);
                     //append exterior color
                     $('#exteriorColorRow').html("");
                     $('#selectedExteriorColorDisplay').text("Selected Color: ");
@@ -247,7 +249,7 @@ function setDarkMode() {
         $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
         $('footer').css('background-color', '#333');
         $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
-        $('a').css('color', 'rgba(255,255,255,0.65)');
+        $('a,#subNav').css('color', 'rgba(255,255,255,0.65)');
         $('.infoBox .word').css('color', 'white');
         $('.section').css('border-bottom', '1px solid #4c4c4c');
         if (window.innerWidth > 1036){
@@ -274,7 +276,7 @@ function setDarkMode() {
         $('html, nav,.modal-content').css('background-color', 'white');
         $('footer').css('background-color', '#e8e6e6');
         $('body, nav,.modal-content').css('color', 'black');
-        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
+        $('a,footer,#subNav').css('color', 'rgba(0,0,0,0.65)');
         $('.infoBox .word').css('color', 'black');
         $('.section').css('border-bottom', '1px solid #d1cece');
         if (window.innerWidth > 1036){
@@ -305,7 +307,7 @@ function loadDarkMode() {
             $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
             $('footer').css('background-color', '#333');
             $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
-            $('a').css('color', 'rgba(255,255,255,0.65)');
+            $('a,#subNav').css('color', 'rgba(255,255,255,0.65)');
             $('.infoBox .title').css('color','white');
             $('.infoBox .word').css('color', 'white');
             $('.section').css('border-bottom', '1px solid #4c4c4c');
@@ -332,7 +334,7 @@ function loadDarkMode() {
             $('html,nav,.modal-content').css('background-color', 'white');
             $('footer').css('background-color', '#e8e6e6');
             $('body, nav,.modal-content').css('color', 'black');
-            $('a,footer').css('color', 'rgba(0,0,0,0.65)');
+            $('a,footer,#subNav').css('color', 'rgba(0,0,0,0.65)');
             $('.infoBox .title').css('color','black');
             $('.infoBox .word').css('color', 'black');
             $('.section').css('border-bottom', '1px solid #d1cece');
