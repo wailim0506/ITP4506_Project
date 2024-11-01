@@ -83,22 +83,26 @@
 
                 if(type === "C") {   //For customer
                     if($('#policy').is(':checked') && !hasError) {
-                        alert("Resister successfully \nYour username is: LMC0001");
+                        //alert("Resister successfully \nYour username is: LMC0001");
+                        openAlertModal("Resister successfully <br>Your username is: LMC0001<br> Redirect to login page");
                     }else if(!$('#policy').is(':checked')) {
-                        alert("Please agree to the terms and conditions");
+                        //alert("Please agree to the terms and conditions");
+                        openAlertModal("Please agree to the terms and conditions");
                     }
                 }else if(type === "V") {    //For vehicle sales
                     SN = $("#SN").val();
                     if(SN === "LM0001" && !hasError) {
-                        alert("Resister successfully \nYour username is: VS0001\nThe system will redirect to the login page.");
-                        window.location.href = "../../index.html";
+                        //alert("Resister successfully \nYour username is: VS0001\nThe system will redirect to the login page.");
+                        openAlertModal("Resister successfully <br> Your username is: VS0001 <br> The system will redirect to the login page.");
+                        // window.location.href = "../../index.html";
                     }
 
                 }else if(type === "I") {    //For insurance sales
                     SN = $("#SN").val();
                     if(SN === "LM0001" && !hasError) {
-                        alert("Resister successfully \nYour username is: IS0001\nThe system will redirect to the login page.");
-                        window.location.href = "../../index.html";
+                        //alert("Resister successfully \nYour username is: IS0001\nThe system will redirect to the login page.");
+                        openAlertModal("Resister successfully <br> Your username is: IS0001\nThe system will redirect to the login page.");
+                        // window.location.href = "../../index.html";
                     }
                 }
             });
@@ -243,6 +247,18 @@
         </div>
     </div>
 </div>
+
+<div id="alertModal" class="modal2">
+    <div class="modal-content2">
+        <span class="close">&times;</span>
+        <h2>Alert</h2>
+        <div class="modal-body">
+            <p id="alertMessage"></p>
+        </div>
+        <button id="redirectBtn">OK</button>
+    </div>
+</div>
+
 <!-- dark mode button -->
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>

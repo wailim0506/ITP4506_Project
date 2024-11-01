@@ -55,11 +55,82 @@ function loadDarkMode(){
         }
     }
 }
+
+function openAlertModal(message) {
+    var modal = $("#alertModal");
+    var btn = $("#");
+    var span = $(".close");
+
+    // Open modal
+
+    modal.show();
+    $('#alertMessage').html(message);
+
+    // Prevent body scroll
+    $('body').css({
+        'overflow': 'hidden',
+        'position': 'fixed',
+        'width': '100%',
+        'top': `-${window.scrollY}px`
+    });
+
+}
+
 loadDarkMode();
 $(document).ready(function(){
     loadDarkMode();
 
     $('#darkModeToggle').click(function() {
         setDarkMode();
+    });
+
+    var modal2 = $("#alertModal");
+    var btn = $("#");
+    var span = $(".close");
+
+    span.click(function() {
+        modal2.hide();
+
+        // Restore body scroll
+        var scrollY = $('body').css('top');
+        $('body').css({
+            'overflow': '',
+            'position': '',
+            'top': ''
+        });
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    });
+
+    // Close modal when clicking outside of it
+    $(window).click(function (event) {
+        if (event.target == modal2[0]) {
+            modal2.hide();
+
+            // Restore body scroll
+            var scrollY = $('body').css('top');
+            $('body').css({
+                'overflow': '',
+                'position': '',
+                'top': ''
+            });
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+    });
+
+    $('#redirectBtn').click(function() {
+        if($('#alertMessage').text() == 'Please agree to the terms and conditions'){
+            modal2.hide();
+
+            // Restore body scroll
+            var scrollY = $('body').css('top');
+            $('body').css({
+                'overflow': '',
+                'position': '',
+                'top': ''
+            });
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            return;
+        }
+        window.location.href = '../../index.html';
     });
 });

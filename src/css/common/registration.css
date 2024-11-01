@@ -6,7 +6,7 @@ html{
 
 #body_div{
     width: 100%;
-    height: 97vh;
+    height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -58,7 +58,7 @@ html{
 .field label{
     width: 84%;
     margin: 10px 10%;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nameDiv{
@@ -80,7 +80,7 @@ html{
 .nameDivInner label{
     width: 84%;
     margin: 10px 10%  0 -1%;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .nameDivInner input{
@@ -90,11 +90,11 @@ html{
     border-radius: 5px;
     font-size: 16px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .genderBtnDiv{
-    margin-top: 10px;
+    margin-top: 9px;
     margin-bottom: 5px;
     display: flex;
     flex-direction: row;
@@ -107,7 +107,7 @@ html{
 }
 
 .genderBtnDiv label{
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 7px;
     display: flex;
     flex-direction: row-reverse;
@@ -124,7 +124,7 @@ html{
     padding: 0 10px;
     border: 1px solid lightgray;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 select{
@@ -268,7 +268,7 @@ select{
     align-items: center;
     margin-left: 1%;
     width: 90%;
-    margin-top: 1%;
+    margin-top: 0;
 }
 
 #closePolicy{
@@ -482,5 +482,61 @@ select{
         height: 35px;
         font-size: 18px;
     }
+}
+
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    height: 40%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+.modal-body {
+    max-height: calc(90% - 60px); /* Adjust height for button */
+    overflow-y: auto; /* Enable vertical scrolling */
+    flex-grow: 1; /* Allow body to grow */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#redirectBtn{
+    width: 80%;
+    height: 40px;
+    margin: 5px 10% 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
