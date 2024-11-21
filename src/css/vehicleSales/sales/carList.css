@@ -1,6 +1,4 @@
-
-
-#main{
+#main {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -8,7 +6,7 @@
     align-items: center;
 }
 
-#main_title{
+#main_title {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,7 +14,7 @@
     font-size: 30px;
 }
 
-#main_sorting{
+#main_sorting {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,14 +23,14 @@
     width: 95%;
 }
 
-#filter_div{
+#filter_div {
     display: flex;
     flex-direction: row;
     align-items: center;
 
 }
 
-.filter_set{
+.filter_set {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,7 +38,7 @@
     width: 90%;
 }
 
-.filter_set label{
+.filter_set label {
     font-size: 16px;
     margin-right: 0px;
     margin-left: 9px;
@@ -50,11 +48,11 @@
     justify-content: start;
 }
 
-.filter_set select{
+.filter_set select {
     width: 170px;
 }
 
-select{
+select {
     width: 130px;
     height: 35px;
     font-size: 16px;
@@ -74,7 +72,7 @@ select{
     margin-left: 5px;
 }
 
-#resetFiltersBtn{
+#resetFiltersBtn {
     padding: 10px 20px;
     background-color: teal;
     color: white;
@@ -84,90 +82,73 @@ select{
     margin-left: 10px;
 }
 
-#main_carList{
+#main_carList {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+}
+
+#carTable {
     width: 95%;
+    margin-top: 20px;
+    border-collapse: collapse;
 }
 
-/*.row{*/
-/*    border-bottom: 1px solid lightgray;*/
-/*}*/
-
-.brand_name{
-    font-size: 30px;
-    font-weight: 600;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.car-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    margin-bottom: 20px;
-    width: 100%;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.car-item {
-    /*border: 1px solid lightgray;*/
-    border-radius: 25px;
-    box-shadow:
-            0 10px 15px -3px rgba(0, 0, 0, 0.1),
-            0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+tr {
     text-align: center;
-    width: 300px;
-    margin-left: 25px;
+    border-bottom: 0.1px solid grey;
 }
 
-
-.car-item img {
-    width: 100%;
-    height: auto;
+th {
+    padding: 10px;
 }
 
-.car-item p {
-    margin: 10px 0;
+td {
+    padding: 10px;
 }
 
-.car-item button {
-    padding: 10px 20px;
+td button {
+    padding: 8px 18px;
     background-color: teal;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 15px;
+    height: 50%;
 }
 
-.car-item button:hover {
-    background-color: #0056b3;
+#carID_cell {
+    width: 5%;
 }
 
+#image_cell {
+    width: 20%;
+}
+
+td img {
+    width: 70%;
+    border-radius: 10px;
+}
 
 
 /*responsive*/
-@media screen and (max-width: 1090px){
-    #main_sorting{
+@media screen and (max-width: 1090px) {
+    #main_sorting {
         width: 98%;
         flex-direction: column;
     }
 
 
-    #filter_div{
+    #filter_div {
         flex-direction: column;
         width: 100%;
         align-items: normal;
     }
 
-    .filter_set, #sortBy_set{
+    .filter_set, #sortBy_set {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -176,16 +157,16 @@ select{
         margin-bottom: 8px;
     }
 
-    .filter_set label, #sortBy_set label{
+    .filter_set label, #sortBy_set label {
         width: 20%;
         margin-left: 0px;
     }
 
-    .filter_set select, #sortBy_set select, .filter_set input{
+    .filter_set select, #sortBy_set select, .filter_set input {
         width: 100%;
     }
 
-    #resetFiltersBtn{
+    #resetFiltersBtn {
         margin-left: 0px;
         width: 100%;
         margin-bottom: 8px;
@@ -194,24 +175,25 @@ select{
     }
 }
 
+@media screen and (max-width: 670px) {
 
-@media screen and (max-width: 700px){
+    #carTable {
+        width: 99%;
+        font-size: 12px;
+    }
 
-    #main_carList{
+    #carTable button{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    td img {
         width: 100%;
+        border-radius: 10px;
     }
 
-    .car-item {
-        width: 90%;
-        margin-bottom: 20px;
-        margin-left: 0px;
-    }
-    .car-row{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    #image_cell {
+        width: 30%;
     }
 }
-
 

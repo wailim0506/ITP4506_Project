@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Vehicle List</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/carList.css">
+    <script src="../../../src/js/vehicleSales/sales/carList.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/navBar.css">
+    <script src="../../../src/js/vehicleSales/customer/navBar.js"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html" style="font-weight: 700;text-decoration: underline">Vehicle List</a>
+        <a href="wishList.html">Customers' Quote</a>
+        <a href="quotesList.html">Profile</a>
+        <a href="loanPaymentCalculator.html">Sales Analysis</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
+        <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
+        <a href="../../../index.html">Logout</a>
+    </div>
+</div>
+<div id="main">
+    <div id="main_title">
+        <p>Vehicles List</p>
+    </div>
+    <div id="main_sorting">
+        <div id="filter_div">
+            <div class="filter_set">
+                <label>Car Type:</label>
+                <select name="type" id="type">
+                    <!--added by JS-->
+                </select>
+            </div>
+            <div class="filter_set">
+                <label>Brand:</label>
+                <select name="brand" id="brand">
+                    <!--added by JS-->
+                </select>
+            </div>
+            <div class="filter_set">
+                <label>Fuel Type:</label>
+                <select name="fuel" id="fuel">
+                    <!--added by JS-->
+                </select>
+            </div>
+            <div class="filter_set">
+                <label>Model:</label>
+                <input type="text" id="searchModel" name="searchModel" placeholder="Enter car model">
+            </div>
+            <button id="resetFiltersBtn">Reset</button>
+        </div>
+    </div>
+    <div id="main_carList">
+        <table id="carTable">
+            <tr>
+                <th id="carID_cell">Car ID</th>
+                <th id="image_cell">Car Image</th>
+                <th id="brandName_cell">Brand</th>
+                <th>Model</th>
+                <th>Car Type</th>
+                <th>Fuel Type</th>
+                <th>Price</th>
+                <th>View</th>
+            </tr>
+            <!-- Rows will be added by JS -->
+        </table>
+    </div>
+
+</div>
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>
