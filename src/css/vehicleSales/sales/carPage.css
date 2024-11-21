@@ -136,6 +136,7 @@ i {
     border: none;
 }
 
+
 .carInfo{
     width: 100%;
     font-size: 32px;
@@ -165,8 +166,6 @@ i {
     position: relative;
 }
 
-
-
 .infoBox{
     width: 16.66666667%;  /*change when resize*/
     /*width: 200px;*/
@@ -189,53 +188,6 @@ i {
 
 .infoBox .word{
     font-size: 20px;
-}
-
-/* similar car */
-#similarCar {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.similarCarBox {
-    width: 23%;  /*change when resize*/
-    margin: 1%;
-    border: 1px solid gray;
-    border-radius: 5px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.similarCarBox img {
-    width: 100%;
-    height: auto;
-}
-
-.similarCarBox .name {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 10px 0;
-}
-
-.similarCarBox .price {
-    font-size: 16px;
-    /*color: #555;*/
-    margin-bottom: 10px;
-}
-
-.similarCarBox button{
-    padding: 10px 20px;
-    background-color: teal;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    width: 30%;
 }
 
 /*responsive*/
@@ -372,5 +324,4 @@ i {
         padding-left: 20px;
     }
 }
-
 

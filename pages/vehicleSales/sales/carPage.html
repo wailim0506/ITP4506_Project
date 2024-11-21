@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Vehicle Page</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/carPage.css">
+    <script src="../../../src/js/vehicleSales/sales/carPage.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+    <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/imageSlide.css">
+  <script src="../../../src/js/vehicleSales/commonElement/imageSlide.js"></script>
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html" style="font-weight: 700;text-decoration: underline">Vehicle List</a>
+        <a href="#">Customers' Quote</a>
+        <a href="#">Profile</a>
+        <a href="#">Sales Analysis</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="#">Customers' Quote</a>
+        <a href="#">Profile</a>
+        <a href="#">Sales Analysis</a>
+    </div>
+</div>
+<div id="main">
+    <div style="width: 100%;margin-top: 17px;margin-bottom: 12px">
+        <p id="subNav" style="margin-left: 15px;text-decoration: underline"><a href="carList.html">Vehicle List</a>/
+        </p>
+        <a href="carList.html" style="margin-left: 15px;text-decoration: none">← Back to Vehicle List</a>
+    </div>
+  <div id="upperPart">
+    <div id="upperLeft">
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <div id="slide1" style="width: 100%;display: flex;flex-direction: row;justify-content: center">
+            <!-- add by JS-->
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <div id="slide2" style="width: 100%;display: flex;flex-direction: row;justify-content: center">
+            <!--            add by JS-->
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <div id="slide3" style="width: 100%;display: flex;flex-direction: row;justify-content: center">
+            <!--            add by JS-->
+          </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+    <div id="upperRight">
+      <span class="carInfo" style="text-decoration: underline" id="carInfo_brand"></span>
+      <span class="carInfo" style="font-weight: normal;margin-top: 8px" id="carInfo_name"></span>
+      <span id="carType" style="margin-top: 10px;font-weight: 500">Type: SUV</span>
+      <span id="carInfo_price" style="font-size: 2.25rem;font-weight: 500;margin-top: 10px"></span>
+      <div id="exteriorColorSelection">
+        <div id="exteriorColorSelectionCollapse">
+          Available Exterior Color
+          <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="exteriorColorDiv">
+          <p id="selectedExteriorColorDisplay">Color Available: </p>
+          <div id="exteriorColorRow">
+            <div class="colorCircle" style="background-color: red" color="Red"></div>
+            <div class="colorCircle" style="background-color: blue;" color="Blue"></div>
+            <div class="colorCircle" style="background-color: green;" color="Green"></div>
+          </div>
+        </div>
+      </div>
+      <div id="interiorColorSelection">
+        <div id="interiorColorSelectionCollapse">
+          Available Interior Color
+          <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="interiorColorDiv">
+          <p id="selectedInteriorColorDisplay">Color Available: </p>
+          <div id="interiorColorRow">
+            <div class="colorCircle" style="background-color: red" id="Red"></div>
+            <div class="colorCircle" style="background-color: blue;" id="Blue"></div>
+            <div class="colorCircle" style="background-color: green;" id="Green"></div>
+          </div>
+        </div>
+
+      </div>
+      <!--      <p id="name" style="font-size: 24px">Tesla Model X</p>-->
+      <!--      <p id="price" style="font-size: 2.25rem;font-weight: bold">$10000</p>-->
+<!--      <button id="compareBtn">Compare with other vehicles</button>-->
+<!--      <button id="addToWishListBtn">Add to Wish List</button>-->
+    </div>
+  </div>
+  <div id="info" style="width: 100%">
+    <!--  basic info-->
+    <div class="sectionTitleDiv">
+      <p>Basic Information</p>
+    </div>
+    <div class="section" id="basicInfoSection">
+      <!--      add by JS-->
+    </div>
+    <!--  battery info-->
+    <div class="sectionTitleDiv" id="batterySectionTitle">
+      <p>Battery Information</p>
+    </div>
+    <div class="section" id="batteryInfoSection">
+      <!--      add by JS-->
+    </div>
+    <!--  features-->
+    <div class="sectionTitleDiv">
+      <p>Features</p>
+    </div>
+    <div class="section" id="featureInfoSection">
+      <!--      add by JS-->
+    </div>
+    <!--  warranty-->
+    <div class="sectionTitleDiv">
+      <p>Warranty</p>
+    </div>
+    <div class="section" id="warrantyInfoSection" style="border-bottom: 0">
+      <!--      add by JS-->
+    </div>
+  </div>
+
+</div>
+<footer>
+  <div id="footerUp">
+    <a href="carList.html">Vehicle List</a>
+    <a href="#">Customers' Quote</a>
+    <a href="#">Profile</a>
+    <a href="#">Sales Analysis</a>
+  </div>
+  <div id="footerDown">
+    <div id="footerDown_left">
+      <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
+    </div>
+    <div id="footerDown_right">
+      <img src="../../../src/img/LMLogo.webp">
+    </div>
+  </div>
+</footer>
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>

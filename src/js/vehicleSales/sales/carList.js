@@ -166,8 +166,8 @@ function loadCars(){
                                                 <td>${car.model}</td>
                                                 <td>${car.type}</td>
                                                 <td>${car.fuelType}</td>
-                                                <td>${car.price}</td>
-                                                <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));">View</button></td>
+                                                <td>$${car.price}</td>
+                                                <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));location.href = 'carPage.html';">View</button></td>
                                                 </tr>`);
                 }
             }
@@ -199,8 +199,8 @@ function loadCars(){
                                                 <td>${car.model}</td>
                                                 <td>${car.type}</td>
                                                 <td>${car.fuelType}</td>
-                                                <td>${car.price}</td>
-                                                <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));">View</button></td>
+                                                <td>$${car.price}</td>
+                                                <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));location.href = 'carPage.html';">View</button></td>
                                                 </tr>`);
                 }
             }
