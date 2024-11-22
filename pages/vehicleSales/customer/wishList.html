@@ -94,7 +94,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Preferred Payment & Trade In Detail</h2>
+        <h2>Quote Detail</h2>
         <i style="color: red">*Required</i>
         <div class="modal-body">
             <form id="longForm" autocomplete="on" autocapitalize="on">
@@ -103,15 +103,15 @@
                 <label>Payment Method<span style="color: red">*</span></label>
                 <div style="display: flex;flex-direction: column">
                     <div style="display: flex;flex-direction: row;align-items: center">
-                        <input type="radio" id="creditCard" name="paymentMethod" value="creditCard">
+                        <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" required>
                         <p>Credit Card</p>
                     </div>
                     <div style="display: flex;flex-direction: row;align-items: center">
-                        <input type="radio" id="cheque" name="paymentMethod" value="cheque">
+                        <input type="radio" id="cheque" name="paymentMethod" value="cheque" required>
                         <p>Cheque</p>
                     </div>
                     <div style="display: flex;flex-direction: row;align-items: center">
-                        <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer">
+                        <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer" required>
                         <p>Bank Transfer</p>
                     </div>
                 </div>

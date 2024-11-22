@@ -304,7 +304,7 @@ function formShowRegistration(){
         '                            <input id="uploadInsure" type="file"\n' +
         '                                   style="width: 100%; text-align: center;padding-top: 10px"\n' +
         '                                   placeholder="Upload the original or photocopy of valid Third Party Risks Insurance Policy or Cover Note"\n' +
-        '                                   required>\n' +
+        '                                   >\n' +
         '                        </div>\n' +
         '                    </div>\n' +
         '\n' +
@@ -313,7 +313,7 @@ function formShowRegistration(){
         '                    <div>\n' +
         '                        <input id="uploadID" type="file" style="width: 100%; text-align: center;padding-top: 10px"\n' +
         '                               placeholder="Upload the original of your HKID card (for HK Resident) or passport (for Non HK Resident)"\n' +
-        '                               required>\n' +
+        '                               >\n' +
         '                    </div>\n' +
         '                    <label>Upload the original or photocopy of proof of vehicle registration address which is issued not\n' +
         '                        more than 3 months<span style="color: red">*</span> </label>\n' +
@@ -321,7 +321,7 @@ function formShowRegistration(){
         '                        <input id="uploadAddressProof" type="file"\n' +
         '                               style="width: 100%; text-align: center;padding-top: 10px"\n' +
         '                               placeholder="Upload the original or photocopy of proof of vehicle registration address which is issued not more than 3 months"\n' +
-        '                               required>\n' +
+        '                               >\n' +
         '                    </div>\n' +
         '                    <div style="display: flex;flex-direction: column" id="notesVehRegistration">\n' +
         '                        <p style="font-size: 20px;font-weight: 600">NOTES ABOUT VEHICLE REGISTRATION:</p>\n' +

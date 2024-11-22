@@ -26,15 +26,6 @@ function createQuote() {
     });
 
 
-    // get data
-    // var firstName = $('#firstName').val();
-    // var lastName = $('#lastName').val();
-    // var email = $('#email').val();
-    // var phone = $('#phone').val();
-    // var address = $('#address').val();
-    // var country = $('#country').val();
-    // var city = $('#city').val();
-    // var zip = $('#zip').val();
 
     var paymentMethod = $('input[name="paymentMethod"]:checked').val();
     if (paymentMethod === 'cheque') {
@@ -126,6 +117,13 @@ function createQuote() {
         "accidentHistory": accidentHistory,
         "tradeInValue": "10000"
     };
+
+    newQuote.appRegistrationInformation = {
+        "appRegistration": "Yes",
+        "needTag": "Yes",
+        "haveInsure": "Yes"
+    };
+
     newQuote.status = "Pending";
     newQuote.totalPrice = $('#subtotal').text().replace('$', '').replace('.00', '').trim();
 

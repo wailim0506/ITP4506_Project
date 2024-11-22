@@ -131,7 +131,7 @@
     height: auto;
 }
 
-#buyerInfo ,#paymentInfo{
+#buyerInfo ,#paymentInfo, #tradeInfo{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
 }
@@ -152,6 +152,10 @@
 }
 
 #TradeInInfoSmallBoxDiv div{
+    width: 25%;
+}
+
+#ApplyInfoSmallBoxDiv div{
     width: 25%;
 }
 

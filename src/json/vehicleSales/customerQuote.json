@@ -32,6 +32,11 @@
     "tradeInInformation": {
       "tradeIn": "no"
     },
+    "applyRegistrationInformation": {
+      "applyRegistration": "no",
+      "needTag": "Yes",
+      "haveInsure": "Yes"
+    },
     "status": "Confirmed",
     "totalPrice": "20000"
   },
@@ -80,6 +85,11 @@
       "accidentHistory": "/",
       "tradeInValue": "10000"
     },
+    "applyRegistrationInformation": {
+      "applyRegistration": "Yes",
+      "needTag": "Yes",
+      "haveInsure": "Yes"
+    },
     "status": "Pending",
     "totalPrice": "35000"
   },
@@ -118,6 +128,11 @@
       "tradeIn": "no",
       "tradeInValue": "10000"
     },
+    "applyRegistrationInformation": {
+      "applyRegistration": "Yes",
+      "needTag": "Yes",
+      "haveInsure": "Yes"
+    },
     "status": "Pending",
     "totalPrice": "50000"
   },
@@ -155,6 +170,11 @@
     "tradeInInformation": {
       "tradeIn": "no",
       "tradeInValue": "10000"
+    },
+    "applyRegistrationInformation": {
+      "applyRegistration": "Yes",
+      "needTag": "Yes",
+      "haveInsure": "Yes"
     },
     "status": "Delivered",
     "totalPrice": "99000"

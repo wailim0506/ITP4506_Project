@@ -238,6 +238,22 @@ function loadQuoteTradeInDetail() {
     }
 }
 
+function loadApplyRegistrationDetail(){
+    var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId === quoteId);
+        if (quote != null) {
+            if (quote.applyRegistrationInformation.applyRegistration !== "no") {
+
+            }else{
+                $('#applyInfo').remove();
+            }
+        }
+    }
+}
+
 function loadQuotePriceBreakdown() {
     var quoteId = localStorage.getItem('quoteToView');
     var quoteList = localStorage.getItem('quote');
@@ -266,6 +282,7 @@ $(document).ready(function () {
     loadQuotePaymentDetail();
     loadQuoteTradeInDetail();
     loadQuotePriceBreakdown();
+    loadApplyRegistrationDetail();
     loadDarkMode();
 
 
@@ -277,7 +294,7 @@ $(document).ready(function () {
         $(this).hide();
         $('nav,i,#goBackLinkDiv,#buttonDiv').hide();
         $('#vehicleSection img').css('width', '150px');
-        $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div').css('width', '30%');
+        $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '30%');
         $('footer').hide();
         $('#insureBtnDiv button').hide();
         window.print();
@@ -288,7 +305,7 @@ $(document).ready(function () {
         $('#vehicleSection img').css('width', '200px');
         $('#CustInfoSmallBoxDiv div').css('width', '20%');
         $('#PaymentInfoSmallBoxDiv div').css('width', '20%');
-        $('#TradeInInfoSmallBoxDiv div').css('width', '25%');
+        $('#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '25%');
     });
 
     $('#vehicleSection table tr button').click(function () {
