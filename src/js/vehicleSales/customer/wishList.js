@@ -133,7 +133,7 @@ function calculateTotalPrice() {
 }
 
 function formShowTradeIn() {
-    $('#longForm').append("<div id=\"tradeInSection\" style=\"display: flex;flex-direction: column\">\n" +
+    $('#tradeYes').append("<div id=\"tradeInSection\" style=\"display: flex;flex-direction: column\">\n" +
         "                    <label>Current Vehicle Make and Model<span style=\"color: red\">*</span></label>\n" +
         "                    <div>\n" +
         "                        <input id=\"tradeInMakeModel\" type=\"text\" style=\"width: 100%\"\n" +
@@ -251,6 +251,136 @@ function formShowTradeIn() {
     loadDarkMode();
 }
 
+function formShowRegistration(){
+    $('#yes').append('<div id="applyLicenseSection" style="display: flex;flex-direction: column">\n' +
+        '                    <label>Is the vehicle registration address same with the address on your profile?<span\n' +
+        '                            style="color: red">*</span></label>\n' +
+        '                    <div style="display: flex; flex-direction: row;align-items: center">\n' +
+        '                        <div style="display: flex; align-items: center;">\n' +
+        '                            <input type="radio" id="addressSame" name="addressSame" value="yes">\n' +
+        '                            <label for="addressSame">Yes</label>\n' +
+        '                        </div>\n' +
+        '                        <div style="display: flex; align-items: center;flex-direction: row">\n' +
+        '                            <input type="radio" id="addressNotSame" name="addressSame" value="no">\n' +
+        '                            <label for="addressNotSame">No</label>\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '                    <div id="registrationAddressDiv" style="display: flex;flex-direction: column">\n' +
+        '                        <label>Vehicle Registration Address<span style="color: red">*</span></label>\n' +
+        '                        <div>\n' +
+        '                            <input id="registrationAddress" type="text" style="width: 100%"\n' +
+        '                                   placeholder="Vehicle Registration Address"\n' +
+        '                                   >\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '\n' +
+        '                    <label>Apply for vehicle tag from toll service provider (HKeToll)?<span style="color: red">*</span></label>\n' +
+        '                    <div style="display: flex; flex-direction: row;align-items: center">\n' +
+        '                        <div style="display: flex; align-items: center;">\n' +
+        '                            <input type="radio" id="tollYes" name="toll" value="yes">\n' +
+        '                            <label for="addressSame">Yes</label>\n' +
+        '                        </div>\n' +
+        '                        <div style="display: flex; align-items: center;flex-direction: row">\n' +
+        '                            <input type="radio" id="tollNo" name="toll" value="no">\n' +
+        '                            <label for="addressNotSame">No</label>\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '\n' +
+        '                    <label>Do you have an existing third party insurance?<span style="color: red">*</span></label>\n' +
+        '                    <div style="display: flex; flex-direction: row;align-items: center">\n' +
+        '                        <div style="display: flex; align-items: center;">\n' +
+        '                            <input type="radio" id="insureYes" name="insure" value="yes">\n' +
+        '                            <label for="insureYes">Yes</label>\n' +
+        '                        </div>\n' +
+        '                        <div style="display: flex; align-items: center;flex-direction: row">\n' +
+        '                            <input type="radio" id="insureNo" name="insure" value="no">\n' +
+        '                            <label for="insureNo">No</label>\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '                    <div id="UploadInsureDiv" style="display: flex;flex-direction: column">\n' +
+        '                        <label>Upload the original or photocopy of valid Third Party Risks Insurance Policy or Cover\n' +
+        '                            Note<span style="color: red">*</span></label>\n' +
+        '                        <div>\n' +
+        '                            <input id="uploadInsure" type="file"\n' +
+        '                                   style="width: 100%; text-align: center;padding-top: 10px"\n' +
+        '                                   placeholder="Upload the original or photocopy of valid Third Party Risks Insurance Policy or Cover Note"\n' +
+        '                                   required>\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '\n' +
+        '                    <label>Upload the original of your HKID card (for HK Resident) or passport (for Non HK\n' +
+        '                        Resident)<span style="color: red">*</span></label>\n' +
+        '                    <div>\n' +
+        '                        <input id="uploadID" type="file" style="width: 100%; text-align: center;padding-top: 10px"\n' +
+        '                               placeholder="Upload the original of your HKID card (for HK Resident) or passport (for Non HK Resident)"\n' +
+        '                               required>\n' +
+        '                    </div>\n' +
+        '                    <label>Upload the original or photocopy of proof of vehicle registration address which is issued not\n' +
+        '                        more than 3 months<span style="color: red">*</span> </label>\n' +
+        '                    <div>\n' +
+        '                        <input id="uploadAddressProof" type="file"\n' +
+        '                               style="width: 100%; text-align: center;padding-top: 10px"\n' +
+        '                               placeholder="Upload the original or photocopy of proof of vehicle registration address which is issued not more than 3 months"\n' +
+        '                               required>\n' +
+        '                    </div>\n' +
+        '                    <div style="display: flex;flex-direction: column" id="notesVehRegistration">\n' +
+        '                        <p style="font-size: 20px;font-weight: 600">NOTES ABOUT VEHICLE REGISTRATION:</p>\n' +
+        '                        <ol>\n' +
+        '                            <li>Vehicle Taxation and Registration\n' +
+        '                                <ol type="a">\n' +
+        '                                    <li>Vehicles, no matter what class it is, imported into Hong Kong are not subject to any Customs tax, but in general, an importer is required to lodge with the Customs and Excise Department an accurate and complete declaration within 14 days of importation.</li>\n' +
+        '                                    <li>On the first registration of a motor vehicle, a first registration tax is charged. The first registration tax is calculated on the basis of the taxable value of the vehicle and in accordance with the percentage for that vehicle class as specified in the schedule of the Motor Vehicle (First Registration Tax) Ordinance (Chapter 330). In general, the taxable value of a vehicle is calculated on the basis of the published retail price of the vehicle or the provisional taxable value assessed by the Customs and Excise Department.</li>\n' +
+        '                                    <li>A vehicle may be registered only in the name of an individual person aged 18 or above or of an incorporated body.</li>\n' +
+        '                                    <li>In registering a vehicle, the Transport Department will issue a registration mark and a vehicle registration document containing particulars of the vehicle to the registered owner.</li>\n' +
+        '                                    <li>Licensing of vehicles takes place after registration. On licensing, the registering owner is issued with a licence which he is required to display on the left-hand side of the vehicle\'s windscreen. In the case of a motorcycle or a vehicle without a fixed windscreen, the licence must be displayed in a conspicuous position on the left-hand side. </li>\n' +
+        '                                    <li>Further information concerning first registration of vehicles can be obtained from the Hong Kong Licensing Office at 3/F, United Centre, 95 Queensway, Hong Kong (Tel 2804 2637).</li>\n' +
+        '                                </ol>\n' +
+        '                            </li>\n' +
+        '                            <li>\n' +
+        '                                Allocation of Registration Marks\n' +
+        '                                <ol type="a">\n' +
+        '                                    <li>If an application for registration of a vehicle is in order, the vehicle will be assigned a registration mark consisting of a number of not more than four digits other than special registration marks, with two letters as prefix.</li>\n' +
+        '                                    <li>Special registration marks are allocated only after sale by public auction which takes place from time to time. The proceeds of the auction go to the Government Lotteries Fund to be used for charitable purposes. </li>\n' +
+        '                                </ol>\n' +
+        '                            </li>\n' +
+        '                            <li>\n' +
+        '                                Third Party Risks Insurance\n' +
+        '                                <ol type="a">\n' +
+        '                                    <li>Any person (including the registered vehicle owner and driver) has the responsibility of ensuring the presence of a valid third party risks insurance policy for the vehicle concerned whilst using it on roads. Person who contravenes such requirement commits an offence and is liable to a fine of $10,000 and imprisonment for 12 months, and will also be disqualified from holding or obtaining a driving licence (for a period of 12 months to 3 years). The Commissioner for Transport may refuse to license the vehicle concerned or cancel the vehicle licence concerned.</li>\n' +
+        '                                </ol>\n' +
+        '                            </li>\n' +
+        '                            <li>Please click <a href="https://www.td.gov.hk/en/public_services/licences_and_permits/vehicle_licences/how_to_apply_for_registering_and_licensing_a_vehic/index.html" target="_blank">here</a> to read the full notes about vehicle registration</li>\n' +
+        '                        </ol>\n' +
+        '\n' +
+        '                        <div style="display: flex;flex-direction: row;align-items: center">\n' +
+        '                            <input type="checkbox" id="agreeApplyTerms" name="agreeApplyTerms" value="agree" required>\n' +
+        '                            <label for="agreeApplyTerms">I have read and agree to the notes about vehicle registration<span style="color: red">*</span></label>\n' +
+        '                        </div>\n' +
+        '                    </div>\n' +
+        '                </div>');
+
+
+    $('#addressNotSame').click(function(){
+        $('#registrationAddressDiv').show();
+        showFormScrolledPercentage();
+    });
+
+    $('#addressSame').click(function(){
+        $('#registrationAddressDiv').hide();
+        showFormScrolledPercentage();
+    });
+
+    $('#insureYes').click(function(){
+        $('#UploadInsureDiv').show();
+        showFormScrolledPercentage()
+    });
+    $('#insureNo').click(function(){
+        $('#UploadInsureDiv').hide();
+        showFormScrolledPercentage();
+    });
+    loadDarkMode();
+}
+
 function showFormScrolledPercentage() {
     const $modalBody = $('.modal-body');
 
@@ -273,6 +403,9 @@ $(document).ready(function () {
     loadDarkMode();
     loadWishList();
     loadDarkMode();
+    $('#registrationAddressDiv').hide();
+    $('#UploadInsureDiv').hide();
+
 
     $('#subtotal').text('$' + calculateTotalPrice());
 
@@ -384,4 +517,17 @@ $(document).ready(function () {
         showFormScrolledPercentage();
     });
 
+
+
+    $('#applyYes').click(function(){
+        formShowRegistration();
+        $('#registrationAddressDiv').hide();
+        $('#UploadInsureDiv').hide();
+        showFormScrolledPercentage()
+    });
+
+    $('#applyNo').click(function(){
+        $('#applyLicenseSection').remove();
+        showFormScrolledPercentage();
+    });
 });
