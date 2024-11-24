@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Quote List</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/vehicleSales/sales/quotesList.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/quotesList.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+    <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html" style="font-weight: 700;text-decoration: underline">Customers' Quote</a>
+        <a href="#">Sales Analysis</a>
+        <a href="#">Profile</a>
+
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="#">Sales Analysis</a>
+        <a href="#">Profile</a>
+
+    </div>
+</div>
+<div id="main">
+    <div id="filterDiv">
+        <label for="filterStatus">Status:</label>
+        <select id="filterStatus">
+            <option value="">All</option>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Delivered">Delivered</option>
+        </select>
+
+        <label for="filterPrice">Price:</label>
+        <select id="filterPrice">
+            <option value="">All</option>
+            <option value="0-10000">$0 - $10,000</option>
+            <option value="10001-20000">$10,001 - $20,000</option>
+            <option value="20001-30000">$20,001 - $30,000</option>
+            <option value="30001-40000">$30,001 - $40,000</option>
+            <option value="40001-50000">$40,001 - $50,000</option>
+            <option value="50001">$50,001+</option>
+        </select>
+
+        <label for="filterQuoteId">Quote ID:</label>
+        <input type="text" id="filterQuoteId" placeholder="Enter Quote ID">
+        <!--        <button id="applyFilterBtn">Apply Filter</button>-->
+        <button id="resetFilterBtn">Reset</button>
+    </div>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="pendingTitle">
+            <h3>Pending Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="pendingQuotes" class="quoteBoxDiv">
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="confirmedTitle">
+            <h3>Confirmed Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="confirmedQuotes" class="quoteBoxDiv">
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="deliveredTitle">
+            <h3>Delivered Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="deliveredQuotes" class="quoteBoxDiv">
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="quoteBox">-->
+<!--                <div class="quoteBoxLeft1">-->
+<!--                    <strong>QuoteID:</strong> Q00001-->
+<!--                </div>-->
+<!--                <div class="quoteBoxLeft2">-->
+<!--                    <strong>Vehicle:</strong> 2024 Honda Civic<br>-->
+
+<!--                </div>-->
+<!--                <div class="quoteBoxCenter">-->
+<!--                    <strong>Quote Date:</strong> 2024-11-18<br>-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight2">-->
+<!--                    <strong>Status:</strong> Pending-->
+<!--                </div>-->
+<!--                <div class="quoteBoxRight1">-->
+<!--                    <button>View</button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footerUp">
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="#">Sales Analysis</a>
+        <a href="#">Profile</a>
+
+    </div>
+    <div id="footerDown">
+        <div id="footerDown_left">
+            <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
+        </div>
+        <div id="footerDown_right">
+            <img src="../../../src/img/LMLogo.webp">
+        </div>
+    </div>
+</footer>
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>
