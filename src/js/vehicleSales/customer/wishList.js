@@ -381,6 +381,16 @@ function formShowRegistration(){
     loadDarkMode();
 }
 
+function formShowStaffIDInput(){
+    $('#staffIDyes').append(`<div id="staffIDEnterDiv" style="display: flex;flex-direction: column">
+                    <label>Enter Staff Number<span style="color: red">*</span></label>
+                    <div>
+                        <input id="staffIDInputBox" type="text" style="width: 100%"
+                               placeholder="Enter Staff ID">
+                    </div>
+                </div>`);
+}
+
 function showFormScrolledPercentage() {
     const $modalBody = $('.modal-body');
 
@@ -517,8 +527,6 @@ $(document).ready(function () {
         showFormScrolledPercentage();
     });
 
-
-
     $('#applyYes').click(function(){
         formShowRegistration();
         $('#registrationAddressDiv').hide();
@@ -530,4 +538,15 @@ $(document).ready(function () {
         $('#applyLicenseSection').remove();
         showFormScrolledPercentage();
     });
+
+    $('#discountYes').click(function(){
+        formShowStaffIDInput();
+        showFormScrolledPercentage();
+    });
+
+    $('#discountNo').click(function(){
+        $('#staffIDEnterDiv').remove();
+        showFormScrolledPercentage();
+    });
+
 });

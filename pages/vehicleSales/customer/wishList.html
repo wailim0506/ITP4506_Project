@@ -104,15 +104,15 @@
                 <div style="display: flex;flex-direction: column">
                     <div style="display: flex;flex-direction: row;align-items: center">
                         <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" required>
-                        <p>Credit Card</p>
+                        <label for="creditCard">Credit Card</label>
                     </div>
                     <div style="display: flex;flex-direction: row;align-items: center">
                         <input type="radio" id="cheque" name="paymentMethod" value="cheque" required>
-                        <p>Cheque</p>
+                        <label for="cheque">Cheque</label>
                     </div>
                     <div style="display: flex;flex-direction: row;align-items: center">
                         <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer" required>
-                        <p>Bank Transfer</p>
+                        <label for="bankTransfer">Bank Transfer</label>
                     </div>
                 </div>
                 <div id="creditCardSection">
@@ -220,6 +220,25 @@
                 </div>
                 <!-- if yes, add by JS-->
                 <div id="yes">
+
+                </div>
+
+                <p style="font-size: 20px;font-weight: 600">Get Exclusive Discount: Do You Know Our Team?</p>
+                <label>If you know one of our team members, you might qualify for a discount.<span
+                        style="color: red">*</span> (If yes, please enter the staff ID)</label>
+                <div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="discountYes" name="discount" value="yes">
+                        <label for="discountYes">Yes</label>
+                    </div>
+                    <div style="display: flex;flex-direction: row;align-items: center">
+                        <input type="radio" id="discountNo" name="discount" value="no">
+                        <label for="discountNo">No</label>
+                    </div>
+                </div>
+
+                <!-- if yes, add by JS-->
+                <div id="staffIDyes">
 
                 </div>
 

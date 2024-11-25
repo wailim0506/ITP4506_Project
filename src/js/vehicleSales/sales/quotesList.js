@@ -168,7 +168,7 @@ function loadQuoteList() {
             }
             $('.quoteBoxRight1 button').click(function () {
                 localStorage.setItem('sales_quoteToView', $(this).attr('quoteId'));
-                // window.location.href = '../../../pages/vehicleSales/customer/quotePage.html';
+                window.location.href = '../../../pages/vehicleSales/sales/quotePage.html';
             });
         }
     }

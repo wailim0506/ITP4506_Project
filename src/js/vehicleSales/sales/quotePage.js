@@ -110,7 +110,7 @@ function loadDarkMode() {
 }
 
 function loadQuote() {
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     $('#quoteTitle h1').text(`Quote #${quoteId}`);
     $('#statusTitle h2').text(`Status: Pending`);
     var quoteList = localStorage.getItem('quote');
@@ -137,7 +137,7 @@ function loadQuote() {
 }
 
 function loadQuotePersonalDetail() {
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
@@ -153,7 +153,7 @@ function loadQuotePersonalDetail() {
 }
 
 function loadQuotePaymentDetail() {
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
@@ -211,7 +211,7 @@ function loadQuotePaymentDetail() {
 
 
 function loadQuoteTradeInDetail() {
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
@@ -239,7 +239,7 @@ function loadQuoteTradeInDetail() {
 }
 
 function loadApplyRegistrationDetail(){
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
@@ -255,7 +255,7 @@ function loadApplyRegistrationDetail(){
 }
 
 function loadQuotePriceBreakdown() {
-    var quoteId = localStorage.getItem('quoteToView');
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
@@ -274,85 +274,17 @@ function loadQuotePriceBreakdown() {
     }
 }
 
-loadDarkMode();
 $(document).ready(function () {
-
     loadQuote();
     loadQuotePersonalDetail();
     loadQuotePaymentDetail();
     loadQuoteTradeInDetail();
-    loadQuotePriceBreakdown();
     loadApplyRegistrationDetail();
+    loadQuotePriceBreakdown();
     loadDarkMode();
-
-
     $('#darkModeToggle').click(function () {
         setDarkMode();
     });
 
-    $('#printBtn').click(function () {
-        $(this).hide();
-        $('nav,i,#goBackLinkDiv,#buttonDiv').hide();
-        $('#vehicleSection img').css('width', '150px');
-        $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '30%');
-        $('footer').hide();
-        $('#insureBtnDiv button').hide();
-        window.print();
-        $('nav,i,#goBackLinkDiv,#buttonDiv').show();
-        $(this).show();
-        $('footer').show();
-        $('#insureBtnDiv button').show();
-        $('#vehicleSection img').css('width', '200px');
-        $('#CustInfoSmallBoxDiv div').css('width', '20%');
-        $('#PaymentInfoSmallBoxDiv div').css('width', '20%');
-        $('#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '25%');
-    });
 
-    $('#vehicleSection table tr button').click(function () {
-        localStorage.setItem('carToView', $(this).parent().parent().attr('carid'));
-        window.location.href = '../../../pages/vehicleSales/customer/carPage.html';
-    });
-
-    $('#buttonDiv button').click(function () {
-        var quoteId = localStorage.getItem('quoteToView');
-        // if (confirm(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`)) {
-        //     var quoteList = localStorage.getItem('quote');
-        //     if (quoteList != null) {
-        //         quoteList = JSON.parse(quoteList);
-        //         quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
-        //         localStorage.setItem('quote', JSON.stringify(quoteList));
-        //         alert(`Quote (${quoteId}) deleted successfully!`);
-        //         window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
-        //     }
-        // }
-
-        confirmModal(`Are you sure you want to delete this quote (${quoteId})?\nYour action cannot to revert!`);
-        $('#modalYesBtn').attr('quoteId', quoteId);
-        $('#modalNoBtn').attr('quoteId', quoteId);
-    });
-
-    $('#modalYesBtn').click(function(){
-        var quoteId = $(this).attr('quoteId');
-        var quoteList = localStorage.getItem('quote');
-        if (quoteList != null) {
-            quoteList = JSON.parse(quoteList);
-            quoteList = quoteList.filter(quote => quote.quoteId != quoteId);
-            localStorage.setItem('quote', JSON.stringify(quoteList));
-            window.location.href = '../../../pages/vehicleSales/customer/quotesList.html';
-        }
-    });
-
-    $('#modalNoBtn').click(function(){
-        $('#myModal').hide();
-        var scrollY = $('body').css('top');
-        $('body').css({
-            'overflow': '',
-            'position': '',
-            'top': ''
-        });
-    });
-
-    $('#insureBtnDiv button').click(function(){
-        window.location.href = '../../../pages/insurance/customer/cusMainPage.html';
-    });
 });
