@@ -1,10 +1,10 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+/*body {*/
+/*    font-family: 'Arial', sans-serif;*/
+/*    background-color: #f9f9f9;*/
+/*    color: #333;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
 #profileContainer {
     max-width: 1100px;
@@ -20,7 +20,6 @@ body {
 #profileContainer h1 {
     text-align: center;
     font-size: 36px;
-    color: #2c3e50;
     margin-bottom: 20px;
     width: 100%;
 }
@@ -51,19 +50,18 @@ body {
 
 .profileHeader i {
     font-size: 150px;
-    cursor: pointer;
-    color: #34495e;
+    /*color: #34495e;*/
 }
 
 .profileHeader h2 {
     font-size: 28px;
-    color: #34495e;
+    /*color: #34495e;*/
     margin: 10px 0;
 }
 
 .profileHeader p {
     font-size: 16px;
-    color: #7f8c8d;
+    /*color: #7f8c8d;*/
     margin: 5px 0;
 }
 
@@ -84,38 +82,38 @@ body {
 
 .profileSection h3 {
     font-size: 24px;
-    color: #2c3e50;
+    /*color: #2c3e50;*/
     margin-bottom: 10px;
 }
 
 .profileSection p {
     font-size: 16px;
-    color: #7f8c8d;
+    /*color: #7f8c8d;*/
 }
 
 .profileSection .changePassword {
     margin-top: 10px;
-    color: #3498db;
+    /*color: #3498db;*/
     cursor: pointer;
 }
 
-footer {
-    background-color: #34495e;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-}
+/*footer {*/
+/*    background-color: #34495e;*/
+/*    color: white;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    margin-top: 50px;*/
+/*}*/
 
-footer a {
-    color: #ecf0f1;
-    text-decoration: none;
-    margin: 0 10px;
-}
+/*footer a {*/
+/*    color: #ecf0f1;*/
+/*    text-decoration: none;*/
+/*    margin: 0 10px;*/
+/*}*/
 
-footer a:hover {
-    text-decoration: underline;
-}
+/*footer a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
 
 /* Media Query for Smaller Screens (Tablets and small screens) */
 @media (max-width: 768px) {
@@ -130,6 +128,7 @@ footer a:hover {
         flex: 1 0 100%; /* Each section takes up full width */
         padding: 0;
         margin-bottom: 20px;
+        border-left: none;
     }
 
     .profileHeader i {
