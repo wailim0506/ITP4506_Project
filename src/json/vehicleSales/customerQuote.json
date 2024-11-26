@@ -34,8 +34,11 @@
     },
     "applyRegistrationInformation": {
       "applyRegistration": "no",
-      "needTag": "Yes",
-      "haveInsure": "Yes"
+      "needTag": "",
+      "haveInsure": ""
+    },
+    "knowStaff": {
+      "know": "no"
     },
     "status": "Confirmed",
     "totalPrice": "20000"
@@ -83,12 +86,18 @@
       "previousOwners": "1",
       "serviceHistory": "2019: Oil change, tire rotation",
       "accidentHistory": "/",
-      "tradeInValue": "10000"
+      "tradeInValue": "0"
     },
     "applyRegistrationInformation": {
       "applyRegistration": "Yes",
       "needTag": "Yes",
       "haveInsure": "Yes"
+    },
+    "knowStaff": {
+      "know": "Yes",
+      "staffID": "S123",
+      "discount": "0",
+      "verified": "No"
     },
     "status": "Pending",
     "totalPrice": "35000"
@@ -133,6 +142,12 @@
       "needTag": "Yes",
       "haveInsure": "Yes"
     },
+    "knowStaff": {
+      "know": "Yes",
+      "staffID": "S123",
+      "discount": "0",
+      "verified": "No"
+    },
     "status": "Pending",
     "totalPrice": "50000"
   },
@@ -175,6 +190,12 @@
       "applyRegistration": "Yes",
       "needTag": "Yes",
       "haveInsure": "Yes"
+    },
+    "knowStaff": {
+      "know": "Yes",
+      "staffID": "S123",
+      "discount": "0",
+      "verified": "No"
     },
     "status": "Delivered",
     "totalPrice": "99000"

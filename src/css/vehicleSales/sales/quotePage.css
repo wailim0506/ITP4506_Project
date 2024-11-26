@@ -131,7 +131,7 @@
     height: auto;
 }
 
-#buyerInfo ,#paymentInfo, #tradeInfo{
+#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo,#discountInfo{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
 }
@@ -159,7 +159,22 @@
     width: 25%;
 }
 
+#DiscountInfoSmallBoxDiv div{
+    width: 20%;
+}
 
+.actionBtn{
+    width: auto;
+    height: auto;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+    align-self: end;
+}
 
 #lowerPart {
     width: 93%;
@@ -176,7 +191,7 @@
 }
 
 #priceBreakdown table {
-    width: 26%;
+    width: 28%;
     text-align: left;
     font-size: 18px;
     border-collapse: collapse;

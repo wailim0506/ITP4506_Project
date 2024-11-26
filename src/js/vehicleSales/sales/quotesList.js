@@ -78,7 +78,15 @@ function loadDarkMode() {
         }
     }
 }
-
+function setQuoteListToLocalStorage(){
+    $.getJSON('../../../src/json/vehicleSales/customerQuote.json', function(data){
+        var quoteList = localStorage.getItem('quote');
+        if (quoteList == null) {
+            localStorage.setItem('quote', JSON.stringify(data));
+            window.location.reload();
+        }
+    });
+} //initial the quote list
 function loadQuoteList() {
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
@@ -177,6 +185,7 @@ function loadQuoteList() {
 let pendingOpen = true;
 let confirmedOpen = true;
 let deliveredOpen = true;
+setQuoteListToLocalStorage();
 $(document).ready(function () {
     loadDarkMode();
     loadQuoteList();

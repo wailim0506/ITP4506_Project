@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/quotePage.css">
     <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
     <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <script src="../../../src/js/vehicleSales/sales/enterDiscountModal.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/verifyDiscountModal.css">
+    <script src="../../../src/js/vehicleSales/sales/verifyDiscountModal.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/enterDiscountModal.css">
+    <script src="../../../src/js/vehicleSales/sales/tradeInModal.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/tradeInModal.css">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 <body>
 <nav>
@@ -168,10 +173,12 @@
                     </div>
                     <div>
                         <h3>Trade-In Value:</h3>
-                        <p id="tradeInValue">$10000</p>
+                        <p id="tradeInValue">N/A</p>
                     </div>
                 </div>
-                <button>Decide Trade In Value</button>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: end;">
+                    <button class="actionBtn" id="decideTradeInBtn">Decide Trade In Value</button>
+                </div>
             </div>
             <div id="applyInfo">
                 <h2>Application for Registration and License Information:</h2>
@@ -185,7 +192,33 @@
                         <p id="haveInsurance">Yes</p>
                     </div>
                 </div>
-                <button>Apply Now</button>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: end;">
+                    <button class="actionBtn" id="applyNowBtn">Apply Now</button>
+                </div>
+            </div>
+            <div id="discountInfo">
+                <h2>Know Staff Discount:</h2>
+                <div class="InfoSmallBoxDiv" id="DiscountInfoSmallBoxDiv">
+                    <div>
+                        <h3>Know Our Staff:</h3>
+                        <p id="knowStaff">Yes</p>
+                    </div>
+                    <div>
+                        <h3>Staff ID:</h3>
+                        <p id="staffID">S1234</p>
+                    </div>
+                    <div>
+                        <h3>Verification:</h3>
+                        <p id="verified">N/A</p>
+                    </div>
+                    <div>
+                        <h3>Discount:</h3>
+                        <p id="discount">N/A</p>
+                    </div>
+                </div>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: end;">
+                    <button class="actionBtn" id="enterDiscountBtn">Verify and Enter Discount</button>
+                </div>
             </div>
         </div>
     </div>
@@ -203,11 +236,15 @@
                 </tr>
                 <tr>
                     <th>Discount</th>
-                    <td>- $0</td>
+                    <td id="discountBreakdown">- $0</td>
                 </tr>
                 <tr>
                     <th>Shipping Fee</th>
-                    <td>+ $0</td>
+                    <td>+ $5000</td>
+                </tr>
+                <tr>
+                    <th>Vehicle Registration Handling Fee</th>
+                    <td id="registrationBreakdown"></td>
                 </tr>
                 <tr id="breakdown_tr">
                     <th>Tax</th>
@@ -238,6 +275,71 @@
         </div>
     </div>
 </footer>
+
+<div id="verifyDiscountModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Verify Discount:</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div>
+                    <p id="warningMessage"></p>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow">
+            <button id="verifyModalNoBtn">No</button>
+            <button id="verifyModalYesBtn">Yes</button>
+        </div>
+    </div>
+</div>
+
+<div id="enterDiscountModal" class="modal">
+    <div class="modal-content2">
+        <span class="close">&times;</span>
+        <h2>Enter Discount:</h2>
+        <div class="modal-body">
+            <form id="longForm2">
+                <div>
+                    <p id="warningMessage2"></p>
+                </div>
+            </form>
+        </div>
+        <div id="o">
+            <div style="display: flex;align-items: center" id="q">
+                $<input type="number" placeholder="e.g. 10000" id="discountInput">
+            </div>
+        </div>
+        <div id="modalButtonRow2">
+            <button id="verifyModalNoBtn2">Back</button>
+            <button id="verifyModalYesBtn2">Set Discount</button>
+        </div>
+    </div>
+</div>
+
+<div id="TradeInModal" class="modal">
+    <div class="modal-content3">
+        <span class="close">&times;</span>
+        <h2>Enter Discount:</h2>
+        <div class="modal-body">
+            <form id="longForm3">
+                <div>
+                    <p id="warningMessage3"></p>
+                </div>
+            </form>
+        </div>
+        <div id="ooo">
+            <div style="display: flex;align-items: center" id="ppp">
+                $<input type="number" placeholder="e.g. 10000" id="tradeInInput" style="margin-left: 4px">
+            </div>
+        </div>
+        <div id="modalButtonRow3">
+            <button id="verifyModalNoBtn3">Back</button>
+            <button id="verifyModalYesBtn3">Set Trade In Value</button>
+        </div>
+    </div>
+</div>
+
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 </body>

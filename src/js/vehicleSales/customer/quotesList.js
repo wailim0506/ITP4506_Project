@@ -93,6 +93,7 @@ function setQuoteListToLocalStorage(){
         var quoteList = localStorage.getItem('quote');
         if (quoteList == null) {
             localStorage.setItem('quote', JSON.stringify(data));
+            window.location.reload();
         }
     });
 } //initial the quote list
