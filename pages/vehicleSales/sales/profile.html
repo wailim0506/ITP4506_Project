@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Profile</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/profile.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/carList.css">
+    <script src="../../../src/js/vehicleSales/sales/carList.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+    <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <script src="../../../src/js/vehicleSales/sales/profile.js"></script>
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html" >Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="#">Sales Analysis</a>
+        <a href="profile.html" style="font-weight: 700; text-decoration: underline">Profile</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons" style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons" style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="#">Sales Analysis</a>
+        <a href="profile.html">Profile</a>
+    </div>
+</div>
+<h1 style="text-align: center">Your Profile</h1>
+<div id="profileContainer">
+    <!-- Left: Profile Header -->
+    <div class="profileLeft">
+        <div class="profileHeader">
+            <i id="icon" class="material-icons" style="cursor: pointer; font-size: 150px">account_circle</i>
+            <div style="display: flex;flex-direction: column; align-items: center">
+                <h2>John Doe</h2>
+                <p>Email: johndoe@example.com</p>
+                <p>Phone: +123 456 7890</p>
+                <button class="editButton" onclick="window.location.href='editProfile.html'">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Profile Sections -->
+    <div class="profileRight">
+        <div class="profileSection">
+            <h3>Personal Information</h3>
+            <p>Full Name: John Doe</p>
+            <p>Date of Birth: January 1, 1990</p>
+            <p>Gender: Male</p>
+        </div>
+
+        <div class="profileSection">
+            <h3>Address</h3>
+            <p>123 Main Street, Springfield, IL, 62701, USA</p>
+        </div>
+
+        <div class="profileSection">
+            <h3>Account Settings</h3>
+            <p>Account Type: Customer</p>
+            <p>Joined: March 10, 2023</p>
+            <p><span class="changePassword" onclick="window.location.href='changePassword.html'">Change Password</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footerUp">
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="salesAnalysis.html">Sales Analysis</a>
+        <a href="profile.html">Profile</a>
+    </div>
+    <div id="footerDown">
+
+        <div id="footerDown_left">
+            <p>@Copyright Legend Motor Limited 2024 All Rights Reserved</p>
+        </div>
+        <div id="footerDown_right">
+            <img src="../../../src/img/LMLogo.webp" alt="Legend Motor Logo">
+        </div>
+    </div>
+</footer>
+
+<i id="darkModeToggle" class="material-icons" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+
+</html>

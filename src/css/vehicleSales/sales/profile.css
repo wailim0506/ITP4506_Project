@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#profileContainer {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#profileContainer h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.profileLeft {
+    flex: 0 0 45%; /* Profile header now takes up 35% of the container */
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileRight {
+    flex: 0 0 50%; /* Profile section now takes up 60% of the container */
+    padding-left: 20px;
+    border-left: 1px solid #ccc; /* Divider between sections */
+}
+
+.profileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.profileHeader i {
+    font-size: 150px;
+    cursor: pointer;
+    color: #34495e;
+}
+
+.profileHeader h2 {
+    font-size: 28px;
+    color: #34495e;
+    margin: 10px 0;
+}
+
+.profileHeader p {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+.editButton {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.profileSection {
+    margin-bottom: 30px;
+}
+
+.profileSection h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.profileSection p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+.profileSection .changePassword {
+    margin-top: 10px;
+    color: #3498db;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Smaller Screens (Tablets and small screens) */
+@media (max-width: 768px) {
+    #profileContainer {
+        flex-direction: column; /* Stack the columns vertically on smaller screens */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .profileLeft,
+    .profileRight {
+        flex: 1 0 100%; /* Each section takes up full width */
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .profileHeader i {
+        font-size: 120px; /* Smaller icon for mobile */
+    }
+
+    .editButton {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .profileSection h3 {
+        font-size: 20px;
+    }
+
+    .profileSection p {
+        font-size: 14px;
+    }
+}
+
+/* Media Query for Very Small Screens (Mobile Phones) */
+@media (max-width: 480px) {
+    #profileContainer {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #profileContainer h1 {
+        font-size: 28px;
+    }
+
+    .profileHeader i {
+        font-size: 80px;
+    }
+
+    .profileHeader h2 {
+        font-size: 24px;
+    }
+
+    .profileHeader p {
+        font-size: 14px;
+    }
+
+    .editButton {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .profileSection h3 {
+        font-size: 18px;
+    }
+
+    .profileSection p {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
