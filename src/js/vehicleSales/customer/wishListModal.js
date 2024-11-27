@@ -115,7 +115,7 @@ function createQuote() {
         "previousOwners": previousOwners,
         "serviceHistory": serviceHistory,
         "accidentHistory": accidentHistory,
-        "tradeInValue": "10000"
+        "tradeInValue": "0"
     };
 
     newQuote.appRegistrationInformation = {

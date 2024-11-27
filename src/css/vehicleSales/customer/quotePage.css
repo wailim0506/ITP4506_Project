@@ -78,6 +78,14 @@
 
 }
 
+#statusBtnRow{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #vehicleSection table {
     width: 100%;
     border-collapse: collapse;

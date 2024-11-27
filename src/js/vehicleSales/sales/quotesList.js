@@ -131,7 +131,7 @@ function loadQuoteList() {
                         <strong>Vehicle:</strong> ${quote.vehicleInQuote.map(vehicle => `${vehicle.vehicleName}`).join('')}
                     </div>
                     <div class="quoteBoxRight2">
-                        <strong>Price:</strong> ${quote.totalPrice}
+                        <strong>Price:</strong> $${quote.totalPrice}
                     </div>
                     <div class="quoteBoxRight1">
                         <button quoteId="${quote.quoteId}">View</button>
@@ -149,7 +149,7 @@ function loadQuoteList() {
                         <strong>Vehicle:</strong> ${quote.vehicleInQuote.map(vehicle => `${vehicle.vehicleName}`).join('')}
                     </div>
                     <div class="quoteBoxRight2">
-                        <strong>Price:</strong> ${quote.totalPrice}
+                        <strong>Price:</strong> $${quote.totalPrice}
                     </div>
                     <div class="quoteBoxRight1">
                         <button quoteId="${quote.quoteId}">View</button>
@@ -167,7 +167,7 @@ function loadQuoteList() {
                         <strong>Vehicle:</strong> ${quote.vehicleInQuote.map(vehicle => `${vehicle.vehicleName}`).join('')}
                     </div>
                     <div class="quoteBoxRight2">
-                        <strong>Price:</strong> ${quote.totalPrice}
+                        <strong>Price:</strong> $${quote.totalPrice}
                     </div>
                     <div class="quoteBoxRight1">
                         <button quoteId="${quote.quoteId}">View</button>

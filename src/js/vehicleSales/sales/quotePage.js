@@ -143,6 +143,14 @@ function loadQuote() {
         //     $('#applyNowBtn').remove();
         // }
 
+        if (s == "Pending") {
+            $('#changeStatusBtn').text(`Change Status to Confirmed`);
+        }else if (s == 'Confirmed'){
+            $('#changeStatusBtn').text(`Change Status to Delivered`);
+        }else{
+            $('#changeStatusBtn').remove();
+        }
+
     }
 }
 
@@ -344,6 +352,30 @@ function loadQuotePriceBreakdown() {
     }
 }
 
+function changeStatusToConfirmed() {
+    var quoteId = localStorage.getItem('sales_quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId === quoteId);
+        if (quote != null) {
+            if (quote.knowStaff.know == "Yes" && quote.knowStaff.verified == "True") {
+                if (quote.tradeInInformation.tradeIn != "no") {
+                    if (quote.tradeInInformation.tradeInValue != 0) {
+                        quote.status = "Confirmed";
+                        localStorage.setItem('quote', JSON.stringify(quoteList));
+                        window.location.reload();
+                    } else {
+                        alertModal('Please decide the trade in value first');
+                    }
+                }
+            }else{
+                alertModal('Please verify the discount first');
+            }
+        }
+    }
+}
+
 $(document).ready(function () {
     loadQuote();
     loadQuotePersonalDetail();
@@ -393,4 +425,23 @@ $(document).ready(function () {
             $('#applyNowBtn').show();
         }
     });
+
+    $('#changeStatusBtn').click(function () {
+        if (s == "Pending") {
+            changeStatusToConfirmed();
+        }else if (s == "Confirmed"){
+            var quoteId = localStorage.getItem('sales_quoteToView');
+            var quoteList = localStorage.getItem('quote');
+            if (quoteList != null) {
+                quoteList = JSON.parse(quoteList);
+                var quote = quoteList.find(quote => quote.quoteId === quoteId);
+                if (quote != null) {
+                    quote.status = "Delivered";
+                    localStorage.setItem('quote', JSON.stringify(quoteList));
+                    window.location.reload();
+                }
+            }
+        }
+    });
 });
+

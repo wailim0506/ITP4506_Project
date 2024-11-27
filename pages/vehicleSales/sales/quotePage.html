@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Legend Motor Limited - Quote Page</title>
     <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/vehicleSales/sales/alertModal.js"></script>
     <script src="../../../src/js/vehicleSales/sales/quotePage.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/quotePage.css">
     <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/enterDiscountModal.css">
     <script src="../../../src/js/vehicleSales/sales/tradeInModal.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/tradeInModal.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/alertModal.css">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -57,7 +59,7 @@
         </div>
         <div id="quoteTitle">
             <h1>Quote</h1>
-            <button id="printBtn">Print this page</button>
+            <button id="printBtn">Print this page<i class="material-icons" style="margin-left: 5px">print</i></button>
         </div>
         <div id="statusTitle">
             <h2>Status: Pending</h2>
@@ -65,7 +67,11 @@
     </div>
     <div id="middlePart">
         <div id="vehicleSection">
-            <h2>Vehicle in Quote:</h2>
+            <div id="statusBtnRow">
+                <h2>Vehicle in Quote:</h2>
+                <button id="changeStatusBtn">Change Status to </button>
+            </div>
+
             <table>
                 <tr id="headingRow">
                     <th>Vehicle Image</th>
@@ -336,6 +342,23 @@
         <div id="modalButtonRow3">
             <button id="verifyModalNoBtn3">Back</button>
             <button id="verifyModalYesBtn3">Set Trade In Value</button>
+        </div>
+    </div>
+</div>
+
+<div id="AlertModal" class="modal">
+    <div class="modal-content4">
+        <span class="close" id="closeAlert">&times;</span>
+        <h2>Enter Discount:</h2>
+        <div class="modal-body">
+            <form id="longForm4">
+                <div>
+                    <p id="warningMessage4"></p>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow4">
+            <button id="verifyModalYesBtn4">OK</button>
         </div>
     </div>
 </div>
