@@ -57,7 +57,7 @@
         </div>
         <div id="quoteTitle">
             <h1>Quote</h1>
-            <button id="printBtn">Print this page</button>
+            <button id="printBtn">Print this page<i class="material-icons" style="margin-left: 5px">print</i></button>
         </div>
         <div id="statusTitle">
             <h2>Status: Pending</h2>
@@ -190,6 +190,27 @@
                     </div>
                 </div>
             </div>
+            <div id="discountInfo">
+                <h2>Know Staff Discount:</h2>
+                <div class="InfoSmallBoxDiv" id="DiscountInfoSmallBoxDiv">
+                    <div>
+                        <h3>Know Our Staff:</h3>
+                        <p id="knowStaff">Yes</p>
+                    </div>
+                    <div>
+                        <h3>Staff ID:</h3>
+                        <p id="staffID">S1234</p>
+                    </div>
+                    <div>
+                        <h3>Verification:</h3>
+                        <p id="verified">N/A</p>
+                    </div>
+                    <div>
+                        <h3>Discount:</h3>
+                        <p id="discount">N/A</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="lowerPart">
@@ -206,11 +227,15 @@
                 </tr>
                 <tr>
                     <th>Discount</th>
-                    <td>- $0</td>
+                    <td id="discountBreakdown">- $0</td>
                 </tr>
                 <tr>
                     <th>Shipping Fee</th>
-                    <td>+ $0</td>
+                    <td>+ $5000</td>
+                </tr>
+                <tr>
+                    <th>Vehicle Registration Handling Fee</th>
+                    <td id="registrationBreakdown"></td>
                 </tr>
                 <tr id="breakdown_tr">
                     <th>Tax</th>
@@ -227,7 +252,7 @@
         <button>Go insure your car</button>
     </div>
     <div id="buttonDiv">
-        <button>Cancel Quote</button>
+        <button id="cancelBtn">Cancel Quote</button>
     </div>
 </div>
 <div id="myModal" class="modal">

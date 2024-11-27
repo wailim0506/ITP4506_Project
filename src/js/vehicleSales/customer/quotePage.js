@@ -119,6 +119,7 @@ function loadQuote() {
         var quote = quoteList.find(quote => quote.quoteId == quoteId);
         if (quote != null) {
             for (var i = 0; i < quote.vehicleInQuote.length; i++) {
+                $('#statusTitle h2').text(`Status: ${quote.status}`);
                 $('#vehicleSection table').append(`<tr class="carRow" carid="${quote.vehicleInQuote[i].vehicleId}">
                     <td><img src="../../../src/img/vehicleSales/car/${quote.vehicleInQuote[i].vehicleId}/1.jpg"/></td>
                     <td>${quote.vehicleInQuote[i].vehicleName}</td>
@@ -131,6 +132,9 @@ function loadQuote() {
                         <button>View</button>
                     </td>
                 </tr>`);
+            }
+            if (quote.status != "Pending") {
+                $('#cancelBtn').remove();
             }
         }
     }
@@ -230,11 +234,15 @@ function loadQuoteTradeInDetail() {
                 $('#tradeInPO').text(`${quote.tradeInInformation.previousOwners}`);
                 $('#tradeInSH').text(`${quote.tradeInInformation.serviceHistory}`);
                 $('#tradeInAH').text(`${quote.tradeInInformation.accidentHistory}`);
-                // $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInPrice}`);
+                $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInValue}`);
             } else {
                 $('#tradeInfo').remove();
             }
         }
+    }
+
+    if ($('#tradeInValue').text() != "$0") {
+        $('#decideTradeInBtn').remove();
     }
 }
 
@@ -254,21 +262,77 @@ function loadApplyRegistrationDetail(){
     }
 }
 
-function loadQuotePriceBreakdown() {
+function loadDiscountDetail() {
     var quoteId = localStorage.getItem('quoteToView');
+    var quoteList = localStorage.getItem('quote');
+    if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find(quote => quote.quoteId === quoteId);
+        if (quote != null) {
+            if (quote.knowStaff.know !== "no") {
+                if (quote.knowStaff.verified === "No") {
+                    $('#discount').text('$0');
+                    $('#verified').text("Pending Verification");
+                } else if (quote.knowStaff.verified === "No Discount") {
+                    $('#discount').text('$0');
+                    $('#verified').text("No Discount");
+                    $('#enterDiscountBtn').remove();
+                } else {
+                    $('#verified').text("Verified");
+                    $('#discount').text(`$${quote.knowStaff.discount}`);
+                    $('#enterDiscountBtn').remove();
+                }
+            } else {
+                $('#discountInfo').remove();
+            }
+        }
+    }
+}
+
+function loadQuotePriceBreakdown() {
+    var quoteId = localStorage.getItem('sales_quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
         var quote = quoteList.find(quote => quote.quoteId == quoteId);
         if (quote != null) {
             $('#subtotal').text(`$${parseInt(quote.totalPrice)}`);
-            if (quote.tradeInInformation.tradeIn != "no") {
+            var subtotal = parseInt(quote.totalPrice); //get from json
+            let tradeInValue = 0;
+            let discount = 0;
+            if (quote.tradeInInformation.tradeIn !== "no") {
                 // $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
-                $('#tradeInValueBreakdown').text(`-$10000`);
-                $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(10000) + 5000}`);
+                tradeInValue = parseInt(quote.tradeInInformation.tradeInValue);
+                $('#tradeInValueBreakdown').text(`-$${tradeInValue}`);
+                subtotal -= tradeInValue;
+                // $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(10000) + 5000}`);
             } else {
                 $('#tradeInValueBreakdown').text(`-$0`);
-                $('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);
+                //$('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);
+            }
+
+            if (quote.knowStaff.know === "Yes" && quote.knowStaff.verified == "True") {
+                if (quote.knowStaff.verified === "True") {
+                    discount = parseInt(quote.knowStaff.discount);
+                    $('#discountBreakdown').text(`-$${discount}`);
+                    subtotal -= discount;
+                } else {
+                    $('#discountBreakdown').text(`-$${discount}`);
+                }
+            }
+
+            if (quote.applyRegistrationInformation.applyRegistration === "Yes") {
+                $('#registrationBreakdown').text(`+ $1000`);
+                subtotal += 1000;
+            } else {
+                $('#registrationBreakdown').text(`+ $0`);
+            }
+            subtotal += 5000; //tax
+            subtotal += 5000; //shipping fee
+            if (subtotal < 0){
+                $('#totalPrice').text(`$0`);
+            }else{
+                $('#totalPrice').text(`$${subtotal}`);
             }
         }
     }
@@ -283,6 +347,7 @@ $(document).ready(function () {
     loadQuoteTradeInDetail();
     loadQuotePriceBreakdown();
     loadApplyRegistrationDetail();
+    loadDiscountDetail();
     loadDarkMode();
 
 

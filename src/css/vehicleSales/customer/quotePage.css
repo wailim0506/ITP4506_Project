@@ -20,6 +20,11 @@
     margin-top: 8px;
 }
 
+#printBtn{
+    display: flex;
+    align-items: center;
+}
+
 #quoteTitle {
     width: 93%;
     display: flex;
@@ -139,7 +144,7 @@
     height: auto;
 }
 
-#buyerInfo ,#paymentInfo, #tradeInfo{
+#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo,#discountInfo{
     border-bottom: 1px solid black;
     padding-bottom: 10px;
 }
@@ -167,7 +172,9 @@
     width: 25%;
 }
 
-
+#DiscountInfoSmallBoxDiv div{
+    width: 20%;
+}
 
 #lowerPart {
     width: 93%;
@@ -184,7 +191,7 @@
 }
 
 #priceBreakdown table {
-    width: 26%;
+    width: 28%;
     text-align: left;
     font-size: 18px;
     border-collapse: collapse;

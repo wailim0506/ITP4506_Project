@@ -3,9 +3,9 @@ s = "";
 function setDarkMode() {
     if ($('#darkModeToggle').text() == 'brightness_2') {
         //to dark mode
-        $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
+        $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'rgb(34,37,41)');
         $('footer').css('background-color', '#333');
-        $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
+        $('body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
         $('.car-item').css('border', '0.1px solid grey');
         $('input, select').css({
@@ -28,9 +28,9 @@ function setDarkMode() {
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
-        $('html, nav,.modal-content').css('background-color', 'white');
+        $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'white');
         $('footer').css('background-color', '#e8e6e6');
-        $('body, nav,.modal-content').css('color', 'black');
+        $('body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'black');
         $('a,footer').css('color', 'rgba(0,0,0,0.65)');
         $('.car-item').css('border', '1px solid lightgrey');
         $('input').css({
@@ -60,9 +60,9 @@ function setDarkMode() {
 function loadDarkMode() {
     if (localStorage.getItem('darkMode') != null) {
         if (localStorage.getItem('darkMode') == 'Y') {
-            $('html, nav,.modal-content').css('background-color', 'rgb(34,37,41)');
+            $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'rgb(34,37,41)');
             $('footer').css('background-color', '#333');
-            $('body, nav,footer,.modal-content').css('color', 'rgb(194,196,200)');
+            $('body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
             $('.car-item').css('border', '0.1px solid grey');
             $('input, select').css({
@@ -82,9 +82,9 @@ function loadDarkMode() {
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
-            $('html, nav,.modal-content').css('background-color', 'white');
+            $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'white');
             $('footer').css('background-color', '#e8e6e6');
-            $('body, nav,.modal-content').css('color', 'black');
+            $('body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'black');
             $('a,footer').css('color', 'rgba(0,0,0,0.65)');
             $('.car-item').css('border', '1px solid lightgrey');
             $('input').css({
@@ -137,11 +137,11 @@ function loadQuote() {
             }
             s = quote.status;
         }
-        // if (quote.status != "Pending") {
-        //     $('#decideTradeInBtn').remove();
-        //     $('#enterDiscountBtn').remove();
-        //     $('#applyNowBtn').remove();
-        // }
+        if (quote.status != "Pending") {
+            $('#decideTradeInBtn').remove();
+            $('#enterDiscountBtn').remove();
+            $('#applyNowBtn').remove();
+        }
 
         if (s == "Pending") {
             $('#changeStatusBtn').text(`Change Status to Confirmed`);
@@ -226,7 +226,6 @@ function loadQuotePaymentDetail() {
         }
     }
 }
-
 
 function loadQuoteTradeInDetail() {
     var quoteId = localStorage.getItem('sales_quoteToView');
@@ -359,9 +358,33 @@ function changeStatusToConfirmed() {
         quoteList = JSON.parse(quoteList);
         var quote = quoteList.find(quote => quote.quoteId === quoteId);
         if (quote != null) {
-            if (quote.knowStaff.know == "Yes" && quote.knowStaff.verified == "True") {
-                if (quote.tradeInInformation.tradeIn != "no") {
-                    if (quote.tradeInInformation.tradeInValue != 0) {
+            if (quote.knowStaff.know != 'Yes' && quote.tradeInInformation.tradeIn == 'no') { //dont know staff, dont tradein
+                quote.status = "Confirmed";
+                localStorage.setItem('quote', JSON.stringify(quoteList));
+                window.location.reload();
+            }
+
+            if (quote.knowStaff.know === 'Yes' && quote.tradeInInformation.tradeIn == 'no'){ //know staff, dont tradein
+                if (quote.knowStaff.verified === "True") {
+                    quote.status = "Confirmed";
+                    localStorage.setItem('quote', JSON.stringify(quoteList));
+                    window.location.reload();
+                }else{
+                    alertModal('Please verify the discount first');
+                }
+            }
+
+            if (quote.knowStaff.know === 'No' && quote.tradeInInformation.tradeIn !== 'no') { //dont know staff, tradein
+                if (quote.tradeInInformation.tradeInValue !== 0) {
+                    quote.status = "Confirmed";
+                    localStorage.setItem('quote', JSON.stringify(quoteList));
+                    window.location.reload();
+                }
+            }
+
+            if (quote.knowStaff.know === "Yes" && quote.knowStaff.verified === "True") { //know staff, tradein
+                if (quote.tradeInInformation.tradeIn !== "no") {
+                    if (quote.tradeInInformation.tradeInValue !== 0) {
                         quote.status = "Confirmed";
                         localStorage.setItem('quote', JSON.stringify(quoteList));
                         window.location.reload();
