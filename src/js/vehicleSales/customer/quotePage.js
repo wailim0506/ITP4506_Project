@@ -290,7 +290,7 @@ function loadDiscountDetail() {
 }
 
 function loadQuotePriceBreakdown() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
+    var quoteId = localStorage.getItem('quoteToView');
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);

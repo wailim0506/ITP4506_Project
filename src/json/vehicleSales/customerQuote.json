@@ -194,8 +194,8 @@
     "knowStaff": {
       "know": "Yes",
       "staffID": "S123",
-      "discount": "0",
-      "verified": "No"
+      "discount": "10000",
+      "verified": "True"
     },
     "status": "Delivered",
     "totalPrice": "99000"
