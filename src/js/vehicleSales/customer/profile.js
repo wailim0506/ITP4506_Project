@@ -164,5 +164,15 @@ $(document).ready(function () {
         $('.editButton').show();
         $('.shownField').show();
         $('.changePassword').show();
+
+        //restore the style and remove the p
+        $('#customerNameInput p').remove();
+        $('#customerEmailInput p').remove();
+        $('#customerPhoneInput p').remove();
+        $('#customerAddressInput p').remove();
+        $('#customerNameInput input').css('border', '1px solid lightgrey');
+        $('#customerEmailInput input').css('border', '1px solid lightgrey');
+        $('#customerPhoneInput input').css('border', '1px solid lightgrey');
+        $('#customerAddressInput input').css('border', '1px solid lightgrey');
     });
 });

@@ -51,9 +51,8 @@
             <i id="icon" class="material-icons">account_circle</i>
             <div style="display: flex;flex-direction: column; align-items: center">
                 <h2>John Doe</h2>
-                <p>Email: johndoe@example.com</p>
-                <p>Phone: +123 456 7890</p>
-                <button class="editButton" onclick="window.location.href='editProfile.html'">Edit Profile</button>
+                <button class="editButton">Edit Profile</button>
+                <button id="saveBtn">Save</button>
             </div>
         </div>
     </div>
@@ -62,22 +61,32 @@
     <div class="profileRight">
         <div class="profileSection">
             <h3>Personal Information</h3>
-            <p>Full Name: John Doe</p>
             <p>Staff Number: S1234</p>
+            <p>Full Name: John Doe</p>
+            <p id="email" class="shownField">Email: johndoe@example.com</p>
+            <label id="emailInput" class="hiddenInput">Email:
+                <input type="text">
+            </label>
+            <p id="phone" class="shownField">Phone: 12345678</p>
+            <label id="phoneInput" class="hiddenInput">Phone:
+                <input type="number">
+            </label>
             <p>Role: Vehicle Sales</p>
         </div>
 
         <div class="profileSection">
             <h3>Address</h3>
-            <p>123 Main Street, Springfield, IL, 62701, USA</p>
+            <p id="address" class="shownField">21 Yuen Wo Road, Sha Tin, Hong Kong</p>
+            <label id="addressInput" class="hiddenInput">Address:
+                <input type="text">
+            </label>
         </div>
 
         <div class="profileSection">
             <h3>Account Settings</h3>
             <p>Account Type: Staff</p>
             <p>Joined: March 10, 2023</p>
-            <p><span class="changePassword" onclick="window.location.href='changePassword.html'">Change Password</span>
-            </p>
+            <p><button class="changePassword" onclick="openPWModal($('#pwModal'))">Change Password</button></p>
         </div>
     </div>
 </div>

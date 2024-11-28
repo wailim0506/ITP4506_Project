@@ -86,8 +86,83 @@ function loadDarkMode() {
 loadDarkMode();
 $(document).ready(function () {
     loadDarkMode();
+    $('.hiddenInput').hide();
+    $('#saveBtn').hide();
 
     $('#darkModeToggle').click(function () {
         setDarkMode();
+    });
+
+    $('.editButton').click(function () {
+        $('#emailInput input').val($('#email').text().split(": ")[1]);
+        $('#phoneInput input').val($('#phone').text().split(": ")[1]);
+        $('#addressInput input').val($('#address').text());
+
+
+        $('.hiddenInput').show();
+        $('.shownField').hide();
+        $('#saveBtn').show();
+        $(this).hide();
+    });
+
+    $('#saveBtn').click(function () {
+        const email = $('#emailInput input').val();
+        const phone = $('#phoneInput input').val();
+        const address = $('#addressInput input').val();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let valid = true;
+
+
+        if (email == '') {
+            $('#emailInput p').remove();
+            $('#emailInput').append(`<p style="color: red;font-size: 14px">Please enter your email address.</p>`);
+            $('#emailInput input').css('border', '1px solid red');
+            valid = false;
+        }
+
+        if (phone == '') {
+            $('#phoneInput p').remove();
+            $('#phoneInput').append(`<p style="color: red;font-size: 14px">Please enter your phone number.</p>`);
+            $('#phoneInput input').css('border', '1px solid red');
+            valid = false;
+        }
+
+        if (address == '') {
+            $('#addressInput p').remove();
+            $('#addressInput').append(`<p style="color: red;font-size: 14px">Please enter your address.</p>`);
+            $('#addressInput input').css('border', '1px solid red');
+            valid = false;
+        }
+
+        if (!emailPattern.test(email)) {
+            $('#emailInput p').remove();
+            $('#emailInput').append(`<p style="color: red;font-size: 14px">Please enter a valid email address.</p>`);
+            $('#emailInput input').css('border', '1px solid red');
+            valid = false;
+
+        }
+
+        if (!valid) {
+            return;
+        }
+
+        $('#email').text("Email: " + email);
+        $('#phone').text("Phone: " + phone);
+        $('#address').text(address);
+
+        $('.hiddenInput').hide();
+        $('#saveBtn').hide();
+        $('.editButton').show();
+        $('.shownField').show();
+        $('.changePassword').show();
+
+        //restore the style and remove the p
+        $('#emailInput input').css('border', '1px solid lightgrey');
+        $('#phoneInput input').css('border', '1px solid lightgrey');
+        $('#addressInput input').css('border', '1px solid lightgrey');
+        $('#emailInput p').remove();
+        $('#phoneInput p').remove();
+        $('#addressInput p').remove();
+
     });
 });

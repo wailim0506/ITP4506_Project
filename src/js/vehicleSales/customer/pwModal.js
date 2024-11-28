@@ -12,20 +12,15 @@ function openPWModal(modal) {
     $('#warningMessage2').text("Enter Discount Below:");
 }
 
-
 $(document).ready(function () {
     var modal = $("#enterDiscountModal");
     var btn = $("#verifyModalYesBtn");
     var span = $(".close");
 
-
-
     // Close modal
     span.click(function () {
         window.location.reload();
     });
-
-
 
     // Close modal when clicking outside of it
     $(window).click(function (event) {
@@ -83,6 +78,5 @@ $(document).ready(function () {
         }else{
             window.location.reload();
         }
-
     });
 });
