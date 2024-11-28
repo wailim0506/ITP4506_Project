@@ -41,6 +41,7 @@ $(document).ready(function () {
             window.scrollTo(0, parseInt(scrollY || '0') * -1);
             // $('#o p').remove();
             $('.modal-content').css('height', '39.5%');
+            window.location.reload();
         }
     });
 
