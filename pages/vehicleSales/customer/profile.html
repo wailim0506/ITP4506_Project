@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Profile</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+    <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <script src="../../../src/js/vehicleSales/customer/profile.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/profile.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/pwModal.css">
+    <script src="../../../src/js/vehicleSales/customer/pwModal.js"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
+        <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
+        <a href="profile.html" style="font-weight: 700;text-decoration: underline">Profile</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
+        <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
+        <a href="profile.html">Profile</a>
+        <a href="../../../index.html">Logout</a>
+    </div>
+</div>
+<h1 style="text-align: center">Your Profile</h1>
+<div id="profileContainer">
+    <!-- Left: Profile Header -->
+    <div class="profileLeft">
+        <div class="profileHeader">
+            <i id="icon" class="material-icons">account_circle</i>
+            <div style="display: flex;flex-direction: column; align-items: center">
+                <h2>John Doe</h2>
+                <button class="editButton">Edit Profile</button>
+                <button id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Profile Sections -->
+    <div class="profileRight">
+        <div class="profileSection">
+            <h3>Personal Information</h3>
+            <p>Customer Number: C1234</p>
+            <p id="customerName" class="shownField">Full Name: John Doe</p>
+            <label id="customerNameInput" class="hiddenInput">Full Name:
+                <input type="text">
+            </label>
+            <p id="customerEmail" class="shownField">Email: example@gmail.com</p>
+            <label id="customerEmailInput" class="hiddenInput">Email:
+                <input type="text">
+            </label>
+            <p id="customerPhone" class="shownField">Phone: +123 456 7890</p>
+            <label id="customerPhoneInput" class="hiddenInput">Phone:
+                <input type="text">
+            </label>
+            <p>Role: Customer</p>
+        </div>
+
+        <div class="profileSection">
+            <h3>Address</h3>
+            <p id="customerAddress" class="shownField">21 Yuen Wo Road, Sha Tin, Hong Kong</p>
+            <label id="customerAddressInput" class="hiddenInput">Address:
+                <input type="text">
+            </label>
+        </div>
+        <div class="profileSection">
+            <h3>Account Settings</h3>
+            <p>Account Type: Customer</p>
+            <p>Joined: March 10, 2023</p>
+            <p><button class="changePassword" onclick="openPWModal($('#pwModal'))">Change Password</button></p>
+        </div>
+    </div>
+</div>
+<div id="pwModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Change Password:</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div>
+                    <label for="pwInput" id="pwInputDiv">
+                        New Password:
+                        <input type="number" placeholder="Enter New Password Here" id="pwInput" style="margin-left: 4px">
+                    </label>
+                    <br>
+                    <label for="cpwInput" id="cpwInputDiv">
+                        Confirm New Password:
+                        <input type="number" placeholder="Confirm Your New Password" id="cpwInput" style="margin-left: 4px">
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow">
+            <button id="verifyModalNoBtn">Back</button>
+            <button id="verifyModalYesBtn">Confirm New Password</button>
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footerUp">
+        <a href="carList.html">Vehicle List</a>
+        <a href="wishList.html">Wish List</a>
+        <a href="quotesList.html">Your Quotes</a>
+        <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
+        <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
+        <a href="profile.html">Profile</a>
+    </div>
+    <div id="footerDown">
+        <div id="footerDown_left">
+            <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
+        </div>
+        <div id="footerDown_right">
+            <img src="../../../src/img/LMLogo.webp">
+        </div>
+    </div>
+</footer>
+<i id="darkModeToggle" class="material-icons" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+</body>
+</html>
