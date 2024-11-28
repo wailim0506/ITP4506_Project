@@ -71,5 +71,14 @@ $(document).ready(function () {
             $('.modal-content').css('height', '55%');
         }
 
+        if (pw != cpw) {
+            $('#cpwInputDiv p').remove();
+            $('#cpwInput').css('border', '1px solid red');
+            $('#cpwInput').parent().append(`<p style="color: red;font-size: 14px">Passwords do not match.</p>`);
+            $('.modal-content').css('height', '47%');
+        }else{
+            window.location.reload();
+        }
+
     });
 });
