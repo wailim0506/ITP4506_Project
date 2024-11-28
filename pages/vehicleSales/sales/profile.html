@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../../../src/js/vehicleSales/commonElement/pwModal.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/pwModal.css">
 
 </head>
 <body>
@@ -65,11 +67,11 @@
             <p>Full Name: John Doe</p>
             <p id="email" class="shownField">Email: johndoe@example.com</p>
             <label id="emailInput" class="hiddenInput">Email:
-                <input type="text">
+                <input type="text" placeholder="Enter Email Here">
             </label>
             <p id="phone" class="shownField">Phone: 12345678</p>
             <label id="phoneInput" class="hiddenInput">Phone:
-                <input type="number">
+                <input type="number" placeholder="Enter Phone Here">
             </label>
             <p>Role: Vehicle Sales</p>
         </div>
@@ -78,7 +80,7 @@
             <h3>Address</h3>
             <p id="address" class="shownField">21 Yuen Wo Road, Sha Tin, Hong Kong</p>
             <label id="addressInput" class="hiddenInput">Address:
-                <input type="text">
+                <input type="text" placeholder="Enter Address Here">
             </label>
         </div>
 
@@ -108,6 +110,32 @@
         </div>
     </div>
 </footer>
+
+<div id="pwModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Change Password:</h2>
+        <div class="modal-body">
+            <form id="longForm">
+                <div>
+                    <label for="pwInput" id="pwInputDiv">
+                        New Password:
+                        <input type="number" placeholder="Enter New Password Here" id="pwInput" style="margin-left: 4px">
+                    </label>
+                    <br>
+                    <label for="cpwInput" id="cpwInputDiv">
+                        Confirm New Password:
+                        <input type="number" placeholder="Confirm Your New Password" id="cpwInput" style="margin-left: 4px">
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div id="modalButtonRow">
+            <button id="verifyModalNoBtn">Back</button>
+            <button id="verifyModalYesBtn">Save New Password</button>
+        </div>
+    </div>
+</div>
 
 <i id="darkModeToggle" class="material-icons" style="position: fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
 </body>
