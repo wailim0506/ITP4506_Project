@@ -62,6 +62,7 @@ $(document).ready(function () {
             $('#pwInput').css('border', '1px solid red');
             $('#pwInput').parent().append(`<p style="color: red;font-size: 14px">Please enter your password.</p>`);
             $('.modal-content').css('height', '55%');
+            return;
         }
 
         if (cpw == '') {
@@ -69,10 +70,13 @@ $(document).ready(function () {
             $('#cpwInput').css('border', '1px solid red');
             $('#cpwInput').parent().append(`<p style="color: red;font-size: 14px">Please confirm your password.</p>`);
             $('.modal-content').css('height', '55%');
+            return;
         }
 
         if (pw != cpw) {
             $('#cpwInputDiv p').remove();
+            $('#pwInputDiv p').remove();
+            $('#pwInput').css('border', '1px solid red');
             $('#cpwInput').css('border', '1px solid red');
             $('#cpwInput').parent().append(`<p style="color: red;font-size: 14px">Passwords do not match.</p>`);
             $('.modal-content').css('height', '47%');
