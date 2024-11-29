@@ -64,12 +64,72 @@ $(document).ready(function(){
     });
 
     $('#loginBtn').click(function () {
+        $('.field input').parent().find('span').text('');
+        $('.field input').css('border', '1px solid lightgrey');
         var selectPlatform = $('#selectPlatform').val();
-        console.log(selectPlatform);
-        if (selectPlatform == '0') {
-            window.location.href = '../../../pages/VehicleSales/customer/carList.html';
-        }else{
-            window.location.href = '../../../pages/insurance/customer/cusMainPage.html';
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        var bothFilled = true;
+        if (email == ''){
+            $('#emailField span').text(`Please fill in email`);
+            $('#emailField input').css('border', '1px solid red');
+            bothFilled = false;
         }
+
+        if (password == ''){
+            $('#pwField span').text(`Please fill in password`);
+            $('#pwField input').css('border', '1px solid red');
+            bothFilled = false;
+        }
+
+        if (!bothFilled){
+            return;
+        }
+
+        if (selectPlatform === '0'){ //vehicle sales platform customer
+            if (email === 'c@demo.com'){
+                if (password === '123456'){
+                    window.location.href = '../../../pages/VehicleSales/customer/carList.html';
+                }else{
+                    $('#pwField span').text(`Password is incorrect`);
+                    $('#pwField input').css('border', '1px solid red');
+                }
+            }else if(email === "s1@demo.com"){ //staff
+                if (password === '123456'){
+                    window.location.href = '../../../pages/VehicleSales/sales/carList.html';
+                }else{
+                    $('#pwField span').text(`Password is incorrect`);
+                    $('#pwField input').css('border', '1px solid red');
+                }
+            }else{
+                $('#emailField span').text(`Email not found in Vehicle Sales Platform`);
+                $('#emailField input').css('border', '1px solid red');
+            }
+        }else{
+            if (email === 'c@demo.com'){  //insurance sales platform customer
+                if (password === '123456'){
+                    window.location.href = '../../../pages/insurance/customer/cusMainPage.html';
+                }else{
+                    $('#pwField span').text(`Password is incorrect`);
+                    $('#pwField input').css('border', '1px solid red');
+                }
+            }else if(email === "s2@demo.com"){  //staff
+                if (password === '123456'){
+                    window.location.href = '../../../pages/insurance/sales/salesMainPage.html';
+                }else{
+                    $('#pwField span').text(`Password is incorrect`);
+                    $('#pwField input').css('border', '1px solid red');
+                }
+            }else{
+                $('#emailField span').text(`Email not found in Insurance Platform`);
+                $('#emailField input').css('border', '1px solid red');
+            }
+        }
+    });
+
+    $('.field input').on('keyup', function () {
+        $(this).css('border', '1px solid lightgrey');
+        $(this).parent().find('span').text('');
     });
 });
