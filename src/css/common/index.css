@@ -55,6 +55,10 @@ html{
     align-items: center;
 }
 
+.field span{
+    color: red;
+}
+
 .field label{
     width: 84%;
     margin: 10px 10%;
