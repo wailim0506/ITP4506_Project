@@ -196,19 +196,19 @@ canvas {
 }
 
 .content-row{
-    gap: 5%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 1% 10% 1% 10%;
+
 }
 
 #chatTitle{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    margin-left: 20.5%;
+    margin-left: 15.5%;
 }
 
 .chartTitle{
@@ -217,8 +217,8 @@ canvas {
     margin-bottom: -10px;
 }
 
-#chatH1, #statusH1{
-    font-size: 25px;
+#chatH1, #statusH1, #progressH1, #auditH1, #finishedH1, #rejectH1{
+    font-size: 28px;
 }
 
 .statusBoxContent{
@@ -233,7 +233,7 @@ canvas {
     border: 2px solid black;
     border-radius: 10px;
     padding: 0 10px 0 10px;
-    width: 280px;
+    width: 330px;
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -271,11 +271,11 @@ canvas {
     background-color: rgba(239, 154, 154, 0.98);
 }
 
-#overviewTitle{
+#overviewTitle, #progressTitle, #auditTitle, #finishedTitle, #rejectTitle{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    margin-left: 20.5%;
+    margin-left: 15.5%;
     margin-bottom: 25px;
 }
 
@@ -299,6 +299,95 @@ canvas {
 
 
 
+/* Plan */
+#planList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10% 5% 10%;
+
+}
+
+.plans{
+    width: 1400px;
+    height: 600px;
+    border: 3px black solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+}
+
+
+.plans table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1% 0 0 0;
+}
+.plans th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.plans td{
+    font-size: 18px;
+}
+
+.plans th {
+    color: black;
+    font-size: 22px;
+}
+.plans tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.plans .button-container {
+    display: flex;
+    gap: 10px;
+    margin-left: -1%;
+}
+.plans .button {
+    font-size: 15px;
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.plans table{
+    margin-top: 0px;
+}
+
+.plans .view-button:hover {
+    background-color: #f6cb79;
+}
+.plans .view-button {
+    background-color: #ffa500;
+}
+.plans .progress-button:hover {
+    background-color: #8cc698;
+}
+.plans .progress-button {
+    background-color: #28a745;
+}
+
+#planProgress thead{
+    background-color: rgba(255, 247, 79, 0.98);
+}
+
+#planAudit thead{
+    background-color: rgb(255, 193, 79);
+}
+
+#planFinished thead{
+    background-color: rgb(138, 227, 148);
+}
+
+#planRejected thead{
+    background-color: rgba(239, 154, 154, 0.98);
+}
 
 
 

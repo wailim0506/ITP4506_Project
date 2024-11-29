@@ -2,9 +2,8 @@ const canvas = document.getElementById('insuranceLineChart');
 const ctx = canvas.getContext('2d');
 
 // Sample data for the number of applications received each day
-const days = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'];
-const applications = [10, 15, 17, 20, 19, 18, 12, 22, 10, 15, 17, 20];
+const days = ['week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8'];
+const applications = [2,3,5,1,3,2,4,6];
 
 const maxApplications = Math.max(...applications);
 const padding = 40;
@@ -41,9 +40,17 @@ ctx.moveTo(padding, canvas.height - padding);
 ctx.lineTo(canvas.width - padding, canvas.height - padding);
 ctx.stroke();
 
-// Draw x-axis labels
+// Draw x-axis labels with rotation
 ctx.fillStyle = '#000';
+ctx.font = '20px Arial';
+
 days.forEach((day, index) => {
     const x = padding + index * xStep;
-    ctx.fillText(day, x, canvas.height - padding + 20);
+    const y = canvas.height - padding + 20;
+
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(-Math.PI / 4);
+    ctx.fillText(day, 0, 0);
+    ctx.restore();
 });
