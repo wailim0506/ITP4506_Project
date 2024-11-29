@@ -27,7 +27,7 @@
           "id": 2,
           "type": "Sportscar",
           "name": "Roadster",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             10,
             20,
@@ -47,7 +47,7 @@
           "id": 3,
           "type": "Sedan",
           "name": "Model S",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             20,
             30,
@@ -67,7 +67,7 @@
           "id": 4,
           "type": "SUV",
           "name": "Model Y",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             40,
             50,
@@ -87,7 +87,7 @@
           "id": 5,
           "type": "Truck",
           "name": "Cybertruck",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             50,
             60,
@@ -107,7 +107,7 @@
           "id": 6,
           "type": "Sedan",
           "name": "Model 3",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             60,
             70,
@@ -153,7 +153,7 @@
           "id": 8,
           "type": "Sedan",
           "name": "Han",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             10,
             20,
@@ -173,7 +173,7 @@
           "id": 9,
           "type": "Hatcback",
           "name": "Dolphin",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             20,
             30,
@@ -193,7 +193,7 @@
           "id": 10,
           "type": "SUV",
           "name": "Song",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             40,
             50,
@@ -213,7 +213,7 @@
           "id": 11,
           "type": "Sedan",
           "name": "e6",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             50,
             60,
@@ -233,7 +233,7 @@
           "id": 12,
           "type": "Hatchback",
           "name": "e2",
-            "fuel": "Electric",
+          "fuel": "Electric",
           "sales": [
             60,
             70,
@@ -278,7 +278,7 @@
           "id": 14,
           "type": "SUV",
           "name": "RAV4",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             50,
             60,
@@ -298,7 +298,7 @@
           "id": 15,
           "type": "Seaden",
           "name": "Camry",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             60,
             70,
@@ -318,7 +318,7 @@
           "id": 16,
           "type": "SUV",
           "name": "Highlander",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             70,
             80,
@@ -338,7 +338,7 @@
           "id": 17,
           "type": "SUV",
           "name": "4Runner",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             80,
             90,
@@ -358,7 +358,7 @@
           "id": 18,
           "type": "Truck",
           "name": "Tacoma",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             90,
             100,
@@ -378,7 +378,7 @@
           "id": 19,
           "type": "SUV",
           "name": "Seqouia",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             100,
             110,
@@ -398,7 +398,7 @@
           "id": 20,
           "type": "SUV",
           "name": "Land Cruiser",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             110,
             120,
@@ -444,7 +444,7 @@
           "id": 22,
           "type": "SUV",
           "name": "CR-V",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             10,
             20,
@@ -464,7 +464,7 @@
           "id": 23,
           "type": "Sedan",
           "name": "Accord",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             20,
             30,
@@ -484,7 +484,7 @@
           "id": 24,
           "type": "SUV",
           "name": "Pilot",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             40,
             50,
@@ -504,7 +504,7 @@
           "id": 25,
           "type": "SUV",
           "name": "HR-V",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             50,
             60,
@@ -524,7 +524,7 @@
           "id": 26,
           "type": "Seden",
           "name": "Civic",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             60,
             70,
@@ -544,7 +544,7 @@
           "id": 27,
           "type": "SUV",
           "name": "Element",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             70,
             80,
@@ -590,7 +590,7 @@
           "id": 29,
           "type": "Sportscar",
           "name": "Grand Cherokee Trackhawk",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             90,
             100,
@@ -610,7 +610,7 @@
           "id": 30,
           "type": "SUV",
           "name": "Cherokee",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             100,
             110,
@@ -630,7 +630,7 @@
           "id": 31,
           "type": "SUV",
           "name": "Compass",
-            "fuel": "Diesel",
+          "fuel": "Diesel",
           "sales": [
             110,
             120,
@@ -650,7 +650,7 @@
           "id": 32,
           "type": "Truck",
           "name": "Gladiator",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             120,
             130,
@@ -670,7 +670,7 @@
           "id": 33,
           "type": "SUV",
           "name": "Renegade",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             130,
             140,
@@ -696,7 +696,7 @@
           "id": 34,
           "type": "Truck",
           "name": "F-150",
-            "fuel": "Diesel",
+          "fuel": "Diesel",
           "sales": [
             180,
             190,
@@ -716,7 +716,7 @@
           "id": 35,
           "type": "SUV",
           "name": "Explorer",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             190,
             200,
@@ -736,7 +736,7 @@
           "id": 36,
           "type": "Seaden",
           "name": "Fusion",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             200,
             210,
@@ -756,7 +756,7 @@
           "id": 37,
           "type": "SUV",
           "name": "Bronco",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             210,
             220,
@@ -776,7 +776,7 @@
           "id": 38,
           "type": "Truck",
           "name": "Ranger",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             220,
             230,
@@ -796,7 +796,7 @@
           "id": 39,
           "type": "SUV",
           "name": "Escape",
-            "fuel": "Hybrid",
+          "fuel": "Hybrid",
           "sales": [
             230,
             240,
@@ -816,7 +816,7 @@
           "id": 40,
           "type": "SUV",
           "name": "Edge",
-            "fuel": "Petrol",
+          "fuel": "Petrol",
           "sales": [
             240,
             250,

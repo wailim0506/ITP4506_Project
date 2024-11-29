@@ -5,7 +5,7 @@ function setDarkMode() {
         $('footer').css('background-color', '#333');
         $('body, nav,footer').css('color', 'rgb(194,196,200)');
         $('a').css('color', 'rgba(255,255,255,0.65)');
-        $('.car-item').css('border', '0.1px solid grey');
+        $('td,th').css('border', '1px solid grey');
         $('input, select').css({
             'background-color': 'rgb(44,47,51)',
             'border': '0.1px solid grey',
@@ -23,7 +23,7 @@ function setDarkMode() {
         $('footer').css('background-color', '#e8e6e6');
         $('body, nav').css('color', 'black');
         $('a,footer').css('color', 'rgba(0,0,0,0.65)');
-        $('.car-item').css('border', '1px solid lightgrey');
+        $('td,th').css('border', '1px solid lightgrey');
         $('input').css({
             'background-color': 'white',
             'border': '1px solid lightgrey',
@@ -50,7 +50,7 @@ function loadDarkMode() {
             $('footer').css('background-color', '#333');
             $('body, nav,footer').css('color', 'rgb(194,196,200)');
             $('a').css('color', 'rgba(255,255,255,0.65)');
-            $('.car-item').css('border', '0.1px solid grey');
+            $('td,th').css('border', '1px solid grey');
             $('input, select').css({
                 'background-color': 'rgb(44,47,51)',
                 'border': '0.1px solid grey',
@@ -67,7 +67,7 @@ function loadDarkMode() {
             $('footer').css('background-color', '#e8e6e6');
             $('body, nav').css('color', 'black');
             $('a,footer').css('color', 'rgba(0,0,0,0.65)');
-            $('.car-item').css('border', '1px solid lightgrey');
+            $('td,th').css('border', '1px solid lightgrey');
             $('input').css({
                 'background-color': 'white',
                 'border': '1px solid lightgrey',

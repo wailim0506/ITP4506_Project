@@ -122,6 +122,7 @@ function loadSelectOptions() {
 }
 
 function loadCars(){
+    var carCount = 0;
     $('#main_carList').html("");
     $('#main_carList').append("<table id=\"carTable\">\n" +
         "            <tr>\n" +
@@ -135,11 +136,9 @@ function loadCars(){
         "                <th>View</th>\n" +
         "            </tr>");
     $.getJSON('../../../src/json/vehicleSales/carList.json', function (data) {
-        console.log(data);
         var numberOfElectricBrand = data.electricBrands.length;
         var numberOfNonElectricBrand = data.nonElectricBrands.length;
         var searchModel = $("#searchModel").val().toLowerCase();
-
         //load electric cars
         for (var i = 0; i < numberOfElectricBrand; i++) {
             if (data.electricBrands[i].name != $("#brand").val() && $("#brand").val() != "all") {
@@ -169,6 +168,7 @@ function loadCars(){
                                                 <td>$${car.price}</td>
                                                 <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));location.href = 'carPage.html';">View</button></td>
                                                 </tr>`);
+                    carCount++;
                 }
             }
         }
@@ -202,13 +202,15 @@ function loadCars(){
                                                 <td>$${car.price}</td>
                                                 <td><button carid='${car.id}' onclick="localStorage.setItem('sales_view_carId', $(this).attr('carid'));location.href = 'carPage.html';">View</button></td>
                                                 </tr>`);
+                    carCount++;
                 }
             }
         }
+        console.log(`Number of cars found: ${carCount}`);
     });
     $('#main_carList').append("</table>");
-}
 
+}
 loadDarkMode();
 $(document).ready(function () {
     loadDarkMode();
