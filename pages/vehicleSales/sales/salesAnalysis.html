@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Sales Analysis</title>
+    <script src="../../../src/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/vehicleSales/sales/salesAnalysis.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/salesAnalysis.css">
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+    <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp"/>
+    </div>
+    <div id="nav_center">
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="salesAnalysis.html" style="font-weight: 700;text-decoration: underline">Sales Analysis</a>
+        <a href="profile.html">Profile</a>
+
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+    <div id="burgerImg">
+        <i id="menu" class="material-icons"
+           style="cursor: pointer;">menu</i>
+    </div>
+</nav>
+<div id="hiddenNav">
+    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
+        <i id="closeNav" class="material-icons"
+           style="cursor: pointer;">close</i>
+    </div>
+    <div>
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="salesAnalysis.html">Sales Analysis</a>
+        <a href="profile.html">Profile</a>
+
+    </div>
+</div>
+<div class="analysis-container">
+    <h1 style="text-align: center">Sales Analysis</h1>
+    <!-- Filter Bar for Sales Data -->
+    <div class="filter-bar">
+        <label for="brand">Brand:
+            <select id="brand">
+            </select>
+        </label>
+        <label>
+            Fuel Type:
+            <select id="fuelType">
+                <option value="All">All</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Electric">Electric</option>
+            </select>
+        </label>
+        <label for="carType">
+            Vehicle Type:
+            <select id="carType">
+                <option value="All">All</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Truck">Truck</option>
+                <option value="Sportscar">Sportscar</option>
+            </select>
+        </label>
+        <label for="searchVehicle">
+            Model:
+            <input type="text" id="searchVehicle" placeholder="Search by Vehicle Model"/>
+        </label>
+        <button>Reset</button>
+    </div>
+    <div id="downloadRow">
+        Note: Below is the number of vehicles sold in each month for each vehicle model in 2024.
+        <button id="downloadCSV">Download CSV <i class="material-icons">download</i></button>
+    </div>
+    <!-- Sales Data Table -->
+    <div class="table-container">
+        <table id="salesTable">
+            <thead>
+            <tr>
+                <th>Brand</th>
+                <th onclick="sortTable(2)">Vehicle Model</th> <!-- Sort by vehicle model -->
+                <!-- Month headers with sorting arrows -->
+                <th onclick="sortTable(3)">January<span class="sort-arrow" id="arrow-3">&#8597;</span></th>
+                <th onclick="sortTable(4)">February<span class="sort-arrow" id="arrow-4">&#8597;</span></th>
+                <th onclick="sortTable(5)">March<span class="sort-arrow" id="arrow-5">&#8597;</span></th>
+                <th onclick="sortTable(6)">April<span class="sort-arrow" id="arrow-6">&#8597;</span></th>
+                <th onclick="sortTable(7)">May<span class="sort-arrow" id="arrow-7">&#8597;</span></th>
+                <th onclick="sortTable(8)">June<span class="sort-arrow" id="arrow-8">&#8597;</span></th>
+                <th onclick="sortTable(9)">July<span class="sort-arrow" id="arrow-9">&#8597;</span></th>
+                <th onclick="sortTable(10)">August<span class="sort-arrow" id="arrow-10">&#8597;</span></th>
+                <th onclick="sortTable(11)">September<span class="sort-arrow" id="arrow-11">&#8597;</span></th>
+                <th onclick="sortTable(12)">October<span class="sort-arrow" id="arrow-12">&#8597;</span></th>
+                <th onclick="sortTable(13)">November<span class="sort-arrow" id="arrow-13">&#8597;</span></th>
+                <th onclick="sortTable(14)">December<span class="sort-arrow" id="arrow-14">&#8597;</span></th>
+            </tr>
+            </thead>
+            <tbody id="salesDataBody">
+            <!-- Data will be populated here -->
+            <!-- Sample data rows will be generated with JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <div id="footerUp">
+        <a href="carList.html">Vehicle List</a>
+        <a href="quotesList.html">Customers' Quote</a>
+        <a href="salesAnalysis.html">Sales Analysis</a>
+        <a href="profile.html">Profile</a>
+
+    </div>
+    <div id="footerDown">
+        <div id="footerDown_left">
+            <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
+        </div>
+        <div id="footerDown_right">
+            <img src="../../../src/img/LMLogo.webp">
+        </div>
+    </div>
+</footer>
+
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+
+
+</body>
+</html>
