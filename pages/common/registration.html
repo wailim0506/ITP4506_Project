@@ -11,20 +11,33 @@
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function () {
             $(".field").has("input[id='SN']").hide();   //Hide the staff number field
+            $(".field").has("input[id='LN']").hide();   //Hide the license number field
             $('.error').hide();
 
 
             $("#customer").click(function () {    //For customer option
-                $(".field").has("input[id='policy']").show();
+                $(".field").has("input[id='LN']").hide();
                 $(".field").has("input[id='SN']").hide();
+                $(".field").has("input[id='policy']").show();
+                $(".field").has("input[id='pass']").show();
+                $(".field").has("input[id='conPass']").show();
+                $('#register').text('Join');
             });
             $("#vehicleSales").click(function () {     //For vehicle sales option
                 $(".field").has("input[id='policy']").hide();
+                $(".field").has("input[id='LN']").hide();
                 $(".field").has("input[id='SN']").show();
+                $(".field").has("input[id='pass']").show();
+                $(".field").has("input[id='conPass']").show();
+                $('#register').text('Join');
             });
             $("#insuranceSales").click(function () {     //For insurance sales option
                 $(".field").has("input[id='policy']").hide();
+                $(".field").has("input[id='pass']").hide();
+                $(".field").has("input[id='conPass']").hide();
                 $(".field").has("input[id='SN']").show();
+                $(".field").has("input[id='LN']").show();
+                $('#register').text('Send for audit');
             });
 
             $("#backBtn").click(function () {        //Back to login page
@@ -32,8 +45,13 @@
             });
 
             $(".typeSelect").change(function (){
-                $('.error').hide();
-                $('#registrationForm')[0].reset();
+                $('#form input.formInput, #form input[type="checkbox"]').val(''); // Clear text inputs
+                $('#form .error').hide(); // Hide all error messages
+
+                // Deselect the checkbox and gender selection
+                $('#policy').prop('checked', false);
+                $('.gender-button').removeClass('selected');
+
             });
 
 
@@ -45,6 +63,11 @@
 
                 if ($('#SN').val().trim() === '' && (type === "V" || type === "I")) {
                     $('#SNError').show();
+                    hasError = true;
+                }
+
+                if ($('#LN').val().trim() === '' && type === "I") {
+                    $('#LNError').show();
                     hasError = true;
                 }
 
@@ -63,12 +86,12 @@
                     hasError = true;
                 }
 
-                if ($('#pass').val().trim() === '') {
+                if ($('#pass').val().trim() === ''&& (type === "C" || type === "V")) {
                     $('#passError').show();
                     hasError = true;
                 }
 
-                if ($('#pass').val().trim() !== $('#conPass').val().trim()) {
+                if ($('#pass').val().trim() !== $('#conPass').val().trim()&& (type === "C" || type === "V")) {
                     $('#confirmPassError').show();
                     hasError = true;
                 }
@@ -97,13 +120,13 @@
                         // window.location.href = "../../index.html";
                     }
 
-                }else if(type === "I") {    //For insurance sales
-                    SN = $("#SN").val();
-                    if(SN === "LM0001" && !hasError) {
-                        //alert("Resister successfully \nYour username is: IS0001\nThe system will redirect to the login page.");
-                        openAlertModal("Resister successfully <br> Your username is: IS0001\nThe system will redirect to the login page.");
-                        // window.location.href = "../../index.html";
-                    }
+                }else if(type === "I" && !hasError) {    //For insurance sales
+                    openAlertModal("Your application has been sent and will be reviewed within 7 working days." +
+                        "<br>Please check your email." +
+                        "<br><br>If you have any questions about this Information Agreement and Policy, please contact us at:" +
+                        "<br>Legend Motor Limited" +
+                        "<br>Email: support@legendmotor.com" +
+                        "<br>Phone: (123) 456-7890");
                 }
             });
         });
@@ -184,6 +207,12 @@
                 <label>Staff Number: </label>
                 <input class="formInput" type="text" placeholder="Staff Number" id="SN">
                 <div class="error" id="SNError">Staff number is required.</div>
+            </div>
+
+            <div class="field">
+                <label>License Number: </label>
+                <input class="formInput" type="text" placeholder="License Number" id="LN">
+                <div class="error" id="LNError">License number is required.</div>
             </div>
 
 
