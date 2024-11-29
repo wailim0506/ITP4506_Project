@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      <!-- Redirect to other page -->
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
@@ -34,7 +35,7 @@
       $(".disable").click(function () {
         alert("You cannot Edit/Progress the plan if is under review or rejected.");
       });
-
+      <!-- Redirect to other page -->
     });
   </script>
 </head>
@@ -44,10 +45,15 @@
       <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
     </button>
     <!-- Chatbot button -->
+
+
     <!-- To top button -->
     <button class="goTopBtn">
       <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
     </button>
+    <!-- To top button -->
+
+
     <!--Nav Bar-->
     <nav>
       <div id="nav_left">
@@ -65,7 +71,6 @@
       </div>
     </nav>
     <!--Nav Bar-->
-
 
 
     <!--Main Content-->
@@ -121,8 +126,6 @@
           </div>
         </div>
       </div>
-
-
 
       <div class="title">
         <h3>My Plans</h3>
@@ -190,14 +193,10 @@
             </tr>
             </tbody>
           </table>
-
-
-
         </div>
       </div>
     </section>
     <!--Main Content-->
-
 
 
     <!--footer-->
@@ -225,9 +224,11 @@
     </section>
     <!--footer-->
 
+
+    <!--Dark mode-->
     <i id="darkModeToggle" class="material-icons"
        style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
+    <!--Dark mode-->
     <script src="../../../src/js/insurance/toTopBtn.js"></script>
 </body>
 </html>

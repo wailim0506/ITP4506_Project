@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      <!-- Redirect to other page -->
       $(".EstimateBtn, #EstimateBtnNoIdea").click(function () {
         window.location.href = "estimate.html";
       });
@@ -19,6 +20,7 @@
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
+      <!-- Redirect to other page -->
     });
   </script>
 </head>
@@ -28,10 +30,15 @@
         <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
     </button>
   <!-- Chatbot button -->
+
+
   <!-- To top button -->
   <button class="goTopBtn">
     <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
   </button>
+  <!-- To top button -->
+
+
   <!--Nav Bar-->
   <nav>
     <div id="nav_left">
@@ -51,15 +58,18 @@
   <!--Nav Bar-->
 
 
-
   <!--Main Content-->
   <section id="mainContent">
     <div class="container">
       <div id="planIntro">
         <h1 id="mainTitle">Our Plans</h1>
         <p>At LMC, we offer tailored car insurance solutions to meet your needs.</p>
-        <h3 id="third">Third-Party Insurance:</h3> <p>Essential coverage for liability in case of accidents, protecting you against claims from other parties.</p>
-        <h3 id="comprehensive">Comprehensive Insurance:</h3><p> Extensive protection that covers both third-party liabilities and damages to your own vehicle, including theft and natural disasters.</p>
+        <h3 id="third">Third-Party Insurance:</h3>
+        <p>Essential coverage for liability in case of accidents, protecting you against claims from other parties.</p>
+        <h3 id="comprehensive">Comprehensive Insurance:</h3>
+        <p> Extensive protection that covers both third-party liabilities and damages to your own vehicle,
+          including theft and natural disasters.
+        </p>
       </div>
       <img src="../../../src/img/insurance/IMG_0008.jpg" alt="insurance">
     </div>
@@ -71,7 +81,9 @@
       <div class="planDetails">
           <h1 class="planTitle">Third Party</h1>
           <h3>What is Third-Party Insurance?</h3>
-          <p>Third-party insurance covers damages to other vehicles and injuries to other people in the event of an accident where you are at fault. It is the minimum legal requirement for car insurance in many places.</p>
+          <p>Third-party insurance covers damages to other vehicles and injuries to other people in the event of an
+            accident where you are at fault. It is the minimum legal requirement for car insurance in many places.
+          </p>
           <h3>Key Features:</h3>
           <ul>
             <li>Coverage for damages to third-party property.</li>
@@ -93,7 +105,10 @@
       <div class="planDetails">
         <h1 class="planTitle">Comprehensive</h1>
         <h3>What is Comprehensive Insurance?</h3>
-        <p>Comprehensive insurance provides broader coverage, including damages to your own vehicle as well as damages to third parties. It covers a variety of risks, including theft, vandalism, and natural disasters.</p>
+        <p>Comprehensive insurance provides broader coverage, including damages to your own vehicle as well as
+          damages to third parties. It covers a variety of risks, including theft, vandalism, and natural disasters.
+        </p>
+
         <h3>Key Features:</h3>
         <ul>
           <li>Covers damages to your own vehicle.</li>
@@ -175,10 +190,8 @@
         <button id="EstimateBtnNoIdea">Estimate Now</button>
       </div>
     </div>
-
   </section>
   <!--Main Content-->
-
 
 
   <!--footer-->
@@ -206,9 +219,11 @@
   </section>
   <!--footer-->
 
+
+  <!--Dark mode-->
   <i id="darkModeToggle" class="material-icons"
      style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
+  <!--Dark mode-->
   <script src="../../../src/js/insurance/toTopBtn.js"></script>
   <script src="../../../src/js/insurance/pageControl.js"></script>
 </body>
