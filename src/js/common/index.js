@@ -122,7 +122,7 @@ $(document).ready(function(){
                     $('#pwField input').css('border', '1px solid red');
                 }
             }else{
-                $('#emailField span').text(`Email not found in Insurance Platform`);
+                $('#emailField span').text(`Email not found in Insurance Sales Platform`);
                 $('#emailField input').css('border', '1px solid red');
             }
         }
