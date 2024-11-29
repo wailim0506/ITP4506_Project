@@ -846,5 +846,12 @@ input[type='checkbox'] {
 }
 
 
+#quoteNotice{
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    margin-left: 15px;
+    margin-top: -20px;
+}
 
 

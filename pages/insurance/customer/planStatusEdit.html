@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" language="JavaScript">
         $(document).ready(function () {
+            <!-- Redirect to other page -->
             $(".chatBtn").click(function () {
                 window.location.href = "onlineBot.html";
             });
@@ -21,8 +22,11 @@
             $("#cancel").click(function () {
                 window.location.href = "cusProFile.html";
             });
+            <!-- Redirect to other page -->
         });
 
+
+        //For select gender button
         function selectGender(button) {
             const buttons = document.querySelectorAll('.gender-button');
             buttons.forEach(btn => btn.classList.remove('selected'));
@@ -36,10 +40,15 @@
         <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
     </button>
     <!-- Chatbot button -->
+
+
     <!-- To top button -->
     <button class="goTopBtn">
         <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
     </button>
+    <!-- To top button -->
+
+
     <!--Nav Bar-->
     <nav>
         <div id="nav_left">
@@ -57,7 +66,6 @@
         </div>
     </nav>
     <!--Nav Bar-->
-
 
 
     <!--Main Content-->
@@ -120,8 +128,6 @@
                             <label id="long">Have you applied for a loan for your insured car? :<a>No</a></label>
                         </div>
 
-
-
                         <p class="subTitle">Driver:</p>
 
                         <div class="inputRow">
@@ -136,7 +142,6 @@
                                 </select>
                             </label>
                         </div>
-
 
                         <div id="driverList">
                             <div class="inputRow">
@@ -181,7 +186,6 @@
                             <label>*Address 1: <input type="text"  class="date" placeholder="102, floor 12, Block A, Sha Tin, New Territories"></label>
                         </div>
 
-
                         <hr>
 
                         <p class="subTitle">Plan:</p>
@@ -210,11 +214,6 @@
                     <button type="button" id="bckProfile">Save & Submit</button>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </section>
     <!--Main Content-->
@@ -245,9 +244,10 @@
     </section>
     <!--footer-->
 
+    <!--Dark mode-->
     <i id="darkModeToggle" class="material-icons"
        style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
+    <!--Dark mode-->
     <script src="../../../src/js/insurance/toTopBtn.js"></script>
 </body>
 </html>
