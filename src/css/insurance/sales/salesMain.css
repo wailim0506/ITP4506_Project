@@ -1,0 +1,327 @@
+html{
+    font-family: system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+
+body{
+    width: 100%;
+    margin: 0;
+}
+
+/* Go to top */
+.goTopBtn{
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    border: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.goTopBtn img{
+    width: 110%;
+}
+
+
+
+/*nav*/
+nav{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-color: black;
+    border-bottom: 1px solid;
+    box-shadow: black 0 0 3px;
+    animation: nav-load 0.5s ease-in;
+}
+
+#nav_left{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+#nav_center{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#nav_right{
+    width:10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_left img{
+    height: 55px;
+}
+
+#nav_center a{
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* The effects of the contents in the nav bar */
+#nav_center a::before{
+    position: absolute;
+    content: '';
+    height: 3px;
+    margin-top: 30px;
+    width: 5.5%;
+    background: teal;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+}
+
+#nav_center a:hover::before{
+    transform: scale(1);
+    transform-origin: left;
+}
+
+#nav_right a{
+    width: 14%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#nav_center a:hover{
+    color: rgba(0,0,0,0.85);
+}
+
+#nav_right a:hover{
+    color: rgba(0,0,0,0.85);
+}
+
+/* The ease-in animation for the nav bar */
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+/*nav*/
+
+
+/* The footer */
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    gap: 10rem;
+    background: #aaa8a8;
+    left: 0;
+    right: 0;
+    padding: 1% 5% 1% 5%;
+}
+
+
+.footer-logo{
+    width: 30%;
+    margin-bottom: 1.5%;
+    margin-left: 3.5%;
+}
+/* The main section in the footer ot the ste map */
+.footer-content h4{
+    color: black;
+    font-size: 23px;
+}
+
+.footer-content a{
+    text-decoration: none;
+}
+
+.footer-content a h4:hover{
+    color: teal;
+    transition: all .40s ease;
+}
+
+/* The sort-into into footer */
+.footer-content p{
+    color: black;
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 4%;
+}
+/* The footer */
+
+
+
+
+/* The Main Content */
+.mainContent{
+    animation: article-load 0.6s ease-in;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.content{
+    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 10% 1% 10%;
+}
+
+.content-row{
+    gap: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1% 10% 1% 10%;
+}
+
+#chatTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 20.5%;
+}
+
+.chartTitle{
+    font-size: 20px;
+    color: rgba(0,0,0,0.85);
+    margin-bottom: -10px;
+}
+
+#chatH1, #statusH1{
+    font-size: 25px;
+}
+
+.statusBoxContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.statusBoxContentRow{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.statueTitle{
+    margin-top: 10px;
+    margin-bottom: -7px;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+}
+
+.statusStatics{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+#statusProgress{
+    background-color: rgba(255, 247, 79, 0.98);
+}
+
+#statusAudit{
+    background-color: rgb(255, 193, 79);
+}
+
+#statusFinished{
+    background-color: rgb(138, 227, 148);
+}
+
+#statusRejected{
+    background-color: rgba(239, 154, 154, 0.98);
+}
+
+#overviewTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 20.5%;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Main Content */
+
+
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

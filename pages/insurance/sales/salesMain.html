@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/insurance/darkMode.js"></script>
+    <title>Legend Motor Limited - Insurance</title>
+    <link rel="stylesheet" href="../../../src/css/insurance/sales/salesMain.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <!-- To top button -->
+    <button class="goTopBtn">
+        <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+    </button>
+    <!-- To top button -->
+
+
+    <!--Nav Bar-->
+    <nav>
+        <div id="nav_left">
+            <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+        </div>
+        <div id="nav_center">
+            <a href="#">Plans</a>
+            <a href="#">Estimate</a>
+            <a href="#">Application</a>
+            <a href="#">ProFile</a>
+        </div>
+        <div id="nav_right">
+            <a href="../../../index.html">Login</a>
+        </div>
+    </nav>
+    <!--Nav Bar-->
+
+
+    <!--Main Content-->
+    <section class="mainContent">
+        <div id="chatTitle">
+            <P class="chartTitle" id="chatH1"><b>Yearly report 2024 (Total: 195)</b></P>
+            <P class="chartTitle"><b>Update date:</b> 2024-12-2</P>
+        </div>
+
+        <div class="content">
+            <canvas id="insuranceLineChart" width="1200" height="500"></canvas>
+        </div>
+
+        <div id="overviewTitle">
+            <p class="chartTitle" id="statusH1"><b>Application Overview:</b></p>
+        </div>
+
+        <div class="content-row">
+            <div class="statusBoxContent">
+                <div class="statusBoxContentRow" id="statusProgress">
+                    <p class="statueTitle">In progress</p>
+                    <p class="statusStatics">25</p>
+                </div>
+                <div class="statusBoxContentRow" id="statusAudit">
+                    <p class="statueTitle">Waiting for audit</p>
+                    <p class="statusStatics">47</p>
+
+                </div>
+                <div class="statusBoxContentRow" id="statusFinished">
+                    <p class="statueTitle">Finished</p>
+                    <p class="statusStatics">103</p>
+                </div>
+                <div class="statusBoxContentRow" id="statusRejected">
+                    <p class="statueTitle">Rejected</p>
+                    <p class="statusStatics">20</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div>
+    </section>
+    <!--Main Content-->
+
+
+    <!--footer-->
+    <section class="footer">
+        <div class="footer-content">
+            <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+            <p>Reliable car insurance for peace of mind on every journey.</p>
+            <p>© 2024 Legend Motor Limited</p>
+        </div>
+        <div class="footer-content">
+            <a href="#"><h4>Plans</h4></a>
+        </div>
+        <div class="footer-content">
+            <a href="#"><h4>Estimate</h4></a>
+        </div>
+        <div class="footer-content">
+            <a href="#"><h4>Application</h4></a>
+        </div>
+        <div class="footer-content">
+            <a href="#"><h4>ProFile</h4></a>
+        </div>
+    </section>
+    <!--footer-->
+
+
+    <!-- dark mode button -->
+    <i id="darkModeToggle" class="material-icons"
+       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+    <script src="../../../src/js/insurance/toTopBtn.js"></script>
+    <!-- dark mode button -->
+    <script src="../../../src/js/insurance/chart.js"></script>
+    </body>
+</html>
