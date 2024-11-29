@@ -12,6 +12,10 @@ function setDarkMode() {
             'color': 'rgb(194,196,200)'
         });
         $('#darkModeToggle').text('wb_sunny');
+        $('th').css({
+            'background-color':'#333',
+            'color':'white'
+        });
         localStorage.setItem('darkMode', 'Y');
     } else {
         //to light mode
@@ -29,6 +33,10 @@ function setDarkMode() {
             'background-color': 'white',
             'color': 'black',
             'border': '1px solid lightgrey'
+        });
+        $('th').css({
+            'background-color':'#f2f2f2',
+            'color':'inherit'
         });
         $('#darkModeToggle').text('brightness_2');
         localStorage.setItem('darkMode', 'N');
@@ -49,6 +57,10 @@ function loadDarkMode() {
                 'color': 'rgb(194,196,200)'
             });
             $('#darkModeToggle').text('wb_sunny');
+            $('th').css({
+                'background-color':'#333',
+                'color':'white'
+            });
         } else {
             //to light mode
             $('html, nav,.analysis-container').css('background-color', 'white');
@@ -67,6 +79,10 @@ function loadDarkMode() {
                 'border': '1px solid lightgrey'
             });
             $('#darkModeToggle').text('brightness_2');
+            $('th').css({
+                'background-color':'#f2f2f2',
+                'color':'inherit'
+            });
         }
     }
 }

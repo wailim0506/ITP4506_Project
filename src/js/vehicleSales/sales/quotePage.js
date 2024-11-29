@@ -14,7 +14,7 @@ function setDarkMode() {
             'color': 'rgb(194,196,200)'
         });
 
-        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo').css('border-bottom', '1px solid grey');
+        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid grey');
         $('#headingRow').css({
             'border-top': '1px solid grey',
             'border-bottom': '1px solid grey'
@@ -43,7 +43,7 @@ function setDarkMode() {
             'color': 'black',
             'border': '1px solid lightgrey'
         });
-        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo').css('border-bottom', '1px solid black');
+        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid black');
         $('#headingRow').css({
             'border-top': '1px solid black',
             'border-bottom': '1px solid black'
@@ -70,7 +70,7 @@ function loadDarkMode() {
                 'border': '0.1px solid grey',
                 'color': 'rgb(194,196,200)'
             });
-            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo').css('border-bottom', '1px solid grey');
+            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid grey');
             $('#headingRow').css({
                 'border-top': '1px solid grey',
                 'border-bottom': '1px solid grey'
@@ -97,7 +97,7 @@ function loadDarkMode() {
                 'color': 'black',
                 'border': '1px solid lightgrey'
             });
-            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo').css('border-bottom', '1px solid black');
+            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid black');
             $('#headingRow').css({
                 'border-top': '1px solid black',
                 'border-bottom': '1px solid black'
