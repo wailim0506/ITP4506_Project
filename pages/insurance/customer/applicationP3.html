@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      <!-- Redirect to other page -->
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
@@ -35,15 +36,15 @@
       $("#AppP3").click(function () {
         window.location.href = "applicationP2.html";
       });
+      <!-- Redirect to other page -->
 
+      //For payment method
       $('.payment').on('click', function() {
         $('.payment').css('border', '2px solid #000');
         $(this).css('border', '5px solid green');
         $('#paymentDetail').empty();
 
-
-
-
+        //Get the selected payment method
         var paymentMethod = $(this).find('p').text();
 
         if (paymentMethod === 'Card' || paymentMethod === 'Apple Pay') {
@@ -78,17 +79,19 @@
           $('#paymentDetail').append(paymentDetailForm);
         }
       });
-
     });
+
+
+    //For payment option
     function payOption(button) {
       const buttons = document.querySelectorAll('.payOption-Installments,.payOption-full');
       buttons.forEach(btn => btn.classList.remove('selected'));
       button.classList.add('selected');
-      var isElectronic = $(button).hasClass('payOption-Installments');
+      var payOption = $(button).hasClass('payOption-Installments');
       var additionalInfoDiv = $('#payOptions');
       additionalInfoDiv.empty(); // Clear previous content
 
-      if (isElectronic) {
+      if (payOption) {
         var inputHtml = `<label>*Installments Options:
                     <select required>
                         <option value="">--Select an Option--</option>
@@ -104,6 +107,8 @@
 
     let selectedPayment = null;
 
+
+    //For payment method
     function selectPayment(element) {
       const payments = document.querySelectorAll('.payment');
       payments.forEach(payment => payment.classList.remove('selected'));
@@ -112,12 +117,12 @@
     }
 
 
+    //Check form validation
     function validateForm() {
       let isValid = true;
       $('input[required]').each(function() {
         const $input = $(this);
         const $errorSpan = $input.next('.error-message');
-
 
         if (!$input.val()) {
           $errorSpan.show();
@@ -169,10 +174,15 @@
   <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
 </button>
 <!-- Chatbot button -->
+
+
 <!-- To top button -->
 <button class="goTopBtn">
   <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
 </button>
+<!-- To top button -->
+
+
 <!--Nav Bar-->
 <nav>
   <div id="nav_left">
@@ -190,7 +200,6 @@
   </div>
 </nav>
 <!--Nav Bar-->
-
 
 
 <!--Main Content-->
@@ -278,27 +287,20 @@
             <label class="error">*Please agree the policy.</label>
           </div>
         </div>
-
-
-
       </form>
     </div>
   </div>
 
-
   <div class="containerRow">
     <div id="previousBtnContainer">
       <button type="button" id="previousBtn">Previous</button>
-      <div>
-        <div id="nextBtnContainer">
-          <button type="button" id="nextBtn">Next</button>
-        </div>
-      </div>
-
-
-  </section>
+    </div>
+    <div id="nextBtnContainer">
+       <button type="button" id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
 <!--Main Content-->
-
 
 
 <!--footer-->
@@ -326,9 +328,11 @@
 </section>
 <!--footer-->
 
+
+<!--Dark mode-->
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
 <script src="../../../src/js/insurance/toTopBtn.js"></script>
+<!--Dark mode-->
 </body>
 </html>

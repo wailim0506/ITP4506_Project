@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      <!-- Redirect to other page -->
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
@@ -32,14 +33,17 @@
         window.location.href = "applicationP1_1.html";
       });
 
-        $('.plan').click(function() {
+      $('.plan').click(function() {
           var details = $(this).data('details');
           $('.plan').css('background-color', '');
 
           $('#planDetail p').text(details);
           $(this).css('background-color', '#f9c22c');
-        });
+      });
+      <!-- Redirect to other page -->
 
+
+      //For calculate the expired date
       function calculateExpireDate() {
         const years = parseInt($('#years').val());
         const startDate = new Date($('#plan').val());
@@ -53,10 +57,12 @@
         }
       }
 
+      //If change the years or plan, recalculate the expired date
       $('#years').on('input', calculateExpireDate);
       $('#plan').on('change', calculateExpireDate);
 
 
+      //For calculate the price
       function calPrice() {
         const years = parseInt($('#years').val());
         const selectedPlan = $('.plan.selected');
@@ -69,16 +75,15 @@
         }
       }
 
-
+      //Get the selected plan
       $('.plan').on('click', function() {
         $('.plan').removeClass('selected');
         $(this).addClass('selected');
         calPrice();
       });
 
-
+      //If change the years, recalculate the price
       $('#years').on('input', calPrice);
-
     });
 
     let selectedPlan= null;
@@ -90,8 +95,11 @@
       selectedPlan = element;
     }
 
+
+    //Check form validation
     function validateForm() {
       let isValid = true;
+
       $('input[required]').each(function() {
         const $input = $(this);
         const $errorSpan = $input.next('.error-message');
@@ -113,7 +121,6 @@
 
       return isValid;
     }
-
   </script>
 </head>
 <body>
@@ -122,10 +129,15 @@
   <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
 </button>
 <!-- Chatbot button -->
+
+
 <!-- To top button -->
 <button class="goTopBtn">
   <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
 </button>
+<!-- To top button -->
+
+
 <!--Nav Bar-->
 <nav>
   <div id="nav_left">
@@ -143,7 +155,6 @@
   </div>
 </nav>
 <!--Nav Bar-->
-
 
 
 <!--Main Content-->
@@ -238,16 +249,13 @@
   <div class="containerRow">
     <div id="previousBtnContainer">
       <button type="button" id="previousBtn">Previous</button>
-    <div>
+    </div>
     <div id="nextBtnContainer">
       <button type="button" id="nextBtn">Next</button>
     </div>
   </div>
-
-
 </section>
 <!--Main Content-->
-
 
 
 <!--footer-->
@@ -275,9 +283,11 @@
 </section>
 <!--footer-->
 
+
+<!--Dark mode-->
 <i id="darkModeToggle" class="material-icons"
    style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
 <script src="../../../src/js/insurance/toTopBtn.js"></script>
+<!--Dark mode-->
 </body>
 </html>

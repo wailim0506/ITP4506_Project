@@ -10,17 +10,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
+      <!-- Initial the form -->
       const today = new Date();
       const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
       const year = minDate.getFullYear();
-      const month = String(minDate.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      const month = String(minDate.getMonth() + 1).padStart(2, '0');
       const day = String(minDate.getDate()).padStart(2, '0');
       const formattedDate = `${year}-${month}-${day}`;
       document.querySelector('.birthdate').setAttribute('max', formattedDate);
-
       document.querySelector('.electronic-button-No').click();
+      <!-- Initial the form -->
 
 
+      <!-- Redirect to other page -->
       $(".chatBtn").click(function () {
         window.location.href = "onlineBot.html";
       });
@@ -34,9 +36,13 @@
       $("#exitBtn").click(function () {
         window.location.href = "cusPlan.html";
       });
+      <!-- Redirect to other page -->
 
-        $('#addDriver').click(function() {
+
+      //For adding a new driver
+      $('#addDriver').click(function() {
           const currentCount = $('.newDriver').length;
+
           if (currentCount < 2) {
             const inputRow = `
         <div class="newDriver"><hr>
@@ -86,8 +92,10 @@
     });
 
 
+    //Check form validation
     function validateForm() {
       let isValid = true;
+
       $('input[required]').each(function() {
         const $input = $(this);
         const $errorSpan = $input.next('.error-message');
@@ -99,6 +107,7 @@
           $errorSpan.hide();
         }
       });
+
       $('select[required]').each(function() {
         const $select = $(this);
         const $errorSpan = $select.next('.error-message');
@@ -111,13 +120,11 @@
         }
       });
 
-
       return isValid;
     }
 
 
-
-
+    //Remove driver
     function removeDriver(button) {
       $(button).closest('.newDriver').remove();
       const currentCount = $('.newDriver').length;
@@ -126,6 +133,8 @@
       }
     }
 
+
+    //For select gender button
     function selectGender(button) {
       const buttons = document.querySelectorAll('.gender-button');
       buttons.forEach(btn => btn.classList.remove('selected'));
@@ -133,6 +142,7 @@
     }
 
 
+    //Check whether is a electronic car
     function selectElectronic(button) {
       const buttons = document.querySelectorAll('.electronic-button-No,.electronic-button-Yes');
       buttons.forEach(btn => btn.classList.remove('selected'));
@@ -141,7 +151,7 @@
       var additionalInfoDiv = $('#electronicOption');
       additionalInfoDiv.empty(); // Clear previous content
 
-
+      //If is a electronic car add a dropdown list
       if (isElectronic) {
         var inputHtml = `
                 <label>*Battery Capacity: <input type="number" placeholder="Battery Capacity" required>
@@ -161,7 +171,7 @@
                     <span class="error-message" style="color:red; display:none;">Please select an option.</span>
                 </label>`;
         additionalInfoDiv.append(inputHtml);
-      } else {
+      } else {   //For fuel car add a input box
         var inputHtml = `
                 <label>*Tank Capacity: <input type="number" placeholder="Tank Capacity" required>
                     <span class="error-message" style="color:red; display:none;">Please enter tank capacity.</span>
@@ -170,14 +180,18 @@
       }
     }
 
+
+    //Whether the car has a loan for 1.2
     function loan(button) {
       const buttons = document.querySelectorAll('.loan-No,.loan-Yes');
       buttons.forEach(btn => btn.classList.remove('selected'));
       button.classList.add('selected');
       var isloan = $(button).hasClass('loan-Yes');
       var additionalInfoDiv = $('.isloan');
+
       additionalInfoDiv.empty(); // Clear previous content
 
+      //If have add a dropdown list
       if (isloan) {
         var inputHtml = `
                 <label>*Loan Company:
@@ -197,7 +211,6 @@
         additionalInfoDiv.append(inputHtml);
       }
     }
-
   </script>
 </head>
 <body>
@@ -206,10 +219,15 @@
     <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
   </button>
   <!-- Chatbot button -->
+
+
   <!-- To top button -->
   <button class="goTopBtn">
     <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
   </button>
+  <!-- To top button -->
+
+
   <!--Nav Bar-->
   <nav>
     <div id="nav_left">
@@ -227,7 +245,6 @@
     </div>
   </nav>
   <!--Nav Bar-->
-
 
 
   <!--Main Content-->
@@ -259,15 +276,17 @@
         </p>
         <h3>Guidelines for Filling Out the Form:</h3>
         <ul>
-          <li><strong>Car Information:</strong> Enter the car's name, select the model from the dropdown, and choose the type of vehicle. Ensure to provide the manufacture date and upload an image of your car if available.</li>
-          <li><strong>Engine Number & Condition:</strong> Fill in the engine number and select the condition of the car from the given options.</li>
+          <li><strong>Car Information:</strong> Enter the car's name, select the model from the dropdown, and choose
+            the type of vehicle. Ensure to provide the manufacture date and upload an image of your car if available.
+          </li>
+          <li><strong>Engine Number & Condition:</strong> Fill in the engine number and select the condition of the car
+            from the given options.
+          </li>
           <li><strong>Mileage:</strong> Provide the mileage of the car in kilometers.</li>
           <li><strong>Driver Information:</strong> Input the driver's date of birth, profession, and marital status. You can add multiple drivers (up to three).</li>
           <li><strong>Gender & Experience:</strong> Select the driver's gender and provide their driving experience in years.</li>
         </ul>
-        <p>
-          If you encounter any issues while completing the form, please contact our support team for assistance.
-        </p>
+        <p>If you encounter any issues while completing the form, please contact our support team for assistance.</p>
       </div>
 
       <div class="container">
@@ -345,12 +364,7 @@
               </label>
             </div>
 
-
-
-            <div class="inputRow" id="electronicOption">
-
-            </div>
-
+            <div class="inputRow" id="electronicOption"></div>
 
             <hr>
 
@@ -365,9 +379,6 @@
               </div>
               <div class="isloan"></div>
             </div>
-
-
-
 
             <hr>
 
@@ -420,18 +431,16 @@
       </div>
     </div>
 
-
     <div class="containerRow">
       <div id="previousBtnContainer">
         <button type="button" id="exitBtn">Exit</button>
-        <div>
-          <div id="nextBtnContainer">
-            <button type="button" id="nextBtn">Next</button>
-        </div>
+      </div>
+      <div id="nextBtnContainer">
+        <button type="button" id="nextBtn">Next</button>
+      </div>
     </div>
   </section>
   <!--Main Content-->
-
 
 
   <!--footer-->
@@ -459,9 +468,11 @@
   </section>
   <!--footer-->
 
+
+  <!--Dark mode-->
   <i id="darkModeToggle" class="material-icons"
      style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
   <script src="../../../src/js/insurance/toTopBtn.js"></script>
+  <!--Dark mode-->
 </body>
 </html>

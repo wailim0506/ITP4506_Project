@@ -1,283 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Legend Motor Limited - Insurance</title>
-    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
-    <link rel="stylesheet" href="../../../src/css/insurance/cusMainPage.css">
-    <script src="../../../src/js/insurance/darkMode.js"></script>
-    <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" language="JavaScript">
-        $(document).ready(function () {
-            $("#EstimateBtn").click(function () {
-                window.location.href = "estimate.html";
+    <head>
+        <meta charset="UTF-8">
+        <title>Legend Motor Limited - Insurance</title>
+        <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+        <link rel="stylesheet" href="../../../src/css/insurance/cusMainPage.css">
+        <script src="../../../src/js/insurance/darkMode.js"></script>
+        <!-- Google Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" language="JavaScript">
+            //Redirect to other page.
+            $(document).ready(function () {
+                $("#EstimateBtn").click(function () {
+                    window.location.href = "estimate.html";
+                });
+
+                $(".chatBtn").click(function () {
+                    window.location.href = "onlineBot.html";
+                });
             });
-            $(".chatBtn").click(function () {
-                window.location.href = "onlineBot.html";
-            });
-        });
-    </script>
-</head>
-<body>
-    <!-- Chatbot button -->
-    <button class="chatBtn">
-        <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
-    </button>
-    <!-- Chatbot button -->
-    <!-- To top button -->
-    <button class="goTopBtn">
-        <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
-    </button>
-    <!--Nav Bar-->
-    <nav>
-        <div id="nav_left">
-            <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
-        </div>
-        <div id="nav_center">
-            <a href="cusPlan.html">Plans</a>
-            <a href="estimate.html">Estimate</a>
-            <a href="onlineBot.html">Online Bot</a>
-            <a href="applicationP1.html">Application</a>
-            <a href="cusProFile.html">ProFile</a>
-        </div>
-        <div id="nav_right">
-            <a href="../../../index.html">Login</a>
-        </div>
-    </nav>
-
-    <!--slider-->
-    <section class="slider">
-        <div class="sliderContent">
-            <h4>Don't know which plan suit for you?</h4>
-            <button id="EstimateBtn">Estimate Now</button>
-        </div>
-    </section>
+        </script>
+    </head>
+    <body>
+        <!-- Chatbot button -->
+        <button class="chatBtn">
+            <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
+        </button>
+        <!-- Chatbot button -->
 
 
-    <!--Main Content-->
-    <section class="mainContent">
-        <div class="content">
-            <div>
-                <h2 class="mainContentTitle">Why do you need car insurance?</h2>
-                <ul>
-                    <li><h3>Financial Protection:</h3>
-                        <p>
-                            It protects you from substantial financial losses in case of accidents, theft, or damage
-                            to your vehicle.
-                        </p>
-                    </li>
-                    <li><h3>Legal Requirement:</h3>
-                        <p>
-                            In many places, having car insurance is mandatory. Driving without it can result in
-                            fines, penalties, or even legal action.
-                        </p>
-                    </li>
-                    <li><h3>Liability Coverage:</h3>
-                        <p>
-                            If you're at fault in an accident, insurance helps cover the costs of damages or injuries
-                            to others, preventing you from facing significant out-of-pocket expenses.
-                        </p>
-                    </li>
-                    <li><h3>Medical Expenses:</h3>
-                        <p>
-                            Car insurance can cover medical costs for you and your passengers if you're injured in
-                            an accident.
-                        </p>
-                    </li>
-                    <li><h3>Protection Against Uninsured Drivers:</h3>
-                        <p>
-                            If you're in an accident with someone who doesn't have insurance, your policy can cover
-                            your costs.
-                        </p>
-                    </li>
-                </ul>
+        <!-- To top button -->
+        <button class="goTopBtn">
+            <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+        </button>
+        <!-- To top button -->
+
+
+        <!--Nav Bar-->
+        <nav>
+            <div id="nav_left">
+                <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
             </div>
-
-            <div>
-                <img src="../../../src/img/insurance/IMG_0005.jpg" class="contentIMG">
+            <div id="nav_center">
+                <a href="cusPlan.html">Plans</a>
+                <a href="estimate.html">Estimate</a>
+                <a href="onlineBot.html">Online Bot</a>
+                <a href="applicationP1.html">Application</a>
+                <a href="cusProFile.html">ProFile</a>
             </div>
-        </div>
-
-        <hr>
-
-        <div class="content">
-            <div>
-                <img src="../../../src/img/insurance/IMG_0006.jpg" class="contentIMG">
+            <div id="nav_right">
+                <a href="../../../index.html">Login</a>
             </div>
-            <div>
-                <h2 class="mainContentTitle">Why Having Car Insurance Is Important?</h2>
-                <ul>
-                    <li><h3>Protection Against Uninsured Drivers:</h3>
-                        <p>
-                            If you’re involved in an accident with someone who doesn’t have insurance, your policy
-                            may cover your expenses, minimizing your financial risk.
-                        </p>
-                    </li>
-                    <li><h3>Peace of Mind:</h3>
-                        <p>
-                            Knowing you have insurance can reduce stress while driving, allowing you to focus
-                            on the road rather than potential financial repercussions.
-                        </p>
-                    </li>
-                    <li><h3>Coverage for Personal Belongings:</h3>
-                        <p>
-                            Some policies may cover personal items stolen from your vehicle or damaged during an
-                            accident.
-                        </p>
-                    </li>
-                    <li><h3>Support in Legal Issues:</h3>
-                        <p>
-                            Insurance can help with legal fees and representation if you face lawsuits related to
-                            an accident.
-                        </p>
-                    </li>
-                </ul>
+        </nav>
+        <!--Nav Bar-->
+
+
+        <!--slider-->
+        <section class="slider">
+            <div class="sliderContent">
+                <h4>Don't know which plan suit for you?</h4>
+                <button id="EstimateBtn">Estimate Now</button>
             </div>
-        </div>
+        </section>
+        <!--slider-->
 
-        <hr>
 
-        <div class="contentTable">
-            <h2 class="mainContentTitle">Why Legend Motor Limited?</h2>
-            <table id="compareTb">
-                <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>LML's Plan</th>
-                    <th>Competitor Plan</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="compareType">Monthly Premium</td>
-                    <td>$100</td>
-                    <td>$120</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Deductible</td>
-                    <td>$500</td>
-                    <td>$600</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Coverage Amount</td>
-                    <td>$1,000,000</td>
-                    <td>$800,000</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Network Size</td>
-                    <td>Extensive network with 500+ providers</td>
-                    <td>Limited network with 300 providers</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Claim Processing Time</td>
-                    <td>Average of 5 days</td>
-                    <td>Average of 7 days</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Customer Satisfaction</td>
-                    <td>95% satisfaction rate</td>
-                    <td>85% satisfaction rate</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Additional Benefits</td>
-                    <td>- Wellness programs<br>- 24/7 customer support<br>- Free annual health checkup</td>
-                    <td>- None<br>- Limited support hours</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Discounts Available</td>
-                    <td>- Multi-policy discount<br>- Safe driver discount</td>
-                    <td>- Loyalty discount<br>- None</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Policy Flexibility</td>
-                    <td>Customizable plans available</td>
-                    <td>Standard plans only</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Online Tools</td>
-                    <td>Comprehensive online portal</td>
-                    <td>Basic online services</td>
-                </tr>
-                <tr>
-                    <td class="compareType">Exclusions</td>
-                    <td>- Pre-existing conditions covered<br>- No lifetime limits</td>
-                    <td>- Pre-existing conditions not covered<br>- Lifetime limits apply</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <hr>
-
-        <div class="contact">
-            <h2>You can contact us via:</h2>
-            <div class="followMethod">
-                <div class="follow">
-                    <a href="https://twitter.com">
-                        <img src="../../../src/img/insurance/twitter.png">
-                    </a>
-                    <span>Twitter</span>
+        <!--Main Content-->
+        <section class="mainContent">
+            <div class="content">
+                <div>
+                    <h2 class="mainContentTitle">Why do you need car insurance?</h2>
+                    <ul>
+                        <li><h3>Financial Protection:</h3>
+                            <p>
+                                It protects you from substantial financial losses in case of accidents, theft, or damage
+                                to your vehicle.
+                            </p>
+                        </li>
+                        <li><h3>Legal Requirement:</h3>
+                            <p>
+                                In many places, having car insurance is mandatory. Driving without it can result in
+                                fines, penalties, or even legal action.
+                            </p>
+                        </li>
+                        <li><h3>Liability Coverage:</h3>
+                            <p>
+                                If you're at fault in an accident, insurance helps cover the costs of damages or injuries
+                                to others, preventing you from facing significant out-of-pocket expenses.
+                            </p>
+                        </li>
+                        <li><h3>Medical Expenses:</h3>
+                            <p>
+                                Car insurance can cover medical costs for you and your passengers if you're injured in
+                                an accident.
+                            </p>
+                        </li>
+                        <li><h3>Protection Against Uninsured Drivers:</h3>
+                            <p>
+                                If you're in an accident with someone who doesn't have insurance, your policy can cover
+                                your costs.
+                            </p>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="follow">
-                    <a href="https://www.instagram.com">
-                        <img src="../../../src/img/insurance/instagram.png">
-                    </a>
-                    <span>Instagram</span>
-                </div>
-
-                <div class="follow">
-                    <a href="https://www.facebook.com">
-                        <img src="../../../src/img/insurance/facebook.png">
-                    </a>
-                    <span>Facebook</span>
-                </div>
-
-                <div class="follow">
-                    <a href="mailto: 230410071@stu.vtc.edu.hk">
-                        <img src="../../../src/img/insurance/envelope.png">
-                    </a>
-                    <span>Sent Us a Email</span>
+                <div>
+                    <img src="../../../src/img/insurance/IMG_0005.jpg" class="contentIMG">
                 </div>
             </div>
-        </div>
+
+            <hr>
+
+            <div class="content">
+                <div>
+                    <img src="../../../src/img/insurance/IMG_0006.jpg" class="contentIMG">
+                </div>
+                <div>
+                    <h2 class="mainContentTitle">Why Having Car Insurance Is Important?</h2>
+                    <ul>
+                        <li><h3>Protection Against Uninsured Drivers:</h3>
+                            <p>
+                                If you’re involved in an accident with someone who doesn’t have insurance, your policy
+                                may cover your expenses, minimizing your financial risk.
+                            </p>
+                        </li>
+                        <li><h3>Peace of Mind:</h3>
+                            <p>
+                                Knowing you have insurance can reduce stress while driving, allowing you to focus
+                                on the road rather than potential financial repercussions.
+                            </p>
+                        </li>
+                        <li><h3>Coverage for Personal Belongings:</h3>
+                            <p>
+                                Some policies may cover personal items stolen from your vehicle or damaged during an
+                                accident.
+                            </p>
+                        </li>
+                        <li><h3>Support in Legal Issues:</h3>
+                            <p>
+                                Insurance can help with legal fees and representation if you face lawsuits related to
+                                an accident.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="contentTable">
+                <h2 class="mainContentTitle">Why Legend Motor Limited?</h2>
+                <table id="compareTb">
+                    <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>LML's Plan</th>
+                        <th>Competitor Plan</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="compareType">Monthly Premium</td>
+                        <td>$100</td>
+                        <td>$120</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Deductible</td>
+                        <td>$500</td>
+                        <td>$600</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Coverage Amount</td>
+                        <td>$1,000,000</td>
+                        <td>$800,000</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Network Size</td>
+                        <td>Extensive network with 500+ providers</td>
+                        <td>Limited network with 300 providers</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Claim Processing Time</td>
+                        <td>Average of 5 days</td>
+                        <td>Average of 7 days</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Customer Satisfaction</td>
+                        <td>95% satisfaction rate</td>
+                        <td>85% satisfaction rate</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Additional Benefits</td>
+                        <td>- Wellness programs<br>- 24/7 customer support<br>- Free annual health checkup</td>
+                        <td>- None<br>- Limited support hours</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Discounts Available</td>
+                        <td>- Multi-policy discount<br>- Safe driver discount</td>
+                        <td>- Loyalty discount<br>- None</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Policy Flexibility</td>
+                        <td>Customizable plans available</td>
+                        <td>Standard plans only</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Online Tools</td>
+                        <td>Comprehensive online portal</td>
+                        <td>Basic online services</td>
+                    </tr>
+                    <tr>
+                        <td class="compareType">Exclusions</td>
+                        <td>- Pre-existing conditions covered<br>- No lifetime limits</td>
+                        <td>- Pre-existing conditions not covered<br>- Lifetime limits apply</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <div class="contact">
+                <h2>You can contact us via:</h2>
+                <div class="followMethod">
+                    <div class="follow">
+                        <a href="https://twitter.com">
+                            <img src="../../../src/img/insurance/twitter.png">
+                        </a>
+                        <span>Twitter</span>
+                    </div>
+
+                    <div class="follow">
+                        <a href="https://www.instagram.com">
+                            <img src="../../../src/img/insurance/instagram.png">
+                        </a>
+                        <span>Instagram</span>
+                    </div>
+
+                    <div class="follow">
+                        <a href="https://www.facebook.com">
+                            <img src="../../../src/img/insurance/facebook.png">
+                        </a>
+                        <span>Facebook</span>
+                    </div>
+
+                    <div class="follow">
+                        <a href="mailto: 230410071@stu.vtc.edu.hk">
+                            <img src="../../../src/img/insurance/envelope.png">
+                        </a>
+                        <span>Sent Us a Email</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Main Content-->
 
 
 
-    </section>
-    <!--Main Content-->
+        <!--footer-->
+        <section class="footer">
+            <div class="footer-content">
+                <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+                <p>Reliable car insurance for peace of mind on every journey.</p>
+                <p>© 2024 Legend Motor Limited</p>
+            </div>
+            <div class="footer-content">
+                <a href="cusPlan.html"><h4>Plans</h4></a>
+            </div>
+            <div class="footer-content">
+                <a href="estimate.html"><h4>Estimate</h4></a>
+            </div>
+            <div class="footer-content">
+                <a href="onlineBot.html"><h4>OnlineBot</h4></a>
+            </div>
+            <div class="footer-content">
+                <a href="applicationP1.html"><h4>Application</h4></a>
+            </div>
+            <div class="footer-content">
+                <a href="cusProFile.html"><h4>ProFile</h4></a>
+            </div>
+        </section>
+        <!--footer-->
 
 
 
-    <!--footer-->
-    <section class="footer">
-        <div class="footer-content">
-            <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
-            <p>Reliable car insurance for peace of mind on every journey.</p>
-            <p>© 2024 Legend Motor Limited</p>
-        </div>
-        <div class="footer-content">
-            <a href="cusPlan.html"><h4>Plans</h4></a>
-        </div>
-        <div class="footer-content">
-            <a href="estimate.html"><h4>Estimate</h4></a>
-        </div>
-        <div class="footer-content">
-            <a href="onlineBot.html"><h4>OnlineBot</h4></a>
-        </div>
-        <div class="footer-content">
-            <a href="applicationP1.html"><h4>Application</h4></a>
-        </div>
-        <div class="footer-content">
-            <a href="cusProFile.html"><h4>ProFile</h4></a>
-        </div>
-    </section>
-    <!--footer-->
-
-    <i id="darkModeToggle" class="material-icons"
-       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-
-    <script src="../../../src/js/insurance/toTopBtn.js"></script>
-</body>
+        <!-- dark mode button -->
+        <i id="darkModeToggle" class="material-icons"
+           style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+        <script src="../../../src/js/insurance/toTopBtn.js"></script>
+        <!-- dark mode button -->
+    </body>
 </html>
