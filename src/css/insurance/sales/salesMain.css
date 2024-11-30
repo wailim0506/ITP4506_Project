@@ -542,10 +542,10 @@ hr {
 .plans .view-button {
     background-color: #ffa500;
 }
-.plans .progress-button:hover, .plans .audit:hover , .plans .finish:hover{
+.plans .progress-button:hover, .plans .audit:hover, .plans .finish:hover, .plans .inProgress:hover{
     background-color: #8cc698;
 }
-.plans .progress-button, .plans .audit , .plans .finish{
+.plans .progress-button, .plans .audit, .plans .finish, .plans .inProgress{
     background-color: #28a745;
 }
 

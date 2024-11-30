@@ -2,70 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Legend Motor Limited - Profile</title>
+  <title>Legend Motor Limited - Application</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
-  <link rel="stylesheet" href="../../../src/css/insurance/sales/salesFinishedApp.css">
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script type="text/javascript" language="JavaScript">
     $(document).ready(function () {
       <!-- Redirect to other page -->
-      $("#bckProfile").click(function () {
-        window.location.href = "salesMain.html";
-      });
-      <!-- Redirect to other page -->
-
-      $('#carImg').click(function() {
-        openAlertModal('Car Image',
-                '<img id="alertImg" src="../../../src/img/insurance/IMG_0020.png" alt="Car Image">');
-      });
-
-
-      // Function to open the alert
-      function openAlertModal(title, message) {
-        $('#modalTitle').html(title);
-        $('#modalMessage').html(message);
-        $('#alertModal').fadeIn();
-
-        $('#alertButtonSend').off('click').on('click', function() {
-          // Check if at least one checkbox is checked
-          if ($('#alertButton input[type="checkbox"]:checked').length === 0) {
-            alert('Please select at least one method (SMS or Email).');
-            return;
-          }
-
-          $('#alertModal').fadeOut(); // Close the modal
-          alert('Send successful!');
+        $("#bckProfile").click(function () {
+            window.location.href = "salesMain.html";
         });
-      }
-
-      // Close the alert
-      $('.close').on('click', function() {
-        $('#alertModal').fadeOut();
-      });
-
-      // Close the alert
-      $(window).on('click', function(event) {
-        if ($(event.target).is('#alertModal')) {
-          $('#alertModal').fadeOut();
-        }
-      });
+      <!-- Redirect to other page -->
     });
   </script>
+  <link rel="stylesheet" href="../../../src/css/insurance/sales/salesInprogressApp.css">
 </head>
 <body>
-<!--Alert-->
-<div class="modal" id="alertModal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalMessage"></p>
-  </div>
-</div>
-<!--Alert-->
-
-
 <!-- To top button -->
 <button class="goTopBtn">
   <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
@@ -92,40 +45,47 @@
 <!--Nav Bar-->
 
 
+
 <!--Main Content-->
 <section id="mainContent">
   <div class="container">
+    <h1>Read only Mode! App No - LMIS654321, Customer ID - LMC00789</h1>
+  </div>
+
+  <div class="container">
     <div id="progress">
-      <div class="arrowRow">
-        <p class="completed">Auditing</p><span class="arrowCompleted">&#8680;</span>
-        <p class="completed">Approved</p><span class="arrowCompleted">&#8680;</span>
-        <p class="completed">Wait for Payment</p><span class="arrowCompleted">&#8680;</span>
-        <p class="completed">Finish</p>
-      </div>
+      <p class="completed" id="AppP1">Basic Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP2">Policyholder Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP3">Plan Select</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP4">Payment</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="inProgress">Submit for Checking</p>
     </div>
   </div>
 
   <div class="container">
     <div id="form">
       <form  id="contactForm">
-        <p class="formClass">Finished - LMIS505152</p>
-        <p class="formClass">Customer ID - LMC05456</p>
+        <p class="formClass">5 - Submit for Checking</p>
 
-        <p id="chkMsg" style="color: red">This application was finished.</p>
+        <p id="chkMsg">The information you have entered. Please check it carefully.</p>
 
         <hr>
 
         <p class="subTitle">Basic Information:</p>
 
         <div class="infoRow">
-          <label>Car Name:<a>Chevrolet Tahoe</a></label>
-          <label>Car Model:<a>Chevrolet</a></label>
+          <label>Car Name:<a>Mercedes-Benz C-Class</a></label>
+          <label>Car Model:<a>Mercedes-Benz</a></label>
           <label>Car Type:<a>HatchBack</a></label>
         </div>
 
         <div class="infoRow">
           <label>Manufacture Date:<a>2000/01/16</a></label>
-          <label>Car Image:<a id="carImg">IMG_1293.jpg</a></label>
+          <label>Car Image:<a>IMG_1293.jpg</a></label>
           <label>Electronic Car? :<a>No</a></label>
         </div>
 
@@ -145,7 +105,6 @@
         </div>
 
         <p class="subTitle">Driver:</p>
-
         <div class="infoRow">
           <label>Date of Birth:<a>1989/04/13</a></label>
           <label>Profession:<a>Teacher</a></label>
@@ -182,14 +141,13 @@
         </div>
         <div class="infoRow">
           <label>Address:<a>102, floor 12, Block A, Sha Tin, New Territories</a></label>
-
         </div>
 
         <hr>
 
         <p class="subTitle">Plan:</p>
         <div class="infoRow">
-          <label><a>Third Party</a></label>
+          <label><a>Comprehensive</a></label>
           <label>Starting Date:<a>2024/10/10</a></label>
           <label>Expire Date:<a>2025/10/10</a></label>
         </div>
@@ -203,9 +161,68 @@
           <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
           <label>Payment Option:<a>Pay in full</a></label>
         </div>
+        <br>
+        <p id="quoteNotice">All prices are for reference only, and the actual prices are subject to the latest quotation.</p>
+
+        <hr>
+        <p class="subTitle">5.2 - Legend Motor Limited - Information Agreement and Policy</p>
+
+        <div id="agreementPolicy">
+          <h2>Information Agreement</h2>
+          <p>By submitting your information on the Legend Motor Limited car insurance application page, you agree to the following terms:</p>
+          <ol>
+            <li><strong>Accuracy of Information:</strong> You certify that all information provided is accurate, complete, and truthful to the best of your knowledge. Providing false information may result in the denial of coverage or cancellation of your policy.</li>
+            <li><strong>Consent for Communication:</strong> You consent to receive communications from Legend Motor Limited regarding your application, policy updates, and other relevant information via email, phone, or SMS.</li>
+            <li><strong>Use of Information:</strong> Your information will be used solely for the purpose of processing your car insurance application and managing your policy. We will not sell, rent, or lease your personal information to third parties.</li>
+            <li><strong>Data Protection:</strong> Legend Motor Limited is committed to protecting your personal information. We comply with applicable data protection laws and have implemented appropriate security measures to safeguard your data.</li>
+            <li><strong>Right to Access and Correct Information:</strong> You have the right to access your personal information held by us and to request corrections if necessary. Please contact our customer service for assistance.</li>
+          </ol>
+
+          <h2>Privacy Policy</h2>
+          <p>We collect personal information necessary to provide you with car insurance quotes and policies. This may include:</p>
+          <ul>
+            <li>Name</li>
+            <li>Address</li>
+            <li>Date of birth</li>
+            <li>Vehicle information</li>
+            <li>Driving history</li>
+          </ul>
+
+          <p>We may use your information for:</p>
+          <ul>
+            <li>Processing your application</li>
+            <li>Providing customer support</li>
+            <li>Communicating updates about your policy</li>
+            <li>Complying with legal obligations</li>
+          </ul>
+
+          <p>We may share your information with:</p>
+          <ul>
+            <li>Insurance partners for underwriting and claims purposes</li>
+            <li>Regulatory authorities as required by law</li>
+            <li>Service providers who assist us in delivering our services</li>
+          </ul>
+
+          <p>Your information will be retained for as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
+
+          <p>Legend Motor Limited reserves the right to update this policy. We will notify you of any significant changes via email or through our website.</p>
+
+          <h2>Contact Us</h2>
+          <p>If you have any questions about this Information Agreement and Policy, please contact us at:</p>
+          <p><strong>Legend Motor Limited</strong><br>
+            Email: support@legendmotor.com<br>
+            Phone: (123) 456-7890</p>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="agreement" required>
+            <label for="agreement" id="agreeP4">I have read and agree to the Information Agreement and Privacy Policy.</label>
+          </div>
+          <label class="error">*Please agree the policy.</label>
+        </div>
       </form>
     </div>
   </div>
+
 
   <div class="containerRow">
     <div id="nextBtnContainer">
@@ -214,6 +231,7 @@
   </div>
 </section>
 <!--Main Content-->
+
 
 
 <!--footer-->
