@@ -622,9 +622,13 @@ nav{
     box-sizing: border-box;
 }
 
+.infoColumn{
+    margin-left: 30px;
+}
 
-
-
+.infoColumn p{
+    font-size: 20px;
+}
 
 
 

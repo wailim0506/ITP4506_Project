@@ -22,6 +22,10 @@
                 window.location.href = 'salesInprogressApp.html';
             });
 
+            $('.reject').click(function() {
+                window.location.href = 'salesRejectApp.html';
+            });
+
             $('.view-button').on('click', function() {
                 openAlertModal("<h2 id='alertTitle'>Remind the user</h2>", "<h3 class='alertH3'>Application detail: </h3>" +
                     "<br><b>Reference ID:</b> LMIS654321" +
@@ -608,7 +612,7 @@
                             <td>2024-10-20</td>
                             <td>
                                 <div class="button-container">
-                                    <button class="button progress-button">View</button>
+                                    <button class="button reject">View</button>
                                     <button class="button view-button">Remind the user</button>
                                 </div>
                             </td>
@@ -622,7 +626,7 @@
                             <td>2024-11-01</td>
                             <td>
                                 <div class="button-container">
-                                    <button class="button progress-button">View</button>
+                                    <button class="button reject">View</button>
                                     <button class="button view-button">Remind the user</button>
                                 </div>
                             </td>
@@ -636,7 +640,7 @@
                             <td>2024-10-04</td>
                             <td>
                                 <div class="button-container">
-                                    <button class="button progress-button">View</button>
+                                    <button class="button reject">View</button>
                                     <button class="button view-button">Remind the user</button>
                                 </div>
                             </td>
