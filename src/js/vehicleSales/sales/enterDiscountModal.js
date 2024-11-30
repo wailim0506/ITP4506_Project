@@ -39,10 +39,6 @@ $(document).ready(function () {
     var btn = $("#verifyModalYesBtn");
     var span = $(".close");
 
-    // Open modal
-
-
-    // Close modal
     span.click(function () {
         modal.hide();
 
@@ -78,7 +74,7 @@ $(document).ready(function () {
         }
     });
 
-    // Handle form submission
+
     $("#longForm2").submit(function (event) {
         event.preventDefault(); // Prevent the default form submission
         alert("Form submitted! \nName: " + $("#name").val() + "\nEmail: " + $("#email").val());
@@ -86,7 +82,6 @@ $(document).ready(function () {
         // Close the modal after submission
         modal.hide();
 
-        // Restore body scroll
         var scrollY = $('body').css('top');
         $('body').css({
             'overflow': '',
@@ -104,14 +99,7 @@ $(document).ready(function () {
         $('#o p').remove();
         $('.modal-content2').css('height', '30%');
 
-        // Restore body scroll
-        // var scrollY = $('body').css('top');
-        // $('body').css({
-        //     'overflow': '',
-        //     'position': '',
-        //     'top': ''
-        // });
-        // window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
     });
 
     $('#verifyModalYesBtn2').click(function() {

@@ -13,6 +13,7 @@
     <script src="../../../src/js/vehicleSales/customer/quotesList.js"></script>
     <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/confirmModal.css">
     <script src="../../../src/js/vehicleSales/customer/confirmModal.js"></script>
+    <link rel="stylesheet" href="../../../src/css/vehicleSales/sales/quotesList.css">
 
 
 </head>
@@ -54,7 +55,7 @@
 </div>
 <div id="main">
     <p style="font-size: 30px;font-weight: 700">Your Quote(s)</p>
-    <div id="filterDiv">
+    <div id="filterDiv" style="margin-top: 0px">
         <label for="filterStatus">Status:</label>
         <select id="filterStatus">
             <option value="">All</option>
@@ -83,19 +84,32 @@
         <p style="font-weight: 700">Total Quote(s): 4</p>
         <button id="refreshBtn">Refresh</button>
     </div>
-    <div class="quoteList">
-        <table>
-            <tr>
-                <th>Quote ID</th>
-                <th style="width: 250px">Vehicle(s)</th>
-                <th>Quantity</th>
-                <th>Quote Total Price</th>
-                <th>Quote Request Date</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-            <!-- add by JS -->
-        </table>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="pendingTitle">
+            <h3>Pending Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="pendingQuotes" class="quoteBoxDiv">
+            <!--add by JS-->
+        </div>
+    </div>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="confirmedTitle">
+            <h3>Confirmed Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="confirmedQuotes" class="quoteBoxDiv">
+            <!--add by JS-->
+        </div>
+    </div>
+    <div class="BigQuoteDiv">
+        <div class="statusTitle" id="deliveredTitle">
+            <h3>Delivered Quotes</h3>
+            <i class="material-icons" style="font-size: 30px">keyboard_arrow_up</i>
+        </div>
+        <div id="deliveredQuotes" class="quoteBoxDiv">
+            <!--add by JS-->
+        </div>
     </div>
 </div>
 

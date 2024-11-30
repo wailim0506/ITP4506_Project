@@ -1,0 +1,11 @@
+Customer Account:
+Email: c@demo.com
+Password: 123456
+
+Vehicle Sales Account:
+Email: s1@demo.com
+Password: 123456
+
+Insurance Sales Account:
+Email: s2@demo.com
+Password: 123456
