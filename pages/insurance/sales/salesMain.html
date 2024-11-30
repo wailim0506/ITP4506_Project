@@ -8,8 +8,66 @@
     <title>Legend Motor Limited - Insurance</title>
     <link rel="stylesheet" href="../../../src/css/insurance/sales/salesMain.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+            $('.view-button').on('click', function() {
+                openAlertModal("<h2 id='alertTitle'>Remind the user</h2>", "<h3 class='alertH3'>Application detail: </h3>" +
+                    "<br><b>Reference ID:</b> LMIS654321" +
+                    "<br><b>Customer ID:</b> LMC00789" +
+                    "<br><b>Plan Type:</b> Comprehensive" +
+                    "<br><b>Update Date:</b> 2024-10-10 " +
+                    "<h3 class='alertH3'>Remind method:</h3> " +
+                    "<div id='alertButton'><label>SMS<input type='checkbox'></label>" +
+                    "<label>Email<input type='checkbox'></label></div>" +
+                    "<h3 class='alertH3'>Additional info:</h3>" +
+                    "<div id='addition'><textarea minlength='0' maxlength='100'></textarea></div>" +
+                    "<button id='alertButtonSend'>Send</button>");
+            });
+
+            // Function to open the alert
+            function openAlertModal(title, message) {
+                $('#modalTitle').html(title);
+                $('#modalMessage').html(message);
+                $('#alertModal').fadeIn();
+
+                $('#alertButtonSend').off('click').on('click', function() {
+                    // Check if at least one checkbox is checked
+                    if ($('#alertButton input[type="checkbox"]:checked').length === 0) {
+                        alert('Please select at least one method (SMS or Email).');
+                        return;
+                    }
+
+                    $('#alertModal').fadeOut(); // Close the modal
+                    alert('Send successful!');
+                });
+            }
+
+            // Close the alert
+            $('.close').on('click', function() {
+                $('#alertModal').fadeOut();
+            });
+
+            // Close the alert
+            $(window).on('click', function(event) {
+                if ($(event.target).is('#alertModal')) {
+                    $('#alertModal').fadeOut();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
+    <!--Alert-->
+    <div class="modal" id="alertModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+    <!--Alert-->
+
+
     <!-- To top button -->
     <button class="goTopBtn">
         <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
@@ -23,13 +81,13 @@
             <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
         </div>
         <div id="nav_center">
+            <a href="#">Manage</a>
             <a href="#">Plans</a>
-            <a href="#">Estimate</a>
             <a href="#">Application</a>
             <a href="#">ProFile</a>
         </div>
         <div id="nav_right">
-            <a href="../../../index.html">Login</a>
+            <a href="../../../index.html">Logout</a>
         </div>
     </nav>
     <!--Nav Bar-->
@@ -51,10 +109,17 @@
         </div>
 
         <div class="content-row">
+            <div id="overviewTotal">
+                <p class="statueTitle">Total</p>
+                <p class="statusStatics">25 + 1</p>
+            </div>
+        </div>
+
+        <div class="content-row">
             <div class="statusBoxContent">
                 <div class="statusBoxContentRow" id="statusProgress">
                     <p class="statueTitle">In progress</p>
-                    <p class="statusStatics">6</p>
+                    <p class="statusStatics">5 + 1</p>
                 </div>
                 <div class="statusBoxContentRow" id="statusAudit">
                     <p class="statueTitle">Waiting for audit</p>
@@ -93,11 +158,25 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>LMIS123456</td>
-                            <td>LMC00012</td>
+                            <td>LMIS654321</td>
+                            <td>LMC00789</td>
                             <td>Comprehensive</td>
-                            <td>Toyota Camry</td>
-                            <td>2024-10-01</td>
+                            <td>Mercedes-Benz C-Class</td>
+                            <td>2024-10-10</td>
+                            <td>N/A</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LMIS456789</td>
+                            <td>LMC00123</td>
+                            <td>Comprehensive</td>
+                            <td>Ford Mustang</td>
+                            <td>2024-10-05</td>
                             <td>N/A</td>
                             <td>
                                 <div class="button-container">
@@ -121,25 +200,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>LMIS345678</td>
-                            <td>LMC08352</td>
-                            <td>Third Party</td>
-                            <td>BMW 3 Series</td>
-                            <td>2024-08-20</td>
-                            <td>2024-09-01</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS456789</td>
-                            <td>LMC00123</td>
+                            <td>LMIS123456</td>
+                            <td>LMC00012</td>
                             <td>Comprehensive</td>
-                            <td>Ford Mustang</td>
-                            <td>2024-10-05</td>
+                            <td>Toyota Camry</td>
+                            <td>2024-10-01</td>
                             <td>N/A</td>
                             <td>
                                 <div class="button-container">
@@ -163,12 +228,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>LMIS654321</td>
-                            <td>LMC00789</td>
-                            <td>Comprehensive</td>
-                            <td>Mercedes-Benz C-Class</td>
-                            <td>2024-10-10</td>
-                            <td>N/A</td>
+                            <td>LMIS345678</td>
+                            <td>LMC08352</td>
+                            <td>Third Party</td>
+                            <td>BMW 3 Series</td>
+                            <td>2024-08-20</td>
+                            <td>2024-09-01</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -202,11 +267,11 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>LMIS111213</td>
-                            <td>LMC01678</td>
+                            <td>LMIS262728</td>
+                            <td>LMC03011</td>
                             <td>Comprehensive</td>
-                            <td>Volkswagen Jetta</td>
-                            <td>2024-10-20</td>
+                            <td>Jeep Grand Cherokee</td>
+                            <td>2024-10-25</td>
                             <td>N/A</td>
                             <td>
                                 <div class="button-container">
@@ -216,12 +281,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>LMIS141516</td>
-                            <td>LMC01901</td>
-                            <td>Third Party</td>
-                            <td>Kia Optima</td>
-                            <td>2024-09-05</td>
-                            <td>2024-09-18</td>
+                            <td>LMIS111213</td>
+                            <td>LMC01678</td>
+                            <td>Comprehensive</td>
+                            <td>Volkswagen Jetta</td>
+                            <td>2024-10-20</td>
+                            <td>N/A</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -258,34 +323,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>LMIS232425</td>
-                            <td>LMC02789</td>
-                            <td>Third Party</td>
-                            <td>Chrysler 300</td>
-                            <td>2024-08-15</td>
-                            <td>2024-09-01</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS262728</td>
-                            <td>LMC03011</td>
-                            <td>Comprehensive</td>
-                            <td>Jeep Grand Cherokee</td>
-                            <td>2024-10-25</td>
-                            <td>N/A</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
                             <td>LMIS293031</td>
                             <td>LMC03345</td>
                             <td>Comprehensive</td>
@@ -300,12 +337,40 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>LMIS141516</td>
+                            <td>LMC01901</td>
+                            <td>Third Party</td>
+                            <td>Kia Optima</td>
+                            <td>2024-09-05</td>
+                            <td>2024-09-18</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>LMIS474849</td>
                             <td>LMC05123</td>
                             <td>Comprehensive</td>
                             <td>Ford Explorer</td>
                             <td>2024-09-12</td>
                             <td>2024-09-22</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LMIS232425</td>
+                            <td>LMC02789</td>
+                            <td>Third Party</td>
+                            <td>Chrysler 300</td>
+                            <td>2024-08-15</td>
+                            <td>2024-09-01</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -340,68 +405,26 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td>LMIS505152</td>
+                            <td>LMC05456</td>
+                            <td>Third Party</td>
+                            <td>Chevrolet Tahoe</td>
+                            <td>2024-10-18</td>
+                            <td>2024-10-20</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>LMIS111213</td>
                             <td>LMC01678</td>
                             <td>Comprehensive</td>
                             <td>Volkswagen Jetta</td>
                             <td>2024-10-20</td>
-                            <td>N/A</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS141516</td>
-                            <td>LMC01901</td>
-                            <td>Third Party</td>
-                            <td>Kia Optima</td>
-                            <td>2024-09-05</td>
-                            <td>2024-09-18</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS171819</td>
-                            <td>LMC02234</td>
-                            <td>Comprehensive</td>
-                            <td>Hyundai Sonata</td>
-                            <td>2024-10-12</td>
-                            <td>N/A</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS202122</td>
-                            <td>LMC02456</td>
-                            <td>Comprehensive</td>
-                            <td>Mazda 6</td>
-                            <td>2024-09-30</td>
-                            <td>2024-10-05</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS232425</td>
-                            <td>LMC02789</td>
-                            <td>Third Party</td>
-                            <td>Chrysler 300</td>
-                            <td>2024-08-15</td>
-                            <td>2024-09-01</td>
+                            <td>2024-11-15</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -415,7 +438,7 @@
                             <td>Comprehensive</td>
                             <td>Jeep Grand Cherokee</td>
                             <td>2024-10-25</td>
-                            <td>N/A</td>
+                            <td>2024-10-26</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -438,6 +461,34 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>LMIS141516</td>
+                            <td>LMC01901</td>
+                            <td>Third Party</td>
+                            <td>Kia Optima</td>
+                            <td>2024-09-05</td>
+                            <td>2024-09-18</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LMIS202122</td>
+                            <td>LMC02456</td>
+                            <td>Comprehensive</td>
+                            <td>Mazda 6</td>
+                            <td>2024-09-30</td>
+                            <td>2024-10-05</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>LMIS323334</td>
                             <td>LMC03678</td>
                             <td>Third Party</td>
@@ -452,12 +503,26 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>LMIS505152</td>
-                            <td>LMC05456</td>
+                            <td>LMIS232425</td>
+                            <td>LMC02789</td>
                             <td>Third Party</td>
-                            <td>Chevrolet Tahoe</td>
-                            <td>2024-10-18</td>
-                            <td>N/A</td>
+                            <td>Chrysler 300</td>
+                            <td>2024-08-15</td>
+                            <td>2024-09-01</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LMIS171819</td>
+                            <td>LMC02234</td>
+                            <td>Comprehensive</td>
+                            <td>Hyundai Sonata</td>
+                            <td>2024-10-12</td>
+                            <td>2024-10-15</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -497,7 +562,21 @@
                             <td>Comprehensive</td>
                             <td>Acura TLX</td>
                             <td>2024-10-15</td>
-                            <td>N/A</td>
+                            <td>2024-10-20</td>
+                            <td>
+                                <div class="button-container">
+                                    <button class="button progress-button">View</button>
+                                    <button class="button view-button">Remind the user</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>LMIS444546</td>
+                            <td>LMC04890</td>
+                            <td>Comprehensive</td>
+                            <td>Porsche Macan</td>
+                            <td>2024-10-02</td>
+                            <td>2024-11-01</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -512,20 +591,6 @@
                             <td>Genesis G70</td>
                             <td>2024-09-28</td>
                             <td>2024-10-04</td>
-                            <td>
-                                <div class="button-container">
-                                    <button class="button progress-button">View</button>
-                                    <button class="button view-button">Remind the user</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>LMIS444546</td>
-                            <td>LMC04890</td>
-                            <td>Comprehensive</td>
-                            <td>Porsche Macan</td>
-                            <td>2024-10-02</td>
-                            <td>N/A</td>
                             <td>
                                 <div class="button-container">
                                     <button class="button progress-button">View</button>
@@ -568,8 +633,6 @@
 
 
     <!-- dark mode button -->
-    <i id="darkModeToggle" class="material-icons"
-       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
     <script src="../../../src/js/insurance/toTopBtn.js"></script>
     <!-- dark mode button -->
     <script src="../../../src/js/insurance/chart.js"></script>
