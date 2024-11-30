@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legend Motor Limited - Auditing</title>
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/insurance/darkMode.js"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+            <!-- Redirect to other page -->
+            $("#exitBtn").click(function () {
+                if (confirm("Are you sure you want to exit?")) {
+                    window.location.href = "salesApplication.html";
+                }
+            });
+            <!-- Redirect to other page -->
+
+
+            $('#carImg').click(function() {
+                openAlertModal('Car Image',
+                    '<img id="alertImg" src="../../../src/img/insurance/IMG_0020.png" alt="Car Image">');
+            });
+
+            $('#nextBtn').click(function() {
+                if (process()) {
+                    window.location.href = 'salesMain.html';
+                }
+            });
+
+            //-------For checking-------
+            // Initialize view and checked flags for each section
+            let view = 0;
+            const checkedFlags = {
+                section1: false,
+                section2: false,
+                section3: false,
+                section4: false,
+                section5: false,
+                section6: false,
+                section7: false
+            };
+
+            // Function to handle checkbox changes
+            function handleCheckboxChange(section) {
+                if (!checkedFlags[section] && $(`#${section}chk`).is(':checked')) {
+                    checkedFlags[section] = true;
+                } else if (checkedFlags[section] && !$(`#${section}chk`).is(':checked')) {
+                }
+
+                $(`#${section}container`).css('background-color',
+                    $(`#${section}chk`).is(':checked') ? '#BEFFC6FF' : '#FF6767FF');
+            }
+
+
+            $('#section1chk').change(() => handleCheckboxChange('section1'));
+            $('#section2chk').change(() => handleCheckboxChange('section2'));
+            $('#section3chk').change(() => handleCheckboxChange('section3'));
+            $('#section4chk').change(() => handleCheckboxChange('section4'));
+            $('#section5chk').change(() => handleCheckboxChange('section5'));
+            $('#section6chk').change(() => handleCheckboxChange('section6'));
+            $('#section7chk').change(() => handleCheckboxChange('section7'));
+            //-------For checking-------END
+
+
+            //Check valid
+            function process(){
+                let isValid = true
+                view = Object.values(checkedFlags).filter(value => value === true).length;
+
+                if(view < 7){
+                    isValid = false;
+                    alert('You have not audit all the sections.');
+                }else{
+                    alert('Process successful!');
+                }
+                return isValid;
+            }
+
+            // Function to open the alert
+            function openAlertModal(title, message) {
+                $('#modalTitle').html(title);
+                $('#modalMessage').html(message);
+                $('#alertModal').fadeIn();
+
+                $('#alertButtonSend').off('click').on('click', function() {
+                    // Check if at least one checkbox is checked
+                    if ($('#alertButton input[type="checkbox"]:checked').length === 0) {
+                        alert('Please select at least one method (SMS or Email).');
+                        return;
+                    }
+
+                    $('#alertModal').fadeOut(); // Close the modal
+                    alert('Send successful!');
+                });
+            }
+
+            // Close the alert
+            $('.close').on('click', function() {
+                $('#alertModal').fadeOut();
+            });
+
+            // Close the alert
+            $(window).on('click', function(event) {
+                if ($(event.target).is('#alertModal')) {
+                    $('#alertModal').fadeOut();
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="../../../src/css/insurance/sales/salesAuditApp.css">
+</head>
+<body>
+<!--Alert-->
+<div class="modal" id="alertModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<!--Alert-->
+
+
+<!-- To top button -->
+<button class="goTopBtn">
+    <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+    <div id="nav_left">
+        <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+    </div>
+    <div id="nav_center">
+        <a href="salesMain.html">Manage</a>
+        <a href="salesStaffing.html">Staffing</a>
+        <a href="salesPlan.html">Plans</a>
+        <a href="salesApplication.html">Application</a>
+        <a href="salesProfile.html">ProFile</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section id="mainContent">
+    <div class="container">
+        <div id="progress">
+            <div class="arrowRow">
+                <p class="inProgress">Auditing</p><span class="arrowInProgress">&#8680;</span>
+                <p class="waiting">Approved</p><span class="arrowWaiting">&#8680;</span>
+                <p class="waiting">Wait for Payment</p><span class="arrowWaiting">&#8680;</span>
+                <p class="waiting">Finish</p>
+            </div>
+
+            <div class="arrowRow">
+                <span id="downArrow" class="arrowWaiting">&#8681;</span>
+            </div>
+
+            <div class="arrowRow">
+                <p class="waiting">Rejected</p><span class="arrowWaiting">&#8680;</span>
+                <p class="waiting">Wait for Update</p><span class="arrowWaiting">&#8680;</span>
+                <p class="waiting">Resubmit</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="form">
+            <form  id="contactForm">
+                <p class="formClass">Auditing - LMIS262728</p>
+                <p class="formClass">Customer ID - LMC03011</p>
+
+                <hr>
+
+                <div id="section1container">
+                    <div class="selectSection">
+                        <p class="subTitle">Basic Information:</p>
+                        <label><input type="checkbox" id="section1chk">  Pass</label>
+                    </div>
+
+                    <div class="infoRow">
+                        <label>Car Name:<a>Jeep Grand Cherokee/a></label>
+                        <label>Car Model:<a>Jeep Grand</a></label>
+                        <label>Car Type:<a>HatchBack</a></label>
+                    </div>
+
+                    <div class="infoRow">
+                        <label>Manufacture Date:<a>2000/01/16</a></label>
+                        <label>Car Image:<a id="carImg">IMG_1293.jpg</a></label>
+                        <label>Electronic Car? :<a>No</a></label>
+                    </div>
+
+                    <div class="infoRow">
+                        <label>Engine Number:<a>DQW12334</a></label>
+                        <label>Condition:<a>good</a></label>
+                        <label>Mileage:<a>1821</a></label>
+                    </div>
+
+                    <div class="infoRow">
+                        <label>Tank Capacity:<a>1500</a></label>
+                    </div>
+                </div>
+
+                <div id="section2container">
+                    <div class="selectSection">
+                        <p class="subTitle">Current Status :</p>
+                        <label><input type="checkbox" id="section2chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label id="long">Have you applied for a loan for your insured car? :<a>No</a></label>
+                    </div>
+                </div>
+
+
+                <div id="section3container">
+                    <div class="selectSection">
+                        <p class="subTitle">Driver:</p>
+                        <label><input type="checkbox" id="section3chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Date of Birth:<a>1989/04/13</a></label>
+                        <label>Profession:<a>Teacher</a></label>
+                        <label>Marital Status:<a>Married</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Gender:<a>Male</a></label>
+                        <label>Driving Experience:<a>12</a></label>
+                        <label>License Number:<a>1234567</a></label>
+                    </div>
+                </div>
+                <hr>
+
+                <div id="section4container">
+                    <div class="selectSection">
+                        <p class="subTitle">Policyholder Information:</p>
+                        <label><input type="checkbox" id="section4chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label>First Name:<a>CHAN</a></label>
+                        <label>Last Name:<a>Tai Man</a></label>
+                        <label>Date of Birth:<a>1989/04/13</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>HKID:<a>A1234567</a></label>
+                        <label>Profession:<a>Teacher</a></label>
+                        <label>Marital Status:<a>Married</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Gender:<a>Male</a></label>
+                    </div>
+                </div>
+
+                <div id="section5container">
+                    <div class="selectSection">
+                        <p class="subTitle">Policyholder Contact Information:</p>
+                        <label><input type="checkbox" id="section5chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Phone Number:<a>123345678</a></label>
+                        <label>Family Phone Number:<a>1234678</a></label>
+                        <label>Email Address:<a>abc@abc.com</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Address:<a>102, floor 12, Block A, Sha Tin, New Territories</a></label>
+
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id="section6container">
+                    <div class="selectSection">
+                        <p class="subTitle">Plan:</p>
+                        <label><input type="checkbox" id="section6chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label><a>Comprehensive</a></label>
+                        <label>Starting Date:<a>2024/10/10</a></label>
+                        <label>Expire Date:<a>2025/10/10</a></label>
+                    </div>
+                    <div class="infoRow">
+                        <label>Duration:<a>1 year</a></label>
+                        <label for="price">Price:
+                            <input type="number" min="16800" id="price" name="plan" placeholder="16800" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="section7container">
+                    <div class="selectSection">
+                        <p class="subTitle">Payment:</p>
+                        <label><input type="checkbox" id="section7chk">  Pass</label>
+                    </div>
+                    <div class="infoRow">
+                        <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
+                        <label>Payment Option:<a>Pay in full</a></label>
+                    </div>
+                </div>
+
+                <hr>
+
+                <p class="subTitle">Comment:</p>
+                <div class="infoRow">
+                    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="contactRow">
+                    <p><b>Contact Method:</b></p>
+                    <label><input type="checkbox">SMS</label>
+                    <label><input type="checkbox">Email</label>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="containerRow">
+        <div id="previousBtnContainer">
+            <button type="button" id="exitBtn">Exit</button>
+        </div>
+        <div id="nextBtnContainer">
+            <button type="button" id="nextBtn">Process</button>
+        </div>
+    </div>
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+    <div class="footer-content">
+        <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+        <p>Reliable car insurance for peace of mind on every journey.</p>
+        <p>© 2024 Legend Motor Limited</p>
+    </div>
+    <div class="footer-content">
+        <a href="salesMain.html"><h4>Manage</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesStaffing.html"><h4>Staffing</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesPlan.html"><h4>Plans</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesApplication.html"><h4>Application</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesProfile.html"><h4>ProFile</h4></a>
+    </div>
+</section>
+<!--footer-->
+
+
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+</body>
+</html>

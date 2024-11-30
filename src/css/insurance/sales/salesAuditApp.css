@@ -462,9 +462,21 @@ nav{
     width: 50px;
 }
 
-#bckProfile{
-    width: 18%;
-    background-color: #f99a05;
+#nextBtnContainer{
+    width: 870px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#previousBtnContainer{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#nextBtn{
+    width: 15%;
+    background-color: #f9c22c;
     color: white;
     border: none;
     padding: 10px 10px;
@@ -474,12 +486,20 @@ nav{
     margin: -0.5% 0 1% 0;
 }
 
-#bckProfile:hover{
-    background-color: #f9c22c;
+#FinishBtn{
+    width: 15%;
+    background-color: #29d829;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
 }
 
-#cancel{
-    width: 12%;
+#exitBtn{
+    width: 130px;
     background-color: #ef2c2c;
     color: white;
     border: none;
@@ -487,11 +507,35 @@ nav{
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
-    margin: -0.5% 13px 1% 0;
+    margin: -0.5% 0 1% 0;
 }
 
-#cancel:hover{
-    background-color: #fa6f6f;
+#previousBtn{
+    width: 130px;
+    background-color: #16bdbd;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
+
+#previousBtn:hover{
+    background-color: #46c6c6;
+}
+
+#FinishBtn:hover{
+    background-color: #40cc4a;
+}
+
+#exitBtn:hover{
+    background-color: #df4545;
+}
+
+#nextBtn:hover{
+    background-color: #ffce4b;
 }
 
 .infoRow img{
@@ -523,7 +567,7 @@ nav{
     font-size: 20px;
     width: 900px;
     padding: 7px;
-    border: 1px solid #ccc;
+    border: 1px solid #beffc6;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -531,6 +575,59 @@ nav{
 #carImg:hover{
     cursor: pointer;
 }
+
+.selectSection{
+    display: flex;
+    flex-direction: row;
+}
+
+.selectSection label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.selectSection input{
+    width: 20px;
+    height: 20px;
+    margin-top: 33px;
+    margin-left: 20px;
+}
+
+.infoRow textarea{
+    width: 830px;
+    height: 300px;
+    resize: none;
+    font-size: 18px;
+}
+
+.contactRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+    margin: -30px 3% 3% 7%;
+}
+
+.contactRow p, label{
+    font-size: 20px;
+}
+
+#price{
+    margin-top: 6px;
+    font-size: 20px;
+    width: 280px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
 
 
 /* Modal styles */
@@ -590,6 +687,8 @@ nav{
 }
 
 /* Modal styles */
+
+
 
 
 

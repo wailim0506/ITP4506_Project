@@ -19,10 +19,55 @@
                 window.location.href = "cusProFile.html";
             });
             <!-- Redirect to other page -->
+
+            $('#carImg').click(function() {
+                openAlertModal('Car Image',
+                    '<img id="alertImg" src="../../../src/img/insurance/IMG_0020.png" alt="Car Image">');
+            });
+
+
+            // Function to open the alert
+            function openAlertModal(title, message) {
+                $('#modalTitle').html(title);
+                $('#modalMessage').html(message);
+                $('#alertModal').fadeIn();
+
+                $('#alertButtonSend').off('click').on('click', function() {
+                    // Check if at least one checkbox is checked
+                    if ($('#alertButton input[type="checkbox"]:checked').length === 0) {
+                        alert('Please select at least one method (SMS or Email).');
+                        return;
+                    }
+
+                    $('#alertModal').fadeOut(); // Close the modal
+                    alert('Send successful!');
+                });
+            }
+
+            // Close the alert
+            $('.close').on('click', function() {
+                $('#alertModal').fadeOut();
+            });
+
+            // Close the alert
+            $(window).on('click', function(event) {
+                if ($(event.target).is('#alertModal')) {
+                    $('#alertModal').fadeOut();
+                }
+            });
         });
     </script>
 </head>
 <body>
+<!--Alert-->
+<div class="modal" id="alertModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<!--Alert-->
     <!-- Chatbot button -->
     <button class="chatBtn">
         <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
@@ -98,7 +143,7 @@
 
                     <div class="infoRow">
                         <label>Manufacture Date:<a>2000/01/16</a></label>
-                        <label>Car Image:<a>IMG_1293.jpg</a></label>
+                        <label>Car Image:<a id="carImg">IMG_1293.jpg</a></label>
                         <label>Electronic Car? :<a>No</a></label>
                     </div>
 
