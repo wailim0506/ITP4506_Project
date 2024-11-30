@@ -1,0 +1,421 @@
+html{
+    font-family: system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+
+body{
+    width: 100%;
+    margin: 0;
+}
+
+/* Go to top */
+.goTopBtn{
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    border: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.goTopBtn img{
+    width: 110%;
+}
+
+
+/* Chatbot */
+.chatBtn{
+    position: fixed;
+    bottom: 35px;
+    left: 35px;
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+}
+.chatBtn img{
+    width: 90%;
+}
+
+
+/*nav*/
+nav{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-color: black;
+    border-bottom: 1px solid;
+    box-shadow: black 0 0 3px;
+    animation: nav-load 0.5s ease-in;
+}
+
+#nav_left{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+#nav_center{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#nav_right{
+    width:10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_left img{
+    height: 55px;
+}
+
+#nav_center a{
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* The effects of the contents in the nav bar */
+#nav_center a::before{
+    position: absolute;
+    content: '';
+    height: 3px;
+    margin-top: 30px;
+    width: 5.5%;
+    background: teal;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+}
+
+#nav_center a:hover::before{
+    transform: scale(1);
+    transform-origin: left;
+}
+
+#nav_right a{
+    width: 14%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(0,0,0,0.65);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#nav_center a:hover{
+    color: rgba(0,0,0,0.85);
+}
+
+#nav_right a:hover{
+    color: rgba(0,0,0,0.85);
+}
+
+/* The ease-in animation for the nav bar */
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+/*nav*/
+
+
+/* The footer */
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    gap: 10rem;
+    background: #aaa8a8;
+    left: 0;
+    right: 0;
+    padding: 1% 5% 1% 5%;
+}
+
+
+.footer-logo{
+    width: 30%;
+    margin-bottom: 1.5%;
+    margin-left: 3.5%;
+}
+/* The main section in the footer ot the ste map */
+.footer-content h4{
+    color: black;
+    font-size: 23px;
+}
+
+.footer-content a{
+    text-decoration: none;
+}
+
+.footer-content a h4:hover{
+    color: teal;
+    transition: all .40s ease;
+}
+
+/* The sort-into into footer */
+.footer-content p{
+    color: black;
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 4%;
+}
+/* The footer */
+
+#profile_left hr{
+    width: 90%;
+    height: 6px;
+    border: none;
+    border-top: 2px dashed white;
+    background-color: #333;
+    text-align: center;
+    margin: -1% auto 3% auto;
+}
+
+#mainContent{
+    animation: article-load 0.6s ease-in;
+
+}
+
+.title{
+    align-items: center;
+    justify-content: left;
+    margin: 2% 10% -1% 10%;
+    font-size: 35px;
+    color: teal;
+}
+
+/* Profile */
+#profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+    margin: 0 10% 12% 10%;
+}
+
+#profile_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 550px;
+    border: 2px teal solid;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
+    padding: 0.5%;
+}
+
+#profile_left .info{
+    font-size: 20px;
+    color: black;
+}
+
+
+#userName{
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+#profile_right{
+    width: 70%;
+    height: 550px;
+    border: 2px teal solid;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
+    padding: 0.5%;
+}
+
+#profile_right label{
+    color: black;
+}
+
+#userPhoto{
+    margin-top: 7%;
+    width: 45%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-size: 20px;
+}
+.name-row {
+    margin: 2% 10% 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.name-row .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+.name-row .form-group:last-child {
+    margin-right: 0;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.button-container {
+    text-align: left;
+    margin: 2% 10% 3% 10%;
+}
+.button-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+#personalData{
+    margin: 0 10% 0 10%;
+}
+/* Profile */
+
+
+
+/* Plan */
+#planList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10% 5% 10%;
+
+}
+
+#plans{
+    width: 100%;
+    height: 550px;
+    border: 2px teal solid;
+    border-radius: 20px;
+    box-shadow: 0 .5rem 1rem rgb(134, 134, 134);
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+}
+
+
+#plans table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1% 0 0 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#plans th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#plans td{
+    font-size: 18px;
+}
+
+#plans th {
+    color: black;
+    font-size: 22px;
+}
+#plans tr:hover {
+    background-color: #f1f1f1;
+}
+#plans.button-container {
+    display: flex;
+    gap: 10px;
+    margin-left: -1%;
+}
+#plans .button {
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#plans .disable {
+    background-color: gray;
+    padding: 7.5px 12px;
+}
+
+#plans .edit-button:hover {
+    background-color: #f6cb79;
+}
+
+#plans .edit-button {
+    background-color: #ffa500;
+}
+
+#plans .view-button:hover {
+    background-color: #4b9ffb;
+}
+#plans .view-button {
+    background-color: #007bff;
+}
+#plans .progress-button:hover {
+    background-color: #8cc698;
+}
+#plans .progress-button {
+    background-color: #28a745;
+}
+
+@keyframes article-load {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
