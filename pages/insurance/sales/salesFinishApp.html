@@ -21,6 +21,10 @@
                 '<img id="alertImg" src="../../../src/img/insurance/IMG_0020.png" alt="Car Image">');
       });
 
+      $('#printBtn').click(function() {
+        window.print();
+      });
+
 
       // Function to open the alert
       function openAlertModal(title, message) {
@@ -102,6 +106,12 @@
         <p class="completed">Wait for Payment</p><span class="arrowCompleted">&#8680;</span>
         <p class="completed">Finish</p>
       </div>
+    </div>
+  </div>
+
+  <div class="containerRow">
+    <div id="printBtnContainer">
+      <button type="button" id="printBtn">Print list</button>
     </div>
   </div>
 

@@ -478,6 +478,29 @@ nav{
     background-color: #f9c22c;
 }
 
+#printBtnContainer{
+    width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -50px;
+}
+
+#printBtn{
+    width: 18%;
+    background-color: #26af26;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
+
+#printBtn:hover{
+    background-color: #66d872;
+}
+
 #cancel{
     width: 12%;
     background-color: #ef2c2c;
@@ -593,5 +616,9 @@ nav{
 
 
 
-
+@media print {
+    nav, .footer, .arrowRow {
+        display: none;
+    }
+}
 

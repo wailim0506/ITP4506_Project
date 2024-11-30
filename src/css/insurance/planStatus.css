@@ -592,6 +592,32 @@ nav{
 /* Modal styles */
 
 
+#printBtnContainer{
+    width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -50px;
+}
 
+#printBtn{
+    width: 18%;
+    background-color: #26af26;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: -0.5% 0 1% 0;
+}
 
+#printBtn:hover{
+    background-color: #66d872;
+}
+
+@media print {
+    nav, .footer, .arrowRow , .chatBtn, .nextBtnContainer{
+        display: none;
+    }
+}
 

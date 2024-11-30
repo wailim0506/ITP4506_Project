@@ -25,6 +25,9 @@
                     '<img id="alertImg" src="../../../src/img/insurance/IMG_0020.png" alt="Car Image">');
             });
 
+            $('#printBtn').click(function() {
+                window.print();
+            });
 
             // Function to open the alert
             function openAlertModal(title, message) {
@@ -121,6 +124,12 @@
                     <p class="waiting">Edit</p><span class="arrowWaiting">&#8680;</span>
                     <p class="waiting">Resubmit</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="containerRow">
+            <div id="printBtnContainer">
+                <button type="button" id="printBtn">Print list</button>
             </div>
         </div>
 
@@ -260,10 +269,6 @@
     <!--footer-->
 
 
-    <!--Dark mode-->
-    <i id="darkModeToggle" class="material-icons"
-       style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-    <!--Dark mode-->
     <script src="../../../src/js/insurance/toTopBtn.js"></script>
 </body>
 </html>
