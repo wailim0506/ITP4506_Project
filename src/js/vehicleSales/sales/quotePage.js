@@ -75,10 +75,7 @@ function loadDarkMode() {
                 'border-top': '1px solid grey',
                 'border-bottom': '1px solid grey'
             })
-            // $('th').css({
-            //     'background-color':'#333',
-            //     'color':'white'
-            // });
+
             $('#darkModeToggle').text('wb_sunny');
         } else {
             //to light mode
@@ -102,10 +99,7 @@ function loadDarkMode() {
                 'border-top': '1px solid black',
                 'border-bottom': '1px solid black'
             })
-            // $('th').css({
-            //     'background-color':'#f2f2f2',
-            //     'color':'inherit'
-            // });
+
             $('#darkModeToggle').text('brightness_2');
         }
     }

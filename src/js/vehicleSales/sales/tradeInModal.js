@@ -42,7 +42,6 @@ $(document).ready(function () {
     span.click(function () {
         modal.hide();
 
-        // Restore body scroll
         var scrollY = $('body').css('top');
         $('body').css({
             'overflow': '',
@@ -54,7 +53,6 @@ $(document).ready(function () {
 
 
 
-    // Close modal when clicking outside of it
     $(window).click(function (event) {
 
         if (event.target == modal[0]) {
@@ -73,12 +71,10 @@ $(document).ready(function () {
         }
     });
 
-    // Handle form submission
     $("#longForm").submit(function (event) {
         event.preventDefault(); // Prevent the default form submission
         alert("Form submitted! \nName: " + $("#name").val() + "\nEmail: " + $("#email").val());
 
-        // Close the modal after submission
         modal.hide();
 
         // Restore body scroll
@@ -93,13 +89,12 @@ $(document).ready(function () {
 
 
     $('#verifyModalNoBtn3').click(function() {
-        //$('#verified').text("No Discount");
+
         $('#ooo p').remove();
         $('.modal-content3').css('height', '30%');
 
         modal.hide();
 
-        // Restore body scroll
         var scrollY = $('body').css('top');
         $('body').css({
             'overflow': '',
@@ -124,7 +119,6 @@ $(document).ready(function () {
                     return;
                 }
             } else {
-                //$('#verified').text("False");
             }
             modal.hide();
 
@@ -137,7 +131,6 @@ $(document).ready(function () {
                 'top': ''
             });
             window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            //openEnterDiscountModal($('#enterDiscountModal'));
         }else{
             $('#ooo p').remove();
             $('#ooo').append('<p style="color: red;">Please enter a trade in value</p>');

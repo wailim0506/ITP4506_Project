@@ -87,19 +87,12 @@ function loadDarkMode() {
     }
 }
 
-// let vehicleSalesData;
-// $.getJSON('../../../src/json/vehicleSales/vehicleSalesData.json', function (data) {
-//     vehicleSalesData = data;
-// });
-
 function loadSelectOptions() {
     const brandSelect = $('#brand');
     brandSelect.empty(); // Clear previous options
 
-    // Add a default option
     brandSelect.append('<option value="All">All</option>');
 
-    // Populate the brand select with options from vehicleSalesData
     vehicleSalesData.brand.forEach((brand) => {
         brandSelect.append(`<option value="${brand.name}">${brand.name}</option>`);
     });
@@ -122,15 +115,12 @@ function populateSalesTable() {
                     (search === '' || model.name.toLowerCase().includes(search))) {
                     const row = $('<tr></tr>');
 
-                    // Add brand name cell
                     const brandCell = $('<td></td>').text(brand.name);
                     row.append(brandCell);
 
-                    // Add model name cell
                     const modelCell = $('<td></td>').text(model.name);
                     row.append(modelCell);
 
-                    // Add cells for each month
                     model.sales.forEach((sales) => {
                         const cell = $('<td></td>').text(sales);
                         row.append(cell);
@@ -150,26 +140,25 @@ function sortTable(columnIndex) {
     const isAscending = tbody.data('sortOrder') === 'asc';
 
     rows.sort((rowA, rowB) => {
-        const cellA = $(rowA).children('td').eq(columnIndex).text().replace(/[^0-9]/g, ''); // Remove non-numeric characters for sorting
+        const cellA = $(rowA).children('td').eq(columnIndex).text().replace(/[^0-9]/g, '');
         const cellB = $(rowB).children('td').eq(columnIndex).text().replace(/[^0-9]/g, '');
-        return isAscending ? cellA - cellB : cellB - cellA; // Sort in ascending or descending order
+        return isAscending ? cellA - cellB : cellB - cellA;
     });
 
-    // Clear and re-add sorted rows
-    rows.forEach(row => tbody.append(row));
-    tbody.data('sortOrder', isAscending ? 'desc' : 'asc'); // Toggle sort order
 
-    // Update sort arrow direction
+    rows.forEach(row => tbody.append(row));
+    tbody.data('sortOrder', isAscending ? 'desc' : 'asc');
+
     updateSortArrows(columnIndex);
 }
 
 function updateSortArrows(sortedColumnIndex) {
-    for (let i = 1; i <= 12; i++) { // Loop through month columns
+    for (let i = 1; i <= 12; i++) {
         const arrow = $(`#arrow-${i}`);
         if (i === sortedColumnIndex) {
-            arrow.html($('#salesDataBody').data('sortOrder') === 'asc' ? '&#8593;' : '&#8595;'); // Up or down arrow based on sort order
+            arrow.html($('#salesDataBody').data('sortOrder') === 'asc' ? '&#8593;' : '&#8595;');
         } else {
-            arrow.html('&#8597;'); // Reset other arrows to neutral
+            arrow.html('&#8597;');
         }
     }
 }
@@ -186,12 +175,12 @@ $(document).ready(function () {
         setDarkMode();
     });
 
-    // Initialize the table on page load
+
     $(window).on('load', function () {
         populateSalesTable();
     });
 
-    // Search functionality
+
     $('#searchVehicle').on('input', function () {
         populateSalesTable();
     });

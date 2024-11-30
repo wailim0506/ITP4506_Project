@@ -86,18 +86,18 @@ function setQuoteListToLocalStorage(){
             window.location.reload();
         }
     });
-} //initial the quote list
+}
 function loadQuoteList() {
     var quoteList = localStorage.getItem('quote');
     if (quoteList != null) {
         quoteList = JSON.parse(quoteList);
 
-        // Get filter values
+
         var filterStatus = $('#filterStatus').val();
         var filterPrice = $('#filterPrice').val();
         var filterQuoteId = $('#filterQuoteId').val().toLowerCase();
 
-        // Filter quotes
+
         var filteredQuotes = quoteList.filter(function (quote) {
             var matchesStatus = filterStatus === "" || quote.status === filterStatus;
             var matchesPrice = filterPrice === "" || (
@@ -113,7 +113,7 @@ function loadQuoteList() {
             return matchesStatus && matchesPrice && matchesQuoteId;
         });
 
-        // Append filtered quotes
+
         $('#pendingQuotes').html('');
         $('#confirmedQuotes').html('');
         $('#deliveredQuotes').html('');

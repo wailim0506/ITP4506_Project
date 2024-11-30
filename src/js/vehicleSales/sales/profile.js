@@ -156,7 +156,7 @@ $(document).ready(function () {
         $('.shownField').show();
         $('.changePassword').show();
 
-        //restore the style and remove the p
+
         $('#emailInput input').css('border', '1px solid lightgrey');
         $('#phoneInput input').css('border', '1px solid lightgrey');
         $('#addressInput input').css('border', '1px solid lightgrey');

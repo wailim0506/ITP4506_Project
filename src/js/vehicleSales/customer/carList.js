@@ -266,19 +266,5 @@ $(document).ready(function () {
         location.href = "carPage.html";
     });
 
-    // if(localStorage.getItem('cart') == null){
-    //     var y = [
-    //         {
-    //             "itemId": 1,
-    //             "carId": "3",
-    //             "brand": "Tesla",
-    //             "name": "Model S",
-    //             "exteriorColor": "White",
-    //             "interiorColor": "Black",
-    //             "price": "$89990"
-    //         }
-    //     ];
-    //     localStorage.setItem('cart', JSON.stringify(y));
-    // }
 
 });
