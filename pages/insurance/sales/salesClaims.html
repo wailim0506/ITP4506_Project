@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <script src="../../../src/js/insurance/darkMode.js"></script>
+    <title>Legend Motor Limited - Claims</title>
+    <link rel="stylesheet" href="../../../src/css/insurance/sales/salesMain.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function () {
+            $('.audit').click(function() {
+                window.location.href = 'salesAuditApp.html';
+            });
+
+            $('.finish').click(function() {
+                window.location.href = 'salesFinishApp.html';
+            });
+
+            $('.inProgress').click(function() {
+                window.location.href = 'salesInprogressApp.html';
+            });
+
+            $('.reject').click(function() {
+                window.location.href = 'salesRejectApp.html';
+            });
+
+            $('.view-button').on('click', function() {
+                openAlertModal("<h2 id='alertTitle'>Remind the user</h2>", "<h3 class='alertH3'>Application detail: </h3>" +
+                    "<br><b>Reference ID:</b> LMIS654321" +
+                    "<br><b>Customer ID:</b> LMC00789" +
+                    "<br><b>Plan Type:</b> Comprehensive" +
+                    "<br><b>Update Date:</b> 2024-10-10 " +
+                    "<h3 class='alertH3'>Remind method:</h3> " +
+                    "<div id='alertButton'><label>SMS<input type='checkbox'></label>" +
+                    "<label>Email<input type='checkbox'></label></div>" +
+                    "<h3 class='alertH3'>Additional info:</h3>" +
+                    "<div id='addition'><textarea minlength='0' maxlength='100'></textarea></div>" +
+                    "<button id='alertButtonSend'>Send</button>");
+            });
+
+            //------Hide or show table
+            $('#progressBtn').click(function() {
+                $('#planProgress').toggle();
+            });
+
+            $('#auditBtn').click(function() {
+                $('#planAudit').toggle();
+            });
+
+            $('#finishedBtn').click(function() {
+                $('#planFinished').toggle();
+            });
+
+            $('#rejectBtn').click(function() {
+                $('#planRejected').toggle();
+            });
+            //------Hide or show table
+
+
+            // Function to open the alert
+            function openAlertModal(title, message) {
+                $('#modalTitle').html(title);
+                $('#modalMessage').html(message);
+                $('#alertModal').fadeIn();
+
+                $('#alertButtonSend').off('click').on('click', function() {
+                    // Check if at least one checkbox is checked
+                    if ($('#alertButton input[type="checkbox"]:checked').length === 0) {
+                        alert('Please select at least one method (SMS or Email).');
+                        return;
+                    }
+
+                    $('#alertModal').fadeOut(); // Close the modal
+                    alert('Send successful!');
+                });
+            }
+
+            // Close the alert
+            $('.close').on('click', function() {
+                $('#alertModal').fadeOut();
+            });
+
+            // Close the alert
+            $(window).on('click', function(event) {
+                if ($(event.target).is('#alertModal')) {
+                    $('#alertModal').fadeOut();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<!--Alert-->
+<div class="modal" id="alertModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<!--Alert-->
+
+
+<!-- To top button -->
+<button class="goTopBtn">
+    <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+    <div id="nav_left">
+        <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+    </div>
+    <div id="nav_center">
+        <a href="salesMain.html">Manage</a>
+        <a href="salesClaims.html">Claims</a>
+        <a href="salesPlan.html">Plans</a>
+        <a href="salesApplication.html">Application</a>
+        <a href="salesProfile.html">ProFile</a>
+    </div>
+    <div id="nav_right">
+        <a href="../../../index.html">Logout</a>
+    </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section class="mainContent">
+    <div id="chatTitle">
+        <P class="chartTitle" id="chatH1"><b>Weekly report Oct - Dec (Total: 9)</b></P>
+        <P class="chartTitle"><b>Update date:</b> 2024-12-2</P>
+    </div>
+
+    <div class="content">
+        <canvas id="insuranceLineChart" width="1400" height="500"></canvas>
+    </div>
+
+    <div id="overviewTitle">
+        <p class="chartTitle" id="statusH1"><b>Claims Overview:</b></p>
+    </div>
+
+    <div class="content-row">
+        <div id="overviewTotal">
+            <p class="statueTitle">Total</p>
+            <p class="statusStatics">8 + 1</p>
+        </div>
+    </div>
+
+
+    <div class="content-row">
+        <div class="statusBoxContent">
+            <div class="statusBoxContentRow" id="statusProgress">
+                <p class="statueTitle">In progress</p>
+                <p class="statusStatics">1 + 1</p>
+            </div>
+            <div class="statusBoxContentRow" id="statusAudit">
+                <p class="statueTitle">Waiting for audit</p>
+                <p class="statusStatics">2</p>
+
+            </div>
+            <div class="statusBoxContentRow" id="statusFinished">
+                <p class="statueTitle">Finished</p>
+                <p class="statusStatics">3</p>
+            </div>
+            <div class="statusBoxContentRow" id="statusRejected">
+                <p class="statueTitle">Rejected</p>
+                <p class="statusStatics">2</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="progressTitle">
+        <p class="chartTitle" id="progressH1"><b>In progress (Total: 2):</b></p>
+        <button id="progressBtn">Hide / Show</button>
+    </div>
+
+
+    <div class="content">
+        <div class="planList">
+            <div class="plans" id="planProgress">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Reference ID</th>
+                        <th>Customer ID</th>
+                        <th>Plan Type</th>
+                        <th>Car Name</th>
+                        <th>Update Date</th>
+                        <th>Review Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>LMIS456789</td>
+                        <td>LMC00123</td>
+                        <td>Comprehensive</td>
+                        <td>Ford Mustang</td>
+                        <td>2024-10-05</td>
+                        <td>N/A</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button inProgress">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LMIS123456</td>
+                        <td>LMC00012</td>
+                        <td>Comprehensive</td>
+                        <td>Toyota Camry</td>
+                        <td>2024-10-01</td>
+                        <td>N/A</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button inProgress">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+    <div id="auditTitle">
+        <p class="chartTitle" id="auditH1"><b>Waiting for audit (Total: 2):</b></p>
+        <button id="auditBtn">Hide / Show</button>
+    </div>
+
+    <div class="content">
+        <div class="planList">
+            <div class="plans" id="planAudit">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Reference ID</th>
+                        <th>Customer ID</th>
+                        <th>Plan Type</th>
+                        <th>Car Name</th>
+                        <th>Update Date</th>
+                        <th>Review Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>LMIS202122</td>
+                        <td>LMC02456</td>
+                        <td>Comprehensive</td>
+                        <td>Mazda 6</td>
+                        <td>2024-09-30</td>
+                        <td>2024-10-05</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button audit">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LMIS141516</td>
+                        <td>LMC01901</td>
+                        <td>Third Party</td>
+                        <td>Kia Optima</td>
+                        <td>2024-09-05</td>
+                        <td>2024-09-18</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button audit">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="finishedTitle">
+        <p class="chartTitle" id="finishedH1"><b>Finished: (Total: 3):</b></p>
+        <button id="finishedBtn">Hide / Show</button>
+    </div>
+
+    <div class="content">
+        <div class="planList">
+            <div class="plans" id="planFinished">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Reference ID</th>
+                        <th>Customer ID</th>
+                        <th>Plan Type</th>
+                        <th>Car Name</th>
+                        <th>Update Date</th>
+                        <th>Review Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>LMIS262728</td>
+                        <td>LMC03011</td>
+                        <td>Comprehensive</td>
+                        <td>Jeep Grand Cherokee</td>
+                        <td>2024-10-25</td>
+                        <td>2024-10-26</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button finish">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LMIS141516</td>
+                        <td>LMC01901</td>
+                        <td>Third Party</td>
+                        <td>Kia Optima</td>
+                        <td>2024-09-05</td>
+                        <td>2024-09-18</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button finish">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LMIS202122</td>
+                        <td>LMC02456</td>
+                        <td>Comprehensive</td>
+                        <td>Mazda 6</td>
+                        <td>2024-09-30</td>
+                        <td>2024-10-05</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button finish">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div id="rejectTitle">
+        <p class="chartTitle" id="rejectH1"><b>Rejected: (Total: 2)</b></p>
+        <button id="rejectBtn">Hide / Show</button>
+    </div>
+
+
+    <div class="content">
+        <div class="planList" id="planRejected">
+            <div class="plans">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Reference ID</th>
+                        <th>Customer ID</th>
+                        <th>Plan Type</th>
+                        <th>Car Name</th>
+                        <th>Update Date</th>
+                        <th>Review Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>LMIS383940</td>
+                        <td>LMC04234</td>
+                        <td>Comprehensive</td>
+                        <td>Acura TLX</td>
+                        <td>2024-10-15</td>
+                        <td>2024-10-20</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button reject">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LMIS444546</td>
+                        <td>LMC04890</td>
+                        <td>Comprehensive</td>
+                        <td>Porsche Macan</td>
+                        <td>2024-10-02</td>
+                        <td>2024-11-01</td>
+                        <td>
+                            <div class="button-container">
+                                <button class="button reject">View</button>
+                                <button class="button view-button">Remind the user</button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+    <div class="footer-content">
+        <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+        <p>Reliable car insurance for peace of mind on every journey.</p>
+        <p>© 2024 Legend Motor Limited</p>
+    </div>
+    <div class="footer-content">
+        <a href="salesMain.html"><h4>Manage</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesClaims.html"><h4>Claims</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesPlan.html"><h4>Plans</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesApplication.html"><h4>Application</h4></a>
+    </div>
+    <div class="footer-content">
+        <a href="salesProfile.html"><h4>ProFile</h4></a>
+    </div>
+</section>
+<!--footer-->
+
+
+<!-- dark mode button -->
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+<!-- dark mode button -->
+<script src="../../../src/js/insurance/chart2.js"></script>
+<script src="../../../src/js/insurance/pageControlSales.js"></script>
+</body>
+</html>
