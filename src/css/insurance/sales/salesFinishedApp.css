@@ -612,6 +612,11 @@ nav{
     width: auto;
 }
 
+#carImg:hover, #accImg:hover, #resultImg:hover, #partiesImg:hover, #estimateImg:hover{
+    cursor: pointer;
+}
+
+
 /* Modal styles */
 
 

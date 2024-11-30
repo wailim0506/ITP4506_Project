@@ -615,6 +615,10 @@ nav{
     background-color: #66d872;
 }
 
+#carImg:hover, #accImg:hover, #resultImg:hover, #partiesImg:hover, #estimateImg:hover{
+    cursor: pointer;
+}
+
 @media print {
     nav, .footer, .arrowRow , .chatBtn, .nextBtnContainer{
         display: none;

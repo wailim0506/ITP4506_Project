@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Legend Motor Limited - Rejected</title>
+  <title>Legend Motor Limited - Auditing</title>
   <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
   <script src="../../../src/js/insurance/darkMode.js"></script>
   <!-- Google Material Icons -->
@@ -12,11 +12,30 @@
       <!-- Redirect to other page -->
       $("#exitBtn").click(function () {
         if (confirm("Are you sure you want to exit?")) {
-          window.location.href = "salesMain.html";
+          window.location.href = "salesClaims.html";
         }
       });
       <!-- Redirect to other page -->
 
+      $('#accImg').click(function() {
+        openAlertModal('Accident Image',
+                '<img id="alertImg" src="../../../src/img/insurance/IMG_0023.jpg" alt="Car Image">');
+      });
+
+      $('#resultImg').click(function() {
+        openAlertModal('Result copy',
+                '<img id="alertImg" src="../../../src/img/insurance/IMG_0024.jpg" alt="Car Image">');
+      });
+
+      $('#partiesImg').click(function() {
+        openAlertModal('Parties\' licences',
+                '<img id="alertImg" src="../../../src/img/insurance/IMG_0025.jpg" alt="Car Image">');
+      });
+
+      $('#estimateImg').click(function() {
+        openAlertModal('Estimate result',
+                '<img id="alertImg" src="../../../src/img/insurance/IMG_0026.jpg" alt="Car Image">');
+      });
 
       $('#carImg').click(function() {
         openAlertModal('Car Image',
@@ -39,7 +58,8 @@
         section4: false,
         section5: false,
         section6: false,
-        section7: false
+        section7: false,
+        section8: false
       };
 
       // Function to handle checkbox changes
@@ -61,6 +81,7 @@
       $('#section5chk').change(() => handleCheckboxChange('section5'));
       $('#section6chk').change(() => handleCheckboxChange('section6'));
       $('#section7chk').change(() => handleCheckboxChange('section7'));
+      $('#section8chk').change(() => handleCheckboxChange('section8'));
       //-------For checking-------END
 
 
@@ -154,19 +175,18 @@
   <div class="container">
     <div id="progress">
       <div class="arrowRow">
-        <p class="completed">Auditing</p><span class="arrowWaiting">&#8680;</span>
+        <p class="inProgress">Under Review</p><span class="arrowInProgress">&#8680;</span>
         <p class="waiting">Approved</p><span class="arrowWaiting">&#8680;</span>
-        <p class="waiting">Wait for Payment</p><span class="arrowWaiting">&#8680;</span>
         <p class="waiting">Finish</p>
       </div>
 
       <div class="arrowRow">
-        <span id="downArrow" class="arrowCompleted">&#8681;</span>
+        <span id="downArrow" class="arrowWaiting">&#8681;</span>
       </div>
 
       <div class="arrowRow">
-        <p class="inProgress">Rejected</p><span class="arrowInProgress">&#8680;</span>
-        <p class="waiting">Wait for Update</p><span class="arrowWaiting">&#8680;</span>
+        <p class="waiting">Rejected</p><span class="arrowWaiting">&#8680;</span>
+        <p class="waiting">Edit</p><span class="arrowWaiting">&#8680;</span>
         <p class="waiting">Resubmit</p>
       </div>
     </div>
@@ -175,8 +195,8 @@
   <div class="container">
     <div id="form">
       <form  id="contactForm">
-        <p class="formClass">Rejected - LMIS383940</p>
-        <p class="formClass">Customer ID - LMC04234</p>
+        <p class="formClass">Auditing - LMIS202122</p>
+        <p class="formClass">Customer ID - LMC01901</p>
 
         <hr>
 
@@ -187,26 +207,15 @@
           </div>
 
           <div class="infoRow">
-            <label>Car Name:<a>Acura TLX</a></label>
-            <label>Car Model:<a>Acura</a></label>
+            <label>Car Name:<a>Toyota 7312</a></label>
+            <label>Car Model:<a>Toyota Corolla</a></label>
             <label>Car Type:<a>HatchBack</a></label>
           </div>
 
           <div class="infoRow">
-            <label>Manufacture Date:<a>2000/01/16</a></label>
-            <label>Car Image:<a id="carImg">IMG_1293.jpg</a></label>
-            <label>Electronic Car? :<a>No</a></label>
+            <label>Insurance Number:<a>LMIS123456</a></label>
           </div>
 
-          <div class="infoRow">
-            <label>Engine Number:<a>DQW12334</a></label>
-            <label>Condition:<a>good</a></label>
-            <label>Mileage:<a>1821</a></label>
-          </div>
-
-          <div class="infoRow">
-            <label>Tank Capacity:<a>1500</a></label>
-          </div>
         </div>
 
         <div id="section2container">
@@ -222,7 +231,7 @@
 
         <div id="section3container">
           <div class="selectSection">
-            <p class="subTitle">Driver:</p>
+            <p class="subTitle">Driver Information:</p>
             <label><input type="checkbox" id="section3chk">  Pass</label>
           </div>
           <div class="infoRow">
@@ -240,37 +249,31 @@
 
         <div id="section4container">
           <div class="selectSection">
-            <p class="subTitle">Policyholder Information:</p>
+            <p class="subTitle">Accident Information:</p>
             <label><input type="checkbox" id="section4chk">  Pass</label>
           </div>
           <div class="infoRow">
-            <label>First Name:<a>CHAN</a></label>
-            <label>Last Name:<a>Tai Man</a></label>
-            <label>Date of Birth:<a>1989/04/13</a></label>
+            <label>Date:<a>2024-10-19</a></label>
+            <label>Time:<a>13:20</a></label>
+            <label>Location:<a>abc building road</a></label>
           </div>
           <div class="infoRow">
-            <label>HKID:<a>A1234567</a></label>
-            <label>Profession:<a>Teacher</a></label>
-            <label>Marital Status:<a>Married</a></label>
-          </div>
-          <div class="infoRow">
-            <label>Gender:<a>Male</a></label>
+            <label>Description:<a>Collision with another vehicle</a></label>
           </div>
         </div>
 
         <div id="section5container">
           <div class="selectSection">
-            <p class="subTitle">Policyholder Contact Information:</p>
+            <p class="subTitle">Traffic police handling results:</p>
             <label><input type="checkbox" id="section5chk">  Pass</label>
           </div>
           <div class="infoRow">
-            <label>Phone Number:<a>123345678</a></label>
-            <label>Family Phone Number:<a>1234678</a></label>
-            <label>Email Address:<a>abc@abc.com</a></label>
+            <label>Process Number:<a>123345678</a></label>
+            <label>Date:<a>2024-10-19</a></label>
+            <label>Time:<a>15:14</a></label>
           </div>
           <div class="infoRow">
-            <label>Address:<a>102, floor 12, Block A, Sha Tin, New Territories</a></label>
-
+            <label>Handling opinions:<a>Equal responsibility of both parties</a></label>
           </div>
         </div>
 
@@ -278,43 +281,53 @@
 
         <div id="section6container">
           <div class="selectSection">
-            <p class="subTitle">Plan:</p>
+            <p class="subTitle">Information of the parties involved:</p>
             <label><input type="checkbox" id="section6chk">  Pass</label>
           </div>
           <div class="infoRow">
-            <label><a>Comprehensive</a></label>
-            <label>Starting Date:<a>2024/10/10</a></label>
-            <label>Expire Date:<a>2025/10/10</a></label>
+            <label>Parties Name:<a>Chan Peter</a></label>
+            <label>Parties' Phone:<a>12345678</a></label>
+            <label>Parties' license No:<a>ITV1623481</a></label>
           </div>
           <div class="infoRow">
-            <label>Duration:<a>1 year</a></label>
-            <label for="price">Price:
-              <input type="number" min="16800" id="price" name="plan" placeholder="16800" required>
-            </label>
+            <label>Car Name:<a>BMW type C</a></label>
+            <label>Car Model:<a>BMW</a></label>
+            <label>Car Type:<a>HatchBack</a></label>
           </div>
         </div>
 
         <div id="section7container">
           <div class="selectSection">
-            <p class="subTitle">Payment:</p>
+            <p class="subTitle">Repair Estimate:</p>
             <label><input type="checkbox" id="section7chk">  Pass</label>
           </div>
           <div class="infoRow">
-            <label><a>Alipay<img src="../../../src/img/insurance/IMG_0017.png"></a></label>
-            <label>Payment Option:<a>Pay in full</a></label>
+            <label>Maintenance Party:<a>Toyota</a></label>
+            <label>Price:<a>14,500</a></label>
           </div>
         </div>
 
         <hr>
 
-        <p class="subTitle">Reject Reason:</p>
-        <div class="infoColumn">
-          <p><b>Problem section:</b> Basic Information</p>
-          <p><b>Problem:</b> Car model does not match the car type.</p>
-          <br>
-          <p><b>Problem section:</b> Basic Information</p>
-          <p><b>Problem:</b> Incorrect HKID.</p>
+        <div id="section8container">
+          <div class="selectSection">
+            <p class="subTitle">File Uploaded:</p>
+            <label><input type="checkbox" id="section8chk">  Pass</label>
+          </div>
+          <div class="infoRow">
+            <label>Accident Image:<a id="accImg">IMG_0023</a></label>
+          </div>
+          <div class="infoRow">
+            <label>Result copy:<a id="resultImg">IMG_0024</a></label>
+          </div>
+          <div class="infoRow">
+            <label>Parties' licences:<a id="partiesImg">IMG_0025</a></label>
+          </div>
+          <div class="infoRow">
+            <label>Estimate result:<a id="estimateImg">IMG_0026</a></label>
+          </div>
         </div>
+
 
         <hr>
 
