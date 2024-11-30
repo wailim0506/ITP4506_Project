@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Application</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/application.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      $("#nextBtn").click(function () {
+        if (validateForm()) {
+          window.location.href = "salesApplicationP4.html";
+        }
+      });
+
+      $("#previousBtn").click(function () {
+        window.location.href = "salesApplicationP2.html";
+      });
+
+      $("#AppP1").click(function () {
+        window.location.href = "salesApplicationP1.html";
+      });
+
+      $("#AppP2").click(function () {
+        window.location.href = "salesApplicationP2.html";
+      });
+
+      $('.plan').click(function() {
+        var details = $(this).data('details');
+        $('.plan').css('background-color', '');
+
+        $('#planDetail p').text(details);
+        $(this).css('background-color', '#f9c22c');
+      });
+      <!-- Redirect to other page -->
+
+
+      //For calculate the expired date
+      function calculateExpireDate() {
+        const years = parseInt($('#years').val());
+        const startDate = new Date($('#plan').val());
+
+        if (!isNaN(years) && startDate instanceof Date && !isNaN(startDate)) {
+          const expireDate = new Date(startDate);
+          expireDate.setFullYear(expireDate.getFullYear() + years);
+          $('#expireDate').text(expireDate.toISOString().split('T')[0]);
+        } else {
+          $('#expireDate').text('Please enter date');
+        }
+      }
+
+      //If change the years or plan, recalculate the expired date
+      $('#years').on('input', calculateExpireDate);
+      $('#plan').on('change', calculateExpireDate);
+
+
+      //For calculate the price
+      function calPrice() {
+        const years = parseInt($('#years').val());
+        const selectedPlan = $('.plan.selected');
+        const price = selectedPlan.data('price');
+
+        if(!isNaN(years) && !isNaN(price)){
+          $('#price').text(price * years);
+        } else {
+          $('#price').text('Please select a plan');
+        }
+      }
+
+      //Get the selected plan
+      $('.plan').on('click', function() {
+        $('.plan').removeClass('selected');
+        $(this).addClass('selected');
+        calPrice();
+      });
+
+      //If change the years, recalculate the price
+      $('#years').on('input', calPrice);
+    });
+
+    let selectedPlan= null;
+
+    function selectPlan(element) {
+      const payments = document.querySelectorAll('.plan');
+      payments.forEach(payment => payment.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedPlan = element;
+    }
+
+
+    //Check form validation
+    function validateForm() {
+      let isValid = true;
+
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+      if(!selectedPlan){
+        $("#planError").show();
+        isValid = false;
+      }else {
+        $("#planError").hide();
+      }
+
+      return isValid;
+    }
+  </script>
+</head>
+<body>
+<!-- To top button -->
+<button class="goTopBtn">
+  <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+  <div id="nav_left">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+  </div>
+  <div id="nav_center">
+    <a href="salesMain.html">Manage</a>
+    <a href="#">Staffing</a>
+    <a href="salesPlan.html">Plans</a>
+    <a href="salesApplication.html">Application</a>
+    <a href="#">ProFile</a>
+  </div>
+  <div id="nav_right">
+    <a href="../../../index.html">Logout</a>
+  </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section id="mainContent">
+  <div class="container">
+    <h1>Your client's LML car insurance application</h1>
+  </div>
+
+  <div class="container">
+    <div id="progress">
+      <p class="completed" id="AppP1">Basic Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="completed" id="AppP2">Policyholder Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="inProgress">Plan Select</p>
+      <span class="arrowInProgress">&#8680;</span>
+      <p class="waiting">Payment</p>
+      <span class="arrowWaiting">&#8680;</span>
+      <p class="waiting">Submit for Checking</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="form">
+      <form  id="contactForm">
+        <p class="formClass">3 - Plan Select</p><p id="essential">* Essential Information</p>
+
+
+        <hr>
+        <p class="subTitle">3.1 - Select a Plan</p>
+        <p id="quoteNotice">The prices are for reference only, and the actual prices are subject to the latest quotation.</p>
+        <div id="plans">
+          <div class="plan" data-price="6800" data-details="Third-party insurance covers damages to other vehicles
+              and injuries to other people in the event of an accident where you are at fault.
+              It is the minimum legal requirement for car insurance in many places." onclick="selectPlan(this)">
+            <h1>Third-Party</h1>
+            <div class="planContent">
+              <p>6800 HKD Per year</p>
+              <img src="../../../src/img/insurance/IMG_0012.png" alt="Third-Party">
+            </div>
+          </div>
+
+          <div class="plan" data-price="16800" data-details="Comprehensive insurance provides broader coverage,
+              including damages to your own vehicle as well as damages to third parties. It covers a
+              variety of risks, including theft, vandalism, and natural disasters.." onclick="selectPlan(this)">
+            <h1>Comprehensive</h1>
+            <div class="planContent">
+              <p>16800 HKD Per year</p>
+              <img src="../../../src/img/insurance/IMG_0013.png" alt="Third-Party">
+            </div>
+          </div>
+        </div>
+        <span class="error-message" id="planError" style="color:red; display:none;">Please select a plan.</span>
+
+        <div class="inputRow">
+          <label>*Duration:<input type="number" id="years" min="1" placeholder="Duration" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the duration.</span>
+          </label>
+          <label for="plan">*Starting Date:<input type="date" id="plan" name="plan" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the starting date.</span>
+          </label>
+          <label>Expire Date:<span id="expireDate">Please enter date</span></label>
+        </div>
+
+        <div class="inputRow">
+          <label>Predicted Price:<span id="price">Please select a plan</span></label>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">3.2 - Plan Detail</p>
+        <div id="planDetail">
+          <p>Select a plan to see the details here.</p>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">3.3 - Document Download</p>
+        <div id="downloads">
+          <ul>
+            <li><a href="#" download>Car Insurance Policy Document</a></li>
+            <li><a href="#" download>Claim Form</a></li>
+            <li><a href="#" download>Coverage Summary</a></li>
+            <li><a href="#" download>Premium Payment Guidelines</a></li>
+            <li><a href="#" download>Customer Service Contact Information</a></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="containerRow">
+    <div id="previousBtnContainer">
+      <button type="button" id="previousBtn">Previous</button>
+    </div>
+    <div id="nextBtnContainer">
+      <button type="button" id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+  <div class="footer-content">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+    <p>Reliable car insurance for peace of mind on every journey.</p>
+    <p>© 2024 Legend Motor Limited</p>
+  </div>
+  <div class="footer-content">
+    <a href="salesMain.html"><h4>Manage</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>Staffing</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="salesPlan.html"><h4>Plans</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="salesApplication.html"><h4>Application</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>ProFile</h4></a>
+  </div>
+</section>
+<!--footer-->
+
+
+<!--Dark mode-->
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+<!--Dark mode-->
+</body>
+</html>

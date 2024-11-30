@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Plans</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/cusPlan.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      <!-- Redirect to other page -->
+      $(".EstimateBtn, #EstimateBtnNoIdea").click(function () {
+        window.location.href = "estimate.html";
+      });
+      $(".ApplicationBtn").click(function () {
+        window.location.href = "applicationP1.html";
+      });
+      <!-- Redirect to other page -->
+    });
+  </script>
+</head>
+<body>
+
+
+<!-- To top button -->
+<button class="goTopBtn">
+  <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+  <div id="nav_left">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+  </div>
+  <div id="nav_center">
+    <a href="salesMain.html">Manage</a>
+    <a href="#">Staffing</a>
+    <a href="salesPlan.html">Plans</a>
+    <a href="salesApplication.html">Application</a>
+    <a href="#">ProFile</a>
+  </div>
+  <div id="nav_right">
+    <a href="../../../index.html">Logout</a>
+  </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section id="mainContent">
+  <div class="container">
+    <div id="planIntro">
+      <h1 id="mainTitle">Our Plans</h1>
+      <p>At LMC, we offer tailored car insurance solutions to meet your needs.</p>
+      <h3 id="third">Third-Party Insurance:</h3>
+      <p>Essential coverage for liability in case of accidents, protecting you against claims from other parties.</p>
+      <h3 id="comprehensive">Comprehensive Insurance:</h3>
+      <p> Extensive protection that covers both third-party liabilities and damages to your own vehicle,
+        including theft and natural disasters.
+      </p>
+    </div>
+    <img src="../../../src/img/insurance/IMG_0008.jpg" alt="insurance">
+  </div>
+
+  <hr class="spacing">
+
+  <div class="container" id="thirdContent">
+    <img src="../../../src/img/insurance/IMG_0009.jpeg" alt="Third-Party">
+    <div class="planDetails">
+      <h1 class="planTitle">Third Party</h1>
+      <h3>What is Third-Party Insurance?</h3>
+      <p>Third-party insurance covers damages to other vehicles and injuries to other people in the event of an
+        accident where you are at fault. It is the minimum legal requirement for car insurance in many places.
+      </p>
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Coverage for damages to third-party property.</li>
+        <li>Medical expenses for third-party injuries.</li>
+        <li>No coverage for your own vehicle damage.</li>
+        <li>Typically lower premiums compared to comprehensive plans.</li>
+      </ul>
+
+      <div class="buttonContainer">
+        <button class="ApplicationBtn">Application Now</button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="spacing">
+
+  <div class="container" id="comprehensiveContent">
+    <div class="planDetails">
+      <h1 class="planTitle">Comprehensive</h1>
+      <h3>What is Comprehensive Insurance?</h3>
+      <p>Comprehensive insurance provides broader coverage, including damages to your own vehicle as well as
+        damages to third parties. It covers a variety of risks, including theft, vandalism, and natural disasters.
+      </p>
+
+      <h3>Key Features:</h3>
+      <ul>
+        <li>Covers damages to your own vehicle.</li>
+        <li>Includes third-party liability coverage.</li>
+        <li>Protection against theft and vandalism.</li>
+        <li>Higher premiums, but greater peace of mind.</li>
+      </ul>
+
+      <div class="buttonContainer">
+        <button class="ApplicationBtn">Application Now</button>
+      </div>
+    </div>
+    <img src="../../../src/img/insurance/IMG_0011.jpeg" alt="Third Party">
+  </div>
+
+  <hr id="separateLine">
+
+  <div class="containerColumn">
+    <h1 id="contactUs">Which is more suitable for me?</h1>
+    <table>
+      <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Third-Party Insurance</th>
+        <th>Comprehensive Insurance</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><b>Coverage for Damage to Other Vehicles</b></td>
+        <td class="yesItem">Yes</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Coverage for Personal Injury</b></td>
+        <td class="yesItem">Yes</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Coverage for Your Own Vehicle</b></td>
+        <td class="noItem">No</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Theft and Vandalism Protection</b></td>
+        <td class="noItem">No</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Fire Damage Coverage</b></td>
+        <td class="noItem">No</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Coverage for Accidental Damage</b></td>
+        <td class="noItem">No</td>
+        <td class="yesItem">Yes</td>
+      </tr>
+      <tr>
+        <td><b>Cost</b></td>
+        <td>Generally Lower</td>
+        <td>Generally Higher</td>
+      </tr>
+      <tr>
+        <td><b>Legal Requirements</b></td>
+        <td>Mandatory in Most Places</td>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <td><b>No-Claims Bonus</b></td>
+        <td>Limited</td>
+        <td>Available</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+  <div class="footer-content">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+    <p>Reliable car insurance for peace of mind on every journey.</p>
+    <p>© 2024 Legend Motor Limited</p>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>Manage</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>Staffing</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="salesPlan.html"><h4>Plans</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>Application</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>ProFile</h4></a>
+  </div>
+</section>
+<!--footer-->
+
+
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+<script src="../../../src/js/insurance/pageControl.js"></script>
+</body>
+</html>

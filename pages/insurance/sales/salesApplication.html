@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Application</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/application.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      <!-- Redirect to other page -->
+      $("#exitBtn").click(function () {
+        window.location.href = "salesMain.html";
+      });
+      $("#nextBtn").click(function () {
+        if (validateForm()) {
+          window.location.href = "salesApplicationP1.html";
+        }
+      });
+      <!-- Redirect to other page -->
+    });
+
+    //Check form validation
+    function validateForm() {
+      let isValid = true;
+
+      // Validate text inputs
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val() && !$input.is(':checkbox')) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+      // Check the checkbox specifically
+      if (!$('#agreeTerms').is(':checked')) {
+        $('#agreeTerms').next('.error-message').show();
+        isValid = false;
+      } else {
+        $('#agreeTerms').next('.error-message').hide();
+      }
+
+      return isValid;
+    }
+  </script>
+</head>
+<body>
+
+
+<!-- To top button -->
+<button class="goTopBtn">
+  <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+  <div id="nav_left">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" /></a>
+  </div>
+  <div id="nav_center">
+    <a href="salesMain.html">Manage</a>
+    <a href="#">Staffing</a>
+    <a href="salesPlan.html">Plans</a>
+    <a href="salesApplication.html">Application</a>
+    <a href="#">ProFile</a>
+  </div>
+  <div id="nav_right">
+    <a href="../../../index.html">Logout</a>
+  </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section id="mainContent">
+  <div class="container">
+    <h1>Help your clients apply for their applications.</h1>
+  </div>
+
+  <div class="container">
+    <div id="form">
+      <form  id="contactForm">
+        <p class="formClass">Login your customer's account</p>
+        <hr>
+        <p class="subTitle"></p>
+
+        <div class="inputRow">
+          <label>Customer's account: <input type="text" placeholder="Account" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the account.</span>
+          </label>
+        </div>
+
+        <div class="inputRow">
+          <label>Password: <input type="text" placeholder="Password" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the password.</span>
+          </label>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">Agreement</p>
+        <div class="container-agreement">
+          <p>
+            This agreement confirms that you, the customer, are receiving assistance from our sales representative
+            to complete your insurance application. The representative will guide you through the necessary steps
+            to ensure that your application is comprehensive and accurate.
+          </p>
+
+          <p>
+            By completing this agreement, you acknowledge the following:
+          </p>
+          <p>
+            1. You understand the terms and conditions of the insurance policy.
+          </p>
+          <p>
+            2. The information provided in this application is accurate to the best of your knowledge.
+          </p>
+          <p>
+            3. You consent to the processing of your application as per the guidelines set forth by our insurance provider.
+          </p>
+
+          <div class="form-group">
+            <label for="agreeTerms">
+              <input type="checkbox" id="agreeTerms" required>
+              I acknowledge that I have received assistance from the sales representative and agree to the terms of this agreement.
+              <span class="error-message" style="color:red; display:none;font-size: 18px"><br>Please agree the agreement.</span>
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="containerRow">
+    <div id="previousBtnContainer">
+      <button type="button" id="exitBtn">Exit</button>
+    </div>
+    <div id="nextBtnContainer">
+      <button type="button" id="nextBtn">Next</button>
+    </div>
+  </div>
+
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+  <div class="footer-content">
+    <a href="salesMain.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+    <p>Reliable car insurance for peace of mind on every journey.</p>
+    <p>© 2024 Legend Motor Limited</p>
+  </div>
+  <div class="footer-content">
+    <a href="salesMain.html"><h4>Manage</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>Staffing</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="salesPlan.html"><h4>Plans</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="salesApplication.html"><h4>Application</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="#"><h4>ProFile</h4></a>
+  </div>
+</section>
+<!--footer-->
+
+
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+<script src="../../../src/js/insurance/pageControl.js"></script>
+</body>
+</html>
