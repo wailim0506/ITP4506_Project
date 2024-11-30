@@ -34,7 +34,9 @@
       });
 
       $("#exitBtn").click(function () {
-        window.location.href = "cusPlan.html";
+        if (confirm("Are you sure you want to exit?")) {
+          window.location.href = "cusMainPage.html";
+        }
       });
       <!-- Redirect to other page -->
 
@@ -238,6 +240,7 @@
       <a href="estimate.html">Estimate</a>
       <a href="onlineBot.html">Online Bot</a>
       <a href="applicationP1.html">Application</a>
+      <a href="cusClaims.html">Claims</a>
       <a href="cusProFile.html">ProFile</a>
     </div>
     <div id="nav_right">
@@ -451,9 +454,6 @@
       <p>© 2024 Legend Motor Limited</p>
     </div>
     <div class="footer-content">
-      <a href="cusPlan.html"><h4>Plans</h4></a>
-    </div>
-    <div class="footer-content">
       <a href="estimate.html"><h4>Estimate</h4></a>
     </div>
     <div class="footer-content">
@@ -461,6 +461,9 @@
     </div>
     <div class="footer-content">
       <a href="applicationP1.html"><h4>Application</h4></a>
+    </div>
+    <div class="footer-content">
+      <a href="cusClaims.html"><h4>Claims</h4></a>
     </div>
     <div class="footer-content">
       <a href="cusProFile.html"><h4>ProFile</h4></a>

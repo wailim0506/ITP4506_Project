@@ -32,6 +32,10 @@
         window.location.href = "planStatusProgress.html";
       });
 
+      $(".claimReview").click(function () {
+        window.location.href = "claimReview.html";
+      });
+
       $(".disable").click(function () {
         alert("You cannot Edit/Progress the plan if is under review or rejected.");
       });
@@ -64,6 +68,7 @@
         <a href="estimate.html">Estimate</a>
         <a href="onlineBot.html">Online Bot</a>
         <a href="applicationP1.html">Application</a>
+        <a href="cusClaims.html">Claims</a>
         <a href="cusProFile.html">ProFile</a>
       </div>
       <div id="nav_right">
@@ -131,8 +136,8 @@
         <h3>My Plans</h3>
       </div>
 
-      <div id="planList">
-        <div id="plans">
+      <div class="planList">
+        <div class="plans">
           <table>
             <thead>
             <tr>
@@ -195,6 +200,44 @@
           </table>
         </div>
       </div>
+
+      <div class="title">
+        <h3>My Claims</h3>
+      </div>
+
+      <div class="planList">
+        <div class="plans">
+          <table>
+            <thead>
+            <tr>
+              <th>Reference ID</th>
+              <th>Accident Date</th>
+              <th>Car Name</th>
+              <th>Status</th>
+              <th>Submission Date</th>
+              <th>Review Date</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>LMISC345678</td>
+              <td>2024-08-19</td>
+              <td>BMW 3 Series</td>
+              <td>Under Review</td>
+              <td>2024-08-20</td>
+              <td>2024-09-01</td>
+              <td>
+                <div class="button-container">
+                  <button class="button disable">Edit</button>
+                  <button class="button claimReview">Review</button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
     <!--Main Content-->
 
@@ -207,9 +250,6 @@
         <p>© 2024 Legend Motor Limited</p>
       </div>
       <div class="footer-content">
-        <a href="cusPlan.html"><h4>Plans</h4></a>
-      </div>
-      <div class="footer-content">
         <a href="estimate.html"><h4>Estimate</h4></a>
       </div>
       <div class="footer-content">
@@ -217,6 +257,9 @@
       </div>
       <div class="footer-content">
         <a href="applicationP1.html"><h4>Application</h4></a>
+      </div>
+      <div class="footer-content">
+        <a href="cusClaims.html"><h4>Claims</h4></a>
       </div>
       <div class="footer-content">
         <a href="cusProFile.html"><h4>ProFile</h4></a>

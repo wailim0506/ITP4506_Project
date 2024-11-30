@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legend Motor Limited - Claims</title>
+  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+  <link rel="stylesheet" href="../../../src/css/insurance/application.css">
+  <script src="../../../src/js/insurance/darkMode.js"></script>
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+      <!-- Redirect to other page -->
+      $(".chatBtn").click(function () {
+        window.location.href = "onlineBot.html";
+      });
+
+      $("#nextBtn").click(function () {
+        if (validateForm()) {
+          window.location.href = "cusClaimsP3.html";
+        }
+      });
+
+      $("#previousBtn").click(function () {
+        window.location.href = "cusClaims.html";
+      });
+
+      $("#AppP1").click(function () {
+        window.location.href = "cusClaims.html";
+      });
+      <!-- Redirect to other page -->
+
+    });
+
+
+
+
+
+    //Check form validation
+    function validateForm() {
+      let isValid = true;
+
+      $('input[required]').each(function() {
+        const $input = $(this);
+        const $errorSpan = $input.next('.error-message');
+
+        if (!$input.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+      $('select[required]').each(function() {
+        const $select = $(this);
+        const $errorSpan = $select.next('.error-message');
+
+        if (!$select.val()) {
+          $errorSpan.show();
+          isValid = false;
+        } else {
+          $errorSpan.hide();
+        }
+      });
+
+      return isValid;
+    }
+  </script>
+</head>
+<body>
+<!-- Chatbot button -->
+<button class="chatBtn">
+  <img src="../../../src/img/insurance/chatbotTransparent.png" alt="Chatbot">
+</button>
+<!-- Chatbot button -->
+
+
+<!-- To top button -->
+<button class="goTopBtn">
+  <img src="../../../src/img/insurance/IMG_0007.png" alt="BackToTop">
+</button>
+<!-- To top button -->
+
+
+<!--Nav Bar-->
+<nav>
+  <div id="nav_left">
+    <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" /></a>
+  </div>
+  <div id="nav_center">
+    <a href="cusPlan.html">Plans</a>
+    <a href="estimate.html">Estimate</a>
+    <a href="onlineBot.html">Online Bot</a>
+    <a href="applicationP1.html">Application</a>
+    <a href="cusProFile.html">ProFile</a>
+  </div>
+  <div id="nav_right">
+    <a href="../../../index.html">Logout</a>
+  </div>
+</nav>
+<!--Nav Bar-->
+
+
+<!--Main Content-->
+<section id="mainContent">
+  <div class="container">
+    <h1>Your LML car insurance claims</h1>
+  </div>
+
+  <div class="container">
+    <div id="progress">
+      <p class="completed" id="AppP1">Basic Information</p>
+      <span class="arrowCompleted">&#8680;</span>
+      <p class="inProgress" id="AppP2">Accident Information</p>
+      <span class="arrowInProgress">&#8680;</span>
+      <p class="waiting">File Upload</p>
+      <span class="arrowWaiting">&#8680;</span>
+      <p class="waiting">Submit for Checking</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="form">
+      <form  id="contactForm">
+        <p class="formClass">2 - Accident Information</p><p id="essential">* Essential Information</p>
+
+
+        <hr>
+        <p class="subTitle">2.1 - Accident Information</p>
+
+        <div class="inputRow">
+          <label for="date">*Date:<input type="date" id="date" name="plan" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the date.</span>
+          </label>
+          <label for="time">*Time:<input type="text" id="time" placeholder="Time" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the time.</span>
+          </label>
+          <label for="loc">*Location:<input type="text" id="loc" placeholder="Location" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the location.</span>
+          </label>
+        </div>
+
+        <div class="inputRowAdd" >
+          <label>*Description: <input type="text"  class="date" placeholder="Description" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the description.</span>
+          </label>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">2.2 - Traffic police handling results</p>
+
+        <div class="inputRow">
+          <label for="date">*Process number:<input type="text" id="pNo" placeholder="Process number" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the process number.</span>
+          </label>
+          <label for="date">*Date:<input type="date" id="pDate" name="plan" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the date.</span>
+          </label>
+          <label for="time">*Time:<input type="text" id="pTime" placeholder="Time" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the time.</span>
+          </label>
+        </div>
+
+        <div class="inputRowAdd" >
+          <label>*Handling opinions: <input type="text"  class="date" placeholder="Handling opinions" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the handling opinions.</span>
+          </label>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">2.3 - Information of the parties involved</p>
+
+        <div class="inputRow">
+          <label>*Parties Name: <input type="text" placeholder="Parties Name" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the car name.</span>
+          </label>
+          <label>*Parties' Phone: <input type="text" placeholder="Parties' Phone" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the car name.</span>
+          </label>
+          <label>*Parties' license No: <input type="text" placeholder="Parties' license No" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the car name.</span>
+          </label>
+        </div>
+
+        <div class="inputRow">
+          <label>*Car Name: <input type="text" placeholder="Car Name" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the car name.</span>
+          </label>
+          <label>*Car Model:
+            <select id="carModel" name="carModel" required>
+              <option value="">--Please choose an Model--</option>
+              <option value="toyota_corolla">Toyota Corolla</option>
+              <option value="honda_civic">Honda Civic</option>
+              <option value="ford_focus">Ford Focus</option>
+              <option value="chevrolet_malibu">Chevrolet Malibu</option>
+              <option value="nissan_altima">Nissan Altima</option>
+              <option value="bmw_3_series">BMW 3 Series</option>
+              <option value="audi_a4">Audi A4</option>
+              <option value="mercedes_benz_c_class">Mercedes-Benz C-Class</option>
+            </select>
+            <span class="error-message" style="color:red; display:none;">Please select a model.</span>
+          </label>
+          <label>*Car Type:
+            <select id="carBody" name="carBody" required>
+              <option value="">--Please choose an Type--</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="coupe">Coupe</option>
+              <option value="convertible">Convertible</option>
+              <option value="wagon">Wagon</option>
+              <option value="pickup">Pickup Truck</option>
+              <option value="van">Van</option>
+            </select>
+            <span class="error-message" style="color:red; display:none;">Please select a type.</span>
+          </label>
+        </div>
+
+        <hr>
+
+        <p class="subTitle">2.4 - Repair Estimate</p>
+        <div class="inputRow">
+          <label>*Maintenance Party: <input type="text" placeholder="Maintenance Party" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the maintenance party.</span>
+          </label>
+          <label>*Price: <input type="number" min="0" placeholder="Price" required>
+            <span class="error-message" style="color:red; display:none;">Please enter the price.</span>
+          </label>
+        </div>
+        <hr>
+
+        <p class="subTitle">2.5 - Document Download</p>
+        <div id="downloads">
+          <ul>
+            <li><a href="#" download>Car Insurance Policy Document</a></li>
+            <li><a href="#" download>Claim Form</a></li>
+            <li><a href="#" download>Coverage Summary</a></li>
+            <li><a href="#" download>Premium Payment Guidelines</a></li>
+            <li><a href="#" download>Customer Service Contact Information</a></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="containerRow">
+    <div id="previousBtnContainer">
+      <button type="button" id="previousBtn">Previous</button>
+    </div>
+    <div id="nextBtnContainer">
+      <button type="button" id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
+<!--Main Content-->
+
+
+<!--footer-->
+<section class="footer">
+  <div class="footer-content">
+    <a href="cusMainPage.html"><img src="../../../src/img/LMLogo.webp" class="footer-logo"></a>
+    <p>Reliable car insurance for peace of mind on every journey.</p>
+    <p>© 2024 Legend Motor Limited</p>
+  </div>
+  <div class="footer-content">
+    <a href="cusPlan.html"><h4>Plans</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="estimate.html"><h4>Estimate</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="onlineBot.html"><h4>OnlineBot</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="applicationP1.html"><h4>Application</h4></a>
+  </div>
+  <div class="footer-content">
+    <a href="cusProFile.html"><h4>ProFile</h4></a>
+  </div>
+</section>
+<!--footer-->
+
+
+<!--Dark mode-->
+<i id="darkModeToggle" class="material-icons"
+   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
+<script src="../../../src/js/insurance/toTopBtn.js"></script>
+<!--Dark mode-->
+</body>
+</html>

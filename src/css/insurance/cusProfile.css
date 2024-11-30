@@ -322,7 +322,7 @@ input[type="text"]:focus {
 
 
 /* Plan */
-#planList{
+.planList{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -331,7 +331,7 @@ input[type="text"]:focus {
 
 }
 
-#plans{
+.plans{
     width: 100%;
     height: 550px;
     border: 2px teal solid;
@@ -343,35 +343,35 @@ input[type="text"]:focus {
 }
 
 
-#plans table {
+.plans table {
     width: 100%;
     border-collapse: collapse;
     margin: 1% 0 0 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#plans th, td {
+.plans th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-#plans td{
+.plans td{
     font-size: 18px;
 }
 
-#plans th {
+.plans th {
     color: black;
     font-size: 22px;
 }
-#plans tr:hover {
+.plans tr:hover {
     background-color: #f1f1f1;
 }
-#plans.button-container {
+.plans.button-container {
     display: flex;
     gap: 10px;
     margin-left: -1%;
 }
-#plans .button {
+.plans .button {
     padding: 8px 12px;
     border: none;
     color: white;
@@ -380,29 +380,29 @@ input[type="text"]:focus {
     text-decoration: none;
 }
 
-#plans .disable {
+.plans .disable {
     background-color: gray;
     padding: 7.5px 12px;
 }
 
-#plans .edit-button:hover {
+.plans .edit-button:hover {
     background-color: #f6cb79;
 }
 
-#plans .edit-button {
+.plans .edit-button {
     background-color: #ffa500;
 }
 
-#plans .view-button:hover {
+.plans .view-button:hover, .plans .claimReview:hover {
     background-color: #4b9ffb;
 }
-#plans .view-button {
+.plans .view-button, .plans .claimReview {
     background-color: #007bff;
 }
-#plans .progress-button:hover {
+.plans .progress-button:hover {
     background-color: #8cc698;
 }
-#plans .progress-button {
+.plans .progress-button {
     background-color: #28a745;
 }
 
