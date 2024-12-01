@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Legend Motor Limited - Loan Repayment Calculator</title>
-  <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
-    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/navBar.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Legend Motor Limited - Loan Repayment Calculator</title>
+    <script src="../../../src/js/common/jslib/jquery-1.11.1.js"></script>
+    <link
+      rel="stylesheet"
+      href="../../../src/css/vehicleSales/commonElement/navBar.css"
+    />
     <script src="../../../src/js/vehicleSales/commonElement/navBar.js"></script>
-  <link rel="stylesheet" href="../../../src/css/vehicleSales/customer/loanPaymentCalculator.css">
-  <!-- Google Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="../../../src/js/vehicleSales/customer/loanPaymentCalculator.js"></script>
-    <link rel="stylesheet" href="../../../src/css/vehicleSales/commonElement/footer.css">
-
-</head>
-<body>
-<nav>
-    <div id="nav_left">
-        <img src="../../../src/img/LMLogo.webp"/>
-    </div>
-    <div id="nav_center">
+    <link
+      rel="stylesheet"
+      href="../../../src/css/vehicleSales/customer/loanPaymentCalculator.css"
+    />
+    <!-- Google Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="../../../src/js/vehicleSales/customer/loanPaymentCalculator.js"></script>
+    <link
+      rel="stylesheet"
+      href="../../../src/css/vehicleSales/commonElement/footer.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="nav_left">
+        <img src="../../../src/img/LMLogo.webp" />
+      </div>
+      <div id="nav_center">
         <a href="carList.html">Vehicle List</a>
         <a href="wishList.html">Wish List</a>
         <a href="quotesList.html">Your Quotes</a>
-        <a href="loanPaymentCalculator.html" style="font-weight: 700;text-decoration: underline">Loan Payment Calculator</a>
+        <a
+          href="loanPaymentCalculator.html"
+          style="font-weight: 700; text-decoration: underline"
+          >Loan Payment Calculator</a
+        >
         <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
         <a href="profile.html">Profile</a>
-    </div>
-    <div id="nav_right">
+      </div>
+      <div id="nav_right">
         <a href="../../../index.html">Logout</a>
-    </div>
-    <div id="burgerImg">
-        <i id="menu" class="material-icons"
-           style="cursor: pointer;">menu</i>
-    </div>
-</nav>
-<div id="hiddenNav">
-    <div id="clodeBtnDiv" style="position: fixed; top: 12px;right: 12px">
-        <i id="closeNav" class="material-icons"
-           style="cursor: pointer;">close</i>
-    </div>
-    <div>
+      </div>
+      <div id="burgerImg">
+        <i id="menu" class="material-icons" style="cursor: pointer">menu</i>
+      </div>
+    </nav>
+    <div id="hiddenNav">
+      <div id="clodeBtnDiv" style="position: fixed; top: 12px; right: 12px">
+        <i id="closeNav" class="material-icons" style="cursor: pointer"
+          >close</i
+        >
+      </div>
+      <div>
         <a href="carList.html">Vehicle List</a>
         <a href="wishList.html">Wish List</a>
         <a href="quotesList.html">Your Quotes</a>
@@ -47,104 +62,141 @@
         <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
         <a href="profile.html">Profile</a>
         <a href="../../../index.html">Logout</a>
+      </div>
     </div>
-</div>
-<div id="main">
-    <div class="container">
+    <div id="main">
+      <div class="container">
         <h1>Loan Payment Calculator</h1>
 
         <label for="loanAmount">Loan Amount:</label>
-        <input type="number" id="loanAmount" placeholder="Enter loan amount" required value="100000">
+        <input
+          type="number"
+          id="loanAmount"
+          placeholder="Enter loan amount"
+          required
+          value="100000"
+        />
 
         <label for="interestRate">Annual Interest Rate (%):</label>
-        <input type="number" id="interestRate" placeholder="Enter interest rate" required value="5">
+        <input
+          type="number"
+          id="interestRate"
+          placeholder="Enter interest rate"
+          required
+          value="5"
+        />
 
         <label for="loanTerm">Loan Term (years)(Max. 10):</label>
-        <input type="number" id="loanTerm" placeholder="Enter loan term in years" required value="1">
+        <input
+          type="number"
+          id="loanTerm"
+          placeholder="Enter loan term in years"
+          required
+          value="1"
+        />
 
         <button id="calculateBtn">Calculate</button>
         <button id="resetBtn">Reset</button>
-        <button id="printBtn">Print this page</button>
+        <button
+          id="printBtn"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          Print this page<i
+            class="material-icons"
+            style="margin-left: 5px; font-size: 18px"
+            >print</i
+          >
+        </button>
 
         <h2>Repayment Schedule</h2>
 
         <table id="amortizationTable">
-            <thead>
+          <thead>
             <tr>
-                <th>Payment #</th>
-                <th>Principal Payment</th>
-                <th>Interest Payment</th>
-                <th>Monthly Total Payment</th>
-                <th>Remaining Balance</th>
+              <th>Payment #</th>
+              <th>Principal Payment</th>
+              <th>Interest Payment</th>
+              <th>Monthly Total Payment</th>
+              <th>Remaining Balance</th>
             </tr>
-            </thead>
-            <tbody></tbody>
+          </thead>
+          <tbody></tbody>
         </table>
-    </div>
-    <div id="pieChartDiv">
+      </div>
+      <div id="pieChartDiv">
         <div style="width: 400px">
-            <div id="monthlyPaymentDiv">
-                <p id="monthlyPayment"></p>
-            </div>
+          <div id="monthlyPaymentDiv">
+            <p id="monthlyPayment"></p>
+          </div>
 
-            <table id="percentageTable" style="width: inherit">
-                <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Total Paid</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Total Paid</td>
-                    <td id="totalPayment"></td>
-                </tr>
-                <tr>
-                    <td>Total Principal Paid</td>
-                    <td id="principalPercentage"></td>
-                </tr>
-                <tr>
-                    <td>Total Interest Paid</td>
-                    <td id="interestPercentage"></td>
-                </tr>
-                </tbody>
-            </table>
+          <table id="percentageTable" style="width: inherit">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Total Paid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total Paid</td>
+                <td id="totalPayment"></td>
+              </tr>
+              <tr>
+                <td>Total Principal Paid</td>
+                <td id="principalPercentage"></td>
+              </tr>
+              <tr>
+                <td>Total Interest Paid</td>
+                <td id="interestPercentage"></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <canvas id="pieChart" width="400" height="400"></canvas>
 
         <div id="legend">
-            <div class="legend-item">
-                <div class="color-box" style="background-color: rgb(67,123,212);"></div>
-                <span>Principal</span>
-            </div>
-            <div class="legend-item">
-                <div class="color-box" style="background-color: rgb(149,187,66);"></div>
-                <span>Interest</span>
-            </div>
+          <div class="legend-item">
+            <div
+              class="color-box"
+              style="background-color: rgb(67, 123, 212)"
+            ></div>
+            <span>Principal</span>
+          </div>
+          <div class="legend-item">
+            <div
+              class="color-box"
+              style="background-color: rgb(149, 187, 66)"
+            ></div>
+            <span>Interest</span>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<footer>
-    <div id="footerUp">
+    <footer>
+      <div id="footerUp">
         <a href="carList.html">Vehicle List</a>
         <a href="wishList.html">Wish List</a>
         <a href="quotesList.html">Your Quotes</a>
         <a href="loanPaymentCalculator.html">Loan Payment Calculator</a>
         <a href="carComparisonTool.html">Vehicle Comparison Tool</a>
         <a href="profile.html">Profile</a>
-    </div>
-    <div id="footerDown">
+      </div>
+      <div id="footerDown">
         <div id="footerDown_left">
-            <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
+          <p>@Copyright Legend Motor Limited 2024 All Right Reserved</p>
         </div>
         <div id="footerDown_right">
-            <img src="../../../src/img/LMLogo.webp">
+          <img src="../../../src/img/LMLogo.webp" />
         </div>
-    </div>
-</footer>
-<i id="darkModeToggle" class="material-icons"
-   style="position:fixed; bottom: 10px; right: 10px; cursor: pointer;">wb_sunny</i>
-</body>
+      </div>
+    </footer>
+    <i
+      id="darkModeToggle"
+      class="material-icons"
+      style="position: fixed; bottom: 10px; right: 10px; cursor: pointer"
+      >wb_sunny</i
+    >
+  </body>
 </html>

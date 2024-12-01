@@ -1,189 +1,227 @@
 s = "";
 
 function setDarkMode() {
-    if ($('#darkModeToggle').text() == 'brightness_2') {
-        //to dark mode
-        $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'rgb(34,37,41)');
-        $('footer').css('background-color', '#333');
-        $('body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'rgb(194,196,200)');
-        $('a').css('color', 'rgba(255,255,255,0.65)');
-        $('.car-item').css('border', '0.1px solid grey');
-        $('input, select').css({
-            'background-color': 'rgb(44,47,51)',
-            'border': '0.1px solid grey',
-            'color': 'rgb(194,196,200)'
-        });
+  if ($("#darkModeToggle").text() == "brightness_2") {
+    //to dark mode
+    $(
+      "html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+    ).css("background-color", "rgb(34,37,41)");
+    $("footer").css("background-color", "#333");
+    $(
+      "body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+    ).css("color", "rgb(194,196,200)");
+    $("a").css("color", "rgba(255,255,255,0.65)");
+    $(".car-item").css("border", "0.1px solid grey");
+    $("input, select").css({
+      "background-color": "rgb(44,47,51)",
+      border: "0.1px solid grey",
+      color: "rgb(194,196,200)",
+    });
 
-        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid grey');
-        $('#headingRow').css({
-            'border-top': '1px solid grey',
-            'border-bottom': '1px solid grey'
-        })
-        // $('th').css({
-        //     'background-color':'#333',
-        //     'color':'white'
-        // });
+    $(
+      ".carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo"
+    ).css("border-bottom", "1px solid grey");
+    $("#headingRow").css({
+      "border-top": "1px solid grey",
+      "border-bottom": "1px solid grey",
+    });
+    // $('th').css({
+    //     'background-color':'#333',
+    //     'color':'white'
+    // });
 
-        $('#darkModeToggle').text('wb_sunny');
-        localStorage.setItem('darkMode', 'Y');
-    } else {
-        //to light mode
-        $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'white');
-        $('footer').css('background-color', '#e8e6e6');
-        $('body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'black');
-        $('a,footer').css('color', 'rgba(0,0,0,0.65)');
-        $('.car-item').css('border', '1px solid lightgrey');
-        $('input').css({
-            'background-color': 'white',
-            'border': '1px solid lightgrey',
-            'color': 'black'
-        });
-        $('select').css({
-            'background-color': 'white',
-            'color': 'black',
-            'border': '1px solid lightgrey'
-        });
-        $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid black');
-        $('#headingRow').css({
-            'border-top': '1px solid black',
-            'border-bottom': '1px solid black'
-        })
-        // $('th').css({
-        //     'background-color':'#f2f2f2',
-        //     'color':'inherit'
-        // });
-        $('#darkModeToggle').text('brightness_2');
-        localStorage.setItem('darkMode', 'N');
-    }
+    $("#darkModeToggle").text("wb_sunny");
+    localStorage.setItem("darkMode", "Y");
+  } else {
+    //to light mode
+    $(
+      "html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+    ).css("background-color", "white");
+    $("footer").css("background-color", "#e8e6e6");
+    $(
+      "body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+    ).css("color", "black");
+    $("a,footer").css("color", "rgba(0,0,0,0.65)");
+    $(".car-item").css("border", "1px solid lightgrey");
+    $("input").css({
+      "background-color": "white",
+      border: "1px solid lightgrey",
+      color: "black",
+    });
+    $("select").css({
+      "background-color": "white",
+      color: "black",
+      border: "1px solid lightgrey",
+    });
+    $(
+      ".carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo"
+    ).css("border-bottom", "1px solid black");
+    $("#headingRow").css({
+      "border-top": "1px solid black",
+      "border-bottom": "1px solid black",
+    });
+    // $('th').css({
+    //     'background-color':'#f2f2f2',
+    //     'color':'inherit'
+    // });
+    $("#darkModeToggle").text("brightness_2");
+    localStorage.setItem("darkMode", "N");
+  }
 }
 
 function loadDarkMode() {
-    if (localStorage.getItem('darkMode') != null) {
-        if (localStorage.getItem('darkMode') == 'Y') {
-            $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'rgb(34,37,41)');
-            $('footer').css('background-color', '#333');
-            $('body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'rgb(194,196,200)');
-            $('a').css('color', 'rgba(255,255,255,0.65)');
-            $('.car-item').css('border', '0.1px solid grey');
-            $('input, select').css({
-                'background-color': 'rgb(44,47,51)',
-                'border': '0.1px solid grey',
-                'color': 'rgb(194,196,200)'
-            });
-            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid grey');
-            $('#headingRow').css({
-                'border-top': '1px solid grey',
-                'border-bottom': '1px solid grey'
-            })
+  if (localStorage.getItem("darkMode") != null) {
+    if (localStorage.getItem("darkMode") == "Y") {
+      $(
+        "html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+      ).css("background-color", "rgb(34,37,41)");
+      $("footer").css("background-color", "#333");
+      $(
+        "body, nav,footer,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+      ).css("color", "rgb(194,196,200)");
+      $("a").css("color", "rgba(255,255,255,0.65)");
+      $(".car-item").css("border", "0.1px solid grey");
+      $("input, select").css({
+        "background-color": "rgb(44,47,51)",
+        border: "0.1px solid grey",
+        color: "rgb(194,196,200)",
+      });
+      $(
+        ".carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo"
+      ).css("border-bottom", "1px solid grey");
+      $("#headingRow").css({
+        "border-top": "1px solid grey",
+        "border-bottom": "1px solid grey",
+      });
 
-            $('#darkModeToggle').text('wb_sunny');
-        } else {
-            //to light mode
-            $('html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('background-color', 'white');
-            $('footer').css('background-color', '#e8e6e6');
-            $('body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4').css('color', 'black');
-            $('a,footer').css('color', 'rgba(0,0,0,0.65)');
-            $('.car-item').css('border', '1px solid lightgrey');
-            $('input').css({
-                'background-color': 'white',
-                'border': '1px solid lightgrey',
-                'color': 'black'
-            });
-            $('select').css({
-                'background-color': 'white',
-                'color': 'black',
-                'border': '1px solid lightgrey'
-            });
-            $('.carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo').css('border-bottom', '1px solid black');
-            $('#headingRow').css({
-                'border-top': '1px solid black',
-                'border-bottom': '1px solid black'
-            })
+      $("#darkModeToggle").text("wb_sunny");
+    } else {
+      //to light mode
+      $(
+        "html, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+      ).css("background-color", "white");
+      $("footer").css("background-color", "#e8e6e6");
+      $(
+        "body, nav,.modal-content,.modal-content2,.modal-content3,.modal-content4"
+      ).css("color", "black");
+      $("a,footer").css("color", "rgba(0,0,0,0.65)");
+      $(".car-item").css("border", "1px solid lightgrey");
+      $("input").css({
+        "background-color": "white",
+        border: "1px solid lightgrey",
+        color: "black",
+      });
+      $("select").css({
+        "background-color": "white",
+        color: "black",
+        border: "1px solid lightgrey",
+      });
+      $(
+        ".carRow,#InfoSection,#breakdown_tr,#buyerInfo ,#paymentInfo, #tradeInfo,#applyInfo"
+      ).css("border-bottom", "1px solid black");
+      $("#headingRow").css({
+        "border-top": "1px solid black",
+        "border-bottom": "1px solid black",
+      });
 
-            $('#darkModeToggle').text('brightness_2');
-        }
+      $("#darkModeToggle").text("brightness_2");
     }
+  }
 }
 
 function loadQuote() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    $('#quoteTitle h1').text(`Quote #${quoteId}`);
-    $('#statusTitle h2').text(`Status: Pending`);
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId == quoteId);
-        if (quote != null) {
-            $('#statusTitle h2').text(`Status: ${quote.status}`);
-            for (var i = 0; i < quote.vehicleInQuote.length; i++) {
-                $('#vehicleSection table').append(`<tr class="carRow" carid="${quote.vehicleInQuote[i].vehicleId}">
-                    <td><img src="../../../src/img/vehicleSales/car/${quote.vehicleInQuote[i].vehicleId}/1.jpg"/></td>
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  $("#quoteTitle h1").text(`Quote #${quoteId}`);
+  $("#statusTitle h2").text(`Status: Pending`);
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId == quoteId);
+    if (quote != null) {
+      $("#statusTitle h2").text(`Status: ${quote.status}`);
+      for (var i = 0; i < quote.vehicleInQuote.length; i++) {
+        $("#vehicleSection table").append(`<tr class="carRow" carid="${
+          quote.vehicleInQuote[i].vehicleId
+        }">
+                    <td><img src="../../../src/img/vehicleSales/car/${
+                      quote.vehicleInQuote[i].vehicleId
+                    }/1.jpg"/></td>
                     <td>${quote.vehicleInQuote[i].vehicleName}</td>
                     <td>${quote.vehicleInQuote[i].exteriorColor}</td>
                     <td>${quote.vehicleInQuote[i].interiorColor}</td>
-                    <td>$${(parseInt(quote.vehicleInQuote[i].price) / parseInt(quote.vehicleInQuote[i].quantity))}</td>
+                    <td>$${
+                      parseInt(quote.vehicleInQuote[i].price) /
+                      parseInt(quote.vehicleInQuote[i].quantity)
+                    }</td>
                     <td>${quote.vehicleInQuote[i].quantity}</td>
                     <td>$${quote.vehicleInQuote[i].price}</td>
                     <td>
                         <button>View</button>
                     </td>
                 </tr>`);
-            }
-            s = quote.status;
-        }
-        if (quote.status != "Pending") {
-            $('#decideTradeInBtn').remove();
-            $('#enterDiscountBtn').remove();
-            $('#applyNowBtn').remove();
-        }
-
-        if (s == "Pending") {
-            $('#changeStatusBtn').text(`Change Status to Confirmed`);
-        }else if (s == 'Confirmed'){
-            $('#changeStatusBtn').text(`Change Status to Delivered`);
-        }else{
-            $('#changeStatusBtn').remove();
-        }
-
+      }
+      s = quote.status;
     }
+    if (quote.status != "Pending") {
+      $("#decideTradeInBtn").remove();
+      $("#enterDiscountBtn").remove();
+      $("#applyNowBtn").remove();
+    }
+
+    if (s == "Pending") {
+      $("#changeStatusBtn").text(`Change Status to Confirmed`);
+      $("#changeStatusBtn").append(
+        `<i class="material-icons" style="margin-left: 5px">change_circle</i>`
+      );
+    } else if (s == "Confirmed") {
+      $("#changeStatusBtn").text(`Change Status to Delivered`);
+      $("#changeStatusBtn").append(
+        `<i class="material-icons" style="margin-left: 5px">change_circle</i>`
+      );
+    } else {
+      $("#changeStatusBtn").remove();
+    }
+  }
 }
 
 function loadQuotePersonalDetail() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId == quoteId);
-        if (quote != null) {
-            $('#custName').text(`${quote.personalInformation.firstName} ${quote.personalInformation.lastName}`);
-            $('#custEmail').text(`${quote.personalInformation.email}`);
-            $('#custPhone').text(`${quote.personalInformation.phone}`);
-            $('#custAddress').text(`${quote.personalInformation.address}`);
-            $('#custCountry').text(`${quote.personalInformation.country}`);
-        }
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId == quoteId);
+    if (quote != null) {
+      $("#custName").text(
+        `${quote.personalInformation.firstName} ${quote.personalInformation.lastName}`
+      );
+      $("#custEmail").text(`${quote.personalInformation.email}`);
+      $("#custPhone").text(`${quote.personalInformation.phone}`);
+      $("#custAddress").text(`${quote.personalInformation.address}`);
+      $("#custCountry").text(`${quote.personalInformation.country}`);
     }
+  }
 }
 
 function loadQuotePaymentDetail() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId == quoteId);
-        var box = $("#PaymentInfoSmallBoxDiv");
-        if (quote != null) {
-            if (quote.paymentInformation.paymentMethod === 'cheque') {
-                $('#paymentMethod').text('Cheque');
-                // $('#chequeBankName').text(`${quote.paymentInformation.chequeBankName}`);
-                box.append(`<div>
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId == quoteId);
+    var box = $("#PaymentInfoSmallBoxDiv");
+    if (quote != null) {
+      if (quote.paymentInformation.paymentMethod === "cheque") {
+        $("#paymentMethod").text("Cheque");
+        // $('#chequeBankName').text(`${quote.paymentInformation.chequeBankName}`);
+        box.append(`<div>
                         <h3>Bank Name:</h3>
                         <p>${quote.paymentInformation.chequeBankName}</p>
                         </div>`);
-            }
-            if (quote.paymentInformation.paymentMethod === 'bankTransfer') {
-                $('#paymentMethod').text('Bank Transfer');
+      }
+      if (quote.paymentInformation.paymentMethod === "bankTransfer") {
+        $("#paymentMethod").text("Bank Transfer");
 
-                box.append(`<div>
+        box.append(`<div>
                                 <h3>Bank Name:</h3>
                                 <p>${quote.paymentInformation.bankName}</p>
                             </div>
@@ -199,15 +237,18 @@ function loadQuotePaymentDetail() {
                                 <h3>Swift Code:</h3>
                                 <p>${quote.paymentInformation.swiftCode}</p>
                             </div>`);
-            }
+      }
 
-            if (quote.paymentInformation.paymentMethod === 'creditCard') {
-                // $('#cardType').text(`${quote.paymentInformation.cardType.toUpperCase()}`);
-                let cardNumber = quote.paymentInformation.cardNumber;
-                let maskedCardNumber = cardNumber.replace(/(\d{4})\d{8}(\d{4})/, '$1********$2');
-                // $('#cardNumber').text(maskedCardNumber);
-                $('#paymentMethod').text('Credit Card');
-                box.append(`<div>
+      if (quote.paymentInformation.paymentMethod === "creditCard") {
+        // $('#cardType').text(`${quote.paymentInformation.cardType.toUpperCase()}`);
+        let cardNumber = quote.paymentInformation.cardNumber;
+        let maskedCardNumber = cardNumber.replace(
+          /(\d{4})\d{8}(\d{4})/,
+          "$1********$2"
+        );
+        // $('#cardNumber').text(maskedCardNumber);
+        $("#paymentMethod").text("Credit Card");
+        box.append(`<div>
                                 <h3>Card Type:</h3>
                                 <p>${quote.paymentInformation.cardType.toUpperCase()}</p>
                             </div>
@@ -215,250 +256,274 @@ function loadQuotePaymentDetail() {
                                 <h3>Card Number:</h3>
                                 <p>${maskedCardNumber}</p>
                             </div>`);
-            }
-
-        }
+      }
     }
+  }
 }
 
 function loadQuoteTradeInDetail() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId === quoteId);
-        if (quote != null) {
-            if (quote.tradeInInformation.tradeIn !== "no") {
-                $('#tradeInCar').text(`${quote.tradeInInformation.tradeInMakeModel}`);
-                $('#tradeInMY').text(`${quote.tradeInInformation.tradeInYear}`);
-                $('#tradeInMileage').text(`${quote.tradeInInformation.tradeInMileage}`);
-                // $('#tradeInVin').text(`${quote.tradeInInformation.tradeInVIN}`);
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId === quoteId);
+    if (quote != null) {
+      if (quote.tradeInInformation.tradeIn !== "no") {
+        $("#tradeInCar").text(`${quote.tradeInInformation.tradeInMakeModel}`);
+        $("#tradeInMY").text(`${quote.tradeInInformation.tradeInYear}`);
+        $("#tradeInMileage").text(`${quote.tradeInInformation.tradeInMileage}`);
+        // $('#tradeInVin').text(`${quote.tradeInInformation.tradeInVIN}`);
 
-                $('#tradeInOC').text(`${quote.tradeInInformation.tradeInCondition}`);
-                $('#tradeInEC').text(`${quote.tradeInInformation.exteriorCondition}`);
-                $('#tradeInIC').text(`${quote.tradeInInformation.interiorCondition}`);
-                $('#tradeInMC').text(`${quote.tradeInInformation.mechanicalCondition}`);
-                $('#tradeInPO').text(`${quote.tradeInInformation.previousOwners}`);
-                $('#tradeInSH').text(`${quote.tradeInInformation.serviceHistory}`);
-                $('#tradeInAH').text(`${quote.tradeInInformation.accidentHistory}`);
-                $('#tradeInValue').text(`$${quote.tradeInInformation.tradeInValue}`);
-            } else {
-                $('#tradeInfo').remove();
-            }
-        }
+        $("#tradeInOC").text(`${quote.tradeInInformation.tradeInCondition}`);
+        $("#tradeInEC").text(`${quote.tradeInInformation.exteriorCondition}`);
+        $("#tradeInIC").text(`${quote.tradeInInformation.interiorCondition}`);
+        $("#tradeInMC").text(`${quote.tradeInInformation.mechanicalCondition}`);
+        $("#tradeInPO").text(`${quote.tradeInInformation.previousOwners}`);
+        $("#tradeInSH").text(`${quote.tradeInInformation.serviceHistory}`);
+        $("#tradeInAH").text(`${quote.tradeInInformation.accidentHistory}`);
+        $("#tradeInValue").text(`$${quote.tradeInInformation.tradeInValue}`);
+      } else {
+        $("#tradeInfo").remove();
+      }
     }
+  }
 
-    if ($('#tradeInValue').text() != "$0") {
-        $('#decideTradeInBtn').remove();
-    }
+  if ($("#tradeInValue").text() != "$0") {
+    $("#decideTradeInBtn").remove();
+  }
 }
 
-function loadApplyRegistrationDetail(){
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId === quoteId);
-        if (quote != null) {
-            if (quote.applyRegistrationInformation.applyRegistration !== "no") {
-
-            }else{
-                $('#applyInfo').remove();
-            }
-        }
+function loadApplyRegistrationDetail() {
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId === quoteId);
+    if (quote != null) {
+      if (quote.applyRegistrationInformation.applyRegistration !== "no") {
+      } else {
+        $("#applyInfo").remove();
+      }
     }
+  }
 }
 
 function loadDiscountDetail() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId === quoteId);
-        if (quote != null) {
-            if (quote.knowStaff.know !== "no") {
-                if (quote.knowStaff.verified === "No") {
-                    $('#discount').text('$0');
-                    $('#verified').text("Pending Verification");
-                } else if (quote.knowStaff.verified === "No Discount") {
-                    $('#discount').text('$0');
-                    $('#verified').text("No Discount");
-                    $('#enterDiscountBtn').remove();
-                } else {
-                    $('#verified').text("Verified");
-                    $('#discount').text(`$${quote.knowStaff.discount}`);
-                    $('#enterDiscountBtn').remove();
-                }
-            } else {
-                $('#discountInfo').remove();
-            }
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId === quoteId);
+    if (quote != null) {
+      if (quote.knowStaff.know !== "no") {
+        if (quote.knowStaff.verified === "No") {
+          $("#discount").text("$0");
+          $("#verified").text("Pending Verification");
+        } else if (quote.knowStaff.verified === "No Discount") {
+          $("#discount").text("$0");
+          $("#verified").text("No Discount");
+          $("#enterDiscountBtn").remove();
+        } else {
+          $("#verified").text("Verified");
+          $("#discount").text(`$${quote.knowStaff.discount}`);
+          $("#enterDiscountBtn").remove();
         }
+      } else {
+        $("#discountInfo").remove();
+      }
     }
+  }
 }
 
 function loadQuotePriceBreakdown() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId == quoteId);
-        if (quote != null) {
-            $('#subtotal').text(`$${parseInt(quote.totalPrice)}`);
-            var subtotal = parseInt(quote.totalPrice); //get from json
-            let tradeInValue = 0;
-            let discount = 0;
-            if (quote.tradeInInformation.tradeIn != "no") {
-                // $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
-                tradeInValue = parseInt(quote.tradeInInformation.tradeInValue);
-                $('#tradeInValueBreakdown').text(`-$${tradeInValue}`);
-                subtotal -= tradeInValue;
-                // $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(10000) + 5000}`);
-            } else {
-                $('#tradeInValueBreakdown').text(`-$0`);
-                //$('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);
-            }
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId == quoteId);
+    if (quote != null) {
+      $("#subtotal").text(`$${parseInt(quote.totalPrice)}`);
+      var subtotal = parseInt(quote.totalPrice); //get from json
+      let tradeInValue = 0;
+      let discount = 0;
+      if (quote.tradeInInformation.tradeIn != "no") {
+        // $('#tradeInValueBreakdown').text(`-$${parseInt(quote.tradeInInformation.tradeInPrice)}`);
+        tradeInValue = parseInt(quote.tradeInInformation.tradeInValue);
+        $("#tradeInValueBreakdown").text(`-$${tradeInValue}`);
+        subtotal -= tradeInValue;
+        // $('#totalPrice').text(`$${parseInt(quote.totalPrice) - parseInt(10000) + 5000}`);
+      } else {
+        $("#tradeInValueBreakdown").text(`-$0`);
+        //$('#totalPrice').text(`$${parseInt(quote.totalPrice) + 5000}`);
+      }
 
-            if (quote.knowStaff.know == "Yes" && quote.knowStaff.verified == "True") {
-                if (quote.knowStaff.verified === "True") {
-                    discount = parseInt(quote.knowStaff.discount);
-                    $('#discountBreakdown').text(`-$${discount}`);
-                    subtotal -= discount;
-                } else {
-                    $('#discountBreakdown').text(`-$${discount}`);
-                }
-            }
-
-            if (quote.applyRegistrationInformation.applyRegistration === "Yes") {
-                $('#registrationBreakdown').text(`+ $1000`);
-                subtotal += 1000;
-            } else {
-                $('#registrationBreakdown').text(`+ $0`);
-            }
-            subtotal += 5000; //tax
-            subtotal += 5000; //shipping fee
-            if (subtotal < 0){
-                $('#totalPrice').text(`$0`);
-            }else{
-                $('#totalPrice').text(`$${subtotal}`);
-            }
+      if (quote.knowStaff.know == "Yes" && quote.knowStaff.verified == "True") {
+        if (quote.knowStaff.verified === "True") {
+          discount = parseInt(quote.knowStaff.discount);
+          $("#discountBreakdown").text(`-$${discount}`);
+          subtotal -= discount;
+        } else {
+          $("#discountBreakdown").text(`-$${discount}`);
         }
+      }
+
+      if (quote.applyRegistrationInformation.applyRegistration === "Yes") {
+        $("#registrationBreakdown").text(`+ $1000`);
+        subtotal += 1000;
+      } else {
+        $("#registrationBreakdown").text(`+ $0`);
+      }
+      subtotal += 5000; //tax
+      subtotal += 5000; //shipping fee
+      if (subtotal < 0) {
+        $("#totalPrice").text(`$0`);
+      } else {
+        $("#totalPrice").text(`$${subtotal}`);
+      }
     }
+  }
 }
 
 function changeStatusToConfirmed() {
-    var quoteId = localStorage.getItem('sales_quoteToView');
-    var quoteList = localStorage.getItem('quote');
-    if (quoteList != null) {
-        quoteList = JSON.parse(quoteList);
-        var quote = quoteList.find(quote => quote.quoteId === quoteId);
-        if (quote != null) {
-            if (quote.knowStaff.know != 'Yes' && quote.tradeInInformation.tradeIn == 'no') { //dont know staff, dont tradein
-                quote.status = "Confirmed";
-                localStorage.setItem('quote', JSON.stringify(quoteList));
-                window.location.reload();
-            }
+  var quoteId = localStorage.getItem("sales_quoteToView");
+  var quoteList = localStorage.getItem("quote");
+  if (quoteList != null) {
+    quoteList = JSON.parse(quoteList);
+    var quote = quoteList.find((quote) => quote.quoteId === quoteId);
+    if (quote != null) {
+      if (
+        quote.knowStaff.know != "Yes" &&
+        quote.tradeInInformation.tradeIn == "no"
+      ) {
+        //dont know staff, dont tradein
+        quote.status = "Confirmed";
+        localStorage.setItem("quote", JSON.stringify(quoteList));
+        window.location.reload();
+      }
 
-            if (quote.knowStaff.know === 'Yes' && quote.tradeInInformation.tradeIn == 'no'){ //know staff, dont tradein
-                if (quote.knowStaff.verified === "True") {
-                    quote.status = "Confirmed";
-                    localStorage.setItem('quote', JSON.stringify(quoteList));
-                    window.location.reload();
-                }else{
-                    alertModal('Please verify the discount first');
-                }
-            }
-
-            if (quote.knowStaff.know === 'No' && quote.tradeInInformation.tradeIn !== 'no') { //dont know staff, tradein
-                if (quote.tradeInInformation.tradeInValue !== 0) {
-                    quote.status = "Confirmed";
-                    localStorage.setItem('quote', JSON.stringify(quoteList));
-                    window.location.reload();
-                }
-            }
-
-            if (quote.knowStaff.know === "Yes" && quote.knowStaff.verified === "True") { //know staff, tradein
-                if (quote.tradeInInformation.tradeIn !== "no") {
-                    if (quote.tradeInInformation.tradeInValue !== 0) {
-                        quote.status = "Confirmed";
-                        localStorage.setItem('quote', JSON.stringify(quoteList));
-                        window.location.reload();
-                    } else {
-                        alertModal('Please decide the trade in value first');
-                    }
-                }
-            }else{
-                alertModal('Please verify the discount first');
-            }
+      if (
+        quote.knowStaff.know === "Yes" &&
+        quote.tradeInInformation.tradeIn == "no"
+      ) {
+        //know staff, dont tradein
+        if (quote.knowStaff.verified === "True") {
+          quote.status = "Confirmed";
+          localStorage.setItem("quote", JSON.stringify(quoteList));
+          window.location.reload();
+        } else {
+          alertModal("Please verify the discount first");
         }
+      }
+
+      if (
+        quote.knowStaff.know === "No" &&
+        quote.tradeInInformation.tradeIn !== "no"
+      ) {
+        //dont know staff, tradein
+        if (quote.tradeInInformation.tradeInValue !== 0) {
+          quote.status = "Confirmed";
+          localStorage.setItem("quote", JSON.stringify(quoteList));
+          window.location.reload();
+        }
+      }
+
+      if (
+        quote.knowStaff.know === "Yes" &&
+        quote.knowStaff.verified === "True"
+      ) {
+        //know staff, tradein
+        if (quote.tradeInInformation.tradeIn !== "no") {
+          if (quote.tradeInInformation.tradeInValue !== 0) {
+            quote.status = "Confirmed";
+            localStorage.setItem("quote", JSON.stringify(quoteList));
+            window.location.reload();
+          } else {
+            alertModal("Please decide the trade in value first");
+          }
+        }
+      } else {
+        alertModal("Please verify the discount first");
+      }
     }
+  }
 }
 
 $(document).ready(function () {
-    loadQuote();
-    loadQuotePersonalDetail();
-    loadQuotePaymentDetail();
-    loadQuoteTradeInDetail();
-    loadApplyRegistrationDetail();
-    loadQuotePriceBreakdown();
-    loadDiscountDetail();
-    loadDarkMode();
-    $('#darkModeToggle').click(function () {
-        setDarkMode();
-    });
+  loadQuote();
+  loadQuotePersonalDetail();
+  loadQuotePaymentDetail();
+  loadQuoteTradeInDetail();
+  loadApplyRegistrationDetail();
+  loadQuotePriceBreakdown();
+  loadDiscountDetail();
+  loadDarkMode();
+  $("#darkModeToggle").click(function () {
+    setDarkMode();
+  });
 
-    $('#applyNowBtn').click(function () {
-        window.open('https://www.td.gov.hk/filemanager/common/td22_e-fillable_chi.pdf', '_blank');
-    })
+  $("#applyNowBtn").click(function () {
+    window.open(
+      "https://www.td.gov.hk/filemanager/common/td22_e-fillable_chi.pdf",
+      "_blank"
+    );
+  });
 
-    $('#vehicleSection table tr button').click(function () {
-        localStorage.setItem('sales_view_carId', $(this).parent().parent().attr('carid'));
-        window.location.href = '../../../pages/vehicleSales/sales/carPage.html';
-    });
+  $("#vehicleSection table tr button").click(function () {
+    localStorage.setItem(
+      "sales_view_carId",
+      $(this).parent().parent().attr("carid")
+    );
+    window.location.href = "../../../pages/vehicleSales/sales/carPage.html";
+  });
 
-    $('#printBtn').click(function () {
-        $(this).hide();
-        if (s == "Pending") {
-            $('#decideTradeInBtn').hide();
-            $('#enterDiscountBtn').hide();
-            $('#applyNowBtn').hide();
+  $("#printBtn").click(function () {
+    $(this).hide();
+    if (s == "Pending") {
+      $("#decideTradeInBtn").hide();
+      $("#enterDiscountBtn").hide();
+      $("#applyNowBtn").hide();
+    }
+    $("nav,i,#goBackLinkDiv,#buttonDiv").hide();
+    $("#vehicleSection img").css("width", "150px");
+    $(
+      "#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div"
+    ).css("width", "30%");
+    $("footer").hide();
+    $("#insureBtnDiv button").hide();
+    window.print();
+    $("nav,i,#goBackLinkDiv,#buttonDiv").show();
+    $(this).show();
+    $("footer").show();
+    $("#insureBtnDiv button").show();
+    $("#vehicleSection img").css("width", "200px");
+    $("#CustInfoSmallBoxDiv div").css("width", "20%");
+    $("#PaymentInfoSmallBoxDiv div").css("width", "20%");
+    $("#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div").css(
+      "width",
+      "25%"
+    );
+    if (s == "Pending") {
+      $("#decideTradeInBtn").show();
+      $("#enterDiscountBtn").show();
+      $("#applyNowBtn").show();
+    }
+  });
+
+  $("#changeStatusBtn").click(function () {
+    if (s == "Pending") {
+      changeStatusToConfirmed();
+    } else if (s == "Confirmed") {
+      var quoteId = localStorage.getItem("sales_quoteToView");
+      var quoteList = localStorage.getItem("quote");
+      if (quoteList != null) {
+        quoteList = JSON.parse(quoteList);
+        var quote = quoteList.find((quote) => quote.quoteId === quoteId);
+        if (quote != null) {
+          quote.status = "Delivered";
+          localStorage.setItem("quote", JSON.stringify(quoteList));
+          window.location.reload();
         }
-        $('nav,i,#goBackLinkDiv,#buttonDiv').hide();
-        $('#vehicleSection img').css('width', '150px');
-        $('#CustInfoSmallBoxDiv div, #PaymentInfoSmallBoxDiv div,#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '30%');
-        $('footer').hide();
-        $('#insureBtnDiv button').hide();
-        window.print();
-        $('nav,i,#goBackLinkDiv,#buttonDiv').show();
-        $(this).show();
-        $('footer').show();
-        $('#insureBtnDiv button').show();
-        $('#vehicleSection img').css('width', '200px');
-        $('#CustInfoSmallBoxDiv div').css('width', '20%');
-        $('#PaymentInfoSmallBoxDiv div').css('width', '20%');
-        $('#TradeInInfoSmallBoxDiv div, #ApplyInfoSmallBoxDiv div').css('width', '25%');
-        if (s == "Pending") {
-            $('#decideTradeInBtn').show();
-            $('#enterDiscountBtn').show();
-            $('#applyNowBtn').show();
-        }
-    });
-
-    $('#changeStatusBtn').click(function () {
-        if (s == "Pending") {
-            changeStatusToConfirmed();
-        }else if (s == "Confirmed"){
-            var quoteId = localStorage.getItem('sales_quoteToView');
-            var quoteList = localStorage.getItem('quote');
-            if (quoteList != null) {
-                quoteList = JSON.parse(quoteList);
-                var quote = quoteList.find(quote => quote.quoteId === quoteId);
-                if (quote != null) {
-                    quote.status = "Delivered";
-                    localStorage.setItem('quote', JSON.stringify(quoteList));
-                    window.location.reload();
-                }
-            }
-        }
-    });
+      }
+    }
+  });
 });
-
