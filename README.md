@@ -1,10 +1,14 @@
 # ITP4506_Project (Semester 1, 2024-2025)
 
 ## Table of Content
-1. [Prerequisite](#prerequisite)
-1. [Aims and Objectives](#aims-and-objectives)
-2. [Scenario](#scenario)
-3. [User Account](#user-account)
+- [ITP4506\_Project (Semester 1, 2024-2025)](#itp4506_project-semester-1-2024-2025)
+  - [Table of Content](#table-of-content)
+  - [Prerequisite](#prerequisite)
+  - [Aims and Objectives](#aims-and-objectives)
+  - [Scenario](#scenario)
+  - [UI Preview](#ui-preview)
+    - [Customer Interface](#customer-interface)
+  - [User Account](#user-account)
 
 ## Prerequisite
 This project need a server to run. It is suggested that to use the Live Server extension in Visual Studio Code<br>
@@ -59,6 +63,17 @@ specifications.
 between insurance sales personnel and customers, allowing for timely responses to inquiries and
 clarifications regarding the quote. 
 
+## UI Preview
+
+### Customer Interface
+The customer portal provides an intuitive interface for vehicle browsing and insurance quote requests:
+
+- **Vehicle Browse Page**: Clean grid layout displaying available vehicles with filtering options<br>
+![Image](https://github.com/user-attachments/assets/22ab0054-f09d-4e96-a9ed-931086aacb82)
+- **Vehicle Details**: Comprehensive vehicle information with customization options<br>
+![Image](https://github.com/user-attachments/assets/b1fcbd2c-e9dd-4799-abb1-0add8e0c6d94)
+- **Purchase History**: Easy-to-navigate transaction history and tracking<br>
+![Image](https://github.com/user-attachments/assets/550f81ec-e716-49d3-b761-42a8cfb011b3)
 
 ## User Account
 >Customer Account:<br>
